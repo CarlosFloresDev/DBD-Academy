@@ -1,0 +1,1116 @@
+[
+ {
+  "slug": "coal-tower",
+  "id": 1,
+  "name": "Coal Tower",
+  "codeName": "Warehouse",
+  "realmId": 1,
+  "realm": "The MacMillan Estate",
+  "sizeTiles": 136,
+  "areaM2": 8704,
+  "floors": null,
+  "variations": [
+   {
+    "tiles": 132,
+    "patch": "1.0.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 136,
+    "patch": "7.3.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 180,
+    "patch": "8.7.1",
+    "twoVsEight": true
+   }
+  ],
+  "release": "1.0.0",
+  "landmark": null,
+  "icon": "/img/maps/coal-tower.png",
+  "comp": {
+   "killers1v1": [
+    "Mastermind",
+    "Oni",
+    "Wraith",
+    "Nurse"
+   ],
+   "note": "Mapa fijo del duelo 1v1 (DBD Arena)"
+  }
+ },
+ {
+  "slug": "groaning-storehouse",
+  "id": 2,
+  "name": "Groaning Storehouse",
+  "codeName": "Storehouse",
+  "realmId": 1,
+  "realm": "The MacMillan Estate",
+  "sizeTiles": 148,
+  "areaM2": 9472,
+  "floors": null,
+  "variations": [
+   {
+    "tiles": 156,
+    "patch": "1.5.2c",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 148,
+    "patch": "7.3.0",
+    "twoVsEight": false
+   }
+  ],
+  "release": "1.5.2c",
+  "landmark": null,
+  "icon": "/img/maps/groaning-storehouse.png",
+  "comp": null
+ },
+ {
+  "slug": "ironworks-of-misery",
+  "id": 3,
+  "name": "Ironworks of Misery",
+  "codeName": "Foundry",
+  "realmId": 1,
+  "realm": "The MacMillan Estate",
+  "sizeTiles": 156,
+  "areaM2": 9984,
+  "floors": null,
+  "variations": [
+   {
+    "tiles": 160,
+    "patch": "1.0.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 156,
+    "patch": "7.3.0",
+    "twoVsEight": false
+   }
+  ],
+  "release": "1.0.0",
+  "landmark": null,
+  "icon": "/img/maps/ironworks-of-misery.png",
+  "comp": null
+ },
+ {
+  "slug": "shelter-woods",
+  "id": 4,
+  "name": "Shelter Woods",
+  "codeName": "Forest",
+  "realmId": 1,
+  "realm": "The MacMillan Estate",
+  "sizeTiles": 176,
+  "areaM2": 11264,
+  "floors": null,
+  "variations": [
+   {
+    "tiles": 176,
+    "patch": "1.0.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 176,
+    "patch": "7.3.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 180,
+    "patch": "8.7.1",
+    "twoVsEight": true
+   }
+  ],
+  "release": "1.0.0",
+  "landmark": "Command Centre",
+  "icon": "/img/maps/shelter-woods.png",
+  "comp": null
+ },
+ {
+  "slug": "suffocation-pit",
+  "id": 5,
+  "name": "Suffocation Pit",
+  "codeName": "Mine",
+  "realmId": 1,
+  "realm": "The MacMillan Estate",
+  "sizeTiles": 152,
+  "areaM2": 9728,
+  "floors": null,
+  "variations": [
+   {
+    "tiles": 160,
+    "patch": "1.0.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 152,
+    "patch": "7.3.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 184,
+    "patch": "8.1.1",
+    "twoVsEight": true
+   }
+  ],
+  "release": "1.0.0",
+  "landmark": null,
+  "icon": "/img/maps/suffocation-pit.png",
+  "comp": {
+   "killers1v1": [
+    "Blight",
+    "Trapper"
+   ],
+   "note": "Mapa fijo del duelo 1v1 (DBD Arena)"
+  }
+ },
+ {
+  "slug": "azarov-s-resting-place",
+  "id": 6,
+  "name": "Azarov's Resting Place",
+  "codeName": "Office",
+  "realmId": 2,
+  "realm": "Autohaven Wreckers",
+  "sizeTiles": 176,
+  "areaM2": 11264,
+  "floors": null,
+  "variations": [
+   {
+    "tiles": 176,
+    "patch": "1.0.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 184,
+    "patch": "8.1.1",
+    "twoVsEight": true
+   }
+  ],
+  "release": "1.0.0",
+  "landmark": null,
+  "icon": "/img/maps/azarov-s-resting-place.png",
+  "comp": null
+ },
+ {
+  "slug": "blood-lodge",
+  "id": 7,
+  "name": "Blood Lodge",
+  "codeName": "Lodge",
+  "realmId": 2,
+  "realm": "Autohaven Wreckers",
+  "sizeTiles": 156,
+  "areaM2": 9984,
+  "floors": null,
+  "variations": null,
+  "release": "1.0.0",
+  "landmark": null,
+  "icon": "/img/maps/blood-lodge.png",
+  "comp": {
+   "killers1v1": [
+    "Hillbilly"
+   ],
+   "note": "Mapa fijo del duelo 1v1 (DBD Arena)"
+  }
+ },
+ {
+  "slug": "gas-heaven",
+  "id": 8,
+  "name": "Gas Heaven",
+  "codeName": "Gas Station",
+  "realmId": 2,
+  "realm": "Autohaven Wreckers",
+  "sizeTiles": 156,
+  "areaM2": 9984,
+  "floors": null,
+  "variations": [
+   {
+    "tiles": 156,
+    "patch": "1.4.1",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 184,
+    "patch": "8.1.1",
+    "twoVsEight": true
+   }
+  ],
+  "release": "1.4.1",
+  "landmark": null,
+  "icon": "/img/maps/gas-heaven.png",
+  "comp": null
+ },
+ {
+  "slug": "wreckers-yard",
+  "id": 9,
+  "name": "Wreckers' Yard",
+  "codeName": "Scrapyard",
+  "realmId": 2,
+  "realm": "Autohaven Wreckers",
+  "sizeTiles": 144,
+  "areaM2": 9216,
+  "floors": null,
+  "variations": [
+   {
+    "tiles": 144,
+    "patch": "1.0.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 176,
+    "patch": "8.3.2",
+    "twoVsEight": true
+   }
+  ],
+  "release": "1.0.0",
+  "landmark": null,
+  "icon": "/img/maps/wreckers-yard.png",
+  "comp": {
+   "killers1v1": [
+    "Cannibal",
+    "Clown",
+    "Demogorgon",
+    "Doctor",
+    "Pig"
+   ],
+   "note": "Mapa fijo del duelo 1v1 (DBD Arena)"
+  }
+ },
+ {
+  "slug": "wretched-shop",
+  "id": 10,
+  "name": "Wretched Shop",
+  "codeName": "Garage",
+  "realmId": 2,
+  "realm": "Autohaven Wreckers",
+  "sizeTiles": 164,
+  "areaM2": 10496,
+  "floors": null,
+  "variations": [
+   {
+    "tiles": 164,
+    "patch": "1.0.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 0,
+    "patch": "8.7.1",
+    "twoVsEight": true
+   }
+  ],
+  "release": "1.0.0",
+  "landmark": null,
+  "icon": "/img/maps/wretched-shop.png",
+  "comp": {
+   "killers1v1": [
+    "Dark Lord"
+   ],
+   "note": "Mapa fijo del duelo 1v1 (DBD Arena)"
+  }
+ },
+ {
+  "slug": "fractured-cowshed",
+  "id": 11,
+  "name": "Fractured Cowshed",
+  "codeName": "Barn",
+  "realmId": 3,
+  "realm": "Coldwind Farm",
+  "sizeTiles": 152,
+  "areaM2": 9728,
+  "floors": null,
+  "variations": null,
+  "release": "1.0.4",
+  "landmark": null,
+  "icon": "/img/maps/fractured-cowshed.png",
+  "comp": null
+ },
+ {
+  "slug": "rancid-abattoir",
+  "id": 12,
+  "name": "Rancid Abattoir",
+  "codeName": "Slaughterhouse",
+  "realmId": 3,
+  "realm": "Coldwind Farm",
+  "sizeTiles": 140,
+  "areaM2": 8960,
+  "floors": null,
+  "variations": [
+   {
+    "tiles": 140,
+    "patch": "1.0.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 192,
+    "patch": "8.3.2",
+    "twoVsEight": true
+   }
+  ],
+  "release": "1.0.0",
+  "landmark": null,
+  "icon": "/img/maps/rancid-abattoir.png",
+  "comp": null
+ },
+ {
+  "slug": "rotten-fields",
+  "id": 13,
+  "name": "Rotten Fields",
+  "codeName": "Cornfield",
+  "realmId": 3,
+  "realm": "Coldwind Farm",
+  "sizeTiles": 160,
+  "areaM2": 10240,
+  "floors": null,
+  "variations": null,
+  "release": "1.0.0",
+  "landmark": null,
+  "icon": "/img/maps/rotten-fields.png",
+  "comp": null
+ },
+ {
+  "slug": "the-thompson-house",
+  "id": 14,
+  "name": "The Thompson House",
+  "codeName": "Farmhouse",
+  "realmId": 3,
+  "realm": "Coldwind Farm",
+  "sizeTiles": 152,
+  "areaM2": 9728,
+  "floors": null,
+  "variations": [
+   {
+    "tiles": 152,
+    "patch": "1.0.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 180,
+    "patch": "8.1.1",
+    "twoVsEight": true
+   }
+  ],
+  "release": "1.0.0",
+  "landmark": null,
+  "icon": "/img/maps/the-thompson-house.png",
+  "comp": null
+ },
+ {
+  "slug": "torment-creek",
+  "id": 15,
+  "name": "Torment Creek",
+  "codeName": "Silo",
+  "realmId": 3,
+  "realm": "Coldwind Farm",
+  "sizeTiles": 156,
+  "areaM2": 9984,
+  "floors": null,
+  "variations": [
+   {
+    "tiles": 156,
+    "patch": "1.0.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 180,
+    "patch": "8.7.1",
+    "twoVsEight": true
+   }
+  ],
+  "release": "1.0.0",
+  "landmark": null,
+  "icon": "/img/maps/torment-creek.png",
+  "comp": null
+ },
+ {
+  "slug": "disturbed-ward",
+  "id": 16,
+  "name": "Disturbed Ward",
+  "codeName": "Asylum",
+  "realmId": 4,
+  "realm": "Crotus Prenn Asylum",
+  "sizeTiles": 152,
+  "areaM2": 9728,
+  "floors": null,
+  "variations": [
+   {
+    "tiles": 152,
+    "patch": "1.1.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 188,
+    "patch": "8.1.1",
+    "twoVsEight": true
+   }
+  ],
+  "release": "1.1.0",
+  "landmark": "Shock Therapy Centre, Second Floor",
+  "icon": "/img/maps/disturbed-ward.png",
+  "comp": null
+ },
+ {
+  "slug": "father-campbell-s-chapel",
+  "id": 17,
+  "name": "Father Campbell's Chapel",
+  "codeName": "Chapel",
+  "realmId": 4,
+  "realm": "Crotus Prenn Asylum",
+  "sizeTiles": 140,
+  "areaM2": 8960,
+  "floors": null,
+  "variations": [
+   {
+    "tiles": 140,
+    "patch": "2.0.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 180,
+    "patch": "8.3.2",
+    "twoVsEight": true
+   }
+  ],
+  "release": "2.0.0",
+  "landmark": "Chapel",
+  "icon": "/img/maps/father-campbell-s-chapel.png",
+  "comp": null
+ },
+ {
+  "slug": "lampkin-lane",
+  "id": 18,
+  "name": "Lampkin Lane",
+  "codeName": "Street",
+  "realmId": 5,
+  "realm": "Haddonfield",
+  "sizeTiles": 132,
+  "areaM2": 8448,
+  "floors": null,
+  "variations": null,
+  "release": "1.2.1",
+  "landmark": "Myers' House",
+  "icon": "/img/maps/lampkin-lane.png",
+  "comp": null
+ },
+ {
+  "slug": "the-pale-rose",
+  "id": 19,
+  "name": "The Pale Rose",
+  "codeName": "PaleRose",
+  "realmId": 6,
+  "realm": "Backwater Swamp",
+  "sizeTiles": 161,
+  "areaM2": 10304,
+  "floors": null,
+  "variations": null,
+  "release": "1.3.1",
+  "landmark": "Steamboat",
+  "icon": "/img/maps/the-pale-rose.png",
+  "comp": null
+ },
+ {
+  "slug": "grim-pantry",
+  "id": 20,
+  "name": "Grim Pantry",
+  "codeName": "GrimPantry",
+  "realmId": 6,
+  "realm": "Backwater Swamp",
+  "sizeTiles": 168,
+  "areaM2": 10752,
+  "floors": null,
+  "variations": null,
+  "release": "1.7.0",
+  "landmark": null,
+  "icon": "/img/maps/grim-pantry.png",
+  "comp": null
+ },
+ {
+  "slug": "treatment-theatre",
+  "id": 21,
+  "name": "Treatment Theatre",
+  "codeName": "Treatment",
+  "realmId": 7,
+  "realm": "Léry's Memorial Institute",
+  "sizeTiles": 98,
+  "areaM2": 6272,
+  "floors": null,
+  "variations": null,
+  "release": "1.5.1",
+  "landmark": "Operating Theatre",
+  "icon": "/img/maps/treatment-theatre.png",
+  "comp": null
+ },
+ {
+  "slug": "mother-s-dwelling",
+  "id": 22,
+  "name": "Mother's Dwelling",
+  "codeName": "Mad House",
+  "realmId": 8,
+  "realm": "Red Forest",
+  "sizeTiles": 152,
+  "areaM2": 9728,
+  "floors": null,
+  "variations": [
+   {
+    "tiles": 152,
+    "patch": "1.6.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 200,
+    "patch": "8.1.1",
+    "twoVsEight": true
+   }
+  ],
+  "release": "1.6.0",
+  "landmark": "Cottage",
+  "icon": "/img/maps/mother-s-dwelling.png",
+  "comp": null
+ },
+ {
+  "slug": "the-temple-of-purgation",
+  "id": 23,
+  "name": "The Temple of Purgation",
+  "codeName": "Temple",
+  "realmId": 8,
+  "realm": "Red Forest",
+  "sizeTiles": 136,
+  "areaM2": 8704,
+  "floors": null,
+  "variations": null,
+  "release": "2.6.0",
+  "landmark": "Temple Catacombs",
+  "icon": "/img/maps/the-temple-of-purgation.png",
+  "comp": null
+ },
+ {
+  "slug": "badham-preschool",
+  "id": 24,
+  "name": "Badham Preschool",
+  "codeName": "ElmStreet",
+  "realmId": 9,
+  "realm": "Springwood",
+  "sizeTiles": 148,
+  "areaM2": 9472,
+  "floors": null,
+  "variations": [
+   {
+    "tiles": 144,
+    "patch": "1.8.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 144,
+    "patch": "3.1.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 144,
+    "patch": "3.1.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 140,
+    "patch": "3.1.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 148,
+    "patch": "3.1.0",
+    "twoVsEight": false
+   }
+  ],
+  "release": "1.8.0",
+  "landmark": null,
+  "icon": "/img/maps/badham-preschool.png",
+  "comp": null
+ },
+ {
+  "slug": "the-game",
+  "id": 29,
+  "name": "The Game",
+  "codeName": "Hideout",
+  "realmId": 10,
+  "realm": "Gideon Meat Plant",
+  "sizeTiles": null,
+  "areaM2": null,
+  "floors": [
+   {
+    "tiles": 76,
+    "label": "Upper Floor"
+   },
+   {
+    "tiles": 66,
+    "label": "Lower Floor"
+   }
+  ],
+  "variations": null,
+  "release": "1.9.0",
+  "landmark": "Bathroom",
+  "icon": null,
+  "comp": null
+ },
+ {
+  "slug": "family-residence",
+  "id": 30,
+  "name": "Family Residence",
+  "codeName": "Manor",
+  "realmId": 11,
+  "realm": "Yamaoka Estate",
+  "sizeTiles": 156,
+  "areaM2": 9984,
+  "floors": null,
+  "variations": [
+   {
+    "tiles": 156,
+    "patch": "2.2.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 156,
+    "patch": "8.1.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 184,
+    "patch": "8.3.2",
+    "twoVsEight": true
+   }
+  ],
+  "release": "2.2.0",
+  "landmark": "Manor",
+  "icon": "/img/maps/family-residence.png",
+  "comp": null
+ },
+ {
+  "slug": "sanctum-of-wrath",
+  "id": 31,
+  "name": "Sanctum of Wrath",
+  "codeName": "Shrine",
+  "realmId": 11,
+  "realm": "Yamaoka Estate",
+  "sizeTiles": 148,
+  "areaM2": 9472,
+  "floors": null,
+  "variations": [
+   {
+    "tiles": 156,
+    "patch": "3.4.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 148,
+    "patch": "8.1.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 192,
+    "patch": "8.3.2",
+    "twoVsEight": true
+   }
+  ],
+  "release": "3.4.0",
+  "landmark": "Shrine",
+  "icon": "/img/maps/sanctum-of-wrath.png",
+  "comp": null
+ },
+ {
+  "slug": "mount-ormond-resort",
+  "id": 32,
+  "name": "Mount Ormond Resort",
+  "codeName": "Cottage",
+  "realmId": 12,
+  "realm": "Ormond",
+  "sizeTiles": 156,
+  "areaM2": 9984,
+  "floors": null,
+  "variations": [
+   {
+    "tiles": 156,
+    "patch": "3.2.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 160,
+    "patch": "8.1.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 156,
+    "patch": "8.1.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 180,
+    "patch": "8.5.1",
+    "twoVsEight": true
+   }
+  ],
+  "release": "3.2.0",
+  "landmark": "Chalet",
+  "icon": "/img/maps/mount-ormond-resort.png",
+  "comp": null
+ },
+ {
+  "slug": "the-underground-complex",
+  "id": 33,
+  "name": "The Underground Complex",
+  "codeName": "Lab",
+  "realmId": 13,
+  "realm": "Hawkins National Laboratory",
+  "sizeTiles": 138,
+  "areaM2": 8832,
+  "floors": null,
+  "variations": null,
+  "release": "3.2.0",
+  "landmark": "Isolation Chamber",
+  "icon": "/img/maps/the-underground-complex.png",
+  "comp": null
+ },
+ {
+  "slug": "dead-dawg-saloon",
+  "id": 34,
+  "name": "Dead Dawg Saloon",
+  "codeName": "Saloon",
+  "realmId": 14,
+  "realm": "Grave of Glenvale",
+  "sizeTiles": 136,
+  "areaM2": 8704,
+  "floors": null,
+  "variations": [
+   {
+    "tiles": 136,
+    "patch": "3.6.0",
+    "twoVsEight": false
+   },
+   {
+    "tiles": 180,
+    "patch": "8.3.2",
+    "twoVsEight": true
+   }
+  ],
+  "release": "3.6.0",
+  "landmark": "Saloon",
+  "icon": "/img/maps/dead-dawg-saloon.png",
+  "comp": {
+   "killers1v1": [
+    "Nightmare"
+   ],
+   "note": "Mapa fijo del duelo 1v1 (DBD Arena)"
+  }
+ },
+ {
+  "slug": "midwich-elementary-school",
+  "id": 35,
+  "name": "Midwich Elementary School",
+  "codeName": "Level01",
+  "realmId": 15,
+  "realm": "Silent Hill",
+  "sizeTiles": null,
+  "areaM2": null,
+  "floors": [
+   {
+    "tiles": 64,
+    "label": "Lower Floor"
+   },
+   {
+    "tiles": 49.5,
+    "label": "Upper Floors"
+   }
+  ],
+  "variations": null,
+  "release": "4.0.0",
+  "landmark": "Music Room or Chemistry Laboratory",
+  "icon": null,
+  "comp": null
+ },
+ {
+  "slug": "raccoon-city-police-station",
+  "id": 36,
+  "name": "Raccoon City Police Station",
+  "codeName": "EclipseLevel01",
+  "realmId": 16,
+  "realm": "Raccoon City",
+  "sizeTiles": null,
+  "areaM2": null,
+  "floors": [
+   {
+    "tiles": 0,
+    "label": "Lower Floor"
+   },
+   {
+    "tiles": 0,
+    "label": "Upper Floors"
+   }
+  ],
+  "variations": null,
+  "release": "5.0.0",
+  "landmark": null,
+  "icon": null,
+  "comp": null
+ },
+ {
+  "slug": "eyrie-of-crows",
+  "id": 37,
+  "name": "Eyrie of Crows",
+  "codeName": "IonLevel01",
+  "realmId": 17,
+  "realm": "Forsaken Boneyard",
+  "sizeTiles": 148,
+  "areaM2": 9472,
+  "floors": null,
+  "variations": null,
+  "release": "5.4.0",
+  "landmark": "Eyrie",
+  "icon": "/img/maps/eyrie-of-crows.png",
+  "comp": null
+ },
+ {
+  "slug": "garden-of-joy",
+  "id": 38,
+  "name": "Garden of Joy",
+  "codeName": "MeteorLevel01",
+  "realmId": 18,
+  "realm": "Withered Isle",
+  "sizeTiles": 164,
+  "areaM2": 10496,
+  "floors": null,
+  "variations": null,
+  "release": "6.0.0",
+  "landmark": "Main House",
+  "icon": "/img/maps/garden-of-joy.png",
+  "comp": null
+ },
+ {
+  "slug": "raccoon-city-police-station-east-wing",
+  "id": 39,
+  "name": "Raccoon City Police Station East Wing",
+  "codeName": "EclipseLevel01",
+  "realmId": 16,
+  "realm": "Raccoon City",
+  "sizeTiles": null,
+  "areaM2": null,
+  "floors": [
+   {
+    "tiles": 0,
+    "label": "Lower Floor"
+   },
+   {
+    "tiles": 0,
+    "label": "Upper Floor"
+   }
+  ],
+  "variations": null,
+  "release": "6.2.0",
+  "landmark": "Main Hall",
+  "icon": null,
+  "comp": null
+ },
+ {
+  "slug": "raccoon-city-police-station-west-wing",
+  "id": 40,
+  "name": "Raccoon City Police Station West Wing",
+  "codeName": "EclipseLevelWestSide",
+  "realmId": 16,
+  "realm": "Raccoon City",
+  "sizeTiles": null,
+  "areaM2": null,
+  "floors": [
+   {
+    "tiles": 0,
+    "label": "Lower Floor"
+   },
+   {
+    "tiles": 0,
+    "label": "Upper Floor"
+   }
+  ],
+  "variations": null,
+  "release": "6.2.0",
+  "landmark": "Main Hall",
+  "icon": null,
+  "comp": null
+ },
+ {
+  "slug": "the-shattered-square",
+  "id": 41,
+  "name": "The Shattered Square",
+  "codeName": "QuantumLevel01",
+  "realmId": 19,
+  "realm": "The Decimated Borgo",
+  "sizeTiles": 144,
+  "areaM2": 9216,
+  "floors": null,
+  "variations": null,
+  "release": "6.4.0",
+  "landmark": "Gathering Hall",
+  "icon": "/img/maps/the-shattered-square.png",
+  "comp": null
+ },
+ {
+  "slug": "toba-landing",
+  "id": 42,
+  "name": "Toba Landing",
+  "codeName": "UmbraLevel01",
+  "realmId": 20,
+  "realm": "Dvarka Deepwood",
+  "sizeTiles": 136,
+  "areaM2": 8704,
+  "floors": null,
+  "variations": null,
+  "release": "7.0.0",
+  "landmark": "Base Station",
+  "icon": "/img/maps/toba-landing.png",
+  "comp": null
+ },
+ {
+  "slug": "nostromo-wreckage",
+  "id": 43,
+  "name": "Nostromo Wreckage",
+  "codeName": "WormholeLevel01",
+  "realmId": 20,
+  "realm": "Dvarka Deepwood",
+  "sizeTiles": 152,
+  "areaM2": 9728,
+  "floors": null,
+  "variations": null,
+  "release": "7.2.0",
+  "landmark": "Mess Hall",
+  "icon": "/img/maps/nostromo-wreckage.png",
+  "comp": null
+ },
+ {
+  "slug": "greenville-square",
+  "id": 44,
+  "name": "Greenville Square",
+  "codeName": "ApplePieLevel01",
+  "realmId": 18,
+  "realm": "Withered Isle",
+  "sizeTiles": 160,
+  "areaM2": 10240,
+  "floors": null,
+  "variations": null,
+  "release": "7.6.0",
+  "landmark": "Movie Theatre",
+  "icon": "/img/maps/greenville-square.png",
+  "comp": null
+ },
+ {
+  "slug": "forgotten-ruins",
+  "id": 45,
+  "name": "Forgotten Ruins",
+  "codeName": "QuantumLevel02",
+  "realmId": 19,
+  "realm": "The Decimated Borgo",
+  "sizeTiles": null,
+  "areaM2": null,
+  "floors": [
+   {
+    "tiles": 92,
+    "label": "Surface"
+   },
+   {
+    "tiles": 40,
+    "label": "Dungeon"
+   }
+  ],
+  "variations": null,
+  "release": "8.0.0",
+  "landmark": "Torture Room",
+  "icon": null,
+  "comp": null
+ },
+ {
+  "slug": "ormond-lake-mine",
+  "id": 46,
+  "name": "Ormond Lake Mine",
+  "codeName": "GelatoLevel01",
+  "realmId": 12,
+  "realm": "Ormond",
+  "sizeTiles": 132,
+  "areaM2": 8448,
+  "floors": null,
+  "variations": null,
+  "release": "8.4.2",
+  "landmark": null,
+  "icon": "/img/maps/ormond-lake-mine.png",
+  "comp": null
+ },
+ {
+  "slug": "dead-sands",
+  "id": 47,
+  "name": "Dead Sands",
+  "codeName": "IonShack",
+  "realmId": 17,
+  "realm": "Forsaken Boneyard",
+  "sizeTiles": 140,
+  "areaM2": 8960,
+  "floors": null,
+  "variations": null,
+  "release": "8.6.0",
+  "landmark": null,
+  "icon": "/img/maps/dead-sands.png",
+  "comp": null
+ },
+ {
+  "slug": "freddy-fazbear-s-pizza",
+  "id": 48,
+  "name": "Freddy Fazbear's Pizza",
+  "codeName": "ApplePieLevel02",
+  "realmId": 18,
+  "realm": "Withered Isle",
+  "sizeTiles": 148,
+  "areaM2": 9472,
+  "floors": null,
+  "variations": null,
+  "release": "9.0.0",
+  "landmark": null,
+  "icon": "/img/maps/freddy-fazbear-s-pizza.png",
+  "comp": null
+ },
+ {
+  "slug": "fallen-refuge",
+  "id": 49,
+  "name": "Fallen Refuge",
+  "codeName": "ApplePieShack",
+  "realmId": 18,
+  "realm": "Withered Isle",
+  "sizeTiles": 128,
+  "areaM2": 8192,
+  "floors": null,
+  "variations": null,
+  "release": "9.1.0",
+  "landmark": "Prison Tower",
+  "icon": "/img/maps/fallen-refuge.png",
+  "comp": null
+ },
+ {
+  "slug": "trickster-s-delusion",
+  "id": 50,
+  "name": "Trickster's Delusion",
+  "codeName": "QuiLevel01",
+  "realmId": 21,
+  "realm": "Sleepless District",
+  "sizeTiles": null,
+  "areaM2": null,
+  "floors": null,
+  "variations": null,
+  "release": "9.5.0",
+  "landmark": null,
+  "icon": null,
+  "comp": null
+ },
+ {
+  "slug": "hartshorne-mall",
+  "id": 51,
+  "name": "Hartshorne Mall",
+  "codeName": "Liminal",
+  "realmId": 22,
+  "realm": "The Subdivisions",
+  "sizeTiles": null,
+  "areaM2": null,
+  "floors": null,
+  "variations": null,
+  "release": "10.3.0",
+  "landmark": null,
+  "icon": null,
+  "comp": null
+ }
+]

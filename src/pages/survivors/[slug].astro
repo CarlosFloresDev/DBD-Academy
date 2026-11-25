@@ -1,0 +1,166 @@
+---
+import Base from '../../layouts/Base.astro';
+import Portrait from '../../components/Portrait.astro';
+import PerkCard from '../../components/PerkCard.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import survivors from '../../data/survivors.json';
+import perks from '../../data/perks.json';
+import rules from '../../data/comp-rules.json';
+
+export function getStaticPaths() {
+  return survivors.map((survivor, index) => ({ params: { slug: survivor.slug }, props: { survivor, index } }));
+}
+
+interface Props { survivor: typeof survivors[number]; index: number }
+const { survivor, index } = Astro.props as Props;
+
+const normName = (name: string) => name.trim().toLocaleLowerCase('es').replace(/^hex:\s*/, '').replace(/favour/g, 'favor');
+const banned = new Set(rules.perksSurvivorBaneados.map(normName));
+const ownPerks = survivor.perks.map((name) => ({
+  name,
+  perk: perks.find((perk) => perk.name === name) ?? null,
+  isBanned: banned.has(normName(name)),
+}));
+const prev = index > 0 ? survivors[index - 1] : null;
+const next = index < survivors.length - 1 ? survivors[index + 1] : null;
+const actorText = Array.isArray(survivor.actor) && survivor.actor.length > 0 ? survivor.actor.join(' · ') : 'No publicado';
+---
+
+<Base
+  title={survivor.name}
+  description={`${survivor.name}: ${survivor.role}, origen ${survivor.origin}, capítulo ${survivor.chapter?.name ?? 'base'} y sus tres perks propios.`}
+  active="survivors"
+>
+  <section class="hero container" aria-labelledby="survivor-title">
+    <div class="hero-portrait" data-reveal>
+      <Portrait src={survivor.icon} alt={`Retrato de ${survivor.name}`} size="lg" />
+      {survivor.slug === 'sienna-shaw' && <span class="ribbon">NUEVO</span>}
+      <span class="hero-index mono">SURVIVOR {String(index + 1).padStart(2, '0')} / {survivors.length}</span>
+    </div>
+    <div class="hero-copy">
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="/survivors/">Survivors</a>
+        <span aria-hidden="true">/</span>
+        <span>{survivor.name}</span>
+      </nav>
+      <p class="eyebrow">Ficha de survivor</p>
+      <h1 class="display" id="survivor-title">{survivor.name}</h1>
+      <p class="role">{survivor.role}</p>
+      <dl class="hero-meta">
+        <div><dt>Origen</dt><dd>{survivor.origin}</dd></div>
+        <div><dt>Intérprete</dt><dd>{actorText}</dd></div>
+        <div><dt>Capítulo</dt><dd>{survivor.chapter ? `${survivor.chapter.name} · ${survivor.chapter.date}` : 'Personaje base'}</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="perks container" aria-label="Perks propios">
+    <SectionHead eyebrow="Kit propio" title="SUS TRES PERKS" description="Texto oficial en inglés, tal como aparece en la wiki del juego. Los valores corresponden a los tres niveles de la perk." />
+    <div class="perk-grid">
+      {ownPerks.map(({ name, perk }) => (
+        perk ? <PerkCard perk={perk} /> : (
+          <article class="perk-missing card">
+            <h3>{name}</h3>
+            <p>Ficha no disponible en la biblioteca de perks.</p>
+          </article>
+        )
+      ))}
+    </div>
+  </section>
+
+  <section class="competitive container" aria-labelledby="comp-title">
+    <SectionHead eyebrow="DBD Arena · no oficial" title="PERKS PROPIOS EN COMPETITIVO" />
+    <div class="comp-table" id="comp-title">
+      <ul class="comp-list">
+        {ownPerks.map(({ name, isBanned }) => (
+          <li>
+            <span class="perk-name">{name}</span>
+            {isBanned ? (
+              <span class="status banned">Baneado en 1v1 (DBD Arena)</span>
+            ) : (
+              <span class="status">No figura en la lista general de baneos</span>
+            )}
+          </li>
+        ))}
+      </ul>
+      <p class="source">Fuente: DBD Arena, estándar comunitario, no oficial. DBD no tiene ranking competitivo oficial. Consulta las <a href="/competitivo/">reglas 1v1 completas</a> y las excepciones por killer.</p>
+    </div>
+  </section>
+
+  <nav class="pager container" aria-label="Navegación entre survivors">
+    {prev ? (
+      <a class="pager-link" href={`/survivors/${prev.slug}/`}>
+        <span>Anterior</span>
+        <strong>{prev.name}</strong>
+      </a>
+    ) : (
+      <span class="pager-empty">No hay survivor anterior</span>
+    )}
+    <a class="pager-index mono" href="/survivors/">Índice</a>
+    {next ? (
+      <a class="pager-link next" href={`/survivors/${next.slug}/`}>
+        <span>Siguiente</span>
+        <strong>{next.name}</strong>
+      </a>
+    ) : (
+      <span class="pager-empty next">No hay survivor siguiente</span>
+    )}
+  </nav>
+
+  <style>
+    .hero { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 48px; align-items: start; padding: 132px 0 64px; }
+    .hero-portrait { position: relative; min-width: 0; }
+    .hero-portrait :global(.portrait.lg) { width: 100%; border-left: 3px solid var(--blood); }
+    .ribbon { position: absolute; top: 0; left: 0; padding: 5px 10px; background: var(--blood); color: #fff; font-family: "JetBrains Mono Variable", monospace; font-size: .68rem; font-weight: 700; letter-spacing: .14em; }
+    .hero-index { position: absolute; right: 0; bottom: 0; padding: 6px 10px; background: var(--bg); color: var(--amber); font-size: .7rem; letter-spacing: .1em; }
+    .hero-copy { min-width: 0; }
+    .breadcrumb { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; color: var(--muted); font-size: .74rem; }
+    .breadcrumb a { color: var(--ice); }
+    h1 { margin: 12px 0 12px; font-size: clamp(3.2rem, 8vw, 7rem); overflow-wrap: anywhere; }
+    .role { margin: 0 0 32px; color: var(--blood-2); font-family: "Barlow Condensed", sans-serif; font-size: clamp(1.2rem, 2.4vw, 1.8rem); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .hero-meta { display: grid; gap: 16px; margin: 0; padding: 24px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .hero-meta dt { color: var(--muted); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; }
+    .hero-meta dd { margin: 4px 0 0; font-size: .95rem; }
+
+    .perks, .competitive { padding: 64px 0; border-top: 1px solid var(--line); }
+    .perk-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .perk-missing { display: grid; align-content: start; gap: 8px; min-width: 0; padding: 16px; }
+    .perk-missing h3 { margin: 0; font-family: "Barlow Condensed", sans-serif; font-size: 1.15rem; text-transform: uppercase; }
+    .perk-missing p { margin: 0; color: var(--muted); font-size: .8rem; }
+
+    .comp-table { border: 1px solid var(--line); border-left: 3px solid var(--blood); background: var(--panel); padding: 24px; }
+    .comp-list { display: grid; gap: 0; margin: 0 0 24px; padding: 0; list-style: none; }
+    .comp-list li { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .comp-list li:last-child { border-bottom: 0; }
+    .perk-name { font-weight: 600; }
+    .status { color: var(--muted); font-size: .74rem; }
+    .status.banned { border: 1px solid var(--blood); padding: 3px 8px; color: var(--blood-2); font-family: "JetBrains Mono Variable", monospace; font-size: .7rem; }
+    .source { margin: 0; color: var(--muted); font-size: .76rem; }
+    .source a { color: var(--ice); text-decoration: underline; }
+
+    .pager { display: flex; align-items: stretch; justify-content: space-between; gap: 16px; padding: 0 0 96px; }
+    .pager-link { display: grid; gap: 4px; min-width: 0; max-width: 40%; padding: 12px 16px; border: 1px solid var(--line); }
+    .pager-link:hover { border-color: var(--blood); }
+    .pager-link span { color: var(--muted); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; }
+    .pager-link strong { font-family: "Barlow Condensed", sans-serif; font-size: 1.3rem; font-weight: 700; text-transform: uppercase; overflow-wrap: anywhere; }
+    .pager-link.next { text-align: right; }
+    .pager-empty { max-width: 40%; padding: 12px 16px; color: var(--muted); font-size: .76rem; }
+    .pager-empty.next { text-align: right; }
+    .pager-index { align-self: center; color: var(--amber); font-size: .74rem; }
+
+    @media (max-width: 1000px) {
+      .perk-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; gap: 32px; padding-top: 110px; }
+      .hero-portrait :global(.portrait.lg) { width: min(100%, 360px); }
+    }
+    @media (max-width: 620px) {
+      .perk-grid { grid-template-columns: 1fr; }
+      .comp-list li { flex-direction: column; align-items: flex-start; }
+      .pager { flex-wrap: wrap; padding-bottom: 64px; }
+      .pager-link, .pager-empty { max-width: calc(50% - 8px); }
+      .pager-index { order: 3; width: 100%; text-align: center; }
+    }
+  </style>
+</Base>

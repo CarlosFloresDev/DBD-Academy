@@ -1,0 +1,3503 @@
+{
+ "killers": [
+  {
+   "id": 1,
+   "name": "Trapper",
+   "realName": "Evan MacMillan",
+   "altName": "Chuckles",
+   "gender": "Man",
+   "origin": "American",
+   "realm": 1,
+   "specialAttack": true,
+   "altAttackNote": "Trap Catches",
+   "weapon": "The Cleaver",
+   "speed": 4.6,
+   "radius": 32,
+   "height": "T",
+   "diff": 1,
+   "actor": "Filip Ivanovic (BHVR)"
+  },
+  {
+   "id": 2,
+   "name": "Wraith",
+   "realName": "Philip Ojomo",
+   "altName": [
+    "Banshee",
+    "Bob"
+   ],
+   "gender": "Man",
+   "origin": "Nigerian",
+   "realm": 2,
+   "specialAttack": false,
+   "weapon": "Azarov's Skull",
+   "speed": [
+    4.6,
+    "Uncloaked"
+   ],
+   "altSpeed": [
+    [
+     6,
+     "Cloaked"
+    ]
+   ],
+   "radius": 32,
+   "height": "T",
+   "diff": 1,
+   "actor": "Filip Ivanovic (BHVR)"
+  },
+  {
+   "id": 3,
+   "name": "Hillbilly",
+   "realName": "Max Thompson Jr.",
+   "altName": "The Crooked",
+   "gender": "Man",
+   "origin": "American",
+   "realm": 3,
+   "specialAttack": true,
+   "altAttackNote": "Chainsaw",
+   "weapon": "The Hammer",
+   "speed": 4.6,
+   "altSpeed": [
+    [
+     10.12,
+     "Chainsaw Sprint"
+    ]
+   ],
+   "radius": 40,
+   "height": "T",
+   "diff": 2,
+   "actor": "Filip Ivanovic (BHVR)"
+  },
+  {
+   "id": 4,
+   "name": "Nurse",
+   "realName": "Sally Smithson",
+   "gender": "Woman",
+   "origin": "American of English descent",
+   "specialAttack": true,
+   "altAttackNote": "Lethal Blinks",
+   "weapon": "The Bonesaw",
+   "speed": 3.85,
+   "altSpeed": [
+    [
+     13.33,
+     "Blink"
+    ]
+   ],
+   "radius": 32,
+   "height": "A",
+   "diff": 4,
+   "dlc": 1,
+   "actor": "Anais Renevey (BHVR)"
+  },
+  {
+   "id": 5,
+   "name": "Shape",
+   "realName": "Michael Myers",
+   "altName": [
+    "Boogeyman",
+    "Stalker"
+   ],
+   "gender": "Man",
+   "origin": "American",
+   "specialAttack": true,
+   "altAttackNote": "Slaughtering Strike",
+   "weapon": "Kitchen Knife",
+   "speed": [
+    4.2,
+    "Stalker Mode"
+   ],
+   "altSpeed": [
+    [
+     4.6,
+     "Pursuer Mode & Evil Incarnate"
+    ]
+   ],
+   "radius": [
+    [
+     32,
+     "Stalker Mode"
+    ],
+    [
+     16,
+     "Pursuer Mode"
+    ],
+    [
+     32,
+     "Evil Incarnate"
+    ]
+   ],
+   "height": "T",
+   "diff": 2,
+   "dlc": 2,
+   "actor": "Frédéric Poirier (BHVR)"
+  },
+  {
+   "id": 6,
+   "name": "Hag",
+   "realName": "Lisa Sherwood",
+   "altName": "Witch",
+   "gender": "Woman",
+   "origin": "African American",
+   "power": "Blackened Catalyst",
+   "specialAttack": false,
+   "weapon": "The Claw",
+   "speed": 4.4,
+   "radius": 24,
+   "height": "A",
+   "diff": 4,
+   "dlc": [
+    3,
+    46
+   ],
+   "actor": "Eliane Pregent"
+  },
+  {
+   "id": 7,
+   "name": "Doctor",
+   "realName": "Herman Carter",
+   "altName": "Mu Yi",
+   "gender": "Man",
+   "origin": "African American",
+   "power": "Carter's Spark",
+   "specialAttack": false,
+   "weapon": "The Stick",
+   "speed": 4.6,
+   "altSpeed": [
+    [
+     3.08,
+     "Shock Therapy"
+    ],
+    [
+     2.99,
+     "Static Blast"
+    ]
+   ],
+   "radius": 32,
+   "height": "T",
+   "diff": 3,
+   "dlc": [
+    4,
+    46
+   ],
+   "actor": "Alex Lin (BHVR)"
+  },
+  {
+   "id": 8,
+   "name": "Huntress",
+   "realName": "Anna",
+   "altName": [
+    "Анна",
+    "Bear"
+   ],
+   "possessive": true,
+   "gender": "Woman",
+   "origin": "Russian",
+   "power": "Hunting Hatchets",
+   "specialAttack": true,
+   "altAttackNote": "Hatchets",
+   "weapon": "Broad Axe",
+   "speed": 4.4,
+   "altSpeed": [
+    [
+     3.08,
+     "Wind-up"
+    ]
+   ],
+   "radius": 20,
+   "lullabyRadius": 45,
+   "height": "T",
+   "diff": 2,
+   "dlc": 5,
+   "actor": "Amélie Leguiader (BHVR)"
+  },
+  {
+   "id": 9,
+   "name": "Cannibal",
+   "realName": "Bubba Sawyer",
+   "altName": "Leatherface",
+   "gender": "Man",
+   "origin": "American",
+   "power": "Bubba's Chainsaw",
+   "specialAttack": true,
+   "altAttackNote": "Chainsaw",
+   "weapon": "The Sledge",
+   "speed": 4.6,
+   "altSpeed": [
+    [
+     5.35,
+     "Chainsaw Sweep"
+    ]
+   ],
+   "radius": 32,
+   "height": "T",
+   "diff": 2,
+   "dlc": 17,
+   "actor": "Filip Ivanovic (BHVR)"
+  },
+  {
+   "id": 10,
+   "name": "Nightmare",
+   "realName": "Freddy Krueger",
+   "altName": "The Sandman",
+   "gender": "Man",
+   "origin": "American",
+   "power": "Dream Demon",
+   "specialAttack": true,
+   "altAttackNote": "Dream Pallet Explosion",
+   "weapon": "Clawed Glove",
+   "speed": 4.6,
+   "altSpeed": [
+    [
+     4,
+     " placing '''Dream Snares'''"
+    ]
+   ],
+   "radius": 32,
+   "lullabyRadius": [
+    [
+     32,
+     "[[Dream World]]"
+    ]
+   ],
+   "height": "A",
+   "diff": 2,
+   "dlc": 6,
+   "actor": "Filip Ivanovic (BHVR)"
+  },
+  {
+   "id": 11,
+   "name": "Pig",
+   "realName": "Amanda Young",
+   "gender": "Woman",
+   "origin": "American",
+   "power": "Jigsaw's Baptism",
+   "specialAttack": true,
+   "altAttackNote": "Ambush Dash",
+   "weapon": "Hidden Blade",
+   "speed": 4.6,
+   "altSpeed": [
+    [
+     4,
+     "Crouched"
+    ],
+    [
+     7.1,
+     "Ambush Dash"
+    ]
+   ],
+   "radius": 24,
+   "height": "A",
+   "diff": 3,
+   "dlc": 7,
+   "actor": "Christine Marsh (BHVR)"
+  },
+  {
+   "id": 12,
+   "name": "Clown",
+   "realName": "Kenneth Chase alias Jeffrey Hawk",
+   "shortName": "Kenneth Chase",
+   "altName": [
+    "Jeffrey Hawk",
+    "The Ringmaster",
+    "The Medicine Man"
+   ],
+   "gender": "Man",
+   "origin": "American",
+   "power": "The Afterpiece Tonic",
+   "specialAttack": false,
+   "weapon": "Madame Butterfly",
+   "speed": 4.6,
+   "altSpeed": [
+    [
+     2.3,
+     "Reloading"
+    ]
+   ],
+   "radius": 32,
+   "height": "T",
+   "diff": 2,
+   "dlc": [
+    8,
+    46
+   ],
+   "actor": "Sébastien Duval (BHVR)"
+  },
+  {
+   "id": 13,
+   "name": "Spirit",
+   "realName": "Rin Yamaoka",
+   "gender": "Woman",
+   "origin": "Japanese",
+   "power": "Yamaoka's Haunting",
+   "specialAttack": false,
+   "weapon": "Shattered Katana",
+   "speed": 4.4,
+   "altSpeed": [
+    [
+     7.04,
+     "Phase-Walk"
+    ]
+   ],
+   "radius": 24,
+   "height": "A",
+   "diff": 3,
+   "dlc": [
+    9,
+    46
+   ],
+   "actor": "Gabrielle Murphy (BHVR)"
+  },
+  {
+   "id": 14,
+   "name": "Legion",
+   "realName": "Frank Morrison, Julie Kostenko, Susie Lavoie, Joey Cadogan",
+   "shortName": "Frank, Julie, Susie, Joey",
+   "gender": "Men (Frank, Joey)<br>Women (Julie, Susie)",
+   "origin": "Canadian",
+   "power": "Feral Frenzy",
+   "specialAttack": true,
+   "altAttackNote": "Feral Slashes",
+   "weapon": "Hunting Knife",
+   "speed": 4.6,
+   "altSpeed": [
+    [
+     5.2,
+     "Feral Frenzy"
+    ]
+   ],
+   "radius": 32,
+   "altRadius": [
+    [
+     40,
+     "Feral Frenzy"
+    ]
+   ],
+   "height": "A",
+   "diff": 1,
+   "dlc": [
+    10,
+    47
+   ],
+   "actor": [
+    "Julie/Susie: Emilie Deschamps",
+    "Frank/Joey: Nicolas Brassard",
+    "(both BHVR)"
+   ]
+  },
+  {
+   "id": 15,
+   "name": "Plague",
+   "realName": "Adiris",
+   "altName": "High Priestess of Babylon",
+   "gender": "Woman",
+   "origin": "Babylonian (Ancient Mesopotamia)",
+   "power": "Vile Purge",
+   "specialAttack": true,
+   "altAttackNote": "Corrupt Purge",
+   "weapon": "Profane Censer",
+   "speed": 4.6,
+   "radius": 32,
+   "height": "T",
+   "diff": 3,
+   "dlc": [
+    11,
+    47
+   ],
+   "actor": "Undisclosed Voice Actress"
+  },
+  {
+   "id": 16,
+   "name": "Ghost Face",
+   "realName": "Danny Johnson alias Jed Olsen",
+   "shortName": "Danny Johnson",
+   "altName": [
+    "Jed Olsen"
+   ],
+   "gender": "Man",
+   "origin": "American",
+   "power": "Night Shroud",
+   "specialAttack": false,
+   "weapon": "Tactical Knife",
+   "speed": 4.6,
+   "altSpeed": [
+    [
+     4,
+     "Crouch"
+    ]
+   ],
+   "radius": 24,
+   "height": "A",
+   "diff": 3,
+   "dlc": 12,
+   "actor": "Filip Ivanovic (Art Director)"
+  },
+  {
+   "id": 17,
+   "name": "Demogorgon",
+   "altName": [
+    "The Monster",
+    "The Beast"
+   ],
+   "gender": "Not applicable (not human)",
+   "origin": "None (Creature, Extradimensional Origin)",
+   "power": "Of the Abyss",
+   "specialAttack": true,
+   "altAttackNote": "Shred",
+   "weapon": "Barbarous Claw",
+   "speed": 4.6,
+   "altSpeed": [
+    [
+     3.86,
+     "Of the Abyss"
+    ],
+    [
+     18.4,
+     "Shred"
+    ]
+   ],
+   "radius": 32,
+   "height": "T",
+   "diff": 3,
+   "dlc": 13,
+   "actor": "None (Digital SFX)"
+  },
+  {
+   "id": 18,
+   "name": "Oni",
+   "realName": "Kazan Yamaoka",
+   "gender": "Man",
+   "origin": "Japanese",
+   "power": "Yamaoka's Wrath",
+   "specialAttack": true,
+   "altAttackNote": "Demon Slash/Strike",
+   "weapon": "Yamaoka Blade",
+   "speed": 4.6,
+   "altSpeed": [
+    [
+     3.45,
+     "Absorption"
+    ],
+    [
+     7.82,
+     "Demon Dash"
+    ]
+   ],
+   "radius": 32,
+   "height": "T",
+   "diff": 4,
+   "dlc": [
+    14,
+    47
+   ],
+   "actor": "Jean-Baptiste Garnier (BHVR)"
+  },
+  {
+   "id": 19,
+   "name": "Deathslinger",
+   "realName": "Caleb Quinn",
+   "altName": [
+    "The Collector",
+    "Gunslinger",
+    "Mad Mick"
+   ],
+   "gender": "Man",
+   "origin": "American of Irish descent",
+   "power": "The Redeemer",
+   "specialAttack": true,
+   "altAttackNote": "Harpoon",
+   "weapon": "Death to Bayshore",
+   "speed": 4.4,
+   "radius": 32,
+   "height": "T",
+   "diff": 3,
+   "dlc": [
+    15,
+    47
+   ],
+   "actor": "Patrick Harris (BHVR)"
+  },
+  {
+   "id": 20,
+   "name": "Executioner",
+   "realName": "Pyramid Head",
+   "altName": "Red Pyramid Thing",
+   "gender": "Man",
+   "origin": "None (Creature, Manifestation of Guilt)",
+   "power": "Rites of Judgement",
+   "specialAttack": true,
+   "altAttackNote": "Attack Trail",
+   "weapon": "Great Knife",
+   "speed": 4.6,
+   "altSpeed": [
+    [
+     4.2,
+     "Rites of Judgement"
+    ]
+   ],
+   "radius": 32,
+   "height": "T",
+   "diff": 4,
+   "dlc": 24,
+   "actor": "Jean-Baptiste Garnier (BHVR)"
+  },
+  {
+   "id": 21,
+   "name": "Blight",
+   "realName": "Talbot Grimes",
+   "gender": "Man",
+   "origin": "Scottish",
+   "power": "Blighted Corruption",
+   "specialAttack": true,
+   "altAttackNote": "Lethal Rush",
+   "weapon": "Bonebuster",
+   "speed": 4.4,
+   "altSpeed": [
+    [
+     9.2,
+     "Rush"
+    ]
+   ],
+   "radius": 40,
+   "height": "A",
+   "diff": 4,
+   "dlc": [
+    26,
+    48
+   ],
+   "actor": [
+    "Jean-Baptiste Garnier",
+    "Mathieu Favier",
+    "(both BHVR)"
+   ]
+  },
+  {
+   "id": 22,
+   "name": "Twins",
+   "realName": "Charlotte & Victor Deshayes",
+   "altName": "The Siblings",
+   "possessive": true,
+   "gender": "Woman (Charlotte)<br>Man (Victor)",
+   "origin": "French",
+   "power": "Blood Bond",
+   "specialAttack": true,
+   "altAttackNote": "Pounce",
+   "weapon": "Blade of Marseille",
+   "speed": [
+    4.6,
+    "Charlotte"
+   ],
+   "altSpeed": [
+    [
+     6,
+     "Victor"
+    ]
+   ],
+   "radius": 32,
+   "lullabyRadius": [
+    [
+     12,
+     "Victor's Shrieks - idle"
+    ],
+    [
+     14,
+     "attached"
+    ],
+    [
+     18,
+     "controlled"
+    ]
+   ],
+   "height": "T",
+   "diff": 4,
+   "dlc": [
+    27,
+    48
+   ],
+   "actor": [
+    "Charlotte: Catherine Gauthier",
+    "Victor: Jean-Baptiste Garnier",
+    "(both BHVR)"
+   ]
+  },
+  {
+   "id": 23,
+   "name": "Trickster",
+   "realName": "Hak Ji-woon",
+   "gender": "Man",
+   "origin": "South Korean",
+   "power": "Showstopper",
+   "specialAttack": true,
+   "altAttackNote": "Blades / Laceration",
+   "weapon": "Polished Head-Smasher",
+   "speed": 4.4,
+   "altSpeed": [
+    [
+     3.86,
+     "Throw State"
+    ]
+   ],
+   "radius": [
+    [
+     24,
+     "Default"
+    ],
+    [
+     44,
+     "S-Rank"
+    ]
+   ],
+   "lullabyRadius": [
+    [
+     44,
+     "Default"
+    ],
+    [
+     0,
+     "S-Rank"
+    ]
+   ],
+   "height": "A",
+   "diff": 2,
+   "dlc": [
+    28,
+    48,
+    62
+   ],
+   "actor": "Titus Kim (Voice Actor)"
+  },
+  {
+   "id": 24,
+   "name": "Nemesis",
+   "realName": "Nemesis T-Type",
+   "altName": [
+    "The Pursuer",
+    "The Tyrant",
+    "The Potential"
+   ],
+   "possessive": true,
+   "gender": "Man",
+   "origin": "None (Bio-Weapon manufactured by Umbrella Europe)",
+   "power": "T-Virus",
+   "specialAttack": true,
+   "altAttackNote": "Tentacle Strikes / Zombie Attacks",
+   "weapon": "Raw Fists",
+   "speed": 4.6,
+   "altSpeed": [
+    [
+     3.8,
+     "MR1/MR2 Tentacle Strike"
+    ],
+    [
+     4,
+     "MR3 Tentacle Strike"
+    ]
+   ],
+   "radius": 32,
+   "height": "T",
+   "diff": 3,
+   "dlc": 29,
+   "actor": [
+    "Nemesis: Sébastien Croteau",
+    "Female Zombie: Roxana B. L.",
+    "Male Zombie: David A. B.",
+    "(all The Monster Factory)"
+   ],
+   "multiName": true
+  },
+  {
+   "id": 25,
+   "name": "Cenobite",
+   "realName": "Elliot Spencer",
+   "altName": [
+    "Pinhead",
+    "Lead Cenobite",
+    "Hell Priest"
+   ],
+   "gender": "Man",
+   "origin": "English",
+   "power": "Summons of Pain",
+   "specialAttack": true,
+   "altAttackNote": "Possessed Chains",
+   "weapon": "Hook & Chain",
+   "speed": 4.6,
+   "radius": 32,
+   "height": "T",
+   "diff": 4,
+   "dlc": 32,
+   "actor": "Doug Bradley (Original Actor)"
+  },
+  {
+   "id": 26,
+   "name": "Artist",
+   "realName": "Carmina Mora",
+   "altName": [
+    "The Bird Lady",
+    "The Matron of Crows"
+   ],
+   "gender": "Woman",
+   "origin": "Chilean",
+   "power": "Birds of Torment",
+   "specialAttack": true,
+   "altAttackNote": "Dire Crows",
+   "weapon": "Sharp Palette Blade",
+   "speed": 4.6,
+   "radius": 32,
+   "height": "A",
+   "diff": 2,
+   "dlc": [
+    34,
+    51
+   ],
+   "actor": "Beatrix Moersch (BHVR)"
+  },
+  {
+   "id": 27,
+   "name": "Onryō",
+   "realName": "Sadako Yamamura",
+   "altName": [
+    "山村 貞子"
+   ],
+   "gender": "Woman",
+   "origin": "Japanese",
+   "power": "Deluge of Fear",
+   "specialAttack": false,
+   "weapon": "Ring of Fury",
+   "speed": 4.6,
+   "radius": 24,
+   "lullabyRadius": [
+    [
+     24,
+     "[[Otherworld]]"
+    ]
+   ],
+   "height": "S",
+   "diff": 3,
+   "dlc": 35,
+   "actor": "None"
+  },
+  {
+   "id": 28,
+   "name": "Dredge",
+   "altName": [
+    "The Druanee"
+   ],
+   "gender": "Not applicable (not human)",
+   "origin": "None (Creature, Manifestation of Malthink)",
+   "power": "Reign of Darkness",
+   "specialAttack": false,
+   "weapon": "Knotted Appendage",
+   "speed": 4.6,
+   "radius": 32,
+   "height": "T",
+   "diff": 2,
+   "dlc": [
+    36,
+    51
+   ],
+   "actor": [
+    "Roxana B.L.",
+    "Maude Théberge",
+    "Vanessa Landry",
+    "Misha Standjofski",
+    "Philippe Langelier",
+    "Sébastien Croteau",
+    "(all The Monster Factory)"
+   ]
+  },
+  {
+   "id": 29,
+   "name": "Mastermind",
+   "realName": "Albert Wesker",
+   "gender": "Man",
+   "origin": "American",
+   "power": "Virulent Bound",
+   "specialAttack": true,
+   "weapon": "Combat Knife",
+   "speed": 4.6,
+   "radius": 40,
+   "height": "A",
+   "diff": 2,
+   "dlc": 37,
+   "actor": "Connor Fogarty (The Monster Factory)"
+  },
+  {
+   "id": 30,
+   "name": "Knight",
+   "realName": "Tarhos Kovács",
+   "gender": "Man",
+   "origin": "Hungarian",
+   "power": "Guardia Compagnia",
+   "specialAttack": true,
+   "altAttackNote": "Guards",
+   "weapon": "Imposing Claymore",
+   "speed": 4.6,
+   "altSpeed": [
+    [
+     15,
+     "Patrol-Path Drawing"
+    ]
+   ],
+   "radius": 32,
+   "height": "A",
+   "diff": 2,
+   "dlc": [
+    38,
+    51
+   ],
+   "actor": [
+    "Knight: Misha Standjofski",
+    "Carnifex: David A. B.",
+    "Assassin: Simon Girard",
+    "Jailer: Jeff Mott",
+    "(all The Monster Factory)"
+   ]
+  },
+  {
+   "id": 31,
+   "name": "Skull Merchant",
+   "realName": "Adriana Imai",
+   "gender": "Woman",
+   "origin": "Brazilian of Japanese descent",
+   "power": "Eyes in the Sky",
+   "specialAttack": false,
+   "weapon": "Razor-Sharp Dual Blades",
+   "speed": 4.6,
+   "radius": 24,
+   "height": "A",
+   "diff": 3,
+   "dlc": [
+    39,
+    51
+   ],
+   "actor": [
+    "Viky Boyer (The Monster Factory)"
+   ]
+  },
+  {
+   "id": 32,
+   "name": "Singularity",
+   "realName": "HUX-A7-13",
+   "gender": "Not applicable (Male AI voice)",
+   "origin": "None (Humanoid Android manufactured by Huxlee Industries Ltd.)",
+   "power": "Quantum Instantiation",
+   "specialAttack": false,
+   "weapon": "Modular Claw",
+   "speed": 4.6,
+   "radius": 32,
+   "height": "A",
+   "diff": 3,
+   "dlc": 40,
+   "actor": [
+    "Modified AI Voice"
+   ]
+  },
+  {
+   "id": 33,
+   "name": "Xenomorph",
+   "gender": "Not applicable (not human)",
+   "origin": "None (Creature, Extraterrestrial Origin)",
+   "power": "Hidden Pursuit",
+   "specialAttack": true,
+   "altAttackNote": "Tail Strike",
+   "weapon": "Lithe Arm",
+   "speed": 4.6,
+   "altSpeed": [
+    [
+     4.6,
+     "Crawler Mode"
+    ]
+   ],
+   "radius": 32,
+   "altRadius": [
+    [
+     24,
+     "Crawler Mode"
+    ]
+   ],
+   "height": "A",
+   "diff": 2,
+   "dlc": 44,
+   "actor": [
+    "Sébastien Croteau (The Monster Factory)"
+   ]
+  },
+  {
+   "id": 34,
+   "name": "Good Guy",
+   "realName": "Charles Lee Ray",
+   "altName": [
+    "Chucky",
+    "The Lakeshore Strangler"
+   ],
+   "gender": "Man",
+   "origin": "American",
+   "power": "Playtime's Over",
+   "specialAttack": true,
+   "altAttackNote": "Slice & Dice",
+   "weapon": "Chef's Knife",
+   "speed": 4.4,
+   "radius": 32,
+   "height": "S",
+   "diff": 2,
+   "dlc": 45,
+   "actor": "Brad Dourif (Blindlight, Original Actor)",
+   "multiName": true
+  },
+  {
+   "id": 35,
+   "name": "Unknown",
+   "gender": "None (inhuman Entity that adapts its appearance as needed)",
+   "origin": "Unknown (Malevolent Entity)",
+   "power": "UVX",
+   "specialAttack": true,
+   "altAttackNote": "UVX Projectile",
+   "weapon": "Gently-Used Axe",
+   "speed": 4.6,
+   "radius": 32,
+   "height": "A",
+   "diff": 2,
+   "dlc": 50,
+   "actor": "Zoey Alexandria Wendorf (Blindlight, Transvoice Teacher)"
+  },
+  {
+   "id": 36,
+   "name": "Lich",
+   "realName": "Vecna",
+   "gender": "Man",
+   "origin": "Oerth (D&D World)",
+   "power": "Vile Darkness",
+   "specialAttack": true,
+   "altAttackNote": "Flying Entities",
+   "weapon": "Afterthought Dagger",
+   "speed": 4.6,
+   "altSpeed": [
+    [
+     8,
+     "Fly Spell"
+    ]
+   ],
+   "radius": 32,
+   "height": "A",
+   "diff": 2,
+   "dlc": 52,
+   "actor": "Matthew Mercer (Blindlight, Voice Actor)"
+  },
+  {
+   "id": 37,
+   "name": "Dark Lord",
+   "realName": "Dracula",
+   "altName": [
+    "Vlad Tepes Dracula",
+    "Vlad the Impaler"
+   ],
+   "gender": "Man",
+   "origin": "Wallachian (Romania)",
+   "power": "Vampiric Shift",
+   "specialAttack": true,
+   "altAttackNote": "Hellfire, Pounce",
+   "weapon": "Pale Claws",
+   "speed": 4.6,
+   "altSpeed": [
+    [
+     6.5,
+     "Bat Form"
+    ]
+   ],
+   "radius": 32,
+   "lullabyRadius": [
+    [
+     48,
+     "Bat Form"
+    ]
+   ],
+   "height": "T",
+   "diff": 2,
+   "dlc": 54,
+   "actor": "Crispin Freeman (Blindlight)"
+  },
+  {
+   "id": 38,
+   "name": "Houndmaster",
+   "realName": "Portia Maye",
+   "gender": "Woman",
+   "origin": "Caribbean",
+   "speed": 4.6,
+   "altSpeed": [
+    [
+     6,
+     "Slipstream"
+    ]
+   ],
+   "radius": 32,
+   "lullabyRadius": [
+    [
+     32,
+     "The Dog"
+    ]
+   ],
+   "height": "A",
+   "diff": 2,
+   "power": "Scent of Blood",
+   "specialAttack": true,
+   "altAttackNote": "Dog Damage",
+   "weapon": "Deadly Cane",
+   "dlc": 55,
+   "actor": "Debra Wilson (Blindlight)"
+  },
+  {
+   "id": 39,
+   "name": "Ghoul",
+   "realName": "Ken Kaneki",
+   "gender": "Man",
+   "origin": "Japanese",
+   "speed": 4.6,
+   "radius": 40,
+   "height": "A",
+   "power": "One-Eyed Terror",
+   "specialAttack": true,
+   "altAttackNote": "Tentacle Grabs",
+   "weapon": false,
+   "dlc": 56,
+   "actor": "Natsuki Hanae (Original Voice Actor)"
+  },
+  {
+   "id": 40,
+   "name": "Animatronic",
+   "realName": "William Afton",
+   "altName": [
+    "Springtrap"
+   ],
+   "gender": "Man",
+   "origin": "American of English descent",
+   "power": "Fazbear's Fright",
+   "specialAttack": true,
+   "altAttackNote": "Fire Axe",
+   "weapon": "Pizza Knife",
+   "speed": 4.4,
+   "altSpeed": [
+    [
+     4.6,
+     "No Axe"
+    ]
+   ],
+   "radius": 24,
+   "height": "A",
+   "dlc": 58,
+   "actor": "PJ Heywood (Original Voice Actor)"
+  },
+  {
+   "id": 41,
+   "name": "Krasue",
+   "realName": "Burong Sukapat",
+   "gender": "Woman",
+   "origin": "Thai",
+   "speed": 4.6,
+   "altSpeed": [
+    [
+     4.8,
+     "Head Form"
+    ],
+    [
+     7,
+     "Headlong Flight"
+    ]
+   ],
+   "radius": [
+    [
+     32,
+     "Body Form"
+    ],
+    [
+     40,
+     "Head Form"
+    ]
+   ],
+   "height": "A",
+   "diff": 2,
+   "power": "Unbodied Flesh",
+   "specialAttack": true,
+   "altAttackNote": "Intestinal Whip",
+   "weapon": "Larb Knife",
+   "dlc": 60,
+   "actor": [
+    "Body Form: Organ Prawang (Opera Singer)",
+    "Head Form: Roxana B.L. (The Monster Factory)"
+   ]
+  },
+  {
+   "id": 42,
+   "name": "First",
+   "realName": "Henry Creel",
+   "altName": [
+    "Vecna",
+    "One"
+   ],
+   "gender": "Man",
+   "origin": "American",
+   "power": "Test Subject #001",
+   "specialAttack": true,
+   "altAttackNote": "Vine Attack & Undergate Attack",
+   "weapon": "Foul Intent",
+   "speed": 4.4,
+   "radius": 32,
+   "height": "A",
+   "dlc": 61,
+   "actor": "Andrew Morgado (Voice Actor)"
+  },
+  {
+   "id": 43,
+   "name": "Slasher",
+   "realName": "Jason Voorhees",
+   "gender": "Man",
+   "origin": "American",
+   "power": "Omnipresent Evil",
+   "specialAttack": true,
+   "altAttackNote": "Throwing Spikes",
+   "weapon": "Classic Machete",
+   "speed": 4.4,
+   "altSpeed": [
+    [
+     8,
+     "Omnipresent Evil"
+    ]
+   ],
+   "radius": 32,
+   "height": "A",
+   "dlc": 63,
+   "actor": "None"
+  },
+  {
+   "id": 44,
+   "name": "Judgment",
+   "gender": "None",
+   "origin": "Celestial",
+   "power": "Will of the Gods",
+   "specialAttack": true,
+   "altAttackNote": "Divine Light",
+   "weapon": "Staff of Absolution",
+   "speed": 4.4,
+   "radius": 32,
+   "height": "T",
+   "actor": "Elsie Lovelock (Voice Actress)",
+   "dlc": 65
+  },
+  {
+   "id": 45,
+   "name": "Terrifier",
+   "realName": "Art The Clown",
+   "gender": "Man",
+   "origin": "American",
+   "power": "Bag of Toys",
+   "specialAttack": true,
+   "altAttackNote": "Toys",
+   "weapon": "Spiked Table Leg",
+   "speed": 4.6,
+   "radius": 32,
+   "height": "A",
+   "dlc": 66,
+   "actor": "None",
+   "multiName": true
+  }
+ ],
+ "maps": [
+  {
+   "id": 1,
+   "name": "Coal Tower",
+   "altName": "Warehouse",
+   "realm": 1,
+   "variations": [
+    {
+     "size": 132,
+     "release": "1.0.0"
+    },
+    {
+     "size": 136,
+     "release": "7.3.0"
+    },
+    {
+     "size": 180,
+     "release": "8.7.1",
+     "altVarSuffix": "(2v8)"
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "name": "Groaning Storehouse",
+   "altName": "Storehouse",
+   "realm": 1,
+   "variations": [
+    {
+     "size": 156,
+     "release": "1.5.2c"
+    },
+    {
+     "size": 148,
+     "release": "7.3.0"
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "name": "Ironworks of Misery",
+   "altName": "Foundry",
+   "realm": 1,
+   "variations": [
+    {
+     "size": 160,
+     "release": "1.0.0"
+    },
+    {
+     "size": 156,
+     "release": "7.3.0"
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "name": "Shelter Woods",
+   "altName": "Forest",
+   "realm": 1,
+   "landmark": "Command Centre",
+   "achievName": "Hack the Mainframe",
+   "variations": [
+    {
+     "size": 176,
+     "release": "1.0.0"
+    },
+    {
+     "size": 176,
+     "release": "7.3.0"
+    },
+    {
+     "size": 180,
+     "release": "8.7.1",
+     "altVarSuffix": "(2v8)"
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "name": "Suffocation Pit",
+   "altName": "Mine",
+   "realm": 1,
+   "variations": [
+    {
+     "size": 160,
+     "release": "1.0.0"
+    },
+    {
+     "size": 152,
+     "release": "7.3.0"
+    },
+    {
+     "size": 184,
+     "release": "8.1.1",
+     "altVarSuffix": "(2v8)"
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "name": "Azarov's Resting Place",
+   "altName": "Office",
+   "realm": 2,
+   "variations": [
+    {
+     "size": 176,
+     "release": "1.0.0"
+    },
+    {
+     "size": 184,
+     "release": "8.1.1",
+     "altVarSuffix": "(2v8)"
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "name": "Blood Lodge",
+   "altName": "Lodge",
+   "realm": 2,
+   "size": 156,
+   "release": "1.0.0"
+  },
+  {
+   "id": 8,
+   "name": "Gas Heaven",
+   "altName": "Gas Station",
+   "realm": 2,
+   "variations": [
+    {
+     "size": 156,
+     "release": "1.4.1"
+    },
+    {
+     "size": 184,
+     "release": "8.1.1",
+     "altVarSuffix": "(2v8)"
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "name": "Wreckers' Yard",
+   "altName": "Scrapyard",
+   "realm": 2,
+   "variations": [
+    {
+     "size": 144,
+     "release": "1.0.0"
+    },
+    {
+     "size": 176,
+     "release": "8.3.2",
+     "altVarSuffix": "(2v8)"
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "name": "Wretched Shop",
+   "altName": "Garage",
+   "realm": 2,
+   "variations": [
+    {
+     "size": 164,
+     "release": "1.0.0"
+    },
+    {
+     "size": 0,
+     "release": "8.7.1",
+     "altVarSuffix": "(2v8)"
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "name": "Fractured Cowshed",
+   "altName": "Barn",
+   "realm": 3,
+   "size": 152,
+   "release": "1.0.4"
+  },
+  {
+   "id": 12,
+   "name": "Rancid Abattoir",
+   "altName": "Slaughterhouse",
+   "realm": 3,
+   "variations": [
+    {
+     "size": 140,
+     "release": "1.0.0"
+    },
+    {
+     "size": 192,
+     "release": "8.3.2",
+     "altVarSuffix": "(2v8)"
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "name": "Rotten Fields",
+   "altName": "Cornfield",
+   "realm": 3,
+   "size": 160,
+   "release": "1.0.0"
+  },
+  {
+   "id": 14,
+   "name": "The Thompson House",
+   "altName": "Farmhouse",
+   "realm": 3,
+   "variations": [
+    {
+     "size": 152,
+     "release": "1.0.0"
+    },
+    {
+     "size": 180,
+     "release": "8.1.1",
+     "altVarSuffix": "(2v8)"
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "name": "Torment Creek",
+   "altName": "Silo",
+   "realm": 3,
+   "variations": [
+    {
+     "size": 156,
+     "release": "1.0.0"
+    },
+    {
+     "size": 180,
+     "release": "8.7.1",
+     "altVarSuffix": "(2v8)"
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "name": "Disturbed Ward",
+   "altName": "Asylum",
+   "realm": 4,
+   "landmark": "Shock Therapy Centre, Second Floor",
+   "achievName": "Shock Therapy",
+   "variations": [
+    {
+     "size": 152,
+     "release": "1.1.0"
+    },
+    {
+     "size": 188,
+     "release": "8.1.1",
+     "altVarSuffix": "(2v8)"
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "name": "Father Campbell's Chapel",
+   "altName": "Chapel",
+   "realm": 4,
+   "landmark": "Chapel",
+   "achievName": "Campbell's Chapel Legacy",
+   "variations": [
+    {
+     "size": 140,
+     "release": "2.0.0"
+    },
+    {
+     "size": 180,
+     "release": "8.3.2",
+     "altVarSuffix": "(2v8)"
+    }
+   ]
+  },
+  {
+   "id": 18,
+   "name": "Lampkin Lane",
+   "altName": "Street",
+   "realm": 5,
+   "size": 132,
+   "release": "1.2.1",
+   "landmark": "Myers' House",
+   "achievName": "House of Pain",
+   "achRetired": true
+  },
+  {
+   "id": 19,
+   "name": "The Pale Rose",
+   "altName": "PaleRose",
+   "realm": 6,
+   "size": 161,
+   "release": "1.3.1",
+   "landmark": "Steamboat",
+   "achievName": "All Aboard"
+  },
+  {
+   "id": 20,
+   "name": "Grim Pantry",
+   "altName": "GrimPantry",
+   "realm": 6,
+   "size": 168,
+   "release": "1.7.0"
+  },
+  {
+   "id": 21,
+   "name": "Treatment Theatre",
+   "altName": "Treatment",
+   "realm": 7,
+   "size": 98,
+   "release": "1.5.1",
+   "landmark": "Operating Theatre",
+   "achievName": "Operation: Survival"
+  },
+  {
+   "id": 22,
+   "name": "Mother's Dwelling",
+   "altName": "Mad House",
+   "realm": 8,
+   "landmark": "Cottage",
+   "achievName": "Cottage Owner",
+   "variations": [
+    {
+     "size": 152,
+     "release": "1.6.0"
+    },
+    {
+     "size": 200,
+     "release": "8.1.1",
+     "altVarSuffix": "(2v8)"
+    }
+   ]
+  },
+  {
+   "id": 23,
+   "name": "The Temple of Purgation",
+   "altName": "Temple",
+   "realm": 8,
+   "size": 136,
+   "release": "2.6.0",
+   "landmark": "Temple Catacombs",
+   "achievName": "Shrine Apparatus"
+  },
+  {
+   "id": 24,
+   "name": "Badham Preschool",
+   "altName": "ElmStreet",
+   "realm": 9,
+   "variations": [
+    {
+     "size": 144,
+     "release": "1.8.0"
+    },
+    {
+     "size": 144,
+     "release": "3.1.0"
+    },
+    {
+     "size": 144,
+     "release": "3.1.0"
+    },
+    {
+     "size": 140,
+     "release": "3.1.0"
+    },
+    {
+     "size": 148,
+     "release": "3.1.0"
+    }
+   ]
+  },
+  {
+   "id": 29,
+   "name": "The Game",
+   "altName": "Hideout",
+   "realm": 10,
+   "size": [
+    [
+     76,
+     "Upper Floor"
+    ],
+    [
+     66,
+     "Lower Floor"
+    ]
+   ],
+   "release": "1.9.0",
+   "landmark": "Bathroom",
+   "achievName": "Cherish Your Life"
+  },
+  {
+   "id": 30,
+   "name": "Family Residence",
+   "altName": "Manor",
+   "realm": 11,
+   "landmark": "Manor",
+   "achievName": "Ancestor's Rite",
+   "variations": [
+    {
+     "size": 156,
+     "release": "2.2.0"
+    },
+    {
+     "size": 156,
+     "release": "8.1.0"
+    },
+    {
+     "size": 184,
+     "release": "8.3.2",
+     "altVarSuffix": "(2v8)"
+    }
+   ]
+  },
+  {
+   "id": 31,
+   "name": "Sanctum of Wrath",
+   "altName": "Shrine",
+   "realm": 11,
+   "landmark": "Shrine",
+   "achievName": "Grim Pilgrimage",
+   "variations": [
+    {
+     "size": 156,
+     "release": "3.4.0"
+    },
+    {
+     "size": 148,
+     "release": "8.1.0"
+    },
+    {
+     "size": 192,
+     "release": "8.3.2",
+     "altVarSuffix": "(2v8)"
+    }
+   ]
+  },
+  {
+   "id": 32,
+   "name": "Mount Ormond Resort",
+   "altName": "Cottage",
+   "realm": 12,
+   "landmark": "Chalet",
+   "achievName": "Unforgettable Getaway",
+   "variations": [
+    {
+     "size": 156,
+     "release": "3.2.0"
+    },
+    {
+     "size": 160,
+     "release": "8.1.0"
+    },
+    {
+     "size": 156,
+     "release": "8.1.0"
+    },
+    {
+     "size": 180,
+     "release": "8.5.1",
+     "altVarSuffix": "(2v8)"
+    }
+   ]
+  },
+  {
+   "id": 33,
+   "name": "The Underground Complex",
+   "altName": "Lab",
+   "realm": 13,
+   "size": 138,
+   "release": "3.2.0",
+   "landmark": "Isolation Chamber",
+   "achievName": "So Alone",
+   "achRetired": true
+  },
+  {
+   "id": 34,
+   "name": "Dead Dawg Saloon",
+   "altName": "Saloon",
+   "realm": 14,
+   "landmark": "Saloon",
+   "achievName": "Old West Oasis",
+   "variations": [
+    {
+     "size": 136,
+     "release": "3.6.0"
+    },
+    {
+     "size": 180,
+     "release": "8.3.2",
+     "altVarSuffix": "(2v8)"
+    }
+   ]
+  },
+  {
+   "id": 35,
+   "name": "Midwich Elementary School",
+   "altName": "Level01",
+   "realm": 15,
+   "size": [
+    [
+     64,
+     "Lower Floor"
+    ],
+    [
+     49.5,
+     "Upper Floors"
+    ]
+   ],
+   "release": "4.0.0",
+   "landmark": "Music Room or Chemistry Laboratory",
+   "achievName": "Classy Act"
+  },
+  {
+   "id": 36,
+   "name": "Raccoon City Police Station",
+   "altName": "EclipseLevel01",
+   "realm": 16,
+   "size": [
+    [
+     0,
+     "Lower Floor"
+    ],
+    [
+     0,
+     "Upper Floors"
+    ]
+   ],
+   "release": "5.0.0",
+   "altVarSuffix": "(2v8)"
+  },
+  {
+   "id": 37,
+   "name": "Eyrie of Crows",
+   "altName": "IonLevel01",
+   "realm": 17,
+   "size": 148,
+   "release": "5.4.0",
+   "landmark": "Eyrie",
+   "achievName": "Flight to Freedom"
+  },
+  {
+   "id": 38,
+   "name": "Garden of Joy",
+   "altName": "MeteorLevel01",
+   "realm": 18,
+   "size": 164,
+   "release": "6.0.0",
+   "landmark": "Main House",
+   "achievName": "Outrun the Overlap"
+  },
+  {
+   "id": 39,
+   "name": "Raccoon City Police Station East Wing",
+   "altName": "EclipseLevel01",
+   "realm": 16,
+   "size": [
+    [
+     0,
+     "Lower Floor"
+    ],
+    [
+     0,
+     "Upper Floor"
+    ]
+   ],
+   "release": "6.2.0",
+   "landmark": "Main Hall",
+   "achievName": "Raccoon City Recruit"
+  },
+  {
+   "id": 40,
+   "name": "Raccoon City Police Station West Wing",
+   "altName": "EclipseLevelWestSide",
+   "realm": 16,
+   "size": [
+    [
+     0,
+     "Lower Floor"
+    ],
+    [
+     0,
+     "Upper Floor"
+    ]
+   ],
+   "release": "6.2.0",
+   "landmark": "Main Hall",
+   "achievName": "Raccoon City Recruit"
+  },
+  {
+   "id": 41,
+   "name": "The Shattered Square",
+   "altName": "QuantumLevel01",
+   "realm": 19,
+   "size": 144,
+   "release": "6.4.0",
+   "landmark": "Gathering Hall",
+   "achievName": "Rebuilding the Borgo"
+  },
+  {
+   "id": 42,
+   "name": "Toba Landing",
+   "altName": "UmbraLevel01",
+   "realm": 20,
+   "size": 136,
+   "release": "7.0.0",
+   "landmark": "Base Station",
+   "achievName": "Extraterrestrial"
+  },
+  {
+   "id": 43,
+   "name": "Nostromo Wreckage",
+   "altName": "WormholeLevel01",
+   "realm": 20,
+   "size": 152,
+   "release": "7.2.0",
+   "landmark": "Mess Hall",
+   "achievName": "MU/TH/UR Dearest"
+  },
+  {
+   "id": 44,
+   "name": "Greenville Square",
+   "altName": "ApplePieLevel01",
+   "realm": 18,
+   "size": 160,
+   "release": "7.6.0",
+   "landmark": "Movie Theatre",
+   "achievName": "Movie Buff"
+  },
+  {
+   "id": 45,
+   "name": "Forgotten Ruins",
+   "altName": "QuantumLevel02",
+   "realm": 19,
+   "size": [
+    [
+     92,
+     "Surface"
+    ],
+    [
+     40,
+     "Dungeon"
+    ]
+   ],
+   "release": "8.0.0",
+   "landmark": "Torture Room",
+   "achievName": "Dungeon Crawler"
+  },
+  {
+   "id": 46,
+   "name": "Ormond Lake Mine",
+   "altName": "GelatoLevel01",
+   "realm": 12,
+   "size": 132,
+   "release": "8.4.2"
+  },
+  {
+   "id": 47,
+   "name": "Dead Sands",
+   "altName": "IonShack",
+   "realm": 17,
+   "size": 140,
+   "release": "8.6.0"
+  },
+  {
+   "id": 48,
+   "name": "Freddy Fazbear's Pizza",
+   "altName": "ApplePieLevel02",
+   "realm": 18,
+   "size": 148,
+   "release": "9.0.0"
+  },
+  {
+   "id": 49,
+   "name": "Fallen Refuge",
+   "altName": "ApplePieShack",
+   "realm": 18,
+   "size": 128,
+   "release": "9.1.0",
+   "landmark": "Prison Tower",
+   "achievName": "Don't Open, Dead Inside"
+  },
+  {
+   "id": 50,
+   "name": "Trickster's Delusion",
+   "altName": "QuiLevel01",
+   "realm": 21,
+   "size": 0,
+   "release": "9.5.0"
+  },
+  {
+   "id": 51,
+   "name": "Hartshorne Mall",
+   "altName": "Liminal",
+   "realm": 22,
+   "size": 0,
+   "release": "10.3.0"
+  }
+ ],
+ "realms": [
+  {
+   "id": 1,
+   "name": "The MacMillan Estate",
+   "codeName": "Industrial",
+   "abbr": "Ind",
+   "location": "Washington State, United States",
+   "palette": "Blue",
+   "color": "4982a2",
+   "dlc": 39
+  },
+  {
+   "id": 2,
+   "name": "Autohaven Wreckers",
+   "codeName": "Junkyard",
+   "abbr": "Jnk",
+   "location": "United States",
+   "palette": "Green",
+   "color": "75d277"
+  },
+  {
+   "id": 3,
+   "name": "Coldwind Farm",
+   "codeName": "Farm",
+   "abbr": "Frm",
+   "location": "United States",
+   "palette": "Orange",
+   "color": "fccf6b"
+  },
+  {
+   "id": 4,
+   "name": "Crotus Prenn Asylum",
+   "codeName": "Asylum",
+   "abbr": "Asy",
+   "location": "United States",
+   "palette": "Grey with yellowish tint",
+   "color": "cccfbc",
+   "dlc": [
+    1,
+    8
+   ]
+  },
+  {
+   "id": 5,
+   "name": "Haddonfield",
+   "codeName": "Suburbs",
+   "abbr": "Sub",
+   "location": "Illinois, United States",
+   "palette": "None",
+   "color": "033755",
+   "dlc": 2
+  },
+  {
+   "id": 6,
+   "name": "Backwater Swamp",
+   "codeName": "Swamp",
+   "abbr": "Swp",
+   "location": "United States",
+   "palette": "Light Grey",
+   "color": "adadad",
+   "dlc": 3
+  },
+  {
+   "id": 7,
+   "name": "Léry's Memorial Institute",
+   "codeName": "Hospital",
+   "abbr": "Hos",
+   "location": "Illinois, United States",
+   "palette": "Grey with blueish tint",
+   "color": "92a7ba",
+   "dlc": 4,
+   "diacritics": true
+  },
+  {
+   "id": 8,
+   "name": "Red Forest",
+   "codeName": "Boreal",
+   "abbr": "Brl",
+   "location": "Kiev Governorate, Russian Empire",
+   "palette": "Turquoise",
+   "color": "39b0d9",
+   "dlc": [
+    5,
+    11
+   ]
+  },
+  {
+   "id": 9,
+   "name": "Springwood",
+   "codeName": "England",
+   "abbr": "Eng",
+   "location": "Ohio, United States",
+   "palette": "Purple",
+   "color": "b47dca",
+   "dlc": 6
+  },
+  {
+   "id": 10,
+   "name": "Gideon Meat Plant",
+   "codeName": "Finland",
+   "abbr": "Fin",
+   "location": "Brooklyn, New York, United States",
+   "palette": "Greyish White",
+   "color": "f6f6f6",
+   "dlc": 7
+  },
+  {
+   "id": 11,
+   "name": "Yamaoka Estate",
+   "codeName": "Haiti",
+   "abbr": "Hti",
+   "location": "Kagawa, Japan",
+   "palette": "Orange & Turquoise",
+   "color": "9d3a2c",
+   "dlc": [
+    9,
+    14
+   ]
+  },
+  {
+   "id": 12,
+   "name": "Ormond",
+   "codeName": "Kenya",
+   "abbr": "Kny",
+   "location": "Alberta, Canada",
+   "palette": "Light Blue",
+   "color": "a2f2ff",
+   "dlc": 10
+  },
+  {
+   "id": 13,
+   "name": "Hawkins National Laboratory",
+   "codeName": "Qatar",
+   "abbr": "Qat",
+   "location": "Indiana, United States",
+   "palette": "Blue-Green",
+   "color": "21b6a8",
+   "dlc": 13
+  },
+  {
+   "id": 14,
+   "name": "Grave of Glenvale",
+   "codeName": "Ukraine",
+   "abbr": "Ukr",
+   "location": "Arizona, United States",
+   "palette": "Brown",
+   "color": "ea9533",
+   "dlc": 15
+  },
+  {
+   "id": 15,
+   "name": "Silent Hill",
+   "codeName": "Wales",
+   "abbr": "Wal",
+   "location": "Maine, United States",
+   "palette": "Grey",
+   "color": "898989",
+   "dlc": 24,
+   "multiName": true
+  },
+  {
+   "id": 16,
+   "name": "Raccoon City",
+   "codeName": "Eclipse",
+   "abbr": "Ecl",
+   "location": "Arklay County, United States",
+   "palette": "Grey",
+   "color": "5a7898",
+   "dlc": 29
+  },
+  {
+   "id": 17,
+   "name": "Forsaken Boneyard",
+   "codeName": "Ion",
+   "abbr": "Ion",
+   "location": "Tarapacá, Chile",
+   "palette": "Yellow",
+   "color": "ffe3b5",
+   "dlc": 34
+  },
+  {
+   "id": 18,
+   "name": "Withered Isle",
+   "codeName": "Meteor",
+   "abbr": "Meteor",
+   "location": "Atlantic Ocean",
+   "palette": "Purple",
+   "color": "d5755f",
+   "dlc": [
+    36,
+    50,
+    58,
+    59
+   ]
+  },
+  {
+   "id": 19,
+   "name": "The Decimated Borgo",
+   "codeName": "Quantum",
+   "abbr": "Qtm",
+   "location": "Medieval Italy",
+   "palette": "Dark Turquoise",
+   "color": "046276",
+   "dlc": [
+    38,
+    52
+   ]
+  },
+  {
+   "id": 20,
+   "name": "Dvarka Deepwood",
+   "codeName": "Umbra",
+   "abbr": "Uba",
+   "location": "Dvarka Planet",
+   "palette": "Purple, Blue",
+   "color": "d5755f",
+   "dlc": [
+    40,
+    44
+   ]
+  },
+  {
+   "id": 21,
+   "name": "Sleepless District",
+   "codeName": "Quiche",
+   "abbr": "Qui",
+   "location": "Seoul, South Korea",
+   "palette": "Pale Blue",
+   "color": "b5fcff",
+   "dlc": [
+    62
+   ]
+  },
+  {
+   "id": 22,
+   "name": "The Subdivisions",
+   "codeName": "Liminal",
+   "abbr": "Lm",
+   "location": "United States"
+  }
+ ],
+ "survivors": [
+  {
+   "id": 1,
+   "name": "Dwight Fairfield",
+   "gender": "Man",
+   "role": "Nervous Leader",
+   "origin": "American",
+   "actor": "Ian Chuprun (BHVR)"
+  },
+  {
+   "id": 2,
+   "name": "Meg Thomas",
+   "gender": "Woman",
+   "role": "Energetic Athlete",
+   "origin": "American",
+   "actor": "Ingrid Blemur (BHVR)"
+  },
+  {
+   "id": 3,
+   "name": "Claudette Morel",
+   "gender": "Woman",
+   "role": "Studious Botanist",
+   "origin": "Canadian",
+   "actor": "Sarah Robinson (BHVR)"
+  },
+  {
+   "id": 4,
+   "name": "Jake Park",
+   "altName": "제이크 박 (Korean)",
+   "gender": "Man",
+   "role": "Solitary Survivalist",
+   "origin": "South Korean",
+   "actor": "Kevin Boissonneault (BHVR)"
+  },
+  {
+   "id": 5,
+   "name": "Nea Karlsson",
+   "gender": "Woman",
+   "role": "Urban Artist",
+   "origin": "Swedish",
+   "actor": "Morgane Ravasi (BHVR)",
+   "dlc": 1
+  },
+  {
+   "id": 6,
+   "name": "Laurie Strode",
+   "gender": "Woman",
+   "role": "Determined Survivor",
+   "origin": "American",
+   "actor": "Catherine Lecours (BHVR)",
+   "dlc": 2
+  },
+  {
+   "id": 7,
+   "name": "Ace Visconti",
+   "gender": "Man",
+   "role": "Lucky Gambler",
+   "origin": "Argentinian of Italian descent",
+   "actor": "Sébastien Varas (BVHR)",
+   "dlc": [
+    3,
+    46
+   ]
+  },
+  {
+   "id": 8,
+   "name": "William \"Bill\" Overbeck",
+   "shortName": "Bill Overbeck",
+   "gender": "Man",
+   "role": "Old Soldier",
+   "origin": "American",
+   "actor": "Ricardo Gomez (BHVR)",
+   "dlc": 16
+  },
+  {
+   "id": 9,
+   "name": "Feng Min",
+   "altName": "凤敏 (Chinese)",
+   "useLastName": true,
+   "gender": "Woman",
+   "role": "Focused Competitor",
+   "origin": "Chinese",
+   "actor": "Bianca Lavric (BHVR)",
+   "dlc": [
+    4,
+    46
+   ]
+  },
+  {
+   "id": 10,
+   "name": "David King",
+   "gender": "Man",
+   "role": "Rugged Scrapper",
+   "origin": "English",
+   "actor": "Stefan Horvath (BHVR)",
+   "dlc": 5
+  },
+  {
+   "id": 11,
+   "name": "Quentin Smith",
+   "gender": "Man",
+   "role": "Resolute Dreamwalker",
+   "origin": "American",
+   "actor": "Louis McLean (BHVR)",
+   "dlc": 6
+  },
+  {
+   "id": 12,
+   "name": "Detective David Tapp",
+   "shortName": "David Tapp",
+   "dbdName": "Detective Tapp",
+   "useLastName": true,
+   "gender": "Man",
+   "role": "Obsessed Detective",
+   "origin": "African American",
+   "actor": "Dave Blake (BHVR)",
+   "dlc": 7
+  },
+  {
+   "id": 13,
+   "name": "Kate Denson",
+   "gender": "Woman",
+   "role": "Hopeful Songbird",
+   "origin": "American",
+   "actor": "Daphné Poulin Gourdeau (BHVR)",
+   "dlc": [
+    8,
+    46
+   ]
+  },
+  {
+   "id": 14,
+   "name": "Adam Francis",
+   "gender": "Man",
+   "role": "Resourceful Teacher",
+   "origin": "Jamaican",
+   "actor": "Bourbaki Joseph (BHVR)",
+   "dlc": [
+    9,
+    46
+   ]
+  },
+  {
+   "id": 15,
+   "name": "Jeffrey \"Jeff\" Johansen",
+   "shortName": "Jeff Johansen",
+   "dbdName": "Jeff Johansen",
+   "gender": "Man",
+   "role": "Quiet Artist",
+   "origin": "Canadian of Norwegian descent",
+   "actor": "Filip Ivanovic (BHVR)",
+   "dlc": [
+    10,
+    47
+   ]
+  },
+  {
+   "id": 16,
+   "name": "Jane Romero",
+   "gender": "Woman",
+   "role": "Influential Celebrity",
+   "origin": "Latin American",
+   "actor": "Patricia Brochu-Gagné (BHVR)",
+   "dlc": [
+    11,
+    47
+   ]
+  },
+  {
+   "id": 17,
+   "name": "Ashley J. Williams",
+   "shortName": "Ash Williams",
+   "gender": "Man",
+   "role": "Alone Wolf",
+   "origin": "American",
+   "actor": "Bruce Campbell (Original Actor)",
+   "dlc": 18
+  },
+  {
+   "id": 18,
+   "name": "Nancy Wheeler",
+   "gender": "Woman",
+   "role": "Aspiring Journalist",
+   "origin": "American",
+   "actor": "Madison Lee (Voice Actress)",
+   "dlc": 13
+  },
+  {
+   "id": 19,
+   "name": "Steve Harrington",
+   "gender": "Man",
+   "role": "Former Jock",
+   "origin": "American",
+   "actor": "TBA",
+   "dlc": 13
+  },
+  {
+   "id": 20,
+   "name": "Yui Kimura",
+   "altName": "木村 結衣 (Japanese)",
+   "gender": "Woman",
+   "role": "Hardened Streetracer",
+   "origin": "Japanese",
+   "actor": "Daniela Pinto (BHVR)",
+   "dlc": [
+    14,
+    47
+   ]
+  },
+  {
+   "id": 21,
+   "name": "Zarina Kassir",
+   "gender": "Woman",
+   "role": "Plucky Documentarian",
+   "origin": "Lebanese American",
+   "actor": "Émilie Paquin (BHVR)",
+   "dlc": [
+    15,
+    47
+   ]
+  },
+  {
+   "id": 22,
+   "name": "Cheryl Mason",
+   "gender": "Woman",
+   "role": "Young Veteran of Terror",
+   "origin": "American",
+   "actor": "Undisclosed Voice Actress ",
+   "dlc": 24
+  },
+  {
+   "id": 23,
+   "name": "Felix Richter",
+   "gender": "Man",
+   "role": "Visionary Architect ",
+   "possessive": true,
+   "origin": "German",
+   "actor": "Frédéric Poirier (BHVR)",
+   "dlc": [
+    26,
+    48
+   ]
+  },
+  {
+   "id": 24,
+   "name": "Élodie Rakoto",
+   "gender": "Woman",
+   "role": "Occult Investigator",
+   "origin": "French, Malagasy",
+   "actor": "Beatrix Moersch (BHVR)",
+   "dlc": [
+    27,
+    48
+   ],
+   "diacritics": true
+  },
+  {
+   "id": 25,
+   "name": "Lee Yun-jin",
+   "altName": "이윤진 (Korean)",
+   "gender": "Woman",
+   "role": "Self-Interested Music Producer",
+   "origin": "South Korean",
+   "actor": "Kim So-hee  (Voice Actor)",
+   "dlc": [
+    28,
+    48
+   ]
+  },
+  {
+   "id": 26,
+   "name": "Jill Valentine",
+   "gender": "Woman",
+   "role": "Founding Member of S.T.A.R.S.",
+   "origin": "American",
+   "actor": "Chaney Crabb (The Monster Factory)",
+   "dlc": 29
+  },
+  {
+   "id": 27,
+   "name": "Leon Scott Kennedy",
+   "dbdName": "Leon S. Kennedy",
+   "gender": "Man",
+   "role": "Rookie Police Officer",
+   "origin": "American",
+   "actor": "Riley McShane (The Monster Factory)",
+   "dlc": 29
+  },
+  {
+   "id": 28,
+   "name": "Mikaela Reid",
+   "gender": "Woman",
+   "role": "Young Mystic",
+   "origin": "American",
+   "actor": "Adrienne Cowan (The Monster Factory)",
+   "dlc": [
+    33,
+    48
+   ]
+  },
+  {
+   "id": 29,
+   "name": "Jonah Vasquez",
+   "gender": "Man",
+   "role": "Mathematical Mastermind",
+   "origin": "American of Hispanic descent",
+   "actor": "Felipe Quinzaños (The Monster Factory)",
+   "dlc": [
+    34,
+    51
+   ]
+  },
+  {
+   "id": 30,
+   "name": "Yoichi Asakawa",
+   "altName": "浅川 陽一 (Japanese)",
+   "gender": "Man",
+   "role": "Brilliant Marine Biologist",
+   "origin": "Japanese",
+   "actor": "Mirai Kawashima (The Monster Factory)",
+   "dlc": 35
+  },
+  {
+   "id": 31,
+   "name": "Haddie Kaur",
+   "gender": "Woman",
+   "role": "Brave and Determined Podcaster",
+   "origin": "Canadian of Indian descent",
+   "actor": "Ashavari Anna Joshi (The Monster Factory)",
+   "dlc": [
+    36,
+    51
+   ]
+  },
+  {
+   "id": 32,
+   "name": "Ada Wong",
+   "gender": "Woman",
+   "role": "Mysterious Secret Agent",
+   "origin": "Unknown (Redacted)",
+   "actor": "Vicky Psarakis (The Monster Factory)",
+   "dlc": 37
+  },
+  {
+   "id": 33,
+   "name": "Rebecca Chambers",
+   "gender": "Woman",
+   "role": "Gifted Medic and Squad Member",
+   "origin": "American",
+   "actor": "Megan Orvold-Scheider (The Monster Factory)",
+   "dlc": 37
+  },
+  {
+   "id": 34,
+   "name": "Vittorio Toscano",
+   "gender": "Man",
+   "role": "Endless Wanderer",
+   "origin": "Italian",
+   "actor": "Luc de Villars (The Monster Factory)",
+   "theme": false,
+   "dlc": [
+    38,
+    51
+   ]
+  },
+  {
+   "id": 35,
+   "name": "Thalita Lyra",
+   "gender": "Woman",
+   "role": "Competitive Kite Fighter",
+   "origin": "Brazilian",
+   "actor": "Sylvia Salustti (Brazilian Voice Actress)",
+   "dlc": [
+    39,
+    51
+   ]
+  },
+  {
+   "id": 36,
+   "name": "Renato Lyra",
+   "gender": "Man",
+   "role": "Skilled Kite Fighter",
+   "origin": "Brazilian",
+   "actor": "Felipe Grinnan (Brazilian Voice Actor)",
+   "dlc": [
+    39,
+    51
+   ]
+  },
+  {
+   "id": 37,
+   "name": "Gabriel Soma",
+   "gender": "Man",
+   "role": "Resourceful Engineer",
+   "origin": "Proxima Centauri C",
+   "actor": "Stevie Boiser (The Monster Factory)",
+   "dlc": 40
+  },
+  {
+   "id": 38,
+   "name": "Nicolas Cage",
+   "useLastName": true,
+   "gender": "Man",
+   "role": "Superstar",
+   "origin": "American",
+   "actor": "Nicolas Cage (Himself)",
+   "dlc": 43,
+   "multiName": true
+  },
+  {
+   "id": 39,
+   "name": "Ellen Ripley",
+   "useLastName": true,
+   "gender": "Woman",
+   "role": "Nostromo Warrant Officer",
+   "origin": "American",
+   "actor": "Molly Daisy (The Monster Factory)",
+   "dlc": 44
+  },
+  {
+   "id": 40,
+   "name": "Alan Wake",
+   "gender": "Man",
+   "role": "Bestselling Author",
+   "origin": "American",
+   "actor": "Matthew Porretta (Original Voice Actor, Blindlight)",
+   "dlc": 49,
+   "multiName": true
+  },
+  {
+   "id": 41,
+   "name": "Sable Ward",
+   "gender": "Woman",
+   "role": "Embracer of Darkness",
+   "origin": "American",
+   "actor": "Liz Morey (Blindlight)",
+   "dlc": 50
+  },
+  {
+   "id": 42,
+   "name": "Aestri Yazar & Baermar Uraz",
+   "dbdName": "Aestri Yazar",
+   "moniker": "Troupe",
+   "role": "Bard Troupe",
+   "gender": "Woman (Aestri)<br>Man (Baermar)",
+   "origin": "Oerth (D&D World)",
+   "actor": "Aestri: Jesse Vilinsky<br>Baermar: Robbie Daymond<br>(both Blindlight)",
+   "dlc": 52
+  },
+  {
+   "id": 43,
+   "name": "Lara Croft",
+   "gender": "Woman",
+   "role": "Harded Archaeologist",
+   "origin": "English",
+   "actor": "Emily O'Brien (Blindlight)",
+   "dlc": 53
+  },
+  {
+   "id": 44,
+   "name": "Trevor Belmont",
+   "gender": "Man",
+   "role": "Vampire Hunter",
+   "origin": "Wallachian (Romania)",
+   "actor": "Andrew Wheildon-Dennis (Blindlight)",
+   "dlc": 54
+  },
+  {
+   "id": 45,
+   "name": "Taurie Cain",
+   "gender": "Woman",
+   "role": "Disciple of the Black Talon",
+   "origin": "Scottish",
+   "actor": "Arianna Ratner (Blindlight, Voice-Over Artist)",
+   "dlc": 55
+  },
+  {
+   "id": 46,
+   "name": "Orela Rose",
+   "gender": "Trans Woman",
+   "role": "Calming Paramedic",
+   "origin": "African American",
+   "actor": "Angelica Ross (Blindlight, Actress and Transgender Rights Advocate)",
+   "dlc": 57
+  },
+  {
+   "id": 47,
+   "name": "Rick Grimes",
+   "gender": "Man",
+   "role": "Post-Apocalyptic Group Leader",
+   "origin": "American",
+   "actor": "Andrew Lincoln (Original Actor)",
+   "dlc": 59
+  },
+  {
+   "id": 48,
+   "name": "Michonne Grimes",
+   "gender": "Woman",
+   "role": "Relentless Protector",
+   "origin": "African American",
+   "actor": "Erikka J. (Voice Actress)",
+   "dlc": 59
+  },
+  {
+   "id": 49,
+   "name": "Vee Boonyasak",
+   "gender": "Woman",
+   "role": "Energetic Drummer",
+   "origin": "Thai",
+   "actor": "Sura Siu (Voice-Over Artist)",
+   "dlc": 60
+  },
+  {
+   "id": 50,
+   "name": "Dustin Henderson",
+   "gender": "Man",
+   "role": "Brillant High School Student",
+   "origin": "American",
+   "actor": "Jacob Craner (Voice Actor)",
+   "dlc": 61
+  },
+  {
+   "id": 51,
+   "name": "Eleven",
+   "altName": "Jane Hopper",
+   "gender": "Woman",
+   "role": "Former Test Subject",
+   "origin": "American",
+   "actor": "Abby Espiritu (Voice Actress)",
+   "dlc": 61
+  },
+  {
+   "id": 52,
+   "name": "Kwon Tae-young",
+   "altName": "권태영 (Korean)",
+   "gender": "Man",
+   "role": "Hard-Working Perfectionist",
+   "origin": "South Korean",
+   "actor": "Kevin Woo (Singer-Songwriter)",
+   "dlc": 62
+  },
+  {
+   "id": 53,
+   "name": "Shane Wiigwaas",
+   "gender": "Man",
+   "role": "Atoning Defense Attorney",
+   "origin": "Native American",
+   "actor": "Dallas Goldtooth (Actor)",
+   "dlc": 64
+  },
+  {
+   "id": 54,
+   "name": "Aurora Stardotter",
+   "gender": "Woman",
+   "role": "Saviour of the People",
+   "origin": "Terra Primus",
+   "actor": "Claire Vousden (Voice Actress)",
+   "dlc": 65
+  },
+  {
+   "id": 55,
+   "name": "Sienna Shaw",
+   "gender": "Woman",
+   "role": "Resilient Survivor",
+   "origin": "American",
+   "actor": "Lauren LaVera (Original Actress)",
+   "dlc": 66
+  }
+ ],
+ "dlcs": [
+  {
+   "id": 1,
+   "name": "The Last Breath Chapter",
+   "rDate": "18.08.2016",
+   "category": 1,
+   "cost": "Free",
+   "link": 509060,
+   "release": "1.1.0",
+   "codeName": "B"
+  },
+  {
+   "id": 2,
+   "name": "The HALLOWEEN® Chapter",
+   "rDate": "25.10.2016",
+   "retracted": "19.01.2026",
+   "category": 1,
+   "link": 530711,
+   "release": "1.2.1",
+   "codeName": "C",
+   "licensed": true
+  },
+  {
+   "id": 3,
+   "name": "Of Flesh and Mud",
+   "rDate": "08.12.2016",
+   "retired": "08.01.2024",
+   "category": 1,
+   "link": 554381,
+   "release": "1.3.1",
+   "codeName": "D",
+   "flags": [
+    "xps"
+   ]
+  },
+  {
+   "id": 16,
+   "name": "Left Behind",
+   "rDate": "08.03.2017",
+   "category": 1,
+   "cost": "Free",
+   "link": 573940,
+   "release": "1.4.2",
+   "codeName": "D",
+   "multiName": true
+  },
+  {
+   "id": 4,
+   "name": "Spark of Madness",
+   "rDate": "11.05.2017",
+   "retired": "08.01.2024",
+   "category": 1,
+   "link": 582600,
+   "release": "1.5.1",
+   "codeName": "I",
+   "flags": [
+    "xps"
+   ]
+  },
+  {
+   "id": 5,
+   "name": "A Lullaby for the Dark",
+   "rDate": "27.07.2017",
+   "category": 1,
+   "cost": "Free",
+   "link": 661770,
+   "release": "1.6.0",
+   "codeName": "J"
+  },
+  {
+   "id": 17,
+   "name": "LEATHERFACE™",
+   "rDate": "14.09.2017",
+   "category": 1,
+   "link": 700280,
+   "release": "1.7.0",
+   "codeName": "J",
+   "licensed": true
+  },
+  {
+   "id": 6,
+   "name": "A Nightmare on Elm Street™",
+   "rDate": "26.10.2017",
+   "category": 1,
+   "link": 700282,
+   "release": "1.8.0",
+   "codeName": "England",
+   "licensed": true
+  },
+  {
+   "id": 7,
+   "name": "The SAW™ Chapter",
+   "rDate": "23.01.2018",
+   "category": 1,
+   "link": 750381,
+   "release": "1.9.0",
+   "codeName": "Finland",
+   "licensed": true
+  },
+  {
+   "id": 8,
+   "name": "Curtain Call",
+   "rDate": "12.06.2018",
+   "retired": "08.01.2024",
+   "category": 1,
+   "link": 799200,
+   "release": "2.0.0",
+   "codeName": "Guam",
+   "flags": [
+    "switch"
+   ]
+  },
+  {
+   "id": 9,
+   "name": "Shattered Bloodline",
+   "rDate": "18.09.2018",
+   "retired": "08.01.2024",
+   "category": 1,
+   "link": 925750,
+   "release": "2.2.0",
+   "codeName": "Haiti",
+   "flags": [
+    "switch"
+   ]
+  },
+  {
+   "id": 10,
+   "name": "Darkness Among Us",
+   "rDate": "11.12.2018",
+   "retired": "08.01.2024",
+   "category": 1,
+   "link": 971790,
+   "release": "2.4.0",
+   "codeName": "Kenya"
+  },
+  {
+   "id": 11,
+   "name": "Demise of the Faithful",
+   "rDate": "19.03.2019",
+   "retired": "08.01.2024",
+   "category": 1,
+   "link": 1009820,
+   "release": "2.6.0",
+   "codeName": "Mali"
+  },
+  {
+   "id": 18,
+   "name": "Ash vs Evil Dead",
+   "rDate": "02.04.2019",
+   "category": 1,
+   "link": 1009821,
+   "release": "2.6.3",
+   "codeName": "Mali",
+   "licensed": true
+  },
+  {
+   "id": 12,
+   "name": "Ghost Face®",
+   "rDate": "18.06.2019",
+   "category": 1,
+   "link": 1089270,
+   "release": "3.0.0",
+   "codeName": "Oman",
+   "licensed": true
+  },
+  {
+   "id": 13,
+   "name": "Stranger Things",
+   "rDate": "17.09.2019",
+   "category": 1,
+   "link": 1135280,
+   "release": "3.2.0",
+   "codeName": "Qatar",
+   "licensed": true,
+   "achRetired": true
+  },
+  {
+   "id": 14,
+   "name": "Cursed Legacy",
+   "rDate": "03.12.2019",
+   "retired": "08.01.2024",
+   "category": 1,
+   "link": 1199880,
+   "release": "3.4.0",
+   "codeName": "Sweden"
+  },
+  {
+   "id": 15,
+   "name": "Chains of Hate",
+   "rDate": "10.03.2020",
+   "retired": "08.01.2024",
+   "category": 1,
+   "link": 1251000,
+   "release": "3.6.0",
+   "codeName": "Ukraine"
+  },
+  {
+   "id": 19,
+   "name": "The 80's Suitcase",
+   "rDate": "23.09.2016",
+   "retired": "08.01.2024",
+   "category": 3,
+   "cost": [
+    {
+     "value": 2.99,
+     "ccy": 1
+    }
+   ],
+   "link": 530710,
+   "release": "1.1.2",
+   "flags": [
+    "xps"
+   ]
+  },
+  {
+   "id": 20,
+   "name": "The Bloodstained Sack",
+   "rDate": "17.11.2016",
+   "retired": "08.01.2024",
+   "category": 3,
+   "cost": [
+    {
+     "value": 2.99,
+     "ccy": 1
+    }
+   ],
+   "link": 554380,
+   "release": "1.2.1e",
+   "flags": [
+    "xps"
+   ]
+  },
+  {
+   "id": 21,
+   "name": "Headcase",
+   "rDate": "08.06.2017",
+   "retired": "08.01.2024",
+   "category": 3,
+   "cost": [
+    {
+     "value": 2.99,
+     "ccy": 1
+    }
+   ],
+   "link": 577901,
+   "release": "1.5.2",
+   "flags": [
+    "switch"
+   ]
+  },
+  {
+   "id": 22,
+   "name": "Charity Case",
+   "rDate": "10.08.2017",
+   "category": 3,
+   "cost": [
+    {
+     "value": 4.99,
+     "ccy": 1
+    }
+   ],
+   "link": 627510,
+   "release": "1.6.2"
+  },
+  {
+   "id": 23,
+   "name": "Dead by Daylight: Original Soundtrack",
+   "rDate": "14.06.2016",
+   "category": 4,
+   "cost": [
+    {
+     "value": 9.99,
+     "ccy": 1
+    }
+   ],
+   "link": 492140,
+   "release": "1.0.0"
+  },
+  {
+   "id": 24,
+   "name": "Silent Hill",
+   "rDate": "16.06.2020",
+   "category": 1,
+   "link": 1324970,
+   "release": "4.0.0",
+   "codeName": "Wales",
+   "multiName": true,
+   "licensed": true
+  },
+  {
+   "id": 25,
+   "name": "Dead by Daylight: Original Soundtrack",
+   "rDate": "02.08.2019",
+   "category": 4,
+   "cost": [
+    {
+     "value": 9.49,
+     "ccy": 1
+    }
+   ],
+   "link": 492140,
+   "release": "1.0.0",
+   "skip": true
+  },
+  {
+   "id": 26,
+   "name": "Descend Beyond",
+   "rDate": "08.09.2020",
+   "retired": "08.01.2024",
+   "category": 1,
+   "link": 1408020,
+   "release": "4.2.0",
+   "codeName": "Yemen"
+  },
+  {
+   "id": 27,
+   "name": "A Binding of Kin",
+   "rDate": "01.12.2020",
+   "retired": "08.01.2024",
+   "category": 1,
+   "link": 1474030,
+   "release": "4.4.0",
+   "codeName": "Aurora"
+  },
+  {
+   "id": 28,
+   "name": "All-Kill",
+   "rDate": "30.03.2021",
+   "retired": "08.01.2024",
+   "category": 1,
+   "link": 1557310,
+   "release": "4.6.0",
+   "codeName": "Comet"
+  },
+  {
+   "id": 29,
+   "name": "Resident Evil™",
+   "rDate": "15.06.2021",
+   "category": 1,
+   "link": 1634040,
+   "release": "5.0.0",
+   "codeName": "Eclipse",
+   "licensed": true
+  },
+  {
+   "id": 30,
+   "name": "Escape Expansion Pack",
+   "rDate": "15.06.2021",
+   "category": 5,
+   "cost": [
+    {
+     "value": 29.99,
+     "ccy": 1
+    }
+   ],
+   "link": 1622941,
+   "release": "5.0.0"
+  },
+  {
+   "id": 31,
+   "name": "Terror Expansion Pack",
+   "rDate": "15.06.2021",
+   "category": 5,
+   "cost": [
+    {
+     "value": 29.99,
+     "ccy": 1
+    }
+   ],
+   "link": 1622940,
+   "release": "5.0.0"
+  },
+  {
+   "id": 32,
+   "name": "Hellraiser™",
+   "rDate": "07.09.2021",
+   "retracted": "04.04.2025",
+   "category": 1,
+   "link": 1734080,
+   "release": "5.2.0",
+   "codeName": "Gemini",
+   "licensed": true
+  },
+  {
+   "id": 33,
+   "name": "Hour of the Witch",
+   "rDate": "19.10.2021",
+   "retired": "08.01.2024",
+   "category": 1,
+   "link": 1763310,
+   "release": "5.3.0",
+   "codeName": "Hubble"
+  },
+  {
+   "id": 34,
+   "name": "Portrait of a Murder",
+   "rDate": "30.11.2021",
+   "retired": "14.05.2024",
+   "category": 1,
+   "link": 1804690,
+   "release": "5.4.0",
+   "codeName": "Ion"
+  },
+  {
+   "id": 35,
+   "name": "Sadako Rising",
+   "rDate": "08.03.2022",
+   "category": 1,
+   "link": 1899750,
+   "release": "5.6.0",
+   "codeName": "Kepler",
+   "licensed": true
+  },
+  {
+   "id": 36,
+   "name": "Roots of Dread",
+   "rDate": "07.06.2022",
+   "retired": "14.05.2024",
+   "category": 1,
+   "link": 1985790,
+   "release": "6.0.0",
+   "codeName": "Meteor"
+  },
+  {
+   "id": 37,
+   "name": "Resident Evil™: PROJECT W",
+   "rDate": "30.08.2022",
+   "category": 1,
+   "link": 2102730,
+   "release": "6.2.0",
+   "codeName": "Orion",
+   "licensed": true
+  },
+  {
+   "id": 38,
+   "name": "Forged in Fog",
+   "rDate": "22.11.2022",
+   "retired": "14.05.2024",
+   "category": 1,
+   "link": 2198470,
+   "release": "6.4.0",
+   "codeName": "Quantum"
+  },
+  {
+   "id": 39,
+   "name": "Tools of Torment",
+   "rDate": "07.03.2023",
+   "retired": "14.05.2024",
+   "category": 1,
+   "link": 2294610,
+   "release": "6.6.0",
+   "codeName": "Saturn"
+  },
+  {
+   "id": 40,
+   "name": "End Transmission",
+   "rDate": "13.06.2023",
+   "category": 1,
+   "link": 2399750,
+   "release": "7.0.0",
+   "codeName": "Umbra"
+  },
+  {
+   "id": 41,
+   "name": "Armoured Pack",
+   "rDate": "19.06.2023",
+   "retracted": "18.07.2023",
+   "category": 3,
+   "link": 2405130,
+   "release": "7.0.0",
+   "licensed": true
+  },
+  {
+   "id": 42,
+   "name": "War Hammer Pack",
+   "rDate": "19.06.2023",
+   "retracted": "18.07.2023",
+   "category": 3,
+   "link": 2405140,
+   "release": "7.0.0",
+   "licensed": true
+  },
+  {
+   "id": 43,
+   "name": "Nicolas Cage",
+   "rDate": "25.07.2023",
+   "category": 1,
+   "cost": [
+    {
+     "value": 9.99,
+     "ccy": 1
+    },
+    {
+     "value": 500,
+     "ccy": 5
+    }
+   ],
+   "link": 2469400,
+   "release": "7.1.0",
+   "codeName": "Venus",
+   "licensed": true,
+   "multiName": true
+  },
+  {
+   "id": 44,
+   "name": "Alien",
+   "rDate": "29.08.2023",
+   "category": 1,
+   "cost": [
+    {
+     "value": 11.99,
+     "ccy": 1
+    },
+    {
+     "value": 1000,
+     "ccy": 5
+    }
+   ],
+   "link": 2515990,
+   "release": "7.2.0",
+   "codeName": "Wormhole",
+   "licensed": true
+  },
+  {
+   "id": 45,
+   "name": "Chucky",
+   "rDate": "28.11.2023",
+   "category": 1,
+   "link": 2656010,
+   "release": "7.4.0",
+   "codeName": "Yerkes",
+   "licensed": true,
+   "multiName": true
+  },
+  {
+   "id": 46,
+   "name": "Maddening Darkness Pack",
+   "rDate": "08.01.2024",
+   "category": 8,
+   "cost": [
+    {
+     "value": 9.99,
+     "ccy": 1
+    },
+    {
+     "value": 1000,
+     "ccy": 5
+    },
+    {
+     "value": 18000,
+     "ccy": 3
+    }
+   ],
+   "discount": 0.75,
+   "link": 2526530,
+   "release": "7.4.2"
+  },
+  {
+   "id": 47,
+   "name": "Old Wounds Pack",
+   "rDate": "08.01.2024",
+   "category": 8,
+   "cost": [
+    {
+     "value": 19.99,
+     "ccy": 1
+    },
+    {
+     "value": 2000,
+     "ccy": 5
+    },
+    {
+     "value": 36000,
+     "ccy": 3
+    }
+   ],
+   "link": 2526540,
+   "release": "7.4.2"
+  },
+  {
+   "id": 48,
+   "name": "Macabre Tales Pack",
+   "rDate": "08.01.2024",
+   "category": 8,
+   "cost": [
+    {
+     "value": 19.99,
+     "ccy": 1
+    },
+    {
+     "value": 1750,
+     "ccy": 5
+    },
+    {
+     "value": 31500,
+     "ccy": 3
+    }
+   ],
+   "link": 2526550,
+   "release": "7.4.2"
+  },
+  {
+   "id": 49,
+   "name": "Alan Wake®",
+   "rDate": "30.01.2024",
+   "category": 1,
+   "link": 2661250,
+   "release": "7.5.0",
+   "codeName": "Zodiac",
+   "licensed": true,
+   "multiName": true
+  },
+  {
+   "id": 50,
+   "name": "All Things Wicked",
+   "rDate": "12.03.2024",
+   "category": 1,
+   "link": 2661270,
+   "release": "7.6.0",
+   "codeName": "ApplePie"
+  },
+  {
+   "id": 51,
+   "name": "Endless Hunt Pack",
+   "rDate": "14.05.2024",
+   "category": 8,
+   "cost": [
+    {
+     "value": 19.99,
+     "ccy": 1
+    },
+    {
+     "value": 2250,
+     "ccy": 5
+    },
+    {
+     "value": 40500,
+     "ccy": 3
+    }
+   ],
+   "link": 2922730,
+   "release": "7.7.1"
+  },
+  {
+   "id": 52,
+   "name": "Dungeons & Dragons",
+   "rDate": "03.06.2024",
+   "category": 1,
+   "link": 2958440,
+   "release": "8.0.0",
+   "codeName": "Churros",
+   "licensed": true
+  },
+  {
+   "id": 53,
+   "name": "Tomb Raider™",
+   "rDate": "16.07.2024",
+   "category": 1,
+   "link": 3024580,
+   "release": "8.1.0",
+   "codeName": "Donut",
+   "licensed": true
+  },
+  {
+   "id": 54,
+   "name": "Castlevania",
+   "rDate": "27.08.2024",
+   "category": 1,
+   "link": 3103150,
+   "release": "8.2.0",
+   "codeName": "Eclair",
+   "licensed": true
+  },
+  {
+   "id": 55,
+   "name": "Doomed Course",
+   "rDate": "28.11.2024",
+   "category": 1,
+   "link": 3261720,
+   "release": "8.4.0",
+   "codeName": "Gelato"
+  },
+  {
+   "id": 56,
+   "name": "Tokyo Ghoul",
+   "rDate": "02.04.2025",
+   "category": 1,
+   "link": 3448670,
+   "release": "8.6.0",
+   "codeName": "Icecream",
+   "licensed": true
+  },
+  {
+   "id": 57,
+   "name": "Steady Pulse",
+   "rDate": "06.05.2025",
+   "category": 1,
+   "link": 3698790,
+   "release": "8.7.0",
+   "codeName": "Jerky"
+  },
+  {
+   "id": 58,
+   "name": "Five Nights at Freddy's",
+   "rDate": "17.06.2025",
+   "category": 1,
+   "link": 3796620,
+   "release": "9.0.0",
+   "codeName": "Ketchup",
+   "licensed": true
+  },
+  {
+   "id": 59,
+   "name": "The Walking Dead",
+   "rDate": "29.07.2025",
+   "category": 1,
+   "link": 3884020,
+   "release": "9.1.0",
+   "codeName": "Lasagna",
+   "licensed": true
+  },
+  {
+   "id": 60,
+   "name": "Sinister Grace",
+   "rDate": "23.09.2025",
+   "category": 1,
+   "link": 4019590,
+   "release": "9.2.0",
+   "codeName": "Maple"
+  },
+  {
+   "id": 61,
+   "name": "Stranger Things Chapter 2",
+   "rDate": "27.01.2026",
+   "category": 1,
+   "link": 4318580,
+   "release": "9.4.0",
+   "codeName": "Poutine",
+   "licensed": true
+  },
+  {
+   "id": 62,
+   "name": "All-Kill: Comeback",
+   "rDate": "17.03.2026",
+   "category": 1,
+   "release": "9.5.0",
+   "codeName": "Quiche"
+  },
+  {
+   "id": 63,
+   "name": "Jason",
+   "rDate": "16.06.2026",
+   "category": 1,
+   "link": 4791830,
+   "release": "10.0.0",
+   "codeName": "Sushi",
+   "licensed": true,
+   "multiName": true
+  },
+  {
+   "id": 64,
+   "name": "The Life Road",
+   "rDate": "25.06.2026",
+   "category": 1,
+   "release": "10.0.0",
+   "codeName": "Sushi"
+  },
+  {
+   "id": 65,
+   "name": "Chorus of Sin",
+   "rDate": "25.08.2026",
+   "category": 1,
+   "link": 5060920,
+   "release": "10.1.0",
+   "codeName": "Udon"
+  },
+  {
+   "id": 66,
+   "name": "Terrifier",
+   "rDate": "24.11.2026",
+   "category": 1,
+   "link": 5060920,
+   "release": "10.3.0",
+   "codeName": "Waffle",
+   "licensed": true,
+   "multiName": true
+  }
+ ]
+}

@@ -1,0 +1,215 @@
+---
+import Base from '../layouts/Base.astro';
+import HeroArt from '../components/HeroArt.astro';
+import Portrait from '../components/Portrait.astro';
+import MapThumb from '../components/MapThumb.astro';
+import SectionHead from '../components/SectionHead.astro';
+import killers from '../data/killers.json';
+import survivors from '../data/survivors.json';
+import maps from '../data/maps.json';
+import perks from '../data/perks.json';
+import clock from '../data/clock.json';
+
+const terrifier = killers.find((killer) => killer.slug === 'terrifier')!;
+const sienna = survivors.find((survivor) => survivor.slug === 'sienna-shaw')!;
+const hartshorne = maps.find((map) => map.slug === 'hartshorne-mall')!;
+
+const sections = [
+  ['Killers','45 killers','Catalogos, poderes y estadisticas reales','/killers/'],
+  ['Mapas','47 mapas','Dimensiones, reinos y rutas','/mapas/'],
+  ['Survivors','55 survivors','Perks y perfiles competitivos','/survivors/'],
+  ['Builds','342 perks','Combinaciones por rol y situacion','/builds/'],
+  ['Reloj','5 x 90 cargas','Tiempos y velocidad del juego','/reloj/'],
+  ['Competitivo','1v1','Reglas y tier comunitario','/competitivo/'],
+] as const;
+
+const steps = [
+  ['Fundamentos y numeros base','/reloj/'],
+  ['Elige killer y mapa','/killers/'],
+  ['Arma tu build','/builds/'],
+  ['Domina el reloj','/reloj/'],
+  ['Entra al formato competitivo','/competitivo/'],
+] as const;
+---
+
+<Base title="Inicio" description="Aprende Dead by Daylight competitivo con datos reales, builds, mapas y tiempos." active="inicio">
+  <section class="hero">
+    <div class="hero-copy" data-reveal>
+      <p class="eyebrow">Base de conocimiento competitiva</p>
+      <h1 class="display">Aprende DBD<br/>competitivo</h1>
+      <p class="hero-sub">Datos reales, decisiones claras y ritmo de partido medible.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/killers/">Ver killers</a>
+        <a class="btn btn-secondary" href="/reloj/">Abrir el reloj</a>
+      </div>
+    </div>
+    <div class="hero-visual" data-parallax="0.12"><HeroArt /></div>
+  </section>
+
+  <section class="container counters" aria-label="Contenido disponible">
+    <div class="stat" data-reveal><strong data-count={killers.length}>0</strong><span>Killer</span></div>
+    <div class="stat" data-reveal><strong data-count={survivors.length}>0</strong><span>Survivors</span></div>
+    <div class="stat" data-reveal><strong data-count={maps.length}>0</strong><span>Mapas</span></div>
+    <div class="stat" data-reveal><strong data-count={perks.length}>0</strong><span>Perks</span></div>
+  </section>
+
+  <section class="container terrifier-section" data-reveal>
+    <div class="terrifier-label">
+      <p class="eyebrow">Nuevo: Terrifier</p>
+      <strong class="mono">24.11.2026</strong>
+    </div>
+    <div class="new-grid">
+      <a class="new-person card" href="/killers/terrifier/">
+        <Portrait src={terrifier.icon} alt={`Retrato de ${terrifier.realName}, The Terrifier`} size="sm" />
+        <div><span>Nuevo killer</span><h2 class="display">{terrifier.realName}</h2><p class="mono">{terrifier.speed} m/s · {terrifier.terror[0].radius} m</p></div>
+      </a>
+      <a class="new-person card" href="/survivors/sienna-shaw/">
+        <Portrait src={sienna.icon} alt={`Retrato de ${sienna.name}`} size="sm" />
+        <div><span>Nueva survivor</span><h2 class="display">{sienna.name}</h2><p>{sienna.role}</p></div>
+      </a>
+      <a class="new-map card" href="/mapas/hartshorne-mall/">
+        <MapThumb map={hartshorne} />
+        <div><span>Nuevo mapa</span><h2 class="display">{hartshorne.name}</h2></div>
+      </a>
+    </div>
+    <div class="own-perks">
+      <span class="eyebrow">Perks propias de Art</span>
+      <div>{terrifier.perks.map((perk) => <span class="chip">{perk}</span>)}</div>
+    </div>
+  </section>
+
+  <section class="container section-block">
+    <SectionHead eyebrow="Nucleo del sitio" title="El sistema completo" description="Seis areas conectadas para pasar del concepto a la decision en partida." />
+    <div class="section-cards">
+      {sections.map(([title,number,description,href],index) => (
+        <a class="card section-card" href={href} data-reveal data-reveal-delay={index * 60}>
+          <span class="section-number mono">0{index+1}</span>
+          <strong>{number}</strong>
+          <h3 class="display">{title}</h3>
+          <p>{description}</p>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="container section-block">
+    <SectionHead eyebrow="Ruta de aprendizaje" title="Cinco pasos" description="El orden de estudio que evita acumular informacion sin aplicarla." />
+    <ol class="learning-route">
+      {steps.map(([label,href],index) => (
+        <li data-reveal>
+          <a href={href}>
+            <span class="mono">{String(index+1).padStart(2,'0')}</span>
+            <strong>{label}</strong>
+            <b aria-hidden="true">→</b>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="container clock-preview section-block">
+    <SectionHead eyebrow="Reloj competitivo" title="Tiempo real por objetivo" description="Reparacion pura de un generador segun el numero de survivors activos." />
+    <div class="clock-grid">
+      <div class="clock-table card" data-reveal>
+        <table>
+          <thead><tr><th>Survivors</th><th>Cargas/s</th><th>Tiempo</th></tr></thead>
+          <tbody>
+            {clock.generador.porNumeroDeSobrevivientes.map((row) => (
+              <tr><td>{row.n}</td><td class="mono">{row.cargasPorSegundo.toFixed(row.n === 1 ? 2 : 2).replace('.',',')}</td><td class="mono amber">{row.segundos.toFixed(2).replace('.',',')} s</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div class="speed-panel card" data-reveal>
+        <p class="eyebrow">Velocidad base</p>
+        <div class="speed-row"><span>Survivor</span><strong class="mono">{clock.movimiento.sobrevivienteMs} m/s</strong></div>
+        <div class="speed-row"><span>Killer base</span><strong class="mono">{clock.movimiento.killerBaseMs} m/s</strong></div>
+        <div class="speed-row"><span>Diferencia</span><strong class="mono amber">+{(clock.movimiento.killerBaseMs-clock.movimiento.sobrevivienteMs).toFixed(1)} m/s</strong></div>
+        <a class="btn btn-secondary" href="/reloj/">Abrir el reloj</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero { position:relative; min-height:760px; height:min(860px,calc(100svh - 72px)); margin-top:72px; overflow:hidden; border-bottom:1px solid var(--line); }
+  .hero-copy { position:absolute; z-index:3; left:max(16px,calc((100% - 1200px)/2)); top:50%; width:min(620px,calc(100% - 32px)); transform:translateY(-54%); }
+  .hero-copy h1 { margin:12px 0 20px; font-size:clamp(4.6rem,10vw,9rem); }
+  .hero-sub { max-width:520px; margin:0 0 28px; color:var(--muted); font-size:clamp(1rem,2vw,1.22rem); }
+  .hero-actions { display:flex; flex-wrap:wrap; gap:12px; }
+  .hero-visual { position:absolute; inset:0 0 0 35%; }
+  .hero-visual::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,var(--bg) 0%,transparent 36%,transparent 100%); }
+  .counters { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:-1px; border-bottom:1px solid var(--line); padding-block:24px; }
+  .counters .stat { border-right:1px solid var(--line); padding-left:16px; }
+  .counters .stat:first-child { padding-left:0; }
+  .counters .stat:last-child { border-right:0; }
+  .terrifier-section { margin-top:96px; border:1px solid var(--line); border-left:3px solid var(--blood); background:var(--panel); padding:24px; }
+  .terrifier-label { display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
+  .terrifier-label strong { color:var(--amber); }
+  .new-grid { display:grid; grid-template-columns:1fr 1fr 1.25fr; gap:12px; }
+  .new-person { display:grid; grid-template-columns:120px 1fr; align-items:center; min-height:180px; overflow:hidden; }
+  .new-person :global(.portrait) { height:180px; border:0; border-radius:0; }
+  .new-person > div:last-child { padding:16px; }
+  .new-person span,.new-map span { color:var(--blood-2); font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; }
+  .new-person h2,.new-map h2 { margin:6px 0 4px; font-size:2.1rem; }
+  .new-person p { margin:0; color:var(--muted); }
+  .new-map { overflow:hidden; }
+  .new-map > div:last-child { padding:12px 16px; }
+  .own-perks { display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--line); margin-top:16px; padding-top:16px; }
+  .own-perks > div { display:flex; flex-wrap:wrap; gap:6px; }
+  .section-block { margin-top:96px; }
+  .section-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  .section-card { position:relative; min-height:250px; padding:24px; }
+  .section-number { position:absolute; right:16px; top:14px; color:var(--line); font-size:2.4rem; }
+  .section-card > strong { color:var(--amber); font-family:"JetBrains Mono Variable",monospace; font-size:.8rem; }
+  .section-card h3 { margin:32px 0 8px; font-size:2.6rem; }
+  .section-card p { max-width:280px; color:var(--muted); font-size:.86rem; }
+  .section-card .arrow { position:absolute; right:20px; bottom:18px; color:var(--blood-2); font-size:1.4rem; }
+  .learning-route { list-style:none; margin:0; padding:0; border-top:1px solid var(--line); }
+  .learning-route li { border-bottom:1px solid var(--line); }
+  .learning-route a { display:grid; grid-template-columns:64px 1fr 32px; align-items:center; min-height:82px; padding:8px 12px; }
+  .learning-route a span { color:var(--blood-2); }
+  .learning-route a strong { font-family:"Barlow Condensed",sans-serif; font-size:clamp(1.2rem,3vw,1.8rem); text-transform:uppercase; }
+  .learning-route a b { color:var(--muted); font-weight:400; }
+  .learning-route a:hover { background:var(--panel); }
+  .clock-grid { display:grid; grid-template-columns:1.4fr .6fr; gap:12px; }
+  .clock-table { overflow:hidden; }
+  table { width:100%; border-collapse:collapse; }
+  th,td { border-bottom:1px solid var(--line); padding:16px 20px; text-align:left; }
+  th { color:var(--muted); font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; }
+  td { font-size:.9rem; }
+  tbody tr:last-child td { border-bottom:0; }
+  .amber { color:var(--amber); }
+  .speed-panel { padding:24px; }
+  .speed-row { display:flex; justify-content:space-between; border-bottom:1px solid var(--line); padding:14px 0; color:var(--muted); }
+  .speed-row strong { color:var(--text); }
+  .speed-row .amber { color:var(--amber); }
+  .speed-panel .btn { width:100%; margin-top:20px; }
+  @media (max-width:900px) {
+    .hero { min-height:700px; height:calc(100svh - 72px); }
+    .hero-copy { top:42%; }
+    .hero-visual { inset:20% -25% 0 20%; opacity:.78; }
+    .hero-visual::after { background:linear-gradient(90deg,var(--bg) 0%,transparent 55%); }
+    .new-grid { grid-template-columns:1fr 1fr; }
+    .new-map { grid-column:1/-1; }
+    .section-cards { grid-template-columns:repeat(2,1fr); }
+  }
+  @media (max-width:600px) {
+    .hero { min-height:660px; }
+    .hero-copy { top:38%; }
+    .hero-copy h1 { font-size:clamp(4rem,18vw,5.5rem); }
+    .hero-visual { inset:35% -65% -5% -15%; opacity:.48; }
+    .counters { grid-template-columns:1fr 1fr; }
+    .counters .stat:nth-child(2) { border-right:0; }
+    .counters .stat:nth-child(3) { padding-left:0; }
+    .terrifier-section,.section-block { margin-top:64px; }
+    .terrifier-label { align-items:flex-end; }
+    .new-grid { grid-template-columns:1fr; }
+    .new-map { grid-column:auto; }
+    .own-perks { align-items:flex-start; flex-direction:column; gap:12px; }
+    .section-cards { grid-template-columns:1fr; }
+    .clock-grid { grid-template-columns:1fr; }
+    th,td { padding:14px 10px; }
+  }
+</style>

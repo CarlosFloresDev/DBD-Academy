@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Pagina no encontrada" description="La pagina solicitada no existe en DBD Academy." active="inicio">
+  <section class="not-found">
+    <div class="container" data-reveal>
+      <p class="eyebrow">Error 404</p>
+      <h1 class="display">Esta ruta quedo<br/>sin luz</h1>
+      <p>La pagina que buscas no existe o ya cambio de ubicacion.</p>
+      <a class="btn btn-primary" href="/">Volver al inicio</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+ .not-found { min-height:680px; display:flex; align-items:center; margin-top:72px; background:radial-gradient(circle at 70% 50%,rgba(193,18,31,.12),transparent 24%),var(--bg); }
+ .not-found h1 { margin:12px 0 20px; font-size:clamp(4rem,12vw,8rem); }
+ .not-found p:not(.eyebrow) { margin:0 0 28px; color:var(--muted); }
+</style>

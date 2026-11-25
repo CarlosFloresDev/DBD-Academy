@@ -1,0 +1,23 @@
+---
+interface Props { map: {name:string;icon?:string|null} }
+const { map } = Astro.props;
+---
+<div class="map-thumb">
+  {map.icon ? (
+    <img src={map.icon} alt={`Vista de ${map.name}`} width="640" height="360" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+  ) : null}
+  <svg class:list={['map-fallback',{visible:!map.icon}]} viewBox="0 0 640 360" role="img" aria-label={`Mapa reservado para ${map.name}`}>
+    <rect width="640" height="360" fill="#10161c"/>
+    <g fill="none" stroke="#1f2a33" stroke-width="2">
+      <path d="M0 45h640M0 90h640M0 135h640M0 180h640M0 225h640M0 270h640M0 315h640"/>
+      <path d="M80 0v360M160 0v360M240 0v360M320 0v360M400 0v360M480 0v360M560 0v360"/>
+    </g>
+    <path d="M180 260V126h280v134M250 126V85h140v41" fill="none" stroke="#c1121f" stroke-width="6"/>
+  </svg>
+</div>
+<style>
+ .map-thumb { position:relative; overflow:hidden; aspect-ratio:16/9; border:1px solid var(--line); border-radius:var(--r); background:var(--panel); }
+ .map-thumb img { width:100%; height:100%; object-fit:cover; }
+ .map-fallback { display:none; width:100%; height:100%; }
+ .map-fallback.visible { display:block; }
+</style>

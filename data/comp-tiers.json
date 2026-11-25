@@ -1,0 +1,272 @@
+{
+ "win": {
+  "S": "4K con al menos 1 generador restante",
+  "A": "4K (cualquier número de gens)",
+  "B": "11+ etapas de gancho",
+  "C": "10+ etapas de gancho",
+  "D": "9+ etapas de gancho"
+ },
+ "killers": {
+  "Nurse": {
+   "tier": "S",
+   "win": "4K con al menos 1 generador restante",
+   "source": "DBD Arena"
+  },
+  "Blight": {
+   "tier": "S",
+   "win": "4K con al menos 1 generador restante",
+   "source": "DBD Arena"
+  },
+  "Hillbilly": {
+   "tier": "A",
+   "win": "4K (cualquier número de gens)",
+   "source": "DBD Arena"
+  },
+  "Spirit": {
+   "tier": "A",
+   "win": "4K (cualquier número de gens)",
+   "source": "DBD Arena"
+  },
+  "Oni": {
+   "tier": "A",
+   "win": "4K (cualquier número de gens)",
+   "source": "DBD Arena"
+  },
+  "Twins": {
+   "tier": "A",
+   "win": "4K (cualquier número de gens)",
+   "source": "DBD Arena"
+  },
+  "Singularity": {
+   "tier": "A",
+   "win": "4K (cualquier número de gens)",
+   "source": "DBD Arena"
+  },
+  "Dark Lord": {
+   "tier": "A",
+   "win": "4K (cualquier número de gens)",
+   "source": "DBD Arena"
+  },
+  "Ghoul": {
+   "tier": "A",
+   "win": "4K (cualquier número de gens)",
+   "source": "DBD Arena"
+  },
+  "First": {
+   "tier": "A",
+   "win": "4K (cualquier número de gens)",
+   "source": "DBD Arena"
+  },
+  "Wraith": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Shape": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Huntress": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Nightmare": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Clown": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Plague": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Deathslinger": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Executioner": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Trickster": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Nemesis": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Cenobite": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Artist": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Mastermind": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Knight": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Xenomorph": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Good Guy": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Unknown": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Lich": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Houndmaster": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Animatronic": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Krasue": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Slasher": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Hag": {
+   "tier": "C",
+   "win": "10+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Doctor": {
+   "tier": "C",
+   "win": "10+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Cannibal": {
+   "tier": "C",
+   "win": "10+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Pig": {
+   "tier": "C",
+   "win": "10+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Legion": {
+   "tier": "C",
+   "win": "10+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Demogorgon": {
+   "tier": "C",
+   "win": "10+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Onryō": {
+   "tier": "C",
+   "win": "10+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Dredge": {
+   "tier": "C",
+   "win": "10+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Trapper": {
+   "tier": "D",
+   "win": "9+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Ghost Face": {
+   "tier": "D",
+   "win": "9+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "Skull Merchant": {
+   "tier": "D",
+   "win": "9+ etapas de gancho",
+   "source": "DBD Arena"
+  }
+ },
+ "maps": {
+  "Wreckers' Yard": {
+   "killers1v1": [
+    "Cannibal",
+    "Clown",
+    "Demogorgon",
+    "Doctor",
+    "Pig"
+   ],
+   "note": "Mapa fijo del duelo 1v1 (DBD Arena)"
+  },
+  "Coal Tower": {
+   "killers1v1": [
+    "Mastermind",
+    "Oni",
+    "Wraith",
+    "Nurse"
+   ],
+   "note": "Mapa fijo del duelo 1v1 (DBD Arena)"
+  },
+  "Suffocation Pit": {
+   "killers1v1": [
+    "Blight",
+    "Trapper"
+   ],
+   "note": "Mapa fijo del duelo 1v1 (DBD Arena)"
+  },
+  "Blood Lodge": {
+   "killers1v1": [
+    "Hillbilly"
+   ],
+   "note": "Mapa fijo del duelo 1v1 (DBD Arena)"
+  },
+  "Dead Dawg Saloon": {
+   "killers1v1": [
+    "Nightmare"
+   ],
+   "note": "Mapa fijo del duelo 1v1 (DBD Arena)"
+  },
+  "Wretched Shop": {
+   "killers1v1": [
+    "Dark Lord"
+   ],
+   "note": "Mapa fijo del duelo 1v1 (DBD Arena)"
+  }
+ }
+}

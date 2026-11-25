@@ -1,0 +1,9254 @@
+{
+ "perks": {
+  "A Nurse's Calling": {
+   "id": 62,
+   "units": [
+    3
+   ],
+   "values": [
+    28,
+    30,
+    32
+   ],
+   "patch": "10.1.0",
+   "character": 4,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Auras",
+    "Healing"
+   ]
+  },
+  "A Place For Us": {
+   "id": 329,
+   "units": [
+    1
+   ],
+   "values": [
+    20,
+    25,
+    30
+   ],
+   "patch": "9.5.0",
+   "character": 52,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Elusive",
+    "Healing",
+    "Obsession"
+   ]
+  },
+  "Ace in the Hole": {
+   "id": 66,
+   "units": [
+    4
+   ],
+   "values": [
+    50,
+    75,
+    100
+   ],
+   "patch": "8.4.0",
+   "character": 7,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "addonCount": "1 to 2",
+   "chance": "100 %",
+   "tags": [
+    "Add-ons",
+    "Chests",
+    "Items"
+   ]
+  },
+  "Adrenaline": {
+   "id": 42,
+   "units": [
+    1
+   ],
+   "values": [
+    60,
+    50,
+    40
+   ],
+   "patch": "10.1.0",
+   "character": 2,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "haste": "+50 %",
+   "durationHaste": "4 seconds",
+   "tags": [
+    "Exhausted",
+    "Haste",
+    "Healing"
+   ]
+  },
+  "Aftercare": {
+   "id": 118,
+   "units": [
+    7
+   ],
+   "values": [
+    1,
+    2,
+    3
+   ],
+   "patch": "5.3.0",
+   "character": 15,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Auras"
+   ]
+  },
+  "Agitation": {
+   "id": 51,
+   "units": [
+    4
+   ],
+   "values": [
+    14,
+    16,
+    18
+   ],
+   "patch": "10.2.0",
+   "character": 1,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "radius": "+12 metres",
+   "tags": [
+    "Carrying",
+    "MovementSpeed",
+    "TerrorRadius"
+   ]
+  },
+  "Alert": {
+   "id": 76,
+   "units": [
+    1
+   ],
+   "values": [
+    3,
+    4,
+    5
+   ],
+   "character": 9,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Auras",
+    "BreakableWalls",
+    "Generators",
+    "Pallets"
+   ]
+  },
+  "Alien Instinct": {
+   "id": 254,
+   "units": [
+    1
+   ],
+   "values": [
+    40,
+    50,
+    60
+   ],
+   "patch": "8.6.0",
+   "character": 33,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "aura": "8 seconds",
+   "tags": [
+    "Auras",
+    "Hooks",
+    "Oblivious"
+   ]
+  },
+  "All-Shaking Thunder": {
+   "id": 286,
+   "units": [
+    1
+   ],
+   "values": [
+    15,
+    20,
+    25
+   ],
+   "patch": "9.2.0",
+   "character": 38,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "lunge": "+75 %",
+   "cooldown": "5 seconds",
+   "tags": [
+    "Falling",
+    "Lunge"
+   ]
+  },
+  "Any Means Necessary": {
+   "id": 145,
+   "units": [
+    1
+   ],
+   "values": [
+    5,
+    4,
+    3
+   ],
+   "patch": "9.1.0",
+   "character": 20,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Auras",
+    "Pallets"
+   ]
+  },
+  "Apocalyptic Ingenuity": {
+   "id": 301,
+   "units": [
+    3
+   ],
+   "values": [
+    24,
+    28,
+    32
+   ],
+   "patch": "10.1.0",
+   "character": 47,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "chests": 1,
+   "duration": "3 seconds",
+   "tags": [
+    "Auras",
+    "Chests",
+    "FragilePallet",
+    "Pallets"
+   ]
+  },
+  "Appraisal": {
+   "id": 168,
+   "units": [
+    4
+   ],
+   "values": [
+    40,
+    60,
+    80
+   ],
+   "patch": "9.1.0",
+   "character": 24,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "tokenCount": "4 Tokens",
+   "tokenCost": "-1 Token",
+   "rummageCount": "twice",
+   "tags": [
+    "ActionSpeed",
+    "Chests",
+    "Items",
+    "RummageAbility"
+   ]
+  },
+  "Artefact Hunter": {
+   "id": 1,
+   "charType": "S",
+   "unused": true
+  },
+  "Autodidact": {
+   "id": 113,
+   "units": [
+    5
+   ],
+   "values": [
+    3,
+    4,
+    5
+   ],
+   "patch": "8.1.0",
+   "character": 14,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "BonusProgression",
+    "Healing",
+    "Regression",
+    "SkillChecks",
+    "Tokens"
+   ]
+  },
+  "Awakened Awareness": {
+   "id": 221,
+   "units": [
+    3
+   ],
+   "values": [
+    16,
+    18,
+    20
+   ],
+   "patch": "6.2.0",
+   "character": 29,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Auras",
+    "Carrying"
+   ]
+  },
+  "Babysitter": {
+   "id": 138,
+   "units": [
+    1
+   ],
+   "values": [
+    20,
+    25,
+    30
+   ],
+   "patch": "9.0.0",
+   "character": 19,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "aura": "8 seconds",
+   "haste": "+10 %",
+   "tags": [
+    "Auras",
+    "Haste",
+    "ScratchMarks",
+    "Stealth",
+    "PoolsOfBlood"
+   ]
+  },
+  "Background Player": {
+   "id": 243,
+   "units": [
+    1
+   ],
+   "values": [
+    30,
+    25,
+    20
+   ],
+   "patch": "8.0.0",
+   "character": 36,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "activation": "10 seconds",
+   "haste": "+50 %",
+   "durationHaste": "5 seconds",
+   "tags": [
+    "Exhausted",
+    "Haste",
+    "Hooks"
+   ]
+  },
+  "Bada Bada Boom": {
+   "id": 316,
+   "units": [
+    1
+   ],
+   "values": [
+    40,
+    50,
+    60
+   ],
+   "patch": "9.4.0",
+   "character": 50,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "hindered": "-50 %",
+   "durationHindered": "6 seconds",
+   "tags": [
+    "Generators",
+    "Trap",
+    "VaultLocations",
+    "Hindered",
+    "Auras"
+   ]
+  },
+  "Bamboozle": {
+   "id": 102,
+   "units": [
+    4,
+    1
+   ],
+   "values": [
+    5,
+    10,
+    15,
+    8,
+    12,
+    16
+   ],
+   "patch": "2.5.0",
+   "character": 12,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "ActionSpeed",
+    "Vaulting",
+    "VaultLocations",
+    "WindowBlocker"
+   ]
+  },
+  "Balanced Landing": {
+   "id": 45,
+   "units": [
+    1
+   ],
+   "values": [
+    60,
+    50,
+    40
+   ],
+   "patch": "3.4.0",
+   "character": 5,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "stagger": "-75 %",
+   "haste": "+50 %",
+   "durationHaste": "3 seconds",
+   "tags": [
+    "ActionNoise",
+    "Exhausted",
+    "Haste",
+    "Falling"
+   ]
+  },
+  "Barbecue & Chilli": {
+   "id": 88,
+   "units": [
+    3
+   ],
+   "values": [
+    60,
+    50,
+    40
+   ],
+   "patch": "7.1.0",
+   "character": 9,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Auras",
+    "Hooks"
+   ]
+  },
+  "Bardic Inspiration": {
+   "id": 275,
+   "units": [
+    1
+   ],
+   "values": [
+    110,
+    100,
+    90
+   ],
+   "patch": "8.0.0",
+   "character": 42,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "BonusProgression",
+    "Screams",
+    "SkillChecks"
+   ]
+  },
+  "Batteries Included": {
+   "id": 261,
+   "units": [
+    2
+   ],
+   "values": [
+    1,
+    3,
+    5
+   ],
+   "patch": "9.0.0",
+   "character": 34,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "range": "16 metres",
+   "haste": "+5 %",
+   "tags": [
+    "Generators",
+    "Haste"
+   ]
+  },
+  "Beast of Prey": {
+   "id": 85,
+   "units": [
+    1
+   ],
+   "values": [
+    30,
+    35,
+    40
+   ],
+   "character": 8,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Bloodlust",
+    "Deception",
+    "Stealth",
+    "Undetectable"
+   ]
+  },
+  "Better than New": {
+   "id": 226,
+   "units": [
+    4
+   ],
+   "values": [
+    40,
+    45,
+    50
+   ],
+   "patch": "10.2.0",
+   "character": 33,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "ActionSpeed",
+    "Blessing",
+    "Cleansing",
+    "Chests",
+    "Healing",
+    "HealingProficiency",
+    "Totems"
+   ]
+  },
+  "Better Together": {
+   "id": 135,
+   "units": [
+    1
+   ],
+   "values": [
+    20,
+    25,
+    30
+   ],
+   "patch": "9.1.0",
+   "character": 18,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Auras",
+    "Generators"
+   ]
+  },
+  "Bite the Bullet": {
+   "id": 183,
+   "units": [
+    4
+   ],
+   "values": [
+    3,
+    2,
+    1
+   ],
+   "character": 27,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Healing",
+    "SkillChecks",
+    "LoudNoiseNotifications"
+   ]
+  },
+  "Bitter Murmur": {
+   "id": 7,
+   "units": [
+    1
+   ],
+   "values": [
+    16,
+    18,
+    20
+   ],
+   "patch": "10.2.0",
+   "charType": "K",
+   "range": "20 metres",
+   "duration": "10 seconds",
+   "tags": [
+    "Auras",
+    "Generators"
+   ]
+  },
+  "Blast Mine": {
+   "id": 182,
+   "units": [
+    1
+   ],
+   "values": [
+    100,
+    110,
+    120
+   ],
+   "patch": "8.2.0",
+   "character": 26,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Auras",
+    "Generators",
+    "KillerBlind",
+    "KillerStun",
+    "SurvivorBlind",
+    "Trap"
+   ]
+  },
+  "Blood Echo": {
+   "id": 142,
+   "units": [
+    1
+   ],
+   "values": [
+    20,
+    25,
+    30
+   ],
+   "patch": "8.3.0",
+   "character": 18,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Exhausted",
+    "Haemorrhage",
+    "Hooks"
+   ]
+  },
+  "Blood Pact": {
+   "id": 157,
+   "units": [
+    4
+   ],
+   "values": [
+    5,
+    6,
+    7
+   ],
+   "character": 22,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "patch": "10.2.0",
+   "tags": [
+    "Auras",
+    "Haste",
+    "Obsession"
+   ]
+  },
+  "Blood Rush": {
+   "id": 241,
+   "units": [
+    1
+   ],
+   "values": [
+    40,
+    50,
+    60
+   ],
+   "character": 36,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "patch": "8.3.0",
+   "tags": [
+    "Exhausted",
+    "Healing",
+    "Hooks"
+   ]
+  },
+  "Blood Warden": {
+   "id": 92,
+   "units": [
+    1
+   ],
+   "values": [
+    40,
+    50,
+    60
+   ],
+   "character": 10,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "patch": "1.8.0",
+   "tags": [
+    "Auras",
+    "ExitGates",
+    "GateBlocker",
+    "Hooks"
+   ]
+  },
+  "Bloodhound": {
+   "id": 54,
+   "units": [
+    1
+   ],
+   "values": [
+    2,
+    3,
+    4
+   ],
+   "patch": "1.8.3",
+   "character": 2,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "PoolsOfBlood"
+   ]
+  },
+  "Boil Over": {
+   "id": 107,
+   "units": [
+    4
+   ],
+   "values": [
+    60,
+    70,
+    80
+   ],
+   "character": 13,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Auras",
+    "Hooks",
+    "Wiggle"
+   ]
+  },
+  "Boon: Circle of Healing": {
+   "id": 190,
+   "units": [
+    4
+   ],
+   "values": [
+    50,
+    75,
+    100
+   ],
+   "character": 28,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "patch": "6.7.0",
+   "tags": [
+    "ActionSpeed",
+    "Boon",
+    "Healing",
+    "HealingProficiency",
+    "Totems"
+   ]
+  },
+  "Boon: Dark Theory": {
+   "id": 212,
+   "units": [
+    1
+   ],
+   "values": [
+    2,
+    3,
+    4
+   ],
+   "patch": "8.7.0",
+   "haste": "+3 %",
+   "character": 30,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Boon",
+    "Haste",
+    "Totems"
+   ]
+  },
+  "Boon: Exponential": {
+   "id": 206,
+   "units": [
+    4
+   ],
+   "values": [
+    90,
+    95,
+    100
+   ],
+   "patch": "5.4.0",
+   "character": 29,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Boon",
+    "RecoverySpeed",
+    "Recovering",
+    "Totems"
+   ]
+  },
+  "Boon: Illumination": {
+   "id": 263,
+   "units": [
+    4
+   ],
+   "values": [
+    150,
+    175,
+    200
+   ],
+   "character": 40,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "patch": "10.2.0",
+   "tags": [
+    "Auras",
+    "Blessing",
+    "Boon",
+    "Chests",
+    "Cleansing",
+    "Generators",
+    "Totems"
+   ]
+  },
+  "Boon: Shadow Step": {
+   "id": 191,
+   "units": [
+    1
+   ],
+   "values": [
+    2,
+    3,
+    4
+   ],
+   "character": 28,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Auras",
+    "ScratchMarks",
+    "Totems",
+    "Boon"
+   ]
+  },
+  "Bond": {
+   "id": 33,
+   "units": [
+    3
+   ],
+   "values": [
+    20,
+    28,
+    36
+   ],
+   "character": 1,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Auras"
+   ]
+  },
+  "Borrowed Time": {
+   "id": 73,
+   "units": [
+    1,
+    1
+   ],
+   "values": [
+    6,
+    8,
+    10,
+    16,
+    18,
+    20
+   ],
+   "patch": "6.1.0",
+   "character": 8,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "effect": "+10 seconds",
+   "haste": "20 seconds",
+   "tags": [
+    "ConspicuousActions",
+    "Endurance",
+    "Haste"
+   ]
+  },
+  "Botany Knowledge": {
+   "id": 36,
+   "units": [
+    4
+   ],
+   "values": [
+    30,
+    40,
+    50
+   ],
+   "patch": "9.0.0",
+   "character": 3,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "ActionSpeed",
+    "Healing",
+    "HealingProficiency"
+   ]
+  },
+  "Bound by Obsession": {
+   "id": 323,
+   "units": [
+    4
+   ],
+   "values": [
+    8,
+    9,
+    10
+   ],
+   "patch": "10.2.0",
+   "formerCharacter": 6,
+   "charType": "S",
+   "formerLevel": 35,
+   "formerPrestige": 2,
+   "formerName": "Object of Obsession",
+   "duration": "4 seconds",
+   "interval": "30 seconds",
+   "tags": [
+    "ActionSpeeds",
+    "Auras",
+    "CleansingProficiency",
+    "HealingProficiency",
+    "Obsession",
+    "RepairingProficiency"
+   ]
+  },
+  "Object of Obsession": {
+   "charType": "S",
+   "character": 6,
+   "level": 35,
+   "prestige": 2
+  },
+  "Breakdown": {
+   "id": 117,
+   "units": [
+    1
+   ],
+   "values": [
+    4,
+    5,
+    6
+   ],
+   "patch": "9.3.2",
+   "character": 15,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "timer": "180 seconds",
+   "tags": [
+    "Auras",
+    "Hooks"
+   ]
+  },
+  "Breakout": {
+   "id": 146,
+   "units": [
+    4
+   ],
+   "values": [
+    6,
+    8,
+    10
+   ],
+   "patch": "8.7.0",
+   "range": "5 metres",
+   "wiggling": "+25 %",
+   "character": 20,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "ActionSpeed",
+    "Haste",
+    "Wiggle"
+   ]
+  },
+  "Brutal Strength": {
+   "id": 52,
+   "units": [
+    4
+   ],
+   "values": [
+    10,
+    15,
+    20
+   ],
+   "character": 1,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "ActionSpeed",
+    "BreakableWalls",
+    "Generators",
+    "Pallets"
+   ]
+  },
+  "Buckle Up": {
+   "id": 127,
+   "units": [
+    1
+   ],
+   "values": [
+    3,
+    4,
+    5
+   ],
+   "patch": "8.0.0",
+   "character": 17,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "haste": "+50 %",
+   "tags": [
+    "Auras",
+    "ConspicuousActions",
+    "Exhausted",
+    "Haste",
+    "Recovering"
+   ]
+  },
+  "Built to Last": {
+   "id": 164,
+   "units": [
+    1
+   ],
+   "values": [
+    12,
+    10,
+    8
+   ],
+   "patch": "9.1.0",
+   "character": 23,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "recharges": [
+    "99 %",
+    "66 %",
+    "33 %"
+   ],
+   "finalUse": "third time",
+   "tags": [
+    "Items",
+    "Lockers",
+    "ItemRecharge"
+   ]
+  },
+  "Call of Brine": {
+   "id": 208,
+   "units": [
+    4
+   ],
+   "values": [
+    130,
+    140,
+    150
+   ],
+   "patch": "10.1.0",
+   "character": 27,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "duration": "90 seconds",
+   "tags": [
+    "Generators",
+    "Regression",
+    "SkillChecks"
+   ]
+  },
+  "Calm Spirit": {
+   "id": 40,
+   "units": [
+    4
+   ],
+   "values": [
+    23,
+    24,
+    25
+   ],
+   "patch": "10.3.0",
+   "character": 4,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "ActionNoise",
+    "ActionSpeed",
+    "Stealth",
+    "Chests",
+    "Totems",
+    "CleansingProficiency",
+    "Screams",
+    "Crows"
+   ]
+  },
+  "Camaraderie": {
+   "id": 139,
+   "units": [
+    1
+   ],
+   "values": [
+    26,
+    30,
+    34
+   ],
+   "character": 19,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "EntityProgression",
+    "Hooks",
+    "Struggling"
+   ]
+  },
+  "Champion of Light": {
+   "id": 262,
+   "units": [
+    1
+   ],
+   "values": [
+    60,
+    50,
+    40
+   ],
+   "patch": "9.0.0",
+   "character": 40,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "haste": "+50 %",
+   "hindered": "-20 %",
+   "durationHindered": "6 seconds",
+   "tags": [
+    "Flashlights",
+    "Haste",
+    "Hindered",
+    "KillerBlind"
+   ]
+  },
+  "Change of Plan": {
+   "id": 317,
+   "units": [
+    4
+   ],
+   "values": [
+    80,
+    90,
+    100
+   ],
+   "patch": "9.4.0",
+   "character": 50,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "tokens": [
+    "2 Tokens",
+    "1 Token"
+   ],
+   "tags": [
+    "Items",
+    "Lockers",
+    "ItemRecharge",
+    "Med-Kits",
+    "Toolboxes"
+   ]
+  },
+  "Chemical Trap": {
+   "id": 256,
+   "units": [
+    1
+   ],
+   "values": [
+    40,
+    50,
+    60
+   ],
+   "patch": "8.2.0",
+   "character": 39,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "hindered": "-50 %",
+   "durationHindered": "4 seconds",
+   "tags": [
+    "Auras",
+    "Generators",
+    "Hindered",
+    "Pallets"
+   ]
+  },
+  "Come and Get Me!": {
+   "id": 302,
+   "units": [
+    1
+   ],
+   "values": [
+    10,
+    12.5,
+    15
+   ],
+   "patch": "9.1.0",
+   "character": 47,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "range": "24 metres",
+   "aura": "5 seconds",
+   "tags": [
+    "Auras",
+    "GruntsOfPain",
+    "PoolsOfBlood",
+    "ScratchMarks",
+    "Screams"
+   ]
+  },
+  "Conviction": {
+   "id": 304,
+   "units": [
+    1
+   ],
+   "values": [
+    20,
+    25,
+    30
+   ],
+   "patch": "9.3.0",
+   "character": 48,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "recovery": "25 %",
+   "tags": [
+    "Broken",
+    "Healing",
+    "Recovering"
+   ]
+  },
+  "Corrective Action": {
+   "id": 205,
+   "units": [
+    6
+   ],
+   "values": [
+    1,
+    2,
+    3
+   ],
+   "patch": "8.3.0",
+   "character": 29,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "tokenGain": "+1 Token",
+   "tokenCost": "-1 Token",
+   "tokenLimit": "5 Tokens",
+   "duration": "6 seconds",
+   "tags": [
+    "Auras",
+    "SkillChecks",
+    "Tokens"
+   ]
+  },
+  "Corrupt Intervention": {
+   "id": 120,
+   "units": [
+    1
+   ],
+   "values": [
+    80,
+    100,
+    120
+   ],
+   "patch": "6.1.0",
+   "character": 15,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "GenBlocker",
+    "Generators"
+   ]
+  },
+  "Coulrophobia": {
+   "id": 103,
+   "units": [
+    4
+   ],
+   "values": [
+    20,
+    25,
+    30
+   ],
+   "patch": "10.1.0",
+   "character": 12,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "effect": "+50 %",
+   "tags": [
+    "ActionSpeed",
+    "Healing",
+    "HealingProficiency",
+    "RotationSpeed",
+    "SkillChecks",
+    "TerrorRadius"
+   ]
+  },
+  "Counterforce": {
+   "id": 180,
+   "units": [
+    1
+   ],
+   "values": [
+    10,
+    12,
+    14
+   ],
+   "patch": "9.0.0",
+   "character": 26,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "default": "125 %",
+   "bonus": "+25 %",
+   "tags": [
+    "Totems"
+   ]
+  },
+  "Coup de Grâce": {
+   "id": 167,
+   "units": [
+    4
+   ],
+   "values": [
+    70,
+    75,
+    80
+   ],
+   "patch": "7.1.0",
+   "character": 22,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Generators",
+    "Lunge",
+    "Tokens"
+   ],
+   "diacritics": true
+  },
+  "Clairvoyance": {
+   "id": 189,
+   "units": [
+    1
+   ],
+   "values": [
+    10,
+    11,
+    12
+   ],
+   "patch": "9.2.0",
+   "character": 28,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "range": "64 metres",
+   "tags": [
+    "Auras",
+    "Totems",
+    "Hatch",
+    "Generators",
+    "Hooks",
+    "Chests"
+   ]
+  },
+  "Clean Break": {
+   "id": 290,
+   "units": [
+    1
+   ],
+   "values": [
+    75,
+    60,
+    45
+   ],
+   "patch": "10.1.0",
+   "character": 45,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "healthState": 1,
+   "tags": [
+    "AutoHeal",
+    "Broken"
+   ]
+  },
+  "Cruel Limits": {
+   "id": 134,
+   "units": [
+    1
+   ],
+   "values": [
+    20,
+    25,
+    30
+   ],
+   "patch": "7.3.3",
+   "character": 17,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Auras",
+    "Generators",
+    "VaultLocations",
+    "WindowBlocker"
+   ]
+  },
+  "Cull the Weak": {
+   "id": 327,
+   "units": [
+    4,
+    4
+   ],
+   "values": [
+    2,
+    2.5,
+    3,
+    22,
+    27.5,
+    33
+   ],
+   "formerCharacter": 5,
+   "charType": "K",
+   "formerLevel": 40,
+   "formerPrestige": 3,
+   "formerName": "Dying Light",
+   "tags": [
+    "ActionSpeed",
+    "HealingProficiency",
+    "Obsession",
+    "RepairingProficiency",
+    "SabotageProficiency",
+    "Tokens"
+   ]
+  },
+  "Dying Light": {
+   "charType": "K",
+   "character": 5,
+   "level": 40,
+   "prestige": 3
+  },
+  "Cut Loose": {
+   "id": 240,
+   "units": [
+    1
+   ],
+   "values": [
+    4,
+    5,
+    6
+   ],
+   "patch": "6.6.0",
+   "character": 35,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "cooldown": "45 seconds",
+   "tags": [
+    "LoudNoiseNotifications",
+    "Stealth",
+    "Vaulting"
+   ]
+  },
+  "Dance With Me": {
+   "id": 105,
+   "units": [
+    1
+   ],
+   "values": [
+    20,
+    20,
+    15
+   ],
+   "patch": "8.6.0",
+   "character": 13,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "stealth": "5 seconds",
+   "tags": [
+    "Lockers",
+    "Pallets",
+    "ScratchMarks",
+    "Stealth",
+    "Vaulting"
+   ]
+  },
+  "Dark Arrogance": {
+   "id": 273,
+   "units": [
+    4
+   ],
+   "values": [
+    13,
+    14,
+    15
+   ],
+   "patch": "10.3.0",
+   "character": 36,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "stunRecovery": "-15 %",
+   "missedAttackRecovery": "-15 %",
+   "blindDuration": "+15 %",
+   "vaultSpeed": "+15 %",
+   "tags": [
+    "ActionSpeed",
+    "EffectDuration",
+    "KillerBlind",
+    "KillerStun",
+    "Pallets",
+    "Vaulting",
+    "Windows"
+   ]
+  },
+  "Dark Devotion": {
+   "id": 122,
+   "units": [
+    1
+   ],
+   "values": [
+    35,
+    40,
+    45
+   ],
+   "patch": "9.0.0",
+   "character": 15,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "radius": "40 metres",
+   "tags": [
+    "Deception",
+    "Obsession",
+    "Stealth",
+    "TerrorRadius",
+    "TerrorRadiusTransfer",
+    "Undetectable"
+   ]
+  },
+  "Dark Sense": {
+   "id": 19,
+   "units": [
+    1
+   ],
+   "values": [
+    13,
+    14,
+    15
+   ],
+   "patch": "10.3.0",
+   "charType": "S",
+   "range": [
+    "24 metres",
+    "32 metres"
+   ],
+   "tokens": [
+    "1 Token",
+    "5 Tokens"
+   ],
+   "tags": [
+    "Auras",
+    "Generators"
+   ]
+  },
+  "Darkness Revealed": {
+   "id": 214,
+   "units": [
+    1
+   ],
+   "values": [
+    6,
+    7,
+    8
+   ],
+   "patch": "8.1.0",
+   "character": 28,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Lockers",
+    "Auras"
+   ]
+  },
+  "Dead Hard": {
+   "id": 82,
+   "units": [
+    1
+   ],
+   "values": [
+    60,
+    50,
+    40
+   ],
+   "patch": "6.7.0",
+   "character": 10,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "endurance": "0.5 seconds",
+   "tags": [
+    "DeepWound",
+    "Endurance",
+    "Exhausted"
+   ]
+  },
+  "Dead Man's Switch": {
+   "id": 148,
+   "units": [
+    1
+   ],
+   "values": [
+    30,
+    35,
+    40
+   ],
+   "patch": "10.2.0",
+   "character": 19,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "duration": "2 seconds",
+   "tags": [
+    "Auras",
+    "GenBlocker",
+    "Generators",
+    "Hooks"
+   ]
+  },
+  "Deadline": {
+   "id": 264,
+   "units": [
+    4
+   ],
+   "values": [
+    6,
+    8,
+    10
+   ],
+   "patch": "7.5.0",
+   "character": 40,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "InjuredState",
+    "Healing",
+    "SkillCheckProbability",
+    "SkillChecks",
+    "Repairing"
+   ]
+  },
+  "Deathbound": {
+   "id": 155,
+   "units": [
+    3
+   ],
+   "values": [
+    12,
+    8,
+    4
+   ],
+   "patch": "8.6.0",
+   "character": 20,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "healthState": 1,
+   "tags": [
+    "AuraFlareUp",
+    "Healing",
+    "LoudNoiseNotifications",
+    "Oblivious"
+   ]
+  },
+  "Deception": {
+   "id": 169,
+   "units": [
+    1
+   ],
+   "values": [
+    25,
+    20,
+    15
+   ],
+   "patch": "8.6.0",
+   "character": 24,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "stealth": "5 seconds",
+   "tags": [
+    "Deception",
+    "PoolsOfBlood",
+    "Lockers",
+    "LoudNoiseNotifications",
+    "ScratchMarks",
+    "Stealth"
+   ]
+  },
+  "Deerstalker": {
+   "id": 8,
+   "units": [
+    1
+   ],
+   "values": [
+    40,
+    35,
+    30
+   ],
+   "patch": "10.2.0",
+   "charType": "K",
+   "duration": "4 seconds",
+   "tags": [
+    "Auras"
+   ]
+  },
+  "Déjà Vu": {
+   "id": 20,
+   "units": [
+    4
+   ],
+   "values": [
+    4,
+    5,
+    6
+   ],
+   "patch": "9.1.0",
+   "charType": "S",
+   "generatorCount": 3,
+   "tags": [
+    "Auras",
+    "ActionSpeed",
+    "Generators"
+   ],
+   "diacritics": true
+  },
+  "Deliverance": {
+   "id": 112,
+   "units": [
+    1
+   ],
+   "values": [
+    160,
+    140,
+    120
+   ],
+   "patch": "2.2.0",
+   "character": 14,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Broken",
+    "Chance",
+    "EscapeAttempt",
+    "Hooks"
+   ]
+  },
+  "Desperate Measures": {
+   "id": 163,
+   "units": [
+    4,
+    4
+   ],
+   "values": [
+    16,
+    18,
+    20,
+    64,
+    72,
+    80
+   ],
+   "patch": "9.0.0",
+   "character": 23,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "ActionSpeed",
+    "Healing",
+    "HealingProficiency"
+   ]
+  },
+  "Detective's Hunch": {
+   "id": 100,
+   "units": [
+    3
+   ],
+   "values": [
+    32,
+    48,
+    64
+   ],
+   "patch": "9.1.0",
+   "character": 12,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "duration": "20 seconds",
+   "tags": [
+    "Auras",
+    "Chests",
+    "Generators",
+    "Totems"
+   ]
+  },
+  "Discordance": {
+   "id": 114,
+   "units": [
+    3
+   ],
+   "values": [
+    64,
+    96,
+    128
+   ],
+   "character": 14,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Auras",
+    "Generators",
+    "LoudNoiseNotifications"
+   ]
+  },
+  "Dissolution": {
+   "id": 213,
+   "units": [
+    1
+   ],
+   "values": [
+    13,
+    14,
+    15
+   ],
+   "character": 28,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Pallets",
+    "TerrorRadius",
+    "Vaulting"
+   ]
+  },
+  "Distortion": {
+   "id": 119,
+   "units": [
+    1
+   ],
+   "values": [
+    8,
+    10,
+    12
+   ],
+   "patch": "8.3.2",
+   "character": 15,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tokens": [
+    "1 Token",
+    "-1 Token",
+    "+1 Token",
+    "15 seconds",
+    "2 Tokens"
+   ],
+   "tags": [
+    "Auras",
+    "Chase",
+    "ScratchMarks",
+    "Stealth"
+   ]
+  },
+  "Distressing": {
+   "id": 9,
+   "units": [
+    4
+   ],
+   "values": [
+    -6,
+    -7,
+    -8
+   ],
+   "effect": "+30 %",
+   "charType": "K",
+   "patch": "8.4.0",
+   "tags": [
+    "TerrorRadius"
+   ]
+  },
+  "Diversion": {
+   "id": 111,
+   "units": [
+    1
+   ],
+   "values": [
+    30,
+    25,
+    20
+   ],
+   "patch": "8.2.0",
+   "distance": "20 metres",
+   "character": 14,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Deception",
+    "LoudNoiseNotifications",
+    "ScratchMarks",
+    "TerrorRadius"
+   ]
+  },
+  "Do No Harm": {
+   "id": 295,
+   "units": [
+    4,
+    4
+   ],
+   "values": [
+    30,
+    35,
+    40,
+    60,
+    70,
+    80
+   ],
+   "patch": "10.2.0",
+   "character": 46,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "bonusStack": "+3 %",
+   "bonusMax": "+6 %",
+   "bonusOdds": "+5 %",
+   "bonusOddsMax": "+10 %",
+   "tags": [
+    "ActionSpeed",
+    "BonusProgression",
+    "HealingProficiency",
+    "HookStates",
+    "SkillChecks"
+   ]
+  },
+  "Dominance": {
+   "id": 282,
+   "units": [
+    1
+   ],
+   "values": [
+    3,
+    4,
+    5
+   ],
+   "patch": "10.2.0",
+   "character": 37,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "duration": "25 seconds",
+   "tags": [
+    "Auras",
+    "Chests",
+    "ChestBlocker",
+    "Totems",
+    "TotemBlocker"
+   ]
+  },
+  "Down to the Last": {
+   "id": 322,
+   "units": [
+    1
+   ],
+   "values": [
+    6,
+    8,
+    10
+   ],
+   "patch": "10.2.0",
+   "formerCharacter": 6,
+   "charType": "S",
+   "formerLevel": 30,
+   "formerPrestige": 1,
+   "formerName": "Sole Survivor",
+   "effect": "+10 %",
+   "tags": [
+    "Auras",
+    "ActionSpeed",
+    "Generators",
+    "ExitGates",
+    "Hatch",
+    "Obsession",
+    "RepairingProficiency",
+    "Stealth"
+   ]
+  },
+  "Sole Survivor": {
+   "charType": "S",
+   "character": 6,
+   "level": 30,
+   "prestige": 1
+  },
+  "Dragon's Grip": {
+   "id": 159,
+   "units": [
+    1
+   ],
+   "values": [
+    60,
+    45,
+    30
+   ],
+   "patch": "9.1.0",
+   "character": 21,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "activation": "30 seconds",
+   "location": "4 seconds",
+   "exposed": "60 seconds",
+   "tags": [
+    "Exposed",
+    "Generators",
+    "LoudNoiseNotifications",
+    "Screams"
+   ]
+  },
+  "Dramaturgy": {
+   "id": 250,
+   "units": [
+    1
+   ],
+   "values": [
+    60,
+    50,
+    40
+   ],
+   "patch": "7.1.0",
+   "character": 38,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "activation": "0.5 seconds",
+   "haste": "+25",
+   "durationHaste": "2 seconds",
+   "exposed": "12 seconds",
+   "tags": [
+    "Add-ons",
+    "Exhausted",
+    "Exposed",
+    "Haste",
+    "Items"
+   ]
+  },
+  "Duty of Care": {
+   "id": 296,
+   "units": [
+    1
+   ],
+   "values": [
+    4,
+    5,
+    6
+   ],
+   "patch": "8.7.0",
+   "range": "12 metres",
+   "character": 46,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "haste": "+25 %",
+   "tags": [
+    "Haste",
+    "ProtectionHits"
+   ]
+  },
+  "Empathic Connection": {
+   "id": 211,
+   "units": [
+    4
+   ],
+   "values": [
+    30,
+    35,
+    40
+   ],
+   "patch": "10.2.0",
+   "character": 30,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "ActionSpeed",
+    "Auras",
+    "Healing",
+    "HealingProficiency",
+    "InjuredState"
+   ]
+  },
+  "Empathy": {
+   "id": 37,
+   "units": [
+    3
+   ],
+   "values": [
+    64,
+    96,
+    128
+   ],
+   "patch": "2.6.0",
+   "character": 3,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Auras",
+    "InjuredState"
+   ]
+  },
+  "Enduring": {
+   "id": 57,
+   "units": [
+    4
+   ],
+   "values": [
+    40,
+    45,
+    50
+   ],
+   "patch": "5.6.1",
+   "character": 3,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "KillerStun",
+    "Pallets",
+    "StunRecovery"
+   ]
+  },
+  "Eruption": {
+   "id": 179,
+   "units": [
+    1
+   ],
+   "values": [
+    8,
+    10,
+    12
+   ],
+   "patch": "6.6.0",
+   "character": 24,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "penalty": "-10 %",
+   "cooldown": "30 seconds",
+   "tags": [
+    "Auras",
+    "Generators"
+   ]
+  },
+  "Eyes of Belmont": {
+   "id": 283,
+   "units": [
+    1
+   ],
+   "values": [
+    1,
+    2,
+    3
+   ],
+   "patch": "8.2.0",
+   "character": 44,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Auras",
+    "Generators"
+   ]
+  },
+  "Extrasensory Perception": {
+   "id": 319,
+   "units": [
+    1
+   ],
+   "values": [
+    60,
+    50,
+    40
+   ],
+   "patch": "9.4.0",
+   "character": 51,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "activationTime": "4 seconds",
+   "maxRange": "44 meter",
+   "maxDuration": "11 seconds",
+   "tags": [
+    "Crouching",
+    "Oblivious",
+    "Stealth",
+    "Auras",
+    "Chests",
+    "Generators",
+    "Totems",
+    "Hatch",
+    "ExitGates",
+    "Elusive"
+   ]
+  },
+  "Exultation": {
+   "id": 284,
+   "units": [
+    1
+   ],
+   "values": [
+    30,
+    25,
+    20
+   ],
+   "patch": "9.0.0",
+   "character": 44,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "chargeBonus": "+75 %",
+   "tags": [
+    "Charges",
+    "KillerStun",
+    "Pallets",
+    "RarityUpgrade"
+   ]
+  },
+  "Fast Track": {
+   "id": 174,
+   "units": [
+    6,
+    5
+   ],
+   "values": [
+    1,
+    2,
+    3
+   ],
+   "patch": "9.6.0",
+   "character": 25,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "maxTokens": "9",
+   "chargeReduction": "5 charges",
+   "tags": [
+    "BonusProgression",
+    "Generators",
+    "SkillChecks",
+    "Tokens"
+   ]
+  },
+  "Finesse": {
+   "id": 277,
+   "units": [
+    1
+   ],
+   "values": [
+    40,
+    35,
+    30
+   ],
+   "patch": "8.1.0",
+   "character": 43,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "ActionSpeed",
+    "Vaulting"
+   ]
+  },
+  "Fire Up": {
+   "id": 90,
+   "units": [
+    4,
+    4
+   ],
+   "values": [
+    6,
+    7,
+    8,
+    30,
+    35,
+    40
+   ],
+   "patch": "10.2.0",
+   "character": 10,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "ActionSpeed",
+    "Breaking",
+    "Damaging",
+    "Dropping",
+    "PickingUp",
+    "Tokens",
+    "Vaulting"
+   ]
+  },
+  "Fixated": {
+   "id": 136,
+   "units": [
+    4
+   ],
+   "values": [
+    10,
+    15,
+    20
+   ],
+   "patch": "7.3.3",
+   "character": 18,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Haste",
+    "ScratchMarks"
+   ]
+  },
+  "Five Moves Ahead": {
+   "id": 330,
+   "units": [
+    1
+   ],
+   "values": [
+    40,
+    35,
+    30
+   ],
+   "patch": "10.2.0",
+   "character": 52,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "palletDropSpeedBonus": "50 %",
+   "auraMaxAmount": "5",
+   "tags": [
+    "Pallets",
+    "Auras",
+    "Chase"
+   ]
+  },
+  "Flashbang": {
+   "id": 184,
+   "units": [
+    4
+   ],
+   "values": [
+    50,
+    45,
+    40
+   ],
+   "patch": "8.2.0",
+   "character": 27,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "FlashGrenades",
+    "Generators",
+    "Lockers"
+   ]
+  },
+  "Flip-Flop": {
+   "id": 126,
+   "units": [
+    4
+   ],
+   "values": [
+    40,
+    45,
+    50
+   ],
+   "patch": "2.6.3",
+   "character": 17,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "conversion": "50 %",
+   "tags": [
+    "Conversion",
+    "Recovering",
+    "Wiggle"
+   ]
+  },
+  "Flow State": {
+   "id": 328,
+   "units": [
+    4
+   ],
+   "values": [
+    13,
+    14,
+    15
+   ],
+   "patch": "10.2.0",
+   "character": 52,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "ActionSpeed",
+    "Healing",
+    "Unhooking",
+    "Cleansing",
+    "Blessing"
+   ]
+  },
+  "Fogwise": {
+   "id": 233,
+   "units": [
+    1
+   ],
+   "values": [
+    4,
+    5,
+    6
+   ],
+   "character": 34,
+   "charType": "S",
+   "patch": "6.4.0",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Auras",
+    "Generators",
+    "SkillChecks"
+   ]
+  },
+  "For the People": {
+   "id": 152,
+   "units": [
+    1
+   ],
+   "values": [
+    80,
+    70,
+    60
+   ],
+   "character": 21,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Broken",
+    "DeepWound",
+    "Healing",
+    "Obsession"
+   ]
+  },
+  "Forced Hesitation": {
+   "id": 245,
+   "units": [
+    1
+   ],
+   "values": [
+    40,
+    35,
+    30
+   ],
+   "patch": "7.0.0",
+   "character": 32,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "range": "16 metres",
+   "hindered": "-20 %",
+   "durationHindered": "10 seconds",
+   "tags": [
+    "Hindered"
+   ]
+  },
+  "Forced Penance": {
+   "id": 153,
+   "units": [
+    1
+   ],
+   "values": [
+    60,
+    70,
+    80
+   ],
+   "character": 20,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Broken",
+    "ProtectionHits"
+   ]
+  },
+  "Forever Entwined": {
+   "id": 293,
+   "units": [
+    5,
+    4
+   ],
+   "values": [
+    6,
+    7,
+    8,
+    24,
+    28,
+    32
+   ],
+   "patch": "8.6.0",
+   "character": 39,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "tokenGain": "+1 Token",
+   "bonus": "+4 %",
+   "tags": [
+    "ActionSpeed",
+    "Dropping",
+    "Hooking",
+    "PickingUp",
+    "Tokens"
+   ]
+  },
+  "Franklin's Demise": {
+   "id": 89,
+   "units": [
+    3
+   ],
+   "values": [
+    32,
+    48,
+    64
+   ],
+   "patch": "9.1.0",
+   "character": 9,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Auras",
+    "ForcedItemDrop",
+    "Items"
+   ]
+  },
+  "Friendly Competition": {
+   "id": 238,
+   "units": [
+    1
+   ],
+   "values": [
+    80,
+    85,
+    90
+   ],
+   "patch": "10.2.0",
+   "character": 35,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "effect": "+10 %",
+   "tags": [
+    "ActionSpeed",
+    "Generators",
+    "RepairingProficiency"
+   ]
+  },
+  "Friends 'til the End": {
+   "id": 260,
+   "units": [
+    1
+   ],
+   "values": [
+    6,
+    8,
+    10
+   ],
+   "character": 34,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Auras",
+    "Exposed",
+    "Hooks",
+    "LoudNoiseNotifications",
+    "Obsession"
+   ]
+  },
+  "Furtive Chase": {
+   "id": 131,
+   "units": [
+    1
+   ],
+   "values": [
+    14,
+    16,
+    18
+   ],
+   "patch": "8.7.0",
+   "character": 16,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "haste": "+10 %",
+   "tags": [
+    "Haste",
+    "Hooks",
+    "Obsession",
+    "Undetectable"
+   ]
+  },
+  "Game Afoot": {
+   "id": 237,
+   "units": [
+    1
+   ],
+   "values": [
+    8,
+    9,
+    10
+   ],
+   "patch": "10.2.0",
+   "character": 31,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "haste": "+10 %",
+   "tags": [
+    "BreakableWalls",
+    "Generators",
+    "Haste",
+    "Obsession",
+    "Pallets"
+   ]
+  },
+  "Gearhead": {
+   "id": 147,
+   "units": [
+    1
+   ],
+   "values": [
+    6,
+    7,
+    8
+   ],
+   "patch": "6.7.0",
+   "character": 19,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "activation": "30 seconds",
+   "tags": [
+    "Auras",
+    "Generators",
+    "SkillChecks"
+   ]
+  },
+  "Genetic Limits": {
+   "id": 244,
+   "units": [
+    1
+   ],
+   "values": [
+    6,
+    7,
+    8
+   ],
+   "patch": "8.3.0",
+   "character": 32,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Exhausted"
+   ]
+  },
+  "Ghost Notes": {
+   "id": 312,
+   "units": [
+    4
+   ],
+   "values": [
+    5,
+    7.5,
+    10
+   ],
+   "patch": "9.2.0",
+   "character": 49,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "effect": "+50 %",
+   "tags": [
+    "Exhausted",
+    "ScratchMarks"
+   ]
+  },
+  "Grim Embrace": {
+   "id": 201,
+   "units": [
+    1
+   ],
+   "values": [
+    6,
+    8,
+    10
+   ],
+   "patch": "8.0.0",
+   "character": 26,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Auras",
+    "Generators",
+    "GenBlocker",
+    "Hooks",
+    "Obsession",
+    "Tokens"
+   ]
+  },
+  "Hardened": {
+   "id": 278,
+   "units": [
+    1
+   ],
+   "values": [
+    3,
+    4,
+    5
+   ],
+   "patch": "8.1.0",
+   "character": 43,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Auras",
+    "Chests",
+    "Screams",
+    "Totems"
+   ]
+  },
+  "Haywire": {
+   "id": 300,
+   "units": [
+    4
+   ],
+   "values": [
+    80,
+    90,
+    100
+   ],
+   "patch": "9.0.0",
+   "character": 40,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "threshold": "80 %",
+   "tags": [
+    "ExitGates",
+    "RegressionSpeed"
+   ]
+  },
+  "Head On": {
+   "id": 125,
+   "units": [
+    1
+   ],
+   "values": [
+    60,
+    50,
+    40
+   ],
+   "patch": "9.0.0",
+   "character": 16,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "charge": "3 seconds",
+   "stun": [
+    "2.5 metres",
+    "3 seconds"
+   ],
+   "tags": [
+    "Exhausted",
+    "Lockers",
+    "KillerStun"
+   ]
+  },
+  "Help Wanted": {
+   "id": 298,
+   "units": [
+    1
+   ],
+   "values": [
+    70,
+    80,
+    90
+   ],
+   "patch": "10.2.0",
+   "character": 40,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "cooldown": "+25 %",
+   "limit": "3",
+   "regression": "150 %",
+   "tags": [
+    "AttackCooldown",
+    "Generators",
+    "Regression"
+   ]
+  },
+  "Hex: Blood Favour": {
+   "id": 160,
+   "units": [
+    1
+   ],
+   "values": [
+    13,
+    14,
+    15
+   ],
+   "patch": "10.2.0",
+   "character": 21,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "range": "32 metres",
+   "tags": [
+    "Hex",
+    "PalletBlocker",
+    "Pallets",
+    "Totems"
+   ]
+  },
+  "Hex: Crowd Control": {
+   "id": 172,
+   "units": [
+    7
+   ],
+   "values": [
+    4,
+    5,
+    6
+   ],
+   "patch": "9.5.0",
+   "character": 23,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "vaultSpeedBonus": "15 %",
+   "vaultAuraRange": "24 metres",
+   "tags": [
+    "Hex",
+    "Totems",
+    "Vaulting",
+    "VaultLocations",
+    "WindowBlocker"
+   ]
+  },
+  "Hex: Devour Hope": {
+   "id": 70,
+   "units": [
+    4
+   ],
+   "values": [
+    3,
+    4,
+    5
+   ],
+   "patch": "2.6.0",
+   "character": 6,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "distance": "24 metres",
+   "tokens": [
+    "+1 Token",
+    "5 Tokens"
+   ],
+   "durationHaste": "10 seconds",
+   "delay": "10 seconds",
+   "tags": [
+    "Hex",
+    "Exposed",
+    "Killing",
+    "Haste",
+    "Hooks",
+    "Tokens",
+    "Totems"
+   ]
+  },
+  "Hex: Face the Darkness": {
+   "id": 230,
+   "units": [
+    1
+   ],
+   "values": [
+    35,
+    30,
+    25
+   ],
+   "patch": "6.4.0",
+   "character": 30,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "aura": "2 seconds",
+   "tags": [
+    "Hex",
+    "Auras",
+    "LoudNoiseNotifications",
+    "TerrorRadius"
+   ]
+  },
+  "Hex: Fortune's Fool": {
+   "id": 187,
+   "units": [
+    3
+   ],
+   "values": [
+    24,
+    20,
+    16
+   ],
+   "patch": "9.0.0",
+   "charType": "K",
+   "formerCharacter": 25,
+   "formerLevel": 35,
+   "formerPrestige": 2,
+   "formerName": "Hex: Plaything",
+   "block": "90 seconds",
+   "tags": [
+    "Hex",
+    "Auras",
+    "Oblivious",
+    "Totems"
+   ],
+   "genericVersion": true
+  },
+  "Hex: Plaything": {
+   "charType": "K",
+   "character": 25,
+   "level": 35,
+   "prestige": 2
+  },
+  "Hex: Haunted Ground": {
+   "id": 109,
+   "units": [
+    1
+   ],
+   "values": [
+    40,
+    50,
+    60
+   ],
+   "patch": "2.2.0",
+   "character": 13,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Hex",
+    "Exposed",
+    "Totems"
+   ]
+  },
+  "Hex: Hive Mind": {
+   "id": 315,
+   "units": [
+    4
+   ],
+   "values": [
+    6,
+    8,
+    10
+   ],
+   "patch": "9.4.0",
+   "character": 42,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "penalty": "-10 %",
+   "tags": [
+    "Hex",
+    "Auras",
+    "Generators",
+    "Regression",
+    "ProgressionPenalty"
+   ]
+  },
+  "Hex: Huntress Lullaby": {
+   "id": 86,
+   "units": [
+    4
+   ],
+   "values": [
+    2,
+    4,
+    6
+   ],
+   "patch": "1.6.0",
+   "character": 8,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "tokenGain": "+1 Token",
+   "tokenMax": "5 Tokens",
+   "penalties": [
+    "-14 %",
+    "-28 %",
+    "-42 %",
+    "-56 %"
+   ],
+   "tags": [
+    "ActionNoise",
+    "Hex",
+    "Hooks",
+    "ProgressionPenalty",
+    "SkillChecks",
+    "Tokens",
+    "Totems"
+   ]
+  },
+  "Hex: No One Escapes Death": {
+   "id": 10,
+   "units": [
+    4
+   ],
+   "values": [
+    2,
+    3,
+    4
+   ],
+   "patch": "6.1.0",
+   "charType": "K",
+   "aura": [
+    "4 metres",
+    "24 metres",
+    "30 seconds"
+   ],
+   "tags": [
+    "ExitGates",
+    "Exposed",
+    "Haste",
+    "Hex",
+    "Totems"
+   ]
+  },
+  "Hex: Nothing but Misery": {
+   "id": 292,
+   "units": [
+    1
+   ],
+   "values": [
+    10,
+    12.5,
+    15
+   ],
+   "patch": "8.6.0",
+   "character": 39,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "attacks": "4 times",
+   "hindered": "-5 %",
+   "effect": "-10 %",
+   "tags": [
+    "Hex",
+    "Hindered",
+    "Totems"
+   ]
+  },
+  "Hex: Overture of Doom": {
+   "id": 309,
+   "units": [
+    1
+   ],
+   "values": [
+    20,
+    25,
+    30
+   ],
+   "patch": "9.2.0",
+   "character": 41,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "trigger": "5 seconds",
+   "radius": "32 metres",
+   "tags": [
+    "Auras",
+    "Generators",
+    "Hex",
+    "TerrorRadius",
+    "TerrorRadiusTransfer",
+    "Totems",
+    "Undetectable"
+   ]
+  },
+  "Hex: Pentimento": {
+   "id": 203,
+   "units": [
+    4,
+    4
+   ],
+   "values": [
+    1,
+    2,
+    3,
+    24,
+    28,
+    32
+   ],
+   "patch": "8.7.0",
+   "character": 26,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "tokenGain": "+1 Token",
+   "tokenLimit": "5 Tokens",
+   "penalty": "-20 %",
+   "range": "16 metres",
+   "tags": [
+    "ActionSpeed",
+    "Auras",
+    "HealingProficiency",
+    "Hex",
+    "RepairingProficiency",
+    "Tokens",
+    "TotemBlocker",
+    "Totems"
+   ]
+  },
+  "Hex: Retribution": {
+   "id": 149,
+   "units": [
+    1
+   ],
+   "values": [
+    40,
+    50,
+    60
+   ],
+   "patch": "9.0.0",
+   "character": 19,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "duration": "20 seconds",
+   "tags": [
+    "Auras",
+    "Hex",
+    "Oblivious",
+    "Totems"
+   ]
+  },
+  "Hex: Ruin": {
+   "id": 69,
+   "units": [
+    4
+   ],
+   "values": [
+    100,
+    125,
+    150
+   ],
+   "patch": "9.2.0",
+   "character": 6,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Generators",
+    "Hex",
+    "Regression",
+    "Totems"
+   ]
+  },
+  "Hex: The Third Seal": {
+   "id": 71,
+   "units": [
+    7
+   ],
+   "values": [
+    2,
+    3,
+    4
+   ],
+   "character": 6,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Blindness",
+    "Hex",
+    "Totems"
+   ]
+  },
+  "Hex: Thrill of the Hunt": {
+   "id": 11,
+   "units": [
+    1,
+    1
+   ],
+   "values": [
+    4,
+    5,
+    6,
+    20,
+    25,
+    30
+   ],
+   "patch": "10.2.0",
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "tokenCount": "5 Tokens",
+   "tokenLoss": "-1 Token",
+   "tags": [
+    "ActionSpeed",
+    "Blessing",
+    "Cleansing",
+    "Hex",
+    "Tokens",
+    "Totems"
+   ]
+  },
+  "Hex: Two Can Play": {
+   "id": 259,
+   "units": [
+    8
+   ],
+   "values": [
+    4,
+    3,
+    2
+   ],
+   "character": 34,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Hex",
+    "KillerBlind",
+    "KillerStun",
+    "SurvivorBlind",
+    "Totems"
+   ]
+  },
+  "Hex: Undying": {
+   "id": 161,
+   "units": [
+    3
+   ],
+   "values": [
+    2,
+    3,
+    4
+   ],
+   "character": 21,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Auras",
+    "Hex",
+    "Totems"
+   ]
+  },
+  "Hex: Wretched Fate": {
+   "id": 280,
+   "units": [
+    4
+   ],
+   "values": [
+    27,
+    30,
+    33
+   ],
+   "patch": "8.2.0",
+   "character": 37,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Auras",
+    "Generators",
+    "Hex",
+    "Obsession",
+    "Totems"
+   ]
+  },
+  "Hoarder": {
+   "id": 165,
+   "units": [
+    3
+   ],
+   "values": [
+    32,
+    48,
+    64
+   ],
+   "character": 22,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Chests",
+    "Items",
+    "LoudNoiseNotifications"
+   ]
+  },
+  "Hope": {
+   "id": 21,
+   "units": [
+    4
+   ],
+   "values": [
+    3,
+    4,
+    5
+   ],
+   "patch": "9.2.0",
+   "charType": "S",
+   "tags": [
+    "ExitGates",
+    "Haste"
+   ]
+  },
+  "Hubris": {
+   "id": 231,
+   "units": [
+    1
+   ],
+   "values": [
+    20,
+    25,
+    30
+   ],
+   "patch": "9.1.0",
+   "character": 30,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "cooldown": "20 seconds",
+   "tags": [
+    "Exposed",
+    "KillerStun"
+   ]
+  },
+  "Human Greed": {
+   "id": 281,
+   "units": [
+    1
+   ],
+   "values": [
+    3,
+    4,
+    5
+   ],
+   "patch": "8.4.1",
+   "character": 37,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "range": "8 metres",
+   "cooldown": "10 seconds",
+   "tags": [
+    "ActionSpeed",
+    "Auras",
+    "Chests"
+   ]
+  },
+  "Hyperfocus": {
+   "id": 228,
+   "units": [
+    4,
+    4
+   ],
+   "values": [
+    10,
+    20,
+    30,
+    60,
+    120,
+    180
+   ],
+   "patch": "6.2.0",
+   "character": 33,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "BonusProgression",
+    "RotationSpeed",
+    "SkillCheckDifficulty",
+    "SkillCheckProbability",
+    "SkillChecks",
+    "TriggerOdds"
+   ]
+  },
+  "Hysteria": {
+   "id": 178,
+   "units": [
+    1
+   ],
+   "values": [
+    30,
+    35,
+    40
+   ],
+   "patch": "8.6.0",
+   "cooldown": "20 seconds",
+   "character": 24,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Oblivious"
+   ]
+  },
+  "I'm All Ears": {
+   "id": 129,
+   "units": [
+    1
+   ],
+   "values": [
+    60,
+    45,
+    30
+   ],
+   "patch": "8.1.0",
+   "character": 16,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "range": "48 metres",
+   "duration": "8 seconds",
+   "tags": [
+    "Auras",
+    "Vaulting"
+   ]
+  },
+  "In the Dark": {
+   "id": 2,
+   "charType": "K",
+   "unused": true
+  },
+  "Infectious Fright": {
+   "id": 121,
+   "units": [
+    1
+   ],
+   "values": [
+    4,
+    5,
+    6
+   ],
+   "character": 15,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "AuraFlareUp",
+    "TerrorRadius",
+    "LoudNoiseNotifications"
+   ]
+  },
+  "Inner Focus": {
+   "id": 217,
+   "units": [
+    1
+   ],
+   "values": [
+    6,
+    8,
+    10
+   ],
+   "patch": "8.3.2",
+   "character": 31,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Auras",
+    "ScratchMarks"
+   ]
+  },
+  "Inner Strength": {
+   "id": 137,
+   "units": [
+    1
+   ],
+   "values": [
+    10,
+    9,
+    8
+   ],
+   "patch": "7.3.3",
+   "character": 18,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Broken",
+    "DeepWound",
+    "Healing",
+    "Lockers",
+    "Totems"
+   ]
+  },
+  "Insidious": {
+   "id": 12,
+   "units": [
+    1
+   ],
+   "values": [
+    6,
+    7,
+    8
+   ],
+   "patch": "10.2.0",
+   "charType": "K",
+   "duration": "2 seconds",
+   "tags": [
+    "Deception",
+    "Stealth",
+    "Undetectable"
+   ]
+  },
+  "Invocation: Treacherous Crows": {
+   "id": 289,
+   "units": [
+    1
+   ],
+   "values": [
+    1,
+    1.5,
+    2
+   ],
+   "patch": "8.4.0",
+   "character": 45,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Auras",
+    "Basement",
+    "Broken",
+    "Crows",
+    "InjuredState",
+    "Invocation",
+    "Killer",
+    "TerrorRadius"
+   ]
+  },
+  "Invocation: Weaving Spiders": {
+   "id": 268,
+   "units": [
+    9
+   ],
+   "values": [
+    8,
+    9,
+    10
+   ],
+   "patch": "8.0.0",
+   "character": 41,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Auras",
+    "Basement",
+    "Broken",
+    "InjuredState",
+    "Invocation",
+    "Generators",
+    "RepairRequirement"
+   ]
+  },
+  "Iron Grasp": {
+   "id": 13,
+   "units": [
+    4
+   ],
+   "values": [
+    10,
+    11,
+    12
+   ],
+   "patch": "10.2.0",
+   "charType": "K",
+   "wiggleEffects": "-75 %",
+   "tags": [
+    "ActionTime",
+    "Carrying",
+    "Wiggle"
+   ]
+  },
+  "Iron Maiden": {
+   "id": 116,
+   "units": [
+    4
+   ],
+   "values": [
+    30,
+    40,
+    50
+   ],
+   "patch": "4.5.0",
+   "character": 14,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "duration": "4 seconds",
+   "exposed": "30 seconds",
+   "tags": [
+    "ActionSpeed",
+    "AuraFlareUp",
+    "Exposed",
+    "Lockers",
+    "LoudNoiseNotifications"
+   ]
+  },
+  "Iron Will": {
+   "id": 41,
+   "units": [
+    4
+   ],
+   "values": [
+    80,
+    90,
+    100
+   ],
+   "patch": "8.1.0",
+   "character": 4,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Exhausted",
+    "GruntsOfPain",
+    "Stealth"
+   ]
+  },
+  "Keep Them Waiting": {
+   "id": 325,
+   "units": [
+    5,
+    4
+   ],
+   "values": [
+    6,
+    7,
+    8,
+    30,
+    35,
+    40
+   ],
+   "patch": "10.1.0",
+   "tokenGain": "+1 Token",
+   "tokenCost": "-2 Tokens",
+   "cooldownStack": "-5 % per Token",
+   "formerCharacter": 5,
+   "charType": "K",
+   "formerLevel": 30,
+   "formerPrestige": 1,
+   "formerName": "Save the Best for Last",
+   "tags": [
+    "AttackCooldown",
+    "Obsession",
+    "Tokens"
+   ]
+  },
+  "Save the Best for Last": {
+   "charType": "K",
+   "character": 5,
+   "level": 30,
+   "prestige": 1
+  },
+  "Knock Out": {
+   "id": 87,
+   "units": [
+    1
+   ],
+   "values": [
+    2,
+    3,
+    4
+   ],
+   "patch": "10.2.0",
+   "character": 9,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "range": "10 metres",
+   "timer": "6 seconds",
+   "hindered": "-20 %",
+   "tags": [
+    "Hindered",
+    "Pallets"
+   ]
+  },
+  "Kindred": {
+   "id": 22,
+   "units": [
+    3
+   ],
+   "values": [
+    14,
+    15,
+    16
+   ],
+   "charType": "S",
+   "patch": "10.2.0",
+   "tags": [
+    "Auras",
+    "KillerAura",
+    "Hooks"
+   ]
+  },
+  "Languid Touch": {
+   "id": 272,
+   "units": [
+    1
+   ],
+   "values": [
+    6,
+    8,
+    10
+   ],
+   "patch": "8.4.0",
+   "character": 36,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "range": "36 metres",
+   "cooldown": "5 seconds",
+   "tags": [
+    "Crows",
+    "Exhausted"
+   ]
+  },
+  "Last Stand": {
+   "id": 305,
+   "units": [
+    1
+   ],
+   "values": [
+    120,
+    105,
+    90
+   ],
+   "patch": "9.1.0",
+   "character": 48,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "stun": "3 seconds",
+   "range": "2.5 metres",
+   "tags": [
+    "KillerStun",
+    "Pallets",
+    "TerrorRadius",
+    "Vaulting",
+    "Windows"
+   ]
+  },
+  "Last Standing": {
+   "id": 3,
+   "units": [
+    4,
+    4
+   ],
+   "values": [
+    7.5,
+    15,
+    25,
+    22.5,
+    45,
+    75
+   ],
+   "charType": "S",
+   "unused": true,
+   "tags": [
+    "ActionSpeed"
+   ]
+  },
+  "Leader": {
+   "id": 34,
+   "units": [
+    4
+   ],
+   "values": [
+    20,
+    25,
+    30
+   ],
+   "patch": "2.5.0",
+   "character": 1,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "radius": "10 metres",
+   "linger": "15 seconds",
+   "tags": [
+    "ActionSpeed",
+    "ExitGates",
+    "HealingProficiency",
+    "SabotageProficiency",
+    "CleansingProficiency",
+    "Chests"
+   ]
+  },
+  "Left Behind": {
+   "id": 72,
+   "units": [
+    3
+   ],
+   "values": [
+    24,
+    28,
+    32
+   ],
+   "patch": "3.2.0",
+   "character": 8,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Auras",
+    "Hatch"
+   ],
+   "multiName": true,
+   "displayName": "Left Behind"
+  },
+  "Lethal Pursuer": {
+   "id": 177,
+   "units": [
+    1
+   ],
+   "values": [
+    7,
+    8,
+    9
+   ],
+   "patch": "6.1.0",
+   "character": 24,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Auras"
+   ]
+  },
+  "Leverage": {
+   "id": 236,
+   "units": [
+    4
+   ],
+   "values": [
+    20,
+    25,
+    30
+   ],
+   "patch": "9.2.0",
+   "character": 31,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "duration": "60 seconds",
+   "tags": [
+    "ActionSpeed",
+    "Healing",
+    "HealingProficiency",
+    "Hooks"
+   ]
+  },
+  "Lightborn": {
+   "id": 58,
+   "units": [
+    1
+   ],
+   "values": [
+    6,
+    8,
+    10
+   ],
+   "character": 3,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Auras",
+    "BlindingResistance"
+   ]
+  },
+  "Light-Footed": {
+   "id": 257,
+   "units": [
+    1
+   ],
+   "values": [
+    14,
+    12,
+    10
+   ],
+   "patch": "9.0.0",
+   "character": 39,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Stealth"
+   ]
+  },
+  "Lightweight": {
+   "id": 23,
+   "units": [
+    1
+   ],
+   "values": [
+    3,
+    4,
+    5
+   ],
+   "patch": "6.1.0",
+   "charType": "S",
+   "spawnChance": "-60 %",
+   "tags": [
+    "ScratchMarks",
+    "Stealth"
+   ]
+  },
+  "Lithe": {
+   "id": 77,
+   "units": [
+    1
+   ],
+   "values": [
+    60,
+    50,
+    40
+   ],
+   "patch": "2.6.0",
+   "character": 9,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "haste": "+50 %",
+   "durationHaste": "3 seconds",
+   "tags": [
+    "Exhausted",
+    "Haste",
+    "Pallets",
+    "Vaulting"
+   ]
+  },
+  "Low Profile": {
+   "id": 225,
+   "units": [
+    1
+   ],
+   "values": [
+    70,
+    80,
+    90
+   ],
+   "patch": "6.2.0",
+   "character": 32,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "PoolsOfBlood",
+    "ScratchMarks"
+   ]
+  },
+  "Lucky Break": {
+   "id": 144,
+   "units": [
+    1
+   ],
+   "values": [
+    40,
+    50,
+    60
+   ],
+   "patch": "6.1.0",
+   "character": 20,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "PoolsOfBlood",
+    "ScratchMarks",
+    "Stealth"
+   ]
+  },
+  "Lucky Star": {
+   "id": 258,
+   "units": [
+    1
+   ],
+   "values": [
+    35,
+    30,
+    25
+   ],
+   "patch": "9.2.0",
+   "character": 39,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "duration": "30 seconds",
+   "tags": [
+    "Auras",
+    "Generators",
+    "GruntsOfPain",
+    "Lockers",
+    "PoolsOfBlood",
+    "Stealth"
+   ]
+  },
+  "Machine Learning": {
+   "id": 246,
+   "units": [
+    1
+   ],
+   "values": [
+    40,
+    50,
+    60
+   ],
+   "patch": "10.2.0",
+   "character": 32,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "haste": "+8 %",
+   "limit": "3",
+   "tags": [
+    "Auras",
+    "Generators",
+    "Haste",
+    "Undetectable"
+   ]
+  },
+  "Mad Grit": {
+   "id": 115,
+   "units": [
+    1
+   ],
+   "values": [
+    2,
+    3,
+    4
+   ],
+   "character": 14,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "ActionPause",
+    "AttackCooldown",
+    "Carrying",
+    "Wiggle"
+   ]
+  },
+  "Made for This": {
+   "id": 248,
+   "units": [
+    1,
+    4
+   ],
+   "values": [
+    6,
+    8,
+    10,
+    1,
+    2,
+    3
+   ],
+   "patch": "7.4.0",
+   "character": 37,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "ConspicuousActions",
+    "DeepWound",
+    "Endurance",
+    "Haste",
+    "Healing"
+   ]
+  },
+  "Make Your Choice": {
+   "id": 98,
+   "units": [
+    1
+   ],
+   "values": [
+    40,
+    50,
+    60
+   ],
+   "character": 11,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Exposed",
+    "Hooks",
+    "LoudNoiseNotifications"
+   ]
+  },
+  "Merciless Storm": {
+   "id": 209,
+   "units": [
+    1
+   ],
+   "values": [
+    16,
+    18,
+    20
+   ],
+   "character": 27,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Generator",
+    "SkillChecks"
+   ]
+  },
+  "Mettle of Man": {
+   "id": 128,
+   "units": [
+    3
+   ],
+   "values": [
+    12,
+    14,
+    16
+   ],
+   "patch": "6.2.0",
+   "character": 17,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "counter": "third",
+   "tags": [
+    "Auras",
+    "Obsession",
+    "ProtectionHits"
+   ]
+  },
+  "Mindbreaker": {
+   "id": 133,
+   "units": [
+    1
+   ],
+   "values": [
+    3,
+    4,
+    5
+   ],
+   "patch": "7.3.3",
+   "character": 17,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Blindness",
+    "Exhausted",
+    "Generators"
+   ]
+  },
+  "Mirrored Illusion": {
+   "id": 274,
+   "units": [
+    1
+   ],
+   "values": [
+    40,
+    50,
+    60
+   ],
+   "patch": "8.2.0",
+   "character": 42,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Chests",
+    "ExitGates",
+    "Generators",
+    "Totems"
+   ]
+  },
+  "Moment of Glory": {
+   "id": 285,
+   "units": [
+    1
+   ],
+   "values": [
+    80,
+    70,
+    60
+   ],
+   "patch": "10.1.0",
+   "character": 44,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "AutoHeal",
+    "Broken",
+    "Chests",
+    "Healing"
+   ]
+  },
+  "Monitor & Abuse": {
+   "id": 80,
+   "units": [
+    4,
+    4
+   ],
+   "values": [
+    5,
+    10,
+    15,
+    15,
+    20,
+    25
+   ],
+   "patch": "9.2.0",
+   "character": 7,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "TerrorRadius"
+   ]
+  },
+  "Nemesis": {
+   "id": 143,
+   "units": [
+    1
+   ],
+   "values": [
+    40,
+    50,
+    60
+   ],
+   "patch": "8.6.0",
+   "character": 18,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "aura": "8 seconds",
+   "tags": [
+    "Auras",
+    "Blinding",
+    "Lockers",
+    "Oblivious",
+    "Obsession",
+    "Pallets",
+    "KillerStun"
+   ],
+   "multiName": true
+  },
+  "No Holds Barred": {
+   "id": 186,
+   "units": [
+    1
+   ],
+   "values": [
+    15,
+    20,
+    25
+   ],
+   "patch": "9.0.0",
+   "charType": "K",
+   "formerCharacter": 25,
+   "formerLevel": 30,
+   "formerPrestige": 1,
+   "formerName": "Deadlock",
+   "tags": [
+    "Auras",
+    "GenBlocker",
+    "Generators"
+   ]
+  },
+  "Deadlock": {
+   "charType": "K",
+   "character": 25,
+   "level": 30,
+   "prestige": 1
+  },
+  "No Mither": {
+   "id": 83,
+   "units": [
+    4
+   ],
+   "values": [
+    15,
+    20,
+    25
+   ],
+   "patch": "9.2.0",
+   "character": 10,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Broken",
+    "GruntsOfPain",
+    "PoolsOfBlood",
+    "Recovering",
+    "Stealth"
+   ]
+  },
+  "No One Left Behind": {
+   "id": 24,
+   "units": [
+    4
+   ],
+   "values": [
+    80,
+    90,
+    100
+   ],
+   "patch": "10.2.0",
+   "charType": "S",
+   "effect": "+10 %",
+   "bonus": "+5 seconds",
+   "haste": "20 %",
+   "durationHaste": "15 seconds",
+   "tags": [
+    "ActionSpeed",
+    "Auras",
+    "EffectDuration",
+    "ExitGates",
+    "Haste",
+    "HealingProficiency"
+   ]
+  },
+  "No Quarter": {
+   "id": 288,
+   "units": [
+    1
+   ],
+   "values": [
+    20,
+    25,
+    30
+   ],
+   "patch": "8.4.0",
+   "character": 38,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "threshold": "75 %",
+   "tags": [
+    "Broken",
+    "Healing",
+    "SkillChecks",
+    "Self-Healing"
+   ]
+  },
+  "No Way Out": {
+   "id": 173,
+   "units": [
+    1,
+    1
+   ],
+   "values": [
+    6,
+    9,
+    12,
+    36,
+    48,
+    60
+   ],
+   "patch": "5.1.0",
+   "character": 23,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "tokenGain": "+1 Token",
+   "block": "12 seconds",
+   "tags": [
+    "ExitGates",
+    "GateSwitchBlocker",
+    "LoudNoiseNotifications",
+    "Tokens"
+   ]
+  },
+  "None Are Free": {
+   "id": 294,
+   "units": [
+    1,
+    1
+   ],
+   "values": [
+    12,
+    14,
+    16,
+    48,
+    56,
+    64
+   ],
+   "patch": "8.6.2",
+   "character": 39,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "tokenGain": "+1 Token",
+   "tokenMax": "4 Tokens",
+   "tags": [
+    "Generators",
+    "PalletBlocker",
+    "WindowBlocker"
+   ]
+  },
+  "Nowhere to Hide": {
+   "id": 229,
+   "units": [
+    1
+   ],
+   "values": [
+    3,
+    4,
+    5
+   ],
+   "character": 30,
+   "charType": "K",
+   "patch": "10.1.0",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Auras",
+    "Generators"
+   ]
+  },
+  "Off the Record": {
+   "id": 150,
+   "units": [
+    1
+   ],
+   "values": [
+    30,
+    35,
+    40
+   ],
+   "patch": "9.2.2",
+   "character": 21,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Auras",
+    "GruntsOfPain",
+    "Hooks",
+    "ScratchMarks, Endurance"
+   ]
+  },
+  "One-Two-Three-Four!": {
+   "id": 311,
+   "units": [
+    1
+   ],
+   "values": [
+    110,
+    100,
+    90
+   ],
+   "patch": "9.2.0",
+   "character": 49,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "performance": [
+    "15 seconds",
+    "16 metres",
+    "90 seconds"
+   ],
+   "bonus": "+20 %",
+   "tags": [
+    "Healing",
+    "Repairing",
+    "SkillCheckProbability",
+    "SkillChecks"
+   ]
+  },
+  "Open-Handed": {
+   "id": 67,
+   "units": [
+    3
+   ],
+   "values": [
+    8,
+    12,
+    16
+   ],
+   "character": 7,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Auras",
+    "Vision"
+   ]
+  },
+  "Oppression": {
+   "id": 166,
+   "units": [
+    1
+   ],
+   "values": [
+    45,
+    40,
+    35
+   ],
+   "patch": "9.2.0",
+   "character": 22,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "generators": 4,
+   "tags": [
+    "Generators",
+    "Regression",
+    "SkillChecks"
+   ]
+  },
+  "Overcome": {
+   "id": 204,
+   "units": [
+    1
+   ],
+   "values": [
+    60,
+    50,
+    40
+   ],
+   "patch": "5.4.0",
+   "character": 29,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "effect": "+2 seconds",
+   "tags": [
+    "MovementSpeed",
+    "Exhausted"
+   ]
+  },
+  "Overconfidence": {
+   "id": 4,
+   "charType": "S",
+   "unused": true
+  },
+  "Overcharge": {
+   "id": 79,
+   "units": [
+    4
+   ],
+   "values": [
+    2,
+    3,
+    4
+   ],
+   "patch": "6.7.0",
+   "character": 7,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Generators",
+    "Regression",
+    "ProgressionPenalty",
+    "RegressionSpeed",
+    "SkillChecks"
+   ]
+  },
+  "Overwhelming Presence": {
+   "id": 78,
+   "units": [
+    1
+   ],
+   "values": [
+    2,
+    3,
+    4
+   ],
+   "patch": "9.1.0",
+   "character": 7,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "activationRange": "32 metres",
+   "exhausted": "15 seconds",
+   "cooldown": "25 seconds",
+   "tags": [
+    "Auras",
+    "Exhausted",
+    "Items"
+   ]
+  },
+  "Overzealous": {
+   "id": 219,
+   "units": [
+    4,
+    4
+   ],
+   "values": [
+    8,
+    9,
+    10,
+    16,
+    18,
+    20
+   ],
+   "patch": "6.7.0",
+   "character": 31,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "ActionSpeed",
+    "Generators",
+    "RepairingProficiency",
+    "Totems"
+   ]
+  },
+  "Parental Guidance": {
+   "id": 210,
+   "units": [
+    1
+   ],
+   "values": [
+    5,
+    6,
+    7
+   ],
+   "patch": "5.6.0",
+   "character": 30,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "ScratchMarks",
+    "PoolsOfBlood",
+    "GruntsOfPain"
+   ]
+  },
+  "Phantom Fear": {
+   "id": 299,
+   "units": [
+    1
+   ],
+   "values": [
+    80,
+    70,
+    60
+   ],
+   "patch": "9.0.0",
+   "character": 40,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "aura": "2 seconds",
+   "tags": [
+    "Auras",
+    "TerrorRadius",
+    "Screams"
+   ]
+  },
+  "Pharmacy": {
+   "id": 94,
+   "units": [
+    4
+   ],
+   "values": [
+    75,
+    100,
+    125
+   ],
+   "patch": "10.2.0",
+   "character": 11,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "noiseRange": "-12 metres",
+   "tags": [
+    "ActionNoise",
+    "ActionSpeed",
+    "Chests",
+    "Med-Kits",
+    "Items",
+    "RummageAbility"
+   ]
+  },
+  "Plot Twist": {
+   "id": 252,
+   "units": [
+    1
+   ],
+   "values": [
+    2,
+    3,
+    4
+   ],
+   "patch": "9.2.0",
+   "character": 38,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "recovery": "+25 %",
+   "haste": "+50 %",
+   "tags": [
+    "DyingState",
+    "GruntsOfPain",
+    "Haste",
+    "Healing",
+    "PoolsOfBlood",
+    "SelfRecovery"
+   ]
+  },
+  "Plunderer's Instinct": {
+   "id": 25,
+   "units": [
+    4
+   ],
+   "values": [
+    150,
+    175,
+    200
+   ],
+   "patch": "10.2.0",
+   "charType": "S",
+   "chance": "+50 %",
+   "tags": [
+    "Auras",
+    "Chests",
+    "Items"
+   ]
+  },
+  "Poised": {
+   "id": 124,
+   "units": [
+    1
+   ],
+   "values": [
+    20,
+    25,
+    30
+   ],
+   "patch": "9.2.0",
+   "character": 16,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "duration": "8 seconds",
+   "tags": [
+    "Auras",
+    "Generators",
+    "ScratchMarks",
+    "Stealth"
+   ]
+  },
+  "Pop Goes the Weasel": {
+   "id": 104,
+   "units": [
+    1
+   ],
+   "values": [
+    35,
+    40,
+    45
+   ],
+   "patch": "9.5.0",
+   "character": 12,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "penalty": "+15 %",
+   "totalPenalty": "20 %",
+   "tags": [
+    "Generators",
+    "Hooks",
+    "ProgressionPenalty"
+   ]
+  },
+  "Potential Energy": {
+   "id": 232,
+   "units": [
+    5
+   ],
+   "values": [
+    10,
+    15,
+    20
+   ],
+   "patch": "9.1.0",
+   "character": 34,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "conversion": [
+    "1 Token",
+    "1 %",
+    "+1 %"
+   ],
+   "threshold": "1 Token",
+   "penalty": [
+    "-20 %",
+    "-10 %"
+   ],
+   "tags": [
+    "Generators",
+    "BonusProgression",
+    "SkillChecks",
+    "Tokens"
+   ]
+  },
+  "Power Struggle": {
+   "id": 170,
+   "units": [
+    4
+   ],
+   "values": [
+    25,
+    20,
+    15
+   ],
+   "patch": "5.5.0",
+   "character": 24,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Pallets",
+    "KillerStun",
+    "Wiggle"
+   ]
+  },
+  "Predator": {
+   "id": 55,
+   "units": [
+    1
+   ],
+   "values": [
+    60,
+    50,
+    40
+   ],
+   "patch": "8.3.2",
+   "duration": "4 seconds",
+   "character": 2,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Auras"
+   ]
+  },
+  "Premonition": {
+   "id": 26,
+   "units": [
+    1
+   ],
+   "values": [
+    55,
+    50,
+    45
+   ],
+   "patch": "10.2.0",
+   "charType": "S",
+   "range": "32 metres",
+   "duration": "3 seconds",
+   "tags": [
+    "Warning",
+    "Auras"
+   ]
+  },
+  "Prove Thyself": {
+   "id": 35,
+   "units": [
+    4,
+    4
+   ],
+   "values": [
+    6,
+    8,
+    10,
+    18,
+    24,
+    30
+   ],
+   "patch": "7.1.0",
+   "character": 1,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "ActionSpeed",
+    "Generators",
+    "RepairingProficiency"
+   ]
+  },
+  "Quick & Quiet": {
+   "id": 43,
+   "units": [
+    1
+   ],
+   "values": [
+    25,
+    20,
+    15
+   ],
+   "patch": "8.6.0",
+   "character": 2,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Lockers",
+    "LoudNoiseNotifications",
+    "Pallets",
+    "RepairingProficiency",
+    "Stealth",
+    "Vaulting"
+   ]
+  },
+  "Quick Gambit": {
+   "id": 234,
+   "units": [
+    4
+   ],
+   "values": [
+    3,
+    4,
+    5
+   ],
+   "patch": "9.2.0",
+   "character": 34,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "cooldown": "40 seconds",
+   "tags": [
+    "Auras",
+    "ActionSpeed",
+    "Chase",
+    "RepairingProficiency"
+   ]
+  },
+  "Rancor": {
+   "id": 110,
+   "units": [
+    1
+   ],
+   "values": [
+    5,
+    4,
+    3
+   ],
+   "patch": "6.4.0",
+   "character": 13,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "duration": "3 seconds",
+   "tags": [
+    "Auras",
+    "AuraFlareUp",
+    "Exposed",
+    "Generators",
+    "Killing",
+    "Obsession",
+    "LoudNoiseNotifications"
+   ]
+  },
+  "Rapid Brutality": {
+   "id": 253,
+   "units": [
+    1
+   ],
+   "values": [
+    8,
+    9,
+    10
+   ],
+   "patch": "7.2.0",
+   "character": 33,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Bloodlust",
+    "Haste"
+   ]
+  },
+  "Rapid Response": {
+   "id": 297,
+   "units": [
+    1
+   ],
+   "values": [
+    30,
+    25,
+    20
+   ],
+   "patch": "8.7.0",
+   "character": 46,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "aura": "2 seconds",
+   "tags": [
+    "Auras",
+    "Exhausted",
+    "Lockers"
+   ]
+  },
+  "Ravenous": {
+   "id": 307,
+   "units": [
+    1
+   ],
+   "values": [
+    60,
+    65,
+    70
+   ],
+   "patch": "10.3.0",
+   "character": 41,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "tokens": [
+    "+1 Token",
+    "4 Tokens"
+   ],
+   "effect": "+4 %",
+   "tags": [
+    "Exposed",
+    "Hooks",
+    "Screams"
+   ]
+  },
+  "Reactive Healing": {
+   "id": 224,
+   "units": [
+    4
+   ],
+   "values": [
+    40,
+    45,
+    50
+   ],
+   "patch": "6.2.0",
+   "character": 32,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "BonusProgression",
+    "Healing"
+   ]
+  },
+  "Reassurance": {
+   "id": 227,
+   "units": [
+    1
+   ],
+   "values": [
+    20,
+    25,
+    30
+   ],
+   "patch": "6.2.0",
+   "character": 33,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "range": "6 metres",
+   "limit": "once",
+   "tags": [
+    "ActionPause",
+    "EntityProgression",
+    "Hooks"
+   ]
+  },
+  "Red Herring": {
+   "id": 151,
+   "units": [
+    1
+   ],
+   "values": [
+    25,
+    20,
+    15
+   ],
+   "patch": "8.6.0",
+   "character": 21,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "activation": "1 second",
+   "tags": [
+    "Auras",
+    "Deception",
+    "Generators",
+    "Lockers",
+    "LoudNoiseNotifications"
+   ]
+  },
+  "Remember Me": {
+   "id": 91,
+   "units": [
+    5,
+    1,
+    1
+   ],
+   "values": [
+    3,
+    4,
+    5,
+    18,
+    24,
+    30,
+    38,
+    44,
+    50
+   ],
+   "patch": "8.5.0",
+   "character": 10,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "tokenGain": "+1 Token",
+   "stack": "6 seconds",
+   "gateDefault": "20 seconds",
+   "tags": [
+    "ActionTime",
+    "ExitGates",
+    "Obsession",
+    "Tokens"
+   ]
+  },
+  "Repressed Alliance": {
+   "id": 158,
+   "units": [
+    1
+   ],
+   "values": [
+    40,
+    35,
+    30
+   ],
+   "patch": "10.1.1",
+   "character": 22,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Auras",
+    "GenBlocker",
+    "Generators"
+   ]
+  },
+  "Residual Manifest": {
+   "id": 218,
+   "units": [
+    1
+   ],
+   "values": [
+    20,
+    25,
+    30
+   ],
+   "character": 31,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Blindness",
+    "Chests",
+    "Items",
+    "KillerBlind"
+   ]
+  },
+  "Resilience": {
+   "id": 27,
+   "units": [
+    4
+   ],
+   "values": [
+    7,
+    8,
+    9
+   ],
+   "patch": "10.2.0",
+   "charType": "S",
+   "tags": [
+    "ActionSpeed",
+    "Blessing",
+    "Chests",
+    "Cleansing",
+    "ExitGates",
+    "Generators",
+    "Healing",
+    "Hooks",
+    "Opening",
+    "Repairing",
+    "Sabotaging",
+    "Searching",
+    "Totems",
+    "Unhooking",
+    "Vaulting",
+    "Windows"
+   ]
+  },
+  "Resurgence": {
+   "id": 181,
+   "units": [
+    4
+   ],
+   "values": [
+    50,
+    60,
+    70
+   ],
+   "patch": "8.1.0",
+   "character": 26,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "BonusProgression",
+    "Healing",
+    "Hooks"
+   ]
+  },
+  "Road Life": {
+   "id": 310,
+   "units": [
+    5
+   ],
+   "values": [
+    6,
+    5,
+    4
+   ],
+   "patch": "10.2.0",
+   "character": 49,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "tokens": [
+    "+1 Token",
+    "0 Tokens",
+    "-1 Token"
+   ],
+   "healing": "+10 %",
+   "duration": "4 seconds",
+   "tags": [
+    "ActionSpeed",
+    "Generators",
+    "HealingProficiency",
+    "SkillChecks",
+    "Tokens",
+    "SelfHealing"
+   ]
+  },
+  "Rookie Spirit": {
+   "id": 185,
+   "units": [
+    7
+   ],
+   "values": [
+    5,
+    4,
+    3
+   ],
+   "character": 27,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Auras",
+    "Generators",
+    "SkillChecks"
+   ]
+  },
+  "Saboteur": {
+   "id": 39,
+   "units": [
+    1
+   ],
+   "values": [
+    70,
+    65,
+    60
+   ],
+   "patch": "7.1.0",
+   "character": 4,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "radius": "56 metres",
+   "speed": "+30 %",
+   "tags": [
+    "ActionSpeed",
+    "Auras",
+    "Hooks",
+    "Sabotage",
+    "ScourgeHookAuras"
+   ]
+  },
+  "Scavenger": {
+   "id": 249,
+   "units": [
+    1
+   ],
+   "values": [
+    40,
+    35,
+    30
+   ],
+   "patch": "7.0.0",
+   "character": 37,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Chests",
+    "Items",
+    "SkillChecks",
+    "Tokens"
+   ]
+  },
+  "Scene Partner": {
+   "id": 251,
+   "units": [
+    1
+   ],
+   "values": [
+    4,
+    5,
+    6
+   ],
+   "patch": "8.4.0",
+   "character": 38,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "aura": "+2 seconds",
+   "chance": "50 %",
+   "cooldown": "40 seconds",
+   "tags": [
+    "Auras",
+    "Screams",
+    "TerrorRadius"
+   ]
+  },
+  "Scourge Hook: Floods of Rage": {
+   "id": 207,
+   "units": [
+    1
+   ],
+   "values": [
+    5,
+    6,
+    7
+   ],
+   "character": 27,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "ScourgeHooks",
+    "Hooks",
+    "Auras"
+   ]
+  },
+  "Scourge Hook: Hangman's Trick": {
+   "id": 96,
+   "units": [
+    3
+   ],
+   "values": [
+    12,
+    14,
+    16
+   ],
+   "patch": "9.1.0",
+   "character": 11,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Auras",
+    "Hooks",
+    "LoudNoiseNotifications",
+    "Sabotage",
+    "ScourgeHooks",
+    "LoudNoiseNotifications"
+   ]
+  },
+  "Scourge Hook: Jagged Compass": {
+   "id": 287,
+   "units": [
+    1
+   ],
+   "values": [
+    6,
+    8,
+    10
+   ],
+   "character": 38,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "patch": "8.4.0",
+   "tags": [
+    "Auras",
+    "Generators",
+    "Hooks",
+    "ScourgeHooks"
+   ]
+  },
+  "Scourge Hook: Monstrous Shrine": {
+   "id": 14,
+   "units": [
+    1
+   ],
+   "values": [
+    20,
+    25,
+    30
+   ],
+   "patch": "10.3.0",
+   "distance": "24 metres",
+   "effect": "+200 %",
+   "charType": "K",
+   "tags": [
+    "ActionSpeed",
+    "Basement",
+    "Generators",
+    "Hooks",
+    "ScourgeHooks"
+   ]
+  },
+  "Scourge Hook: Pain Resonance": {
+   "id": 202,
+   "units": [
+    4
+   ],
+   "values": [
+    10,
+    15,
+    20
+   ],
+   "character": 26,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "patch": "8.0.0",
+   "tags": [
+    "ScourgeHooks",
+    "Hooks",
+    "Auras",
+    "Generators",
+    "ProgressionPenalty",
+    "Regression"
+   ]
+  },
+  "Scourge Hook: Weeping Wounds": {
+   "id": 188,
+   "units": [
+    4
+   ],
+   "values": [
+    10,
+    13,
+    16
+   ],
+   "patch": "9.0.0",
+   "charType": "K",
+   "formerCharacter": 25,
+   "formerLevel": 40,
+   "formerPrestige": 3,
+   "formerName": "Scourge Hook: Gift of Pain",
+   "haemorrhage": "90 seconds",
+   "mangled": "90 seconds",
+   "tags": [
+    "ActionSpeed",
+    "Auras",
+    "Haemorrhage",
+    "HealingProficiency",
+    "Hooks",
+    "Mangled",
+    "ScourgeHooks"
+   ]
+  },
+  "Scourge Hook: Gift of Pain": {
+   "charType": "K",
+   "character": 25,
+   "level": 40,
+   "prestige": 3
+  },
+  "Second Wind": {
+   "id": 140,
+   "units": [
+    1
+   ],
+   "values": [
+    28,
+    24,
+    20
+   ],
+   "patch": "7.3.3",
+   "character": 19,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Broken",
+    "Healing",
+    "Hooks"
+   ]
+  },
+  "Secret Project": {
+   "id": 314,
+   "units": [
+    1
+   ],
+   "values": [
+    20,
+    25,
+    30
+   ],
+   "patch": "9.4.0",
+   "character": 42,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Totems",
+    "GenBlocker",
+    "Generators",
+    "Stealth",
+    "Undetectable",
+    "Deception"
+   ]
+  },
+  "See How They Run": {
+   "id": 326,
+   "units": [
+    4,
+    4
+   ],
+   "values": [
+    3,
+    4,
+    5,
+    9,
+    12,
+    15
+   ],
+   "patch": "3.7.0",
+   "formerCharacter": 5,
+   "charType": "K",
+   "formerLevel": 35,
+   "formerPrestige": 2,
+   "formerName": "Play with Your Food",
+   "tokens": [
+    "+1 Token",
+    "3 Tokens",
+    "-1 Token",
+    "1 Token"
+   ],
+   "cooldown": "10 seconds",
+   "tags": [
+    "Chase",
+    "Haste",
+    "Obsession",
+    "Tokens"
+   ]
+  },
+  "Play with Your Food": {
+   "charType": "K",
+   "character": 5,
+   "level": 35,
+   "prestige": 2
+  },
+  "Self-Care": {
+   "id": 38,
+   "units": [
+    4
+   ],
+   "values": [
+    25,
+    30,
+    35
+   ],
+   "patch": "6.1.0",
+   "character": 3,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "ActionSpeed",
+    "Efficiency",
+    "Healing",
+    "HealingProficiency",
+    "SelfHealing"
+   ]
+  },
+  "Self-Preservation": {
+   "id": 176,
+   "units": [
+    1
+   ],
+   "values": [
+    13,
+    14,
+    15
+   ],
+   "patch": "10.2.0",
+   "character": 25,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "GruntsOfPain",
+    "PoolsOfBlood",
+    "ScratchMarks",
+    "Stealth",
+    "Elusive"
+   ]
+  },
+  "Septic Touch": {
+   "id": 215,
+   "units": [
+    1
+   ],
+   "values": [
+    20,
+    25,
+    30
+   ],
+   "patch": "9.2.0",
+   "character": 28,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Healing",
+    "TerrorRadius",
+    "Blindness",
+    "Exhausted"
+   ]
+  },
+  "Shadowborn": {
+   "id": 56,
+   "units": [
+    4
+   ],
+   "values": [
+    6,
+    8,
+    10
+   ],
+   "patch": "7.5.0",
+   "durationHaste": "10 seconds",
+   "character": 2,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Haste",
+    "KillerBlind"
+   ]
+  },
+  "Shattered Hope": {
+   "id": 216,
+   "units": [
+    1
+   ],
+   "values": [
+    16,
+    18,
+    20
+   ],
+   "charType": "K",
+   "tags": [
+    "Auras",
+    "BoonDestroyer",
+    "Totems"
+   ]
+  },
+  "Shoulder the Burden": {
+   "id": 291,
+   "units": [
+    1
+   ],
+   "values": [
+    160,
+    140,
+    120
+   ],
+   "patch": "10.2.0",
+   "character": 45,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Broken",
+    "HookStates",
+    "Screams"
+   ]
+  },
+  "Slippery Meat": {
+   "id": 28,
+   "units": [
+    4
+   ],
+   "values": [
+    65,
+    70,
+    75
+   ],
+   "patch": "10.3.0",
+   "effect": "+7 %",
+   "charType": "S",
+   "tags": [
+    "Hooks",
+    "Haste",
+    "Unhooking"
+   ]
+  },
+  "Sloppy Butcher": {
+   "id": 15,
+   "units": [
+    1,
+    4
+   ],
+   "values": [
+    70,
+    80,
+    90,
+    50,
+    75,
+    100
+   ],
+   "patch": "7.6.0",
+   "charType": "K",
+   "bleeding": "+25 %",
+   "tags": [
+    "Haemorrhage",
+    "Mangled",
+    "PoolsOfBlood"
+   ]
+  },
+  "Small Game": {
+   "id": 29,
+   "units": [
+    3
+   ],
+   "values": [
+    10,
+    11,
+    12
+   ],
+   "patch": "10.2.0",
+   "charType": "S",
+   "tags": [
+    "Totems",
+    "Warning"
+   ]
+  },
+  "Smash Hit": {
+   "id": 175,
+   "units": [
+    1
+   ],
+   "values": [
+    30,
+    25,
+    20
+   ],
+   "patch": "7.1.0",
+   "character": 25,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "haste": "+50 %",
+   "durationHaste": "4 seconds",
+   "tags": [
+    "Exhausted",
+    "Haste",
+    "Pallets",
+    "KillerStun"
+   ]
+  },
+  "Solidarity": {
+   "id": 123,
+   "units": [
+    4
+   ],
+   "values": [
+    65,
+    70,
+    75
+   ],
+   "patch": "10.2.0",
+   "character": 16,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Conversion",
+    "Healing"
+   ]
+  },
+  "Soul Guard": {
+   "id": 156,
+   "units": [
+    1
+   ],
+   "values": [
+    4,
+    6,
+    8
+   ],
+   "patch": "4.7.0",
+   "character": 22,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "cooldown": "30 seconds",
+   "tags": [
+    "ConspicuousActions",
+    "Cursed",
+    "DeepWound",
+    "Endurance",
+    "SelfRecovery"
+   ]
+  },
+  "Specialist": {
+   "id": 279,
+   "units": [
+    9,
+    9
+   ],
+   "values": [
+    2,
+    3,
+    4,
+    12,
+    18,
+    24
+   ],
+   "patch": "8.1.0",
+   "character": 43,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Chests",
+    "Generators",
+    "RepairRequirement",
+    "SkillChecks",
+    "Tokens"
+   ]
+  },
+  "Spies from the Shadows": {
+   "id": 16,
+   "units": [
+    3
+   ],
+   "values": [
+    36,
+    38,
+    40
+   ],
+   "patch": "10.2.0",
+   "charType": "K",
+   "level": 35,
+   "cooldown": "3 seconds",
+   "tags": [
+    "LoudNoiseNotifications",
+    "Crows"
+   ]
+  },
+  "Spine Chill": {
+   "id": 30,
+   "units": [
+    1
+   ],
+   "values": [
+    40,
+    35,
+    30
+   ],
+   "patch": "10.2.0",
+   "charType": "S",
+   "range": "40 metres",
+   "duration": "12 seconds",
+   "effect": "+10 %",
+   "tags": [
+    "ActionSpeed",
+    "Screams"
+   ]
+  },
+  "Spirit Fury": {
+   "id": 108,
+   "units": [
+    7
+   ],
+   "values": [
+    4,
+    3,
+    2
+   ],
+   "patch": "2.2.0",
+   "character": 13,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "KillerStun",
+    "Pallets"
+   ]
+  },
+  "Sprint Burst": {
+   "id": 44,
+   "units": [
+    1
+   ],
+   "values": [
+    60,
+    50,
+    40
+   ],
+   "patch": "10.1.0",
+   "character": 2,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "haste": "+50 %",
+   "durationHaste": "2 seconds",
+   "tags": [
+    "Exhausted",
+    "Haste"
+   ]
+  },
+  "Stake Out": {
+   "id": 101,
+   "units": [
+    5
+   ],
+   "values": [
+    2,
+    3,
+    4
+   ],
+   "patch": "10.2.0",
+   "tokenChargeTime": "15 seconds",
+   "tokenGain": "+1 Token",
+   "tokenCost": "-1 Token",
+   "effect": [
+    "+4 %",
+    "-4 %"
+   ],
+   "range": "24 metres",
+   "character": 12,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "SkillChecks",
+    "TerrorRadius",
+    "Tokens"
+   ]
+  },
+  "Starstruck": {
+   "id": 171,
+   "units": [
+    1
+   ],
+   "values": [
+    26,
+    28,
+    30
+   ],
+   "patch": "4.6.0",
+   "character": 23,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "cooldown": "60 seconds",
+   "tags": [
+    "TerrorRadius",
+    "Exposed"
+   ]
+  },
+  "Still Sight": {
+   "id": 276,
+   "units": [
+    1
+   ],
+   "values": [
+    4,
+    3,
+    2
+   ],
+   "patch": "9.1.0",
+   "character": 42,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "range": "24 meters",
+   "tags": [
+    "Auras",
+    "Chests",
+    "Generators",
+    "KillerAura"
+   ]
+  },
+  "Streetwise": {
+   "id": 47,
+   "units": [
+    4
+   ],
+   "values": [
+    60,
+    70,
+    80
+   ],
+   "patch": "9.1.0",
+   "character": 5,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "activation": "first time",
+   "aura": "8 seconds",
+   "tags": [
+    "Auras",
+    "Charges",
+    "Chests",
+    "Items",
+    "KillerAura"
+   ]
+  },
+  "Strength in Shadows": {
+   "id": 269,
+   "units": [
+    1
+   ],
+   "values": [
+    6,
+    8,
+    10
+   ],
+   "character": 41,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "patch": "7.6.0",
+   "tags": [
+    "ActionSpeed",
+    "Auras",
+    "Basement",
+    "Efficiency",
+    "Healing",
+    "HealingProficiency",
+    "SelfHealing"
+   ]
+  },
+  "Stridor": {
+   "id": 60,
+   "units": [
+    4,
+    4
+   ],
+   "values": [
+    30,
+    40,
+    50,
+    15,
+    20,
+    25
+   ],
+   "character": 4,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "patch": "8.1.1",
+   "tags": [
+    "Breathing",
+    "GruntsOfPain"
+   ]
+  },
+  "Superior Anatomy": {
+   "id": 220,
+   "units": [
+    4
+   ],
+   "values": [
+    30,
+    35,
+    40
+   ],
+   "patch": "10.2.0",
+   "character": 29,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "range": "12 metres",
+   "cooldown": "20 seconds",
+   "duration": "10 seconds",
+   "tags": [
+    "ActionSpeed",
+    "Pallets",
+    "Vaulting",
+    "VaultLocations"
+   ]
+  },
+  "Surge": {
+   "id": 132,
+   "units": [
+    4
+   ],
+   "values": [
+    6,
+    7,
+    8
+   ],
+   "patch": "6.1.0",
+   "range": "32 metres",
+   "character": 17,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Generators",
+    "Regression",
+    "ProgressionPenalty"
+   ]
+  },
+  "Surveillance": {
+   "id": 97,
+   "units": [
+    1
+   ],
+   "values": [
+    8,
+    12,
+    16
+   ],
+   "patch": "5.0.0",
+   "range": "+8 metres",
+   "character": 11,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "ActionNoise",
+    "Auras",
+    "Generators"
+   ]
+  },
+  "Teamwork: Collective Stealth": {
+   "id": 242,
+   "units": [
+    3
+   ],
+   "values": [
+    8,
+    12,
+    16
+   ],
+   "duration": "4 seconds",
+   "character": 36,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "patch": "8.3.0",
+   "tags": [
+    "Healing",
+    "ScratchMarks",
+    "Stealth",
+    "Teamwork"
+   ]
+  },
+  "Teamwork: Full Circuit": {
+   "id": 318,
+   "units": [
+    4
+   ],
+   "values": [
+    15,
+    20,
+    25
+   ],
+   "patch": "9.4.0",
+   "character": 50,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "repairSpeed": "5 %",
+   "tags": [
+    "Generators",
+    "SkillChecks",
+    "SkillCheckDifficulty",
+    "ActionSpeed",
+    "Teamwork"
+   ]
+  },
+  "Teamwork: Power of Two": {
+   "id": 239,
+   "units": [
+    3
+   ],
+   "values": [
+    8,
+    12,
+    16
+   ],
+   "haste": "+5 %",
+   "duration": "4 seconds",
+   "character": 35,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "patch": "8.3.0",
+   "tags": [
+    "Haste",
+    "Healing",
+    "Teamwork"
+   ]
+  },
+  "Teamwork: Soft-Spoken": {
+   "id": 321,
+   "units": [
+    4
+   ],
+   "values": [
+    15,
+    20,
+    25
+   ],
+   "patch": "9.4.0",
+   "character": 51,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "repairSpeed": "5 %",
+   "tags": [
+    "Generators",
+    "ActionNoise",
+    "ActionSpeed",
+    "Teamwork"
+   ]
+  },
+  "Teamwork: Throw Down": {
+   "id": 306,
+   "units": [
+    1
+   ],
+   "values": [
+    6,
+    8,
+    10
+   ],
+   "patch": "9.1.0",
+   "character": 48,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "range": "24 metres",
+   "tags": [
+    "Auras",
+    "Endurance",
+    "KillerBlind",
+    "KillerStun",
+    "Pallets",
+    "Teamwork"
+   ]
+  },
+  "Teamwork: Toughen Up": {
+   "id": 303,
+   "units": [
+    1
+   ],
+   "values": [
+    20,
+    25,
+    30
+   ],
+   "patch": "9.1.0",
+   "character": 47,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "range": "24 metres",
+   "tags": [
+    "GruntsOfPain",
+    "KillerBlind",
+    "KillerStun",
+    "Pallets",
+    "PoolsOfBlood",
+    "ScratchMarks",
+    "Teamwork"
+   ]
+  },
+  "Technician": {
+   "id": 75,
+   "units": [
+    4
+   ],
+   "values": [
+    4,
+    3,
+    2
+   ],
+   "patch": "10.1.0",
+   "range": "-16 metres",
+   "character": 9,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "ActionNoise",
+    "Generators",
+    "ProgressionPenalty",
+    "SkillChecks",
+    "LoudNoiseNotifications"
+   ]
+  },
+  "Tenacity": {
+   "id": 99,
+   "units": [
+    4
+   ],
+   "values": [
+    30,
+    40,
+    50
+   ],
+   "patch": "9.3.0",
+   "character": 12,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "volume": "-75 %",
+   "tags": [
+    "Auras",
+    "GruntsOfPain",
+    "Haste",
+    "Recovering"
+   ]
+  },
+  "Terminus": {
+   "id": 222,
+   "units": [
+    1
+   ],
+   "values": [
+    35,
+    40,
+    45
+   ],
+   "patch": "9.5.0",
+   "character": 29,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Broken",
+    "ExitGates"
+   ]
+  },
+  "Territorial Imperative": {
+   "id": 84,
+   "units": [
+    1
+   ],
+   "values": [
+    4,
+    5,
+    6
+   ],
+   "patch": "7.1.0",
+   "character": 8,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "distance": "24 metres",
+   "cooldown": "45 seconds",
+   "tags": [
+    "Auras",
+    "Basement"
+   ]
+  },
+  "Thanatophobia": {
+   "id": 61,
+   "units": [
+    4,
+    4,
+    4
+   ],
+   "values": [
+    1,
+    1.5,
+    2,
+    4,
+    6,
+    8,
+    16,
+    18,
+    20
+   ],
+   "patch": "6.1.2 / 6.1.3",
+   "character": 4,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "penalty": "+12 %",
+   "tags": [
+    "ActionSpeed",
+    "RepairingProficiency",
+    "SabotageProficiency",
+    "Totems"
+   ]
+  },
+  "This Is Not Happening": {
+   "id": 31,
+   "units": [
+    4
+   ],
+   "values": [
+    150,
+    175,
+    200
+   ],
+   "patch": "10.2.0",
+   "charType": "S",
+   "effect": "+30 %",
+   "tags": [
+    "SkillCheckDifficulty",
+    "SkillChecks"
+   ]
+  },
+  "Thrilling Tremors": {
+   "id": 130,
+   "units": [
+    1
+   ],
+   "values": [
+    40,
+    35,
+    30
+   ],
+   "patch": "9.0.0",
+   "character": 16,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "duration": "16 seconds",
+   "tags": [
+    "Auras",
+    "GenBlocker",
+    "Generators"
+   ]
+  },
+  "THWACK!": {
+   "id": 235,
+   "units": [
+    1
+   ],
+   "values": [
+    4,
+    5,
+    6
+   ],
+   "patch": "9.0.0",
+   "character": 31,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "tokens": "3 Tokens",
+   "radius": "36 metres",
+   "tags": [
+    "Auras",
+    "BreakableWalls",
+    "Hooks",
+    "LoudNoiseNotifications",
+    "Pallets",
+    "Screams",
+    "Tokens"
+   ]
+  },
+  "Tinkerer": {
+   "id": 59,
+   "units": [
+    1
+   ],
+   "values": [
+    12,
+    14,
+    16
+   ],
+   "patch": "6.1.0",
+   "character": 3,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Deception",
+    "Generators",
+    "LoudNoiseNotifications",
+    "Stealth",
+    "Undetectable"
+   ]
+  },
+  "Tough Runner": {
+   "id": 5,
+   "charType": "S",
+   "unused": true
+  },
+  "Trail of Torment": {
+   "id": 154,
+   "units": [
+    1
+   ],
+   "values": [
+    60,
+    45,
+    30
+   ],
+   "patch": "8.1.0",
+   "character": 20,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Auras",
+    "Deception",
+    "Generators",
+    "Stealth",
+    "Undetectable"
+   ]
+  },
+  "Troubleshooter": {
+   "id": 247,
+   "units": [
+    1,
+    1
+   ],
+   "values": [
+    4,
+    5,
+    6,
+    6,
+    8,
+    10
+   ],
+   "patch": "7.0.0",
+   "character": 37,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Auras",
+    "Chase",
+    "Generators",
+    "Pallets"
+   ]
+  },
+  "Turn Back the Clock": {
+   "id": 313,
+   "units": [
+    1
+   ],
+   "values": [
+    40,
+    50,
+    60
+   ],
+   "patch": "9.4.0",
+   "character": 42,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "penalty": "-10 %",
+   "tags": [
+    "Generators",
+    "Hooks",
+    "ProgressionPenalty"
+   ]
+  },
+  "Unbound": {
+   "id": 265,
+   "units": [
+    1
+   ],
+   "values": [
+    26,
+    28,
+    30
+   ],
+   "patch": "10.2.0",
+   "character": 35,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "haste": "+5 %",
+   "durationHaste": "25 seconds",
+   "tags": [
+    "Haste",
+    "InjuredState",
+    "Vaulting",
+    "Windows"
+   ]
+  },
+  "Underperform": {
+   "id": 6,
+   "charType": "K",
+   "unused": true
+  },
+  "Undone": {
+   "id": 267,
+   "units": [
+    6,
+    4,
+    1
+   ],
+   "values": [
+    1,
+    2,
+    3,
+    10,
+    20,
+    30,
+    10,
+    20,
+    30
+   ],
+   "patch": "10.2.0",
+   "character": 35,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "tokenGain": "+1 Token",
+   "penalty": "-10 %",
+   "duration": "10 seconds",
+   "tags": [
+    "Generators",
+    "GenBlocker",
+    "Regression",
+    "Tokens"
+   ]
+  },
+  "Unforeseen": {
+   "id": 266,
+   "units": [
+    1
+   ],
+   "values": [
+    22,
+    26,
+    30
+   ],
+   "patch": "7.6.0",
+   "character": 35,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "radius": "32 metres",
+   "cooldown": "30 seconds",
+   "tags": [
+    "Deception",
+    "Generators",
+    "TerrorRadius",
+    "TerrorRadiusTransfer",
+    "Undetectable"
+   ]
+  },
+  "Ultimate Weapon": {
+   "id": 255,
+   "units": [
+    1
+   ],
+   "values": [
+    55,
+    50,
+    45
+   ],
+   "patch": "9.2.0",
+   "character": 33,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "range": "40 metres",
+   "blindness": "30 seconds",
+   "tags": [
+    "Blindness",
+    "Lockers",
+    "LoudNoiseNotifications"
+   ]
+  },
+  "Unnerving Presence": {
+   "id": 53,
+   "units": [
+    4
+   ],
+   "values": [
+    40,
+    50,
+    60
+   ],
+   "patch": "3.6.0",
+   "skillCheckChance": "+10 %",
+   "character": 1,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "SkillCheckDifficulty",
+    "SkillCheckProbability",
+    "SkillChecks",
+    "TerrorRadius",
+    "TriggerOdds"
+   ]
+  },
+  "Unbreakable": {
+   "id": 74,
+   "units": [
+    4
+   ],
+   "values": [
+    25,
+    30,
+    35
+   ],
+   "patch": "1.4.2",
+   "character": 8,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "limit": "once",
+   "tags": [
+    "Recovering",
+    "RecoverySpeed",
+    "SelfRecovery"
+   ]
+  },
+  "Unrelenting": {
+   "id": 17,
+   "units": [
+    4
+   ],
+   "values": [
+    30,
+    35,
+    40
+   ],
+   "patch": "10.2.0",
+   "charType": "K",
+   "effect": "10 %",
+   "tags": [
+    "AttackCooldown"
+   ]
+  },
+  "Up the Ante": {
+   "id": 68,
+   "units": [
+    4,
+    4
+   ],
+   "values": [
+    1,
+    2,
+    3,
+    3,
+    6,
+    9
+   ],
+   "patch": "9.0.0",
+   "character": 7,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "tokenGain": "+1 Token",
+   "tags": [
+    "Chance",
+    "EscapeAttempts"
+   ]
+  },
+  "Urban Evasion": {
+   "id": 46,
+   "units": [
+    4
+   ],
+   "values": [
+    90,
+    95,
+    100
+   ],
+   "character": 5,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Crouching",
+    "Haste"
+   ]
+  },
+  "Vigil": {
+   "id": 95,
+   "units": [
+    4
+   ],
+   "values": [
+    20,
+    25,
+    30
+   ],
+   "patch": "10.1.1",
+   "character": 11,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "range": "16 metres",
+   "linger": "15 seconds",
+   "tags": [
+    "Blindness",
+    "Broken",
+    "Exposed",
+    "Exhausted",
+    "Haemorrhage",
+    "Hindered",
+    "Mangled",
+    "Oblivious",
+    "RecoverySpeed"
+   ]
+  },
+  "Visionary": {
+   "id": 162,
+   "units": [
+    1
+   ],
+   "values": [
+    20,
+    18,
+    16
+   ],
+   "character": 23,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "range": "32 metres",
+   "tags": [
+    "Auras",
+    "Generators"
+   ]
+  },
+  "Wake Up!": {
+   "id": 93,
+   "units": [
+    4,
+    4
+   ],
+   "values": [
+    8,
+    9,
+    10,
+    68,
+    69,
+    70
+   ],
+   "range": "128 metres",
+   "character": 11,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "patch": "8.5.0",
+   "tags": [
+    "ActionSpeed",
+    "Auras",
+    "ExitGates"
+   ]
+  },
+  "Wandering Eye": {
+   "id": 308,
+   "units": [
+    1
+   ],
+   "values": [
+    40,
+    35,
+    30
+   ],
+   "patch": "9.2.0",
+   "character": 41,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "auras": [
+    "20 metres",
+    "5 seconds"
+   ],
+   "tags": [
+    "Auras",
+    "InjuredState"
+   ]
+  },
+  "We See You": {
+   "id": 320,
+   "units": [
+    1
+   ],
+   "values": [
+    10,
+    12.5,
+    15
+   ],
+   "patch": "9.4.0",
+   "character": 51,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "maxTokens": "4 tokens",
+   "tokenCooldown": "10-second",
+   "tags": [
+    "Auras",
+    "KillerAura"
+   ]
+  },
+  "We'll Make It": {
+   "id": 32,
+   "units": [
+    1
+   ],
+   "values": [
+    70,
+    80,
+    90
+   ],
+   "patch": "10.2.0",
+   "charType": "S",
+   "effect": "+100 %",
+   "tags": [
+    "ActionSpeed",
+    "Healing",
+    "HealingProficiency"
+   ]
+  },
+  "We're Gonna Live Forever": {
+   "id": 81,
+   "units": [
+    1
+   ],
+   "values": [
+    6,
+    8,
+    10
+   ],
+   "healing": "+100 %",
+   "cooldown": "30 seconds",
+   "character": 10,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "patch": "8.3.2",
+   "tags": [
+    "ActionSpeed",
+    "ConspicuousActions",
+    "DeepWound",
+    "Endurance",
+    "Healing",
+    "HealingProficiency"
+   ]
+  },
+  "Weave Attunement": {
+   "id": 271,
+   "units": [
+    1
+   ],
+   "values": [
+    20,
+    25,
+    30
+   ],
+   "range": "12 metres",
+   "character": 36,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "patch": "8.4.1",
+   "tags": [
+    "Auras",
+    "ForcedItemDrop",
+    "Items",
+    "Oblivious"
+   ]
+  },
+  "Whispers": {
+   "id": 18,
+   "units": [
+    3
+   ],
+   "values": [
+    28,
+    26,
+    24
+   ],
+   "patch": "10.3.0",
+   "charType": "K",
+   "effect": "+7 %",
+   "tags": [
+    "Warning"
+   ]
+  },
+  "Wicked": {
+   "id": 270,
+   "units": [
+    1
+   ],
+   "values": [
+    16,
+    18,
+    20
+   ],
+   "patch": "9.3.2",
+   "chance": "100 %",
+   "character": 41,
+   "charType": "S",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Auras",
+    "Basement",
+    "Chance",
+    "EscapeAttempt",
+    "Hooks"
+   ]
+  },
+  "Will to Live": {
+   "id": 324,
+   "units": [
+    1
+   ],
+   "values": [
+    40,
+    50,
+    60
+   ],
+   "patch": "8.0.0",
+   "formerCharacter": 6,
+   "charType": "S",
+   "formerLevel": 40,
+   "formerPrestige": 3,
+   "formerName": "Decisive Strike",
+   "tags": [
+    "Obsession",
+    "SkillChecks",
+    "KillerStun"
+   ]
+  },
+  "Decisive Strike": {
+   "charType": "S",
+   "character": 6,
+   "level": 40,
+   "prestige": 3
+  },
+  "Windows of Opportunity": {
+   "id": 106,
+   "units": [
+    1
+   ],
+   "values": [
+    40,
+    35,
+    30
+   ],
+   "character": 13,
+   "charType": "S",
+   "level": 35,
+   "prestige": 2,
+   "range": "24 metres",
+   "effect": "+10 %",
+   "tags": [
+    "Auras",
+    "BreakableWalls",
+    "Pallets",
+    "VaultLocations"
+   ]
+  },
+  "Wiretap": {
+   "id": 223,
+   "units": [
+    1
+   ],
+   "values": [
+    100,
+    110,
+    120
+   ],
+   "activation": "40 %",
+   "range": "14 metres",
+   "character": 32,
+   "charType": "S",
+   "level": 30,
+   "prestige": 1,
+   "patch": "8.2.0",
+   "tags": [
+    "Auras",
+    "Generators",
+    "Trap"
+   ]
+  },
+  "Zanshin Tactics": {
+   "id": 141,
+   "units": [
+    1
+   ],
+   "values": [
+    3,
+    4,
+    5
+   ],
+   "patch": "8.3.2",
+   "radius": "32 metres",
+   "character": 18,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Auras",
+    "Pallets",
+    "Windows"
+   ]
+  },
+  "Hex: Scared to Death": {
+   "id": 331,
+   "units": [
+    4
+   ],
+   "values": [
+    -11,
+    -12,
+    -13
+   ],
+   "range": "13 metres",
+   "hindered": "3 seconds",
+   "character": 43,
+   "charType": "K",
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Hindered"
+   ]
+  },
+  "Silent Shadow": {
+   "id": 332,
+   "units": [
+    1
+   ],
+   "values": [
+    11,
+    12,
+    13
+   ],
+   "character": 43,
+   "charType": "K",
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Undetectable"
+   ],
+   "patch": "10.0.0"
+  },
+  "Rampage": {
+   "id": 333,
+   "units": [
+    1
+   ],
+   "values": [
+    30,
+    25,
+    20
+   ],
+   "maxTokenAmount": "13",
+   "effect": "+1 %",
+   "haste": "13 seconds",
+   "character": 43,
+   "charType": "K",
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Haste",
+    "Pallets",
+    "BreakableWalls"
+   ]
+  },
+  "Wide Open Throttle": {
+   "id": 334,
+   "units": [
+    4
+   ],
+   "values": [
+    10,
+    12.5,
+    15
+   ],
+   "haste": "3 seconds",
+   "duration": "60 seconds",
+   "cooldown": "60 second",
+   "charType": "S",
+   "character": 53,
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Haste",
+    "Pallets"
+   ]
+  },
+  "Lend a Hand": {
+   "id": 335,
+   "units": [
+    7
+   ],
+   "values": [
+    2,
+    3,
+    4
+   ],
+   "charType": "S",
+   "character": 53,
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Healing"
+   ]
+  },
+  "Cross-Examination": {
+   "id": 336,
+   "units": [
+    1
+   ],
+   "values": [
+    3,
+    4,
+    5
+   ],
+   "lightMarkDuration": "10 seconds",
+   "charType": "S",
+   "character": 53,
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Elusive"
+   ]
+  },
+  "Hex: Under Your Thumb": {
+   "id": 337,
+   "units": [
+    4
+   ],
+   "values": [
+    25,
+    20,
+    15
+   ],
+   "range": "32 metres",
+   "duration": "4 seconds",
+   "charType": "K",
+   "character": 44,
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Hex",
+    "Totems",
+    "Haste"
+   ]
+  },
+  "Celestial Witness": {
+   "id": 338,
+   "units": [
+    1
+   ],
+   "values": [
+    2,
+    2.5,
+    3
+   ],
+   "cooldown": "30 seconds",
+   "range": "40 metres",
+   "charType": "K",
+   "character": 44,
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Obsession",
+    "Auras"
+   ]
+  },
+  "Lay Waste": {
+   "id": 339,
+   "units": [
+    1
+   ],
+   "values": [
+    55,
+    50,
+    45
+   ],
+   "effect": "+2 %",
+   "charType": "K",
+   "character": 44,
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Generators",
+    "RegressionSpeed",
+    "Regression"
+   ]
+  },
+  "Fruits of Your Labor": {
+   "id": 340,
+   "units": [
+    4
+   ],
+   "values": [
+    10,
+    15,
+    20
+   ],
+   "haste": "+5 %",
+   "duration": "2 seconds",
+   "charType": "S",
+   "character": 54,
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Generators",
+    "Haste",
+    "Healing"
+   ]
+  },
+  "Salvation's Cry": {
+   "id": 341,
+   "units": [
+    1
+   ],
+   "values": [
+    1,
+    2,
+    3
+   ],
+   "duration": "5 seconds",
+   "charType": "S",
+   "character": 54,
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Auras"
+   ]
+  },
+  "Boon: Steadfast": {
+   "id": 342,
+   "units": [
+    4
+   ],
+   "values": [
+    8,
+    9,
+    10
+   ],
+   "effect": "-50 %",
+   "charType": "S",
+   "character": 54,
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Boon",
+    "Totems",
+    "Generators",
+    "RegressionSpeed"
+   ]
+  },
+  "Laughingstock": {
+   "id": 343,
+   "units": [
+    1
+   ],
+   "values": [
+    3,
+    4,
+    5
+   ],
+   "range": "12 metres",
+   "duration": "5 seconds",
+   "charType": "K",
+   "character": 45,
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Generators",
+    "Oblivious",
+    "Exhausted"
+   ]
+  },
+  "Kill Spree": {
+   "id": 344,
+   "units": [
+    1
+   ],
+   "values": [
+    12,
+    18,
+    20
+   ],
+   "charType": "K",
+   "character": 45,
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Killing",
+    "ExitGates"
+   ]
+  },
+  "Funny Business": {
+   "id": 345,
+   "units": [
+    1
+   ],
+   "values": [
+    60,
+    50,
+    40
+   ],
+   "effect": "+10 %",
+   "haste": "10 seconds",
+   "duration": [
+    "10 seconds",
+    "5 seconds",
+    "2 seconds",
+    "30 seconds"
+   ],
+   "charType": "K",
+   "character": 45,
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Haste",
+    "Generators"
+   ]
+  },
+  "Valkyrie's Rage": {
+   "id": 345,
+   "units": [
+    1
+   ],
+   "values": [
+    40,
+    35,
+    30
+   ],
+   "effect": "+75 %",
+   "charType": "S",
+   "character": 55,
+   "level": 30,
+   "prestige": 1,
+   "tags": [
+    "Pallets",
+    "Chase"
+   ]
+  },
+  "Shared Trauma": {
+   "id": 346,
+   "units": [
+    1
+   ],
+   "values": [
+    30,
+    35,
+    40
+   ],
+   "range": [
+    "12 metres",
+    "32 metres"
+   ],
+   "charType": "S",
+   "character": 55,
+   "level": 35,
+   "prestige": 2,
+   "tags": [
+    "Exhausted",
+    "ProtectionHits"
+   ]
+  },
+  "Best Gift Ever": {
+   "id": 347,
+   "units": [
+    5
+   ],
+   "values": [
+    4,
+    5,
+    6
+   ],
+   "tokens": "1 Token",
+   "duration": [
+    "2 seconds",
+    "5 seconds",
+    "+1 second"
+   ],
+   "effect": [
+    "+50 %",
+    "25 %"
+   ],
+   "charType": "S",
+   "character": 55,
+   "level": 40,
+   "prestige": 3,
+   "tags": [
+    "Items",
+    "FogVials",
+    "Flashlights",
+    "Keys",
+    "Maps",
+    "Med-Kits",
+    "Toolboxes"
+   ]
+  }
+ },
+ "powers": {
+  "Bear Trap": {
+   "killer": 1,
+   "patch": "7.3.1",
+   "haste": "+7.5 %",
+   "tags": [
+    "Auras",
+    "AutoDamage",
+    "BearTraps",
+    "Haste"
+   ]
+  },
+  "Wailing Bell": {
+   "killer": 2,
+   "patch": "6.7.0",
+   "tags": [
+    "SpiritWorld",
+    "Invisibility",
+    "Undetectable"
+   ]
+  },
+  "Chainsaw": {
+   "killer": 3,
+   "patch": "8.3.0",
+   "tags": [
+    "DoubleDamage",
+    "Overdrive"
+   ]
+  },
+  "Spencer's Last Breath": {
+   "killer": 4,
+   "patch": "6.7.0",
+   "tags": [
+    "Fatigue",
+    "SpiritWorld",
+    "Teleportation",
+    "Tokens"
+   ]
+  },
+  "Evil Within": {
+   "killer": 5,
+   "patch": "9.2.3",
+   "modes": 3,
+   "hookStageCount": 2,
+   "strike": [
+    "1.5 seconds",
+    "4 seconds"
+   ],
+   "evilIncarnate": "60 seconds",
+   "bonus": "+20 %",
+   "stalking": [
+    "60 %",
+    "2.5–32 metres",
+    "-25 %",
+    "20 seconds",
+    "50 %"
+   ],
+   "movementSpeed": [
+    "4.2 m/s",
+    "4.6 m/s",
+    "7.5 m/s"
+   ],
+   "vaulting": [
+    "1.7 seconds",
+    "1.42 seconds"
+   ],
+   "terrorRadius": [
+    "16 metres",
+    "32 metres"
+   ],
+   "tags": [
+    "ActionSpeed",
+    "AttackRange",
+    "Exposed",
+    "MovementSpeed",
+    "Stalking",
+    "TerrorRadius",
+    "Undetectable",
+    "Vaulting"
+   ]
+  },
+  "Blackened Catalyst": {
+   "killer": 6,
+   "patch": "7.6.0",
+   "tags": [
+    "FakeTerrorRadius",
+    "PhantasmTraps",
+    "TerrorRadius",
+    "Teleportation"
+   ]
+  },
+  "Carter's Spark": {
+   "killer": 7,
+   "patch": "8.2.0",
+   "tags": [
+    "Auras",
+    "FakeTerrorRadius",
+    "Hallucinations",
+    "InteractionBlocker",
+    "ItemBlocker",
+    "Lockers",
+    "LoudNoiseNotifications",
+    "Madness",
+    "Oblivious",
+    "Screams",
+    "SkillChecks",
+    "TerrorRadius"
+   ]
+  },
+  "Hunting Hatchets": {
+   "killer": 8,
+   "patch": "7.6.0",
+   "tags": [
+    "Auras",
+    "Lockers",
+    "Lullaby"
+   ]
+  },
+  "Bubba's Chainsaw": {
+   "killer": 9,
+   "patch": "8.0.0",
+   "tags": [
+    "DoubleDamage",
+    "Tantrum"
+   ]
+  },
+  "Dream Demon": {
+   "killer": 10,
+   "patch": "8.5.0",
+   "tags": [
+    "AlarmClocks",
+    "DreamSnares",
+    "DreamPallets",
+    "DreamWorld",
+    "Healing",
+    "Hindered",
+    "Husk",
+    "Invisibility",
+    "Lullaby",
+    "Oblivious",
+    "SkillChecks",
+    "SleepPenalty",
+    "Teleportation",
+    "TerrorRadius"
+   ],
+   "invisibilityFar": "32 metres",
+   "invisibilityIntermittent": "16 to 32 metres",
+   "invisibilityNear": "16 metres",
+   "microsleep": "60 seconds",
+   "immunityMicrosleep": "30 seconds",
+   "wakeUp": "5 seconds",
+   "alarmClockInteraction": "2 seconds",
+   "dreamTraps": 2,
+   "dreamSnareChargeTime": "0.35 seconds",
+   "dreamSnareSpeed": "12 m/s",
+   "dreamSnareRange": "18 metres",
+   "dreamSnarePenalty": "+30 seconds",
+   "dreamSnareCooldown": "7 seconds",
+   "castingDreamSnares": "4.0 m/s",
+   "hindered": "-12 %",
+   "durationHindered": "4.5 seconds",
+   "dreamPallets": 8,
+   "dreamPalletRange": "24 metres",
+   "dreamPalletDelay": "1.5 seconds",
+   "dreamPalletPenalty": "+60 seconds",
+   "dreamPalletAOE": "3.5 metres",
+   "dreamPalletCooldown": "1.5 seconds",
+   "dreamProjectionRange": "8 to 12 metres",
+   "dreamProjectionThreshold": "0.5 seconds",
+   "dreamProjectionDuration": "2.5 seconds",
+   "dreamProjectionBonus": "-15 %",
+   "dreamProjectionMaxBonus": "-60 %",
+   "dreamProjectionCooldown": "30 seconds",
+   "dreamProjectionPenalty": "+15 seconds",
+   "castingDreamProjection": "3.86 m/s",
+   "dreamProjectionAOE": "8 metres",
+   "killerInstinct": "3 seconds"
+  },
+  "Jigsaw's Baptism": {
+   "killer": 11,
+   "patch": "7.6.0",
+   "tags": [
+    "Crouching",
+    "Dash",
+    "DeathTimer",
+    "Generators",
+    "JigsawBoxes",
+    "ReverseBearTraps",
+    "Undetectable"
+   ]
+  },
+  "The Afterpiece Tonic": {
+   "killer": 12,
+   "patch": "9.2.0",
+   "bottles": 6,
+   "reloading": [
+    "2.5 seconds",
+    "2.3 m/s"
+   ],
+   "hindered": "-14 %",
+   "linger": "1.6 seconds",
+   "delay": "1.6 seconds",
+   "haste": "+12 %",
+   "durationHaste": "6 seconds",
+   "tags": [
+    "Antidote",
+    "Haste",
+    "Hindered",
+    "Intoxication",
+    "Invigoration",
+    "Tonic"
+   ]
+  },
+  "Yamaoka's Haunting": {
+   "killer": 13,
+   "patch": "6.7.0",
+   "tags": [
+    "EtherealPlane",
+    "Husk",
+    "MovementSpeed",
+    "Invisibility",
+    "ScratchMarks",
+    "TerrorRadius"
+   ]
+  },
+  "Feral Frenzy": {
+   "killer": 14,
+   "patch": "8.6.0",
+   "frenzyDuration": "11 seconds",
+   "frenzyRecharge": "15 seconds",
+   "frenzySpeedDefault": "5.2 m/s",
+   "frenzySpeedBonus": "+0.24 m/s",
+   "frenzySpeedMax": "+0.96 m/s",
+   "terrorRadiusBonus": "+8 metres",
+   "feralVault": "0.9 seconds",
+   "fatigueSpeed": "2.3 m/s",
+   "fatigueDuration": "2.5 seconds",
+   "tags": [
+    "DeepWound",
+    "DoubleDamage",
+    "Fatigue",
+    "KillerInstinct",
+    "Pallets",
+    "PoolsOfBlood",
+    "ScratchMarks",
+    "TerrorRadius",
+    "Vaulting",
+    "Windows"
+   ]
+  },
+  "Vile Purge": {
+   "killer": 15,
+   "patch": "5.3.0",
+   "tags": [
+    "Broken",
+    "PoolsOfDevotion",
+    "Projectiles"
+   ]
+  },
+  "Night Shroud": {
+   "killer": 16,
+   "patch": "9.6.1",
+   "powerCooldown": "15 seconds",
+   "crouchingSpeed": "4.0 m/s",
+   "stalkSpeedMultiplierActive": "20 %",
+   "stalkSpeedMultiplierPassive": "50 %",
+   "stalkRange": "40 metres",
+   "stalkRate": "+22.5 pts/s",
+   "stalkRateLean": "+45 pts/s",
+   "stalkCapacity": "100 points",
+   "exposed": "60 seconds",
+   "revealVisibility": "30 %",
+   "revealRange": "32 metres",
+   "revealTime": "1.5 seconds",
+   "killerInstinct": "4 seconds",
+   "tags": [
+    "Crouching",
+    "Exposed",
+    "KillerInstinct",
+    "Stalking",
+    "Undetectable"
+   ]
+  },
+  "Of the Abyss": {
+   "killer": 17,
+   "patch": "8.4.1",
+   "undetectable": "12 seconds",
+   "tags": [
+    "BreakableWalls",
+    "KillerInstinct",
+    "Pallets",
+    "Portals",
+    "Oblivious",
+    "Shred",
+    "Undetectable"
+   ]
+  },
+  "Yamaoka's Wrath": {
+   "killer": 18,
+   "patch": "8.7.0",
+   "tags": [
+    "AttackRange",
+    "Dash",
+    "DoubleDamage"
+   ]
+  },
+  "The Redeemer": {
+   "killer": 19,
+   "patch": "8.0.0",
+   "tags": [
+    "DeepWound",
+    "Projectile",
+    "Spear"
+   ]
+  },
+  "Rites of Judgement": {
+   "killer": 20,
+   "patch": "10.2.2a",
+   "killerInstinct": "3 seconds",
+   "ROJ": [
+    "4.2 m/s",
+    "8 Charges",
+    "-1 c/s",
+    "10 seconds",
+    "90 seconds",
+    "32 metres"
+   ],
+   "POTD": [
+    "-2 Charges",
+    "16 metres"
+   ],
+   "tags": [
+    "CagesOfAtonement",
+    "KillerInstinct",
+    "MiniMori",
+    "Torment"
+   ]
+  },
+  "Blighted Corruption": {
+   "killer": 21,
+   "patch": "5.0.0",
+   "tags": [
+    "BreakableWalls",
+    "Dash",
+    "Fatigue",
+    "Pallets",
+    "Slam",
+    "Tokens"
+   ]
+  },
+  "Blood Bond": {
+   "killer": 22,
+   "patch": "8.3.0",
+   "tags": [
+    "Broken",
+    "Collision",
+    "DormantState",
+    "GateBlocker",
+    "Incapacitated",
+    "InteractionBlocker",
+    "KillerInstinct",
+    "Lockers",
+    "Lullaby",
+    "Oblivious",
+    "PoolsOfBlood",
+    "RedStain",
+    "ScratchMarks",
+    "TerrorRadius"
+   ]
+  },
+  "Showstopper": {
+   "killer": 23,
+   "patch": "7.4.2",
+   "tags": [
+    "Blades",
+    "Laceration",
+    "Lockers",
+    "Lullaby",
+    "MainEvent"
+   ]
+  },
+  "T-Virus": {
+   "killer": 24,
+   "patch": "8.2.0",
+   "hindered": "-20 %",
+   "tags": [
+    "BreakableWalls",
+    "Contamination",
+    "HeadOn",
+    "Firecrackers",
+    "FlashGrenades",
+    "Flashlights",
+    "Hindered",
+    "KillerInstinct",
+    "Pallets",
+    "SupplyCases",
+    "Vaccine",
+    "Zombies"
+   ]
+  },
+  "Summons of Pain": {
+   "killer": 25,
+   "patch": "6.7.0",
+   "tags": [
+    "Auras",
+    "ChainHunt",
+    "GateBlocker",
+    "Incapacitated",
+    "KillerInstinct",
+    "LamentConfiguration",
+    "Oblivious",
+    "Teleportation"
+   ]
+  },
+  "Birds of Torment": {
+   "killer": 26,
+   "patch": "6.7.0",
+   "tags": [
+    "Auras",
+    "DireCrows",
+    "FlightPath",
+    "KillerInstinct",
+    "Lockers",
+    "Swarm"
+   ]
+  },
+  "Deluge of Fear": {
+   "killer": 27,
+   "patch": "7.5.1",
+   "tags": [
+    "Auras",
+    "Condemned",
+    "Hooks",
+    "Invisibility",
+    "KillerStun",
+    "Lullaby",
+    "MiniMori",
+    "Pallets",
+    "Teleportation",
+    "TVs",
+    "Undetectable",
+    "VHSTape"
+   ]
+  },
+  "Reign of Darkness": {
+   "killer": 28,
+   "patch": "9.6.0",
+   "tags": [
+    "Husk",
+    "KillerInstinct",
+    "Lockers",
+    "Nightfall",
+    "Remnant",
+    "Teleportation",
+    "Tokens",
+    "Undetectable"
+   ]
+  },
+  "Virulent Bound": {
+   "killer": 29,
+   "patch": "8.4.0",
+   "hindered": "-4 %",
+   "tags": [
+    "Dash",
+    "FirstAidSpray",
+    "GateBlocker",
+    "Hindered",
+    "Infection",
+    "KillerInstinct",
+    "Pallets",
+    "Slam",
+    "SupplyCases",
+    "Tokens",
+    "Vaulting",
+    "Windows"
+   ]
+  },
+  "Guardia Compagnia": {
+   "killer": 30,
+   "patch": "8.2.0",
+   "haste": [
+    "+5 %",
+    "+50 %"
+   ],
+   "tags": [
+    "BreakableWalls",
+    "DeepWound",
+    "Endurance",
+    "Generators",
+    "Guards",
+    "Haste",
+    "Hunt",
+    "GuardOrder",
+    "Pallets",
+    "Patrol",
+    "PatrolPath",
+    "PoolsOfBlood",
+    "ScratchMarks",
+    "Standard"
+   ]
+  },
+  "Eyes in the Sky": {
+   "killer": 31,
+   "patch": "9.3.2",
+   "haste": "+5 %",
+   "durationHaste": "8 seconds",
+   "hindered": "-10 %",
+   "durationHindered": "6 seconds",
+   "undetectable": "8 seconds",
+   "tags": [
+    "Auras",
+    "AutoDamage",
+    "Broken",
+    "ClawTraps",
+    "DeepWound",
+    "Drones",
+    "Haste",
+    "Hindered",
+    "KillerInstinct",
+    "Undetectable"
+   ]
+  },
+  "Quantum Instantiation": {
+   "killer": 32,
+   "patch": "8.7.0",
+   "OCMode_speed": "+3 %",
+   "hindered": "-50 %",
+   "tags": [
+    "ActionSpeed",
+    "Biopods",
+    "BreakableWalls",
+    "EMP",
+    "KillerInstinct",
+    "KillerStun",
+    "OverclockMode",
+    "Pallets",
+    "Slipstream",
+    "SupplyCases",
+    "Teleportation",
+    "Windows"
+   ]
+  },
+  "Hidden Pursuit": {
+   "killer": 33,
+   "patch": "8.6.0",
+   "CS_amount": 7,
+   "CS_auraRange": "12 metres",
+   "CS_AOE": "16 metres",
+   "CS_turretCooldown": "30 seconds",
+   "tunnelSpeed": "18 m/s",
+   "tunnelFootsteps": "16 metres",
+   "CM_chargeRate": "1 c/s",
+   "CM_tunnelChargeRate": "8 c/s",
+   "CM_chargeCapacity": "35 Charges",
+   "CM_terrorRadius": "24 metres",
+   "TS_reach": "4.8 metres",
+   "turret_amount": 4,
+   "turret_attackRange": "10 metres",
+   "turret_respawn": "60 seconds",
+   "flameLimit": "125 Charges",
+   "KI_duration": "3 seconds",
+   "turretTunnelExit": "2.5 seconds",
+   "hindered": "-35 %",
+   "tags": [
+    "AttackRange",
+    "Auras",
+    "ControlStation",
+    "CrawlerMode",
+    "Exhausted",
+    "ExitGates",
+    "Footsteps",
+    "Hindered",
+    "Incapacitated",
+    "KillerInstinct",
+    "KillerStun",
+    "TerrorRadius",
+    "Tunnels",
+    "Turrets"
+   ]
+  },
+  "Playtime's Over": {
+   "killer": 34,
+   "patch": "10.2.2a",
+   "powerDuration": "14 seconds",
+   "powerCooldown": "10 seconds",
+   "illusionRadius": "16 metres",
+   "powerSpeedValue": "8 m/s",
+   "powerSpeedDuration": "2 seconds",
+   "powerLungeDuration": "0.6 seconds",
+   "scamperDuration": "0.8 seconds",
+   "tags": [
+    "Footfalls",
+    "Hallucinations",
+    "Pallets",
+    "Scamper",
+    "Undetectable",
+    "Windows"
+   ]
+  },
+  "UVX": {
+   "killer": 35,
+   "patch": "9.6.0",
+   "uvx": [
+    "2.25 metres",
+    "6.25 seconds"
+   ],
+   "weakened": [
+    "8 seconds",
+    "25 metres",
+    "10 seconds"
+   ],
+   "hallucination": [
+    "45 seconds",
+    4,
+    "8 metres",
+    "-10 seconds"
+   ],
+   "dispelling": [
+    "4 seconds",
+    "-25 %"
+   ],
+   "dispelFail_killerInstinct": "5 seconds",
+   "teleport": [
+    "3 metres",
+    "5 seconds",
+    "25 seconds"
+   ],
+   "hindered": "-6 %",
+   "durationHindered": "3 seconds",
+   "tags": [
+    "ActionSpeed",
+    "BlastArea",
+    "Hallucinations",
+    "Hindered",
+    "KillerInstinct",
+    "Projectile",
+    "Props",
+    "Teleportation",
+    "Weakened"
+   ]
+  },
+  "Vile Darkness": {
+   "killer": 36,
+   "patch": "9.0.0",
+   "haste": "+7 %",
+   "durationHaste": "4 seconds",
+   "hookStageCount": 2,
+   "treasureChestCount": 6,
+   "fly_duration": "5 seconds",
+   "fly_cooldown": "2.75 seconds",
+   "FOTD_entities": 5,
+   "FOTD_killerInstinct": "5 seconds",
+   "dispellingSphere_killerInstinct": "5 seconds",
+   "dispellingSphere_magicItemCooldown": "45 seconds",
+   "dispellingSphereSpeeds": [
+    "9.75 m/s",
+    "6.5 m/s"
+   ],
+   "dispellingSphereSpeedTransition": "3 seconds",
+   "mageHand_palletLift": "0.5 seconds",
+   "mageHand_palletHold": "4 seconds",
+   "spellCooldowns": [
+    "20 seconds",
+    "30 seconds",
+    "30 seconds",
+    "35 seconds"
+   ],
+   "magicItem_auraReveal": "2 seconds",
+   "magicItem_skyguardLinger": "0.25 seconds",
+   "tags": [
+    "Auras",
+    "AutoDamage",
+    "EyeOfVecna",
+    "HandOfVecna",
+    "Haste",
+    "Invisibility",
+    "KillerInstinct",
+    "Levitation",
+    "Lockers",
+    "LoudNoiseNotifications",
+    "MiniMori",
+    "Pallets",
+    "Teleportation",
+    "TreasureChests",
+    "Windows"
+   ]
+  },
+  "Vampiric Shift": {
+   "killer": 37,
+   "patch": "9.2.0",
+   "forms": 3,
+   "movementSpeeds": [
+    "4.6 m/s",
+    "4.8 m/s",
+    "6.5 m/s"
+   ],
+   "shapeshift": "3.5 seconds",
+   "hellfire": [
+    "0.9 seconds",
+    8,
+    "10 metres",
+    "9.5 seconds"
+   ],
+   "pounce": [
+    "0.9 seconds",
+    "2 times",
+    "0.5 seconds",
+    "20 seconds"
+   ],
+   "scentOrbs": [
+    "1 every 6 seconds",
+    "10 seconds",
+    5,
+    "12 metres",
+    "-20 %"
+   ],
+   "haste": "+4.35 %",
+   "durationHaste": "2.5 seconds",
+   "killerInstinct": "2 seconds",
+   "lullaby": "48 metres",
+   "teleport": [
+    "2 to 32 metres",
+    "12 m/s",
+    "15 seconds"
+   ],
+   "footstepSFX": "+50 %",
+   "tags": [
+    "Invisibility",
+    "KillerInstinct",
+    "Lullaby",
+    "MovementSpeed",
+    "PoolsOfBlood",
+    "ScentOrbs",
+    "ScratchMarks",
+    "ShapeShifting",
+    "Teleportation",
+    "Tracking",
+    "Undetectable"
+   ]
+  },
+  "Scent of Blood": {
+   "killer": 38,
+   "patch": "8.7.0",
+   "hindered": "-10 %",
+   "durationHindered": "5 seconds",
+   "tags": [
+    "DeepWound",
+    "Endurance",
+    "GateBlocker",
+    "GruntsOfPain",
+    "Hindered",
+    "HoundSense",
+    "Incapacitated",
+    "KillerInstinct",
+    "Lullaby",
+    "MovementSpeed",
+    "PoolsOfBlood",
+    "SearchPath"
+   ]
+  },
+  "One-Eyed Terror": {
+   "killer": 39,
+   "patch": "8.7.0",
+   "tokenCountDefault": "2 Tokens",
+   "tokenCountEM": 3,
+   "tokenCost": "-1 Token",
+   "minPalletPenalty": 1,
+   "maxPalletPenalty": 2,
+   "powerRecharge": [
+    "4 seconds",
+    "2.5 seconds"
+   ],
+   "leapRange": "14 metres",
+   "windowOpenTime": "5 seconds",
+   "countdownDuration": "40 seconds",
+   "countdownExtended": "50 seconds",
+   "gateBlocker": "5 seconds",
+   "tags": [
+    "ActionSpeed",
+    "Deep Wound",
+    "GateBlocker",
+    "KaguneMark",
+    "Pallets",
+    "Tokens",
+    "Vaulting",
+    "Windows"
+   ]
+  },
+  "Fazbear's Fright": {
+   "killer": 40,
+   "patch": "9.6.0",
+   "SD_amount": 7,
+   "FA_AOE": "2 metres",
+   "linger": "20 seconds",
+   "tags": [
+    "Cameras",
+    "CameraView",
+    "Doors",
+    "Projectile",
+    "SecurityDoors",
+    "SecuritySystem"
+   ]
+  },
+  "Unbodied Flesh": {
+   "killer": 41,
+   "patch": "9.2.2",
+   "terrorRadius": [
+    "32 metres",
+    "40 metres"
+   ],
+   "movementSpeed": [
+    "4.6 m/s",
+    "4.8 m/s"
+   ],
+   "flight": [
+    "25 %",
+    "7.0 m/s",
+    "12 Charges",
+    "-1 c/s",
+    "+0.4 c/s"
+   ],
+   "regurgitate": [
+    4,
+    "2.5 seconds"
+   ],
+   "leeched": [
+    "100 Charges",
+    "+1.665 c/s",
+    "+100 Charges",
+    "+34 Charges"
+   ],
+   "fungus": [
+    5,
+    6,
+    "5 metres",
+    "90 seconds"
+   ],
+   "vaulting": [
+    "1.9 seconds",
+    "1.67 seconds"
+   ],
+   "palletStun": "2.5 seconds",
+   "collision": "0.35 seconds",
+   "tags": [
+    "ActionTime",
+    "Bloodlust",
+    "Broken",
+    "GlowingFungus",
+    "Leeched",
+    "Pallets",
+    "Vaulting",
+    "Windows"
+   ]
+  },
+  "Test Subject #001": {
+   "killer": 42,
+   "patch": "9.4.0",
+   "tags": [
+    "MiniMori"
+   ]
+  },
+  "Omnipresent Evil": {
+   "killer": 43,
+   "haste": "25 seconds"
+  },
+  "Will of the Gods": {
+   "killer": 44
+  },
+  "Bag of Toys": {
+   "killer": 45,
+   "oblivious": "10 seconds"
+  }
+ },
+ "items": {
+  "Broken Key": {
+   "rarity": 1,
+   "category": 1,
+   "patch": "9.1.0",
+   "charges": "6 Charges",
+   "cost": "-1 Charge",
+   "auraRange": "48 metres",
+   "auraDuration": "8 seconds",
+   "tags": [
+    "Auras"
+   ]
+  },
+  "Dull Key": {
+   "rarity": 2,
+   "category": 1,
+   "patch": "9.1.0",
+   "charges": "5 Charges",
+   "cost": "-1 Charge",
+   "auraRange": "56 metres",
+   "auraDuration": "9 seconds",
+   "chestAura": "42 metres",
+   "survivorCount": 1,
+   "rummageCount": "once",
+   "hatch": "2.5 seconds",
+   "tags": [
+    "Auras",
+    "Chests",
+    "Hatch",
+    "RarityBonus",
+    "RummageAbility"
+   ]
+  },
+  "Skeleton Key": {
+   "rarity": 3,
+   "category": 1,
+   "patch": "9.1.0",
+   "charges": "6 Charges",
+   "cost": "-1 Charge",
+   "auraRange": "64 metres",
+   "auraDuration": "10 seconds",
+   "chestAura": "42 metres",
+   "survivorCount": 1,
+   "rummageCount": "once",
+   "hatch": "2.5 seconds",
+   "tags": [
+    "Auras",
+    "Chests",
+    "Hatch",
+    "RarityBonus",
+    "RummageAbility"
+   ]
+  },
+  "Chinese Firecracker": {
+   "id": 4,
+   "rarity": 8,
+   "category": 2,
+   "tags": [
+    "Deafened",
+    "KillerBlind",
+    "KillerStun",
+    "lunarEvent",
+    "SurvivorBlind"
+   ]
+  },
+  "Third Year Party Starter": {
+   "id": 5,
+   "rarity": 8,
+   "category": 2,
+   "deprecated": true,
+   "tags": [
+    "Deafened",
+    "KillerBlind",
+    "KillerStun",
+    "SurvivorBlind"
+   ]
+  },
+  "Winter Party Starter": {
+   "id": 6,
+   "rarity": 8,
+   "category": 2,
+   "tags": [
+    "Deafened",
+    "KillerBlind",
+    "KillerStun",
+    "SurvivorBlind",
+    "winterEvent"
+   ]
+  },
+  "Anniversary Flashlight": {
+   "id": 7,
+   "rarity": 8,
+   "category": 3,
+   "tags": [
+    "anniversaryEvent",
+    "KillerBlind"
+   ]
+  },
+  "Banquet Flashlight": {
+   "id": 51,
+   "rarity": 8,
+   "category": 3,
+   "tags": [
+    "anniversaryEvent",
+    "KillerBlind"
+   ]
+  },
+  "Flashlight": {
+   "id": 8,
+   "rarity": 2,
+   "category": 3,
+   "tags": [
+    "KillerBlind"
+   ]
+  },
+  "Masquerade Flashlight": {
+   "id": 9,
+   "rarity": 8,
+   "category": 3,
+   "tags": [
+    "anniversaryEvent",
+    "KillerBlind"
+   ]
+  },
+  "Sport Flashlight": {
+   "id": 10,
+   "rarity": 3,
+   "category": 3,
+   "tags": [
+    "KillerBlind"
+   ]
+  },
+  "Utility Flashlight": {
+   "id": 11,
+   "rarity": 4,
+   "category": 3,
+   "tags": [
+    "KillerBlind"
+   ]
+  },
+  "Will O' Wisp": {
+   "id": 12,
+   "rarity": 8,
+   "category": 3,
+   "tags": [
+    "halloweenEvent",
+    "KillerBlind"
+   ]
+  },
+  "Apprentice's Fog Vial": {
+   "rarity": 1,
+   "category": 8,
+   "patch": "9.5.0",
+   "charges": "4 Charges",
+   "opacity": "33 %",
+   "radius": "8 metres",
+   "expansion": "2 seconds",
+   "duration": "8 seconds",
+   "rechargeTime": "70 seconds",
+   "tags": [
+    "Auras",
+    "Occlusion",
+    "ScratchMarks",
+    "Stealth"
+   ]
+  },
+  "Artisan's Fog Vial": {
+   "rarity": 2,
+   "category": 8,
+   "patch": "9.5.0",
+   "charges": "4 Charges",
+   "opacity": "33 %",
+   "radius": "8 metres",
+   "expansion": "1.5 seconds",
+   "duration": "10 seconds",
+   "rechargeTime": "65 seconds",
+   "tags": [
+    "Auras",
+    "Occlusion",
+    "ScratchMarks",
+    "Stealth"
+   ]
+  },
+  "Vigo's Fog Vial": {
+   "rarity": 3,
+   "category": 8,
+   "patch": "9.5.0",
+   "charges": "4 Charges",
+   "opacity": "33 %",
+   "radius": "8 metres",
+   "expansion": "1.2 seconds",
+   "duration": "12 seconds",
+   "rechargeTime": "60 seconds",
+   "tags": [
+    "Auras",
+    "Occlusion",
+    "ScratchMarks",
+    "Stealth"
+   ]
+  },
+  "First Aid Spray": {
+   "rarity": 11,
+   "category": 4,
+   "tags": [
+    "PowerCounter",
+    "SupplyCases"
+   ]
+  },
+  "Flash Grenade": {
+   "rarity": 11,
+   "category": 4,
+   "tags": [
+    "Craftable",
+    "Deafened",
+    "KillerBlind",
+    "KillerStun",
+    "LoudNoiseNotifications",
+    "SurvivorBlind"
+   ]
+  },
+  "Lament Configuration": {
+   "rarity": 11,
+   "category": 4,
+   "tags": [
+    "Auras",
+    "ChainHunt",
+    "KillerInstinct",
+    "PowerCounter",
+    "Oblivious"
+   ]
+  },
+  "Pocket Mirror": {
+   "rarity": 11,
+   "category": 4,
+   "tags": [
+    "Bloodpoints",
+    "Glyphs"
+   ]
+  },
+  "Vaccine": {
+   "rarity": 11,
+   "category": 4,
+   "tags": [
+    "PowerCounter",
+    "SupplyCases"
+   ]
+  },
+  "VHS Tape": {
+   "rarity": 11,
+   "category": 4,
+   "patch": "7.5.0",
+   "tags": [
+    "Auras",
+    "Condemned",
+    "PowerCounter",
+    "TVs"
+   ]
+  },
+  "EMP": {
+   "rarity": 11,
+   "category": 4,
+   "patch": "8.1.0",
+   "tags": [
+    "Auras",
+    "Hindered",
+    "MovementSpeed",
+    "PowerCounter",
+    "SupplyCases"
+   ]
+  },
+  "Remote Flame Turret": {
+   "rarity": 11,
+   "category": 4,
+   "patch": "7.2.0",
+   "tags": [
+    "Auras",
+    "CrawlerMode",
+    "Exhausted",
+    "Hindered",
+    "Incapacitated",
+    "PowerCounter"
+   ]
+  },
+  "Keycard": {
+   "rarity": 11,
+   "category": 4,
+   "patch": "7.2.0",
+   "tags": [
+    "EasterEgg"
+   ]
+  },
+  "Glowing Fungus": {
+   "rarity": 11,
+   "category": 4,
+   "patch": "9.2.0",
+   "interaction": "3 seconds",
+   "effect": "-5 %/s",
+   "spawn": "5 seconds",
+   "decay": [
+    "5 seconds",
+    "2.5 metres"
+   ],
+   "aura": "128 metres",
+   "speed": [
+    "70.8 %",
+    "0.5 seconds"
+   ],
+   "tags": [
+    "Leeched"
+   ]
+  },
+  "Searcher's Pendant": {
+   "rarity": 11,
+   "category": 4,
+   "maxSoul": "10",
+   "effect": "0.5 seconds"
+  },
+  "Annotated Map": {
+   "rarity": 3,
+   "category": 5,
+   "patch": "9.1.0",
+   "charges": "6 Charges",
+   "cost": "-1 Charge",
+   "aura_Vaultables": [
+    "40 metres",
+    "14 seconds"
+   ],
+   "aura_BOL": [
+    "32 metres",
+    "16 seconds"
+   ],
+   "tags": [
+    "Auras",
+    "Tracking"
+   ]
+  },
+  "Bloodsense Map": {
+   "rarity": 8,
+   "category": 5,
+   "patch": "9.1.0",
+   "charges": "8 Charges",
+   "cost": "-1 Charge",
+   "aura_Vaultables": [
+    "48 metres",
+    "14 seconds"
+   ],
+   "aura_BOL": [
+    "32 metres",
+    "16 seconds"
+   ],
+   "tags": [
+    "Auras",
+    "Tracking"
+   ]
+  },
+  "Cryptic Map": {
+   "rarity": 1,
+   "category": 5,
+   "patch": "9.1.0",
+   "charges": "4 Charges",
+   "cost": "-1 Charge",
+   "aura_Vaultables": [
+    "24 metres",
+    "10 seconds"
+   ],
+   "aura_BOL": [
+    "32 metres",
+    "16 seconds"
+   ],
+   "tags": [
+    "Auras",
+    "Tracking"
+   ]
+  },
+  "Scribbled Map": {
+   "rarity": 2,
+   "category": 5,
+   "patch": "9.1.0",
+   "charges": "5 Charges",
+   "cost": "-1 Charge",
+   "aura_Vaultables": [
+    "32 metres",
+    "12 seconds"
+   ],
+   "aura_BOL": [
+    "32 metres",
+    "16 seconds"
+   ],
+   "tags": [
+    "Auras",
+    "Tracking"
+   ]
+  },
+  "Anniversary Med-Kit": {
+   "id": 24,
+   "rarity": 8,
+   "category": 6,
+   "patch": "6.7.0",
+   "tags": [
+    "anniversaryEvent",
+    "HealingProficiency",
+    "SelfHeal"
+   ]
+  },
+  "Banquet Med-Kit": {
+   "id": 52,
+   "rarity": 8,
+   "category": 6,
+   "patch": "10.0.1",
+   "tags": [
+    "anniversaryEvent",
+    "HealingProficiency",
+    "SelfHeal"
+   ]
+  },
+  "All Hallows' Eve Lunchbox": {
+   "id": 25,
+   "rarity": 8,
+   "category": 6,
+   "patch": "6.7.0",
+   "tags": [
+    "halloweenEvent",
+    "HealingProficiency",
+    "SelfHeal"
+   ]
+  },
+  "Camping Aid Kit": {
+   "id": 26,
+   "rarity": 1,
+   "category": 6,
+   "patch": "6.7.0",
+   "tags": [
+    "HealingProficiency",
+    "SelfHeal"
+   ]
+  },
+  "Emergency Med-Kit": {
+   "id": 27,
+   "rarity": 3,
+   "category": 6,
+   "patch": "6.7.0",
+   "tags": [
+    "HealingProficiency",
+    "SelfHeal"
+   ]
+  },
+  "First Aid Kit": {
+   "id": 28,
+   "rarity": 2,
+   "category": 6,
+   "patch": "6.7.0",
+   "tags": [
+    "HealingProficiency",
+    "SelfHeal"
+   ]
+  },
+  "Masquerade Med-Kit": {
+   "id": 29,
+   "rarity": 8,
+   "category": 6,
+   "patch": "6.7.0",
+   "tags": [
+    "anniversaryEvent",
+    "HealingProficiency",
+    "SelfHeal"
+   ]
+  },
+  "Ranger Med-Kit": {
+   "id": 30,
+   "rarity": 4,
+   "category": 6,
+   "patch": "6.7.0",
+   "tags": [
+    "HealingProficiency",
+    "SelfHeal"
+   ]
+  },
+  "Anniversary Toolbox": {
+   "id": 31,
+   "rarity": 8,
+   "category": 7,
+   "patch": "8.0.0",
+   "tags": [
+    "anniversaryEvent",
+    "Generators",
+    "SkillCheckProbability",
+    "RepairingProficiency",
+    "SabotageProficiency"
+   ]
+  },
+  "Banquet Toolbox": {
+   "id": 53,
+   "rarity": 8,
+   "category": 7,
+   "patch": "10.0.1",
+   "tags": [
+    "anniversaryEvent",
+    "Generators",
+    "SkillCheckProbability",
+    "RepairingProficiency",
+    "SabotageProficiency"
+   ]
+  },
+  "Alex's Toolbox": {
+   "id": 32,
+   "rarity": 4,
+   "category": 7,
+   "patch": "8.0.0",
+   "tags": [
+    "Generators",
+    "RepairingProficiency",
+    "SabotageProficiency",
+    "SkillCheckProbability"
+   ]
+  },
+  "Commodious Toolbox": {
+   "id": 33,
+   "rarity": 3,
+   "category": 7,
+   "patch": "8.0.0",
+   "tags": [
+    "Generators",
+    "RepairingProficiency",
+    "SkillCheckProbability",
+    "SabotageProficiency"
+   ]
+  },
+  "Festive Toolbox": {
+   "id": 34,
+   "rarity": 8,
+   "category": 7,
+   "patch": "8.0.0",
+   "tags": [
+    "Generators",
+    "springEvent",
+    "RepairingProficiency",
+    "SkillCheckProbability",
+    "SabotageProficiency"
+   ]
+  },
+  "Engineer's Toolbox": {
+   "id": 35,
+   "rarity": 4,
+   "category": 7,
+   "patch": "8.0.0",
+   "tags": [
+    "Generators",
+    "RepairingProficiency",
+    "SabotageProficiency",
+    "SkillCheckProbability"
+   ]
+  },
+  "Masquerade Toolbox": {
+   "id": 36,
+   "rarity": 8,
+   "category": 7,
+   "patch": "8.0.0",
+   "tags": [
+    "anniversaryEvent",
+    "Generators",
+    "RepairingProficiency",
+    "SkillCheckProbability",
+    "SabotageProficiency"
+   ]
+  },
+  "Mechanic's Toolbox": {
+   "id": 37,
+   "rarity": 3,
+   "category": 7,
+   "patch": "8.0.0",
+   "tags": [
+    "Generators",
+    "RepairingProficiency",
+    "SabotageProficiency",
+    "SkillCheckProbability"
+   ]
+  },
+  "Toolbox": {
+   "id": 38,
+   "rarity": 2,
+   "category": 7,
+   "patch": "8.0.0",
+   "tags": [
+    "Generators",
+    "RepairingProficiency",
+    "SabotageProficiency",
+    "SkillCheckProbability"
+   ]
+  },
+  "Worn-Out Tools": {
+   "id": 39,
+   "rarity": 1,
+   "category": 7,
+   "tags": [
+    "Generators",
+    "RepairingProficiency",
+    "SkillCheckDifficulty",
+    "SkillCheckProbability"
+   ]
+  },
+  "Trapple": {
+   "id": 40,
+   "rarity": 0,
+   "category": 0,
+   "unused": true,
+   "tags": []
+  },
+  "Eye of Vecna": {
+   "id": 42,
+   "rarity": 11,
+   "category": 4,
+   "patch": "8.0.0",
+   "killerInstinct": "3 seconds",
+   "hookStages": 2,
+   "healthState": 1,
+   "haste": "+25 %",
+   "durationHaste": "12 seconds",
+   "durationEffect": "12 seconds",
+   "broken": "30 seconds",
+   "diceRoll": 20,
+   "tags": [
+    "Auras",
+    "AutoDamage",
+    "Broken",
+    "Haste",
+    "Invisibility",
+    "Killer Instinct",
+    "Lockers"
+   ]
+  },
+  "Hand of Vecna": {
+   "id": 43,
+   "rarity": 11,
+   "category": 4,
+   "patch": "8.0.0",
+   "killerInstinct": "5 seconds",
+   "hookStages": 2,
+   "teleport": "10 metres",
+   "healthState": 1,
+   "broken": "30 seconds",
+   "diceRoll": 20,
+   "tags": [
+    "AutoDamage",
+    "Broken",
+    "Killer Instinct",
+    "Lockers",
+    "Teleportation"
+   ]
+  },
+  "Fragile Mirror": {
+   "id": 44,
+   "rarity": 11,
+   "category": 4,
+   "tags": [
+    "Bloodpoints",
+    "Glyphs"
+   ]
+  },
+  "Candelabra": {
+   "id": 45,
+   "rarity": 11,
+   "category": 4,
+   "patch": "8.2.0",
+   "radius": "32 metres",
+   "duration": "15 seconds",
+   "tags": [
+    "LightsOut"
+   ]
+  },
+  "Lantern": {
+   "id": 46,
+   "rarity": 11,
+   "category": 4,
+   "patch": "8.2.0",
+   "radius": "32 metres",
+   "duration": "15 seconds",
+   "tags": [
+    "LightsOut"
+   ]
+  },
+  "Void Crystal": {
+   "id": 47,
+   "rarity": 11,
+   "category": 4,
+   "patch": "10.2.0",
+   "voidEnergyCost": "70 Void Energy",
+   "charges": "1 Charge",
+   "size": [
+    "4 metres",
+    "1 second"
+   ],
+   "duration": "3 seconds",
+   "repair": [
+    "0.8 %/s",
+    "30 seconds"
+   ],
+   "scratchMarks": "2–6 metres",
+   "tags": [
+    "Event",
+    "halloweenEvent",
+    "Auras",
+    "Generators",
+    "Invisibility",
+    "ScratchMarks",
+    "Stealth"
+   ]
+  },
+  "Antidote": {
+   "id": 48,
+   "rarity": 11,
+   "category": 4,
+   "patch": "8.5.1",
+   "tags": [
+    "gameMode",
+    "PowerCounter",
+    "SupplyCases"
+   ]
+  },
+  "Blood Can": {
+   "id": 49,
+   "rarity": 11,
+   "category": 4,
+   "patch": "8.6.0",
+   "litres": "40 Litres",
+   "penaltyGround": "-0.5 L/s",
+   "penaltyRunning": "-0.7 L/s",
+   "penaltyToppled": "-20 Litres",
+   "linger": "10 seconds",
+   "tags": [
+    "Event",
+    "springEvent"
+   ]
+  },
+  "Fog Crystal": {
+   "id": 50,
+   "rarity": 11,
+   "category": 4,
+   "patch": "8.7.0",
+   "charge": "1 Charge",
+   "fogRadius": "4 metres",
+   "AOE_min": "2 metres",
+   "AOE_max": "6 metres",
+   "AOE_grow": "1 second",
+   "AOE_linger": "8 seconds",
+   "AOE_shrink": "2 seconds",
+   "tags": [
+    "gameMode",
+    "Invisibility",
+    "ScratchMarks",
+    "Stealth"
+   ]
+  },
+  "Invoking Salt": {
+   "id": 51,
+   "rarity": 11,
+   "category": 4,
+   "duration": [
+    "3 second",
+    "40 seconds",
+    "60 seconds"
+   ],
+   "penalty": "-15 %",
+   "haste": "300 seconds",
+   "effect": [
+    "5 %",
+    "-1 %"
+   ],
+   "tags": [
+    "gameMode"
+   ]
+  }
+ }
+}

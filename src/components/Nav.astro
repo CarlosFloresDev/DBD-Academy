@@ -1,0 +1,80 @@
+---
+interface Props { active: 'killers' | 'mapas' | 'survivors' | 'builds' | 'reloj' | 'competitivo' | 'inicio'; }
+const { active } = Astro.props;
+const links = [
+  ['inicio','Inicio','/'],
+  ['killers','Killers','/killers/'],
+  ['mapas','Mapas','/mapas/'],
+  ['survivors','Survivors','/survivors/'],
+  ['perks','Perks','/perks/'],
+  ['builds','Builds','/builds/'],
+  ['reloj','Reloj','/reloj/'],
+  ['competitivo','Competitivo','/competitivo/'],
+] as const;
+---
+
+<nav class="nav" aria-label="Navegacion principal">
+  <div class="nav-inner">
+    <a class="brand" href="/" aria-label="DBD Academy, inicio">
+      <svg viewBox="0 0 44 44" width="44" height="44" aria-hidden="true">
+        <circle cx="22" cy="22" r="20" fill="none" stroke="currentColor" stroke-width="1"/>
+        <circle cx="22" cy="22" r="13" fill="none" stroke="currentColor" stroke-width="1" opacity=".45"/>
+        <path d="M22 2v7M22 35v7M2 22h7M35 22h7" stroke="currentColor" stroke-width="1"/>
+        <path d="M22 11c-5 6-7 12-5 19l5 6 5-6c2-7 0-13-5-19z" fill="#c1121f"/>
+        <circle cx="22" cy="22" r="3" fill="#06080b"/>
+      </svg>
+      <span>DBD <b>ACADEMY</b></span>
+    </a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-panel">
+      <span></span><span></span>
+      <b>Menu</b>
+    </button>
+    <div class="nav-links" id="nav-panel">
+      {links.map(([key,label,href]) => (
+        <a href={href} class:list={{active: key === active}} aria-current={key === active ? 'page' : undefined}>{label}</a>
+      ))}
+    </div>
+  </div>
+</nav>
+
+<script>
+  const button = document.querySelector('.menu-button');
+  const panel = document.querySelector('#nav-panel');
+  button?.addEventListener('click', () => {
+    const open = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', String(!open));
+    panel?.classList.toggle('open', !open);
+    document.body.style.overflow = open ? '' : 'hidden';
+  });
+  panel?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+    button?.setAttribute('aria-expanded', 'false');
+    panel.classList.remove('open');
+    document.body.style.overflow = '';
+  }));
+</script>
+
+<style>
+  .nav { position: fixed; inset: 0 0 auto; z-index: 1000; height: 72px; border-bottom: 1px solid rgba(31,42,51,.72); background: rgba(6,8,11,.8); backdrop-filter: blur(10px); }
+  .nav-inner { width: min(1200px, calc(100% - 32px)); height: 100%; margin-inline: auto; display: flex; align-items: center; justify-content: space-between; }
+  .brand { display: flex; align-items: center; gap: 8px; color: var(--text); font-family: "Barlow Condensed",sans-serif; font-size: 1.05rem; letter-spacing:.08em; }
+  .brand span { white-space: nowrap; }
+  .brand b { color: var(--blood-2); }
+  .brand svg { color: var(--text); }
+  .nav-links { display: flex; align-items: center; gap: clamp(10px,1.5vw,22px); }
+  .nav-links a { position: relative; padding: 25px 0 23px; color: var(--muted); font-family:"Barlow Condensed",sans-serif; font-size:.88rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
+  .nav-links a::after { content:""; position:absolute; left:0; right:100%; bottom:17px; height:2px; background:var(--blood); transition:right 180ms ease; }
+  .nav-links a:hover,.nav-links a.active { color:var(--text); }
+  .nav-links a.active::after,.nav-links a:hover::after { right:0; }
+  .menu-button { display:none; }
+  @media (max-width: 900px) {
+    .menu-button { display:grid; grid-template-columns:24px auto; gap:8px; align-items:center; border:0; background:none; color:var(--text); padding:8px 0; }
+    .menu-button span { grid-column:1; width:24px; height:1px; background:var(--text); }
+    .menu-button span:first-child { margin-bottom:-7px; }
+    .menu-button span:nth-child(2) { margin-top:-7px; }
+    .menu-button b { grid-column:2; grid-row:1 / span 2; font-family:"Barlow Condensed",sans-serif; text-transform:uppercase; letter-spacing:.08em; }
+    .nav-links { display:none; position:fixed; inset:72px 0 0; z-index:999; align-content:center; align-items:stretch; flex-direction:column; gap:0; background:rgba(6,8,11,.98); padding:32px; }
+    .nav-links.open { display:flex; }
+    .nav-links a { border-bottom:1px solid var(--line); padding:18px 4px; font-size:1.8rem; }
+    .nav-links a::after { bottom:12px; }
+  }
+</style>

@@ -1,0 +1,189 @@
+---
+import Base from '../../layouts/Base.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import SurvivorCard from '../../components/survivors/SurvivorCard.astro';
+import survivors from '../../data/survivors.json';
+
+const format = new Intl.NumberFormat('es-PE');
+const norm = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('es');
+const genderLabel = (gender: string) => gender
+  .replace(/<br\s*\/?>/gi, ' / ')
+  .replace(/Trans Woman/gi, 'Mujer trans')
+  .replace(/\bWoman\b/gi, 'Mujer')
+  .replace(/\bMan\b/gi, 'Hombre');
+const genders = [...new Set(survivors.map((survivor) => survivor.gender))];
+const chapterCount = new Set(survivors.map((survivor) => survivor.chapter?.id).filter((id) => id !== undefined)).size;
+---
+
+<Base
+  title="Survivors"
+  description={`Los ${survivors.length} survivors de Dead by Daylight: rol, origen, actor, capítulo y sus perks propios.`}
+  active="survivors"
+>
+  <section class="hero container">
+    <div class="hero-copy">
+      <p class="eyebrow">Sala de análisis / Survivors</p>
+      <h1 class="display">SURVIVORS</h1>
+      <p class="hero-lede">Ficha por ficha: quién es cada survivor, de dónde viene y qué perks propias lleva al trial.</p>
+      <div class="hero-figures">
+        <div class="stat"><strong data-count={survivors.length}>{survivors.length}</strong><span>Survivors</span></div>
+        <div class="stat"><strong data-count={chapterCount}>{chapterCount}</strong><span>Capítulos</span></div>
+        <div class="stat"><strong data-count={survivors.length * 3}>{format.format(survivors.length * 3)}</strong><span>Perks propios</span></div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true" data-reveal>
+      <span class="art-line mono">4.0 m/s</span>
+      <span class="art-label">Velocidad base del survivor</span>
+      <svg viewBox="0 0 240 240" role="presentation">
+        <circle cx="120" cy="120" r="96" fill="none" stroke="var(--line)" />
+        <circle cx="120" cy="120" r="64" fill="none" stroke="var(--line)" stroke-dasharray="4 8" />
+        <path class="draw" d="M120 24v192M24 120h192" fill="none" stroke="var(--blood)" stroke-width="2" />
+        <circle cx="120" cy="120" r="8" fill="var(--amber)" />
+      </svg>
+    </div>
+  </section>
+
+  <section class="roster container" id="roster" aria-labelledby="roster-title">
+    <SectionHead eyebrow="Plantilla" title="TODOS LOS SURVIVORS" description="Busca por nombre, rol u origen. Filtra por género y ordena la plantilla como lo necesites." />
+    <h2 class="sr-only" id="roster-title">Listado de survivors</h2>
+    <div class="filters">
+      <div class="search-field">
+        <label for="survivor-search">Buscar survivor</label>
+        <input id="survivor-search" type="search" placeholder="Nombre, rol, origen o capítulo" autocomplete="off" />
+      </div>
+      <div class="sort-field">
+        <label for="survivor-order">Ordenar</label>
+        <select id="survivor-order">
+          <option value="id">Número de plantilla</option>
+          <option value="name">Nombre A-Z</option>
+          <option value="role">Rol A-Z</option>
+          <option value="chapter">Capítulo reciente</option>
+        </select>
+      </div>
+      <p class="counter mono" id="survivor-counter" aria-live="polite">{survivors.length} survivors visibles de {survivors.length}</p>
+    </div>
+    <div class="gender-chips" role="group" aria-label="Filtrar survivors por género">
+      <button class="gender-chip" type="button" data-gender="todos" aria-pressed="true">Todos</button>
+      {genders.map((gender) => (
+        <button class="gender-chip" type="button" data-gender={gender} aria-pressed="false">{genderLabel(gender)}</button>
+      ))}
+    </div>
+    <p class="empty mono" id="survivor-empty" hidden>No hay survivors con estos filtros. Cambia la búsqueda o el género.</p>
+    <div class="survivor-grid" id="survivor-grid">
+      {survivors.map((survivor) => (
+        <div
+          class="survivor-item"
+          data-id={survivor.id}
+          data-name={norm(survivor.name)}
+          data-role={norm(survivor.role)}
+          data-chapter={survivor.chapter?.id ?? -1}
+          data-gender={survivor.gender}
+          data-search={norm(`${survivor.name} ${survivor.role} ${survivor.origin} ${survivor.chapter?.name ?? ''} ${survivor.actor.join(' ')}`)}
+        >
+          <SurvivorCard survivor={survivor} isNew={survivor.slug === 'sienna-shaw'} />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <script>
+    const root = document.querySelector<HTMLElement>('#roster');
+    if (root) {
+      const grid = root.querySelector<HTMLElement>('#survivor-grid');
+      const cards = Array.from(root.querySelectorAll<HTMLElement>('.survivor-item'));
+      const search = root.querySelector<HTMLInputElement>('#survivor-search');
+      const order = root.querySelector<HTMLSelectElement>('#survivor-order');
+      const counter = root.querySelector<HTMLElement>('#survivor-counter');
+      const empty = root.querySelector<HTMLElement>('#survivor-empty');
+      const chips = Array.from(root.querySelectorAll<HTMLButtonElement>('.gender-chip'));
+      const normalize = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('es');
+      const state = { query: '', gender: 'todos', order: 'id' };
+      let frame = 0;
+
+      const apply = () => {
+        let visible = 0;
+        for (const card of cards) {
+          const matchesQuery = card.dataset.search?.includes(state.query);
+          const matchesGender = state.gender === 'todos' || card.dataset.gender === state.gender;
+          card.hidden = !(matchesQuery && matchesGender);
+          if (!card.hidden) visible += 1;
+        }
+        if (grid) {
+          const sorted = [...cards].sort((a, b) => {
+            if (state.order === 'name') return (a.dataset.name || '').localeCompare(b.dataset.name || '', 'es');
+            if (state.order === 'role') return (a.dataset.role || '').localeCompare(b.dataset.role || '', 'es');
+            if (state.order === 'chapter') return Number(b.dataset.chapter) - Number(a.dataset.chapter) || Number(a.dataset.id) - Number(b.dataset.id);
+            return Number(a.dataset.id) - Number(b.dataset.id);
+          });
+          sorted.forEach((card) => grid.appendChild(card));
+        }
+        if (counter) counter.textContent = `${visible} survivors visibles de ${cards.length}`;
+        if (empty) empty.hidden = visible !== 0;
+      };
+
+      const schedule = () => {
+        cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(apply);
+      };
+
+      if (search) {
+        search.addEventListener('input', () => {
+          state.query = normalize(search.value.trim());
+          schedule();
+        });
+      }
+      if (order) {
+        order.addEventListener('change', () => {
+          state.order = order.value;
+          schedule();
+        });
+      }
+      chips.forEach((chip) => {
+        chip.addEventListener('click', () => {
+          state.gender = chip.dataset.gender || 'todos';
+          chips.forEach((other) => other.setAttribute('aria-pressed', String(other === chip)));
+          schedule();
+        });
+      });
+    }
+  </script>
+  <style>
+    .hero { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, .7fr); gap: 40px; align-items: end; padding: 148px 0 96px; }
+    .hero-copy { min-width: 0; }
+    h1 { margin: 12px 0 24px; font-size: clamp(4rem, 12vw, 10rem); }
+    .hero-lede { max-width: 50ch; margin: 0; color: var(--muted); }
+    .hero-figures { display: flex; flex-wrap: wrap; gap: 40px; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); }
+    .hero-art { position: relative; display: grid; justify-items: center; gap: 8px; min-width: 0; padding: 24px; border: 1px solid var(--line); background: var(--panel); }
+    .art-line { color: var(--amber); font-size: clamp(2rem, 4vw, 3.4rem); }
+    .art-label { color: var(--muted); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; text-align: center; }
+    .hero-art svg { width: min(100%, 240px); }
+
+    .roster { padding: 96px 0; border-top: 1px solid var(--line); }
+    .filters { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 240px); gap: 16px; align-items: end; margin-bottom: 16px; }
+    .search-field, .sort-field { display: grid; gap: 8px; min-width: 0; }
+    label { color: var(--muted); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
+    input, select { width: 100%; min-height: 46px; border: 1px solid var(--line); border-radius: var(--r); background: var(--bg-2); padding: 10px 12px; color: var(--text); }
+    input::placeholder { color: var(--muted); }
+    input:hover, select:hover { border-color: var(--blood); }
+    .counter { grid-column: 1 / -1; margin: 0; color: var(--amber); font-size: .74rem; }
+    .gender-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+    .gender-chip { border: 1px solid var(--line); border-radius: 999px; background: transparent; padding: 6px 12px; color: var(--muted); font-size: .74rem; cursor: pointer; }
+    .gender-chip:hover { border-color: var(--blood); color: var(--text); }
+    .gender-chip[aria-pressed="true"] { border-color: var(--blood); background: var(--blood); color: #fff; }
+    .empty { padding: 24px; border: 1px dashed var(--line); color: var(--muted); }
+    .survivor-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); gap: 16px; }
+    .survivor-item { min-width: 0; }
+    [hidden] { display: none !important; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding: 120px 0 64px; }
+      .hero-art { order: -1; justify-items: start; }
+    }
+    @media (max-width: 620px) {
+      .filters { grid-template-columns: 1fr; }
+      .hero-figures { gap: 24px; }
+      .roster { padding: 64px 0; }
+    }
+  </style>
+</Base>

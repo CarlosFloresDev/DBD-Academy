@@ -1,0 +1,19 @@
+---
+interface Props { src: string; alt: string; size?: 'sm'|'md'|'lg' }
+const { src, alt, size='md' } = Astro.props;
+---
+<div class:list={['portrait',size]}>
+  <img src={src} alt={alt} width="480" height="560" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'" />
+  <svg class="portrait-fallback" viewBox="0 0 480 560" role="img" aria-label={alt}>
+    <rect width="480" height="560" fill="#10161c"/>
+    <path d="M240 58c70 0 112 46 112 105 0 72-38 112-112 112s-112-40-112-112c0-59 42-105 112-105z" fill="#1f2a33"/>
+    <path d="M68 560c10-142 73-220 172-220s162 78 172 220z" fill="#1f2a33"/>
+    <path d="M240 58v217M128 163h224" stroke="#06080b" stroke-width="5" opacity=".5"/>
+  </svg>
+</div>
+<style>
+ .portrait { position:relative; overflow:hidden; aspect-ratio:480/560; border:1px solid var(--line); border-radius:var(--r); background:var(--panel); }
+ .portrait.sm { width:120px; } .portrait.md { width:100%; } .portrait.lg { width:min(100%,360px); }
+ .portrait img { width:100%; height:100%; object-fit:cover; object-position:center top; }
+ .portrait-fallback { display:none; width:100%; height:100%; }
+</style>

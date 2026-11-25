@@ -1,0 +1,43 @@
+---
+import Portrait from '../Portrait.astro';
+
+interface SurvivorData {
+  slug: string;
+  name: string;
+  role: string;
+  chapter: { name: string; date: string } | null;
+  icon: string;
+}
+
+interface Props { survivor: SurvivorData; isNew?: boolean }
+const { survivor, isNew = false } = Astro.props;
+---
+
+<article class="survivor-card card">
+  <a class="survivor-link" href={`/survivors/${survivor.slug}/`} aria-label={`Ver ficha del survivor ${survivor.name}`}>
+    <div class="portrait-wrap">
+      <Portrait src={survivor.icon} alt={`Retrato de ${survivor.name}`} size="md" />
+      {isNew && <span class="ribbon">NUEVO</span>}
+    </div>
+    <div class="survivor-body">
+      <h3>{survivor.name}</h3>
+      <p class="role">{survivor.role}</p>
+      <p class="chapter mono">{survivor.chapter ? survivor.chapter.name : 'Personaje base'}</p>
+      <span class="open">Abrir ficha <span aria-hidden="true">→</span></span>
+    </div>
+  </a>
+</article>
+
+<style>
+  .survivor-card { min-width: 0; overflow: hidden; }
+  .survivor-link { display: grid; height: 100%; grid-template-rows: auto 1fr; }
+  .portrait-wrap { position: relative; overflow: hidden; }
+  .portrait-wrap :global(.portrait) { border: 0; border-radius: 0; }
+  .ribbon { position: absolute; top: 0; left: 0; padding: 5px 10px; background: var(--blood); color: #fff; font-family: "JetBrains Mono Variable", monospace; font-size: .68rem; font-weight: 700; letter-spacing: .14em; }
+  .survivor-body { display: grid; align-content: start; gap: 6px; min-width: 0; padding: 16px; }
+  h3 { margin: 0; font-family: "Barlow Condensed", sans-serif; font-size: clamp(1.35rem, 2.4vw, 1.7rem); font-weight: 800; letter-spacing: .02em; line-height: 1; text-transform: uppercase; overflow-wrap: anywhere; }
+  .role { margin: 0; color: var(--muted); font-size: .78rem; }
+  .chapter { margin: 4px 0 0; color: var(--ice); font-size: .7rem; }
+  .open { margin-top: 8px; color: var(--amber); font-family: "Barlow Condensed", sans-serif; font-size: .92rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .survivor-link:hover h3, .survivor-link:hover .open { color: var(--blood-2); }
+</style>

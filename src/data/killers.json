@@ -1,0 +1,2630 @@
+[
+ {
+  "slug": "trapper",
+  "id": 1,
+  "name": "Trapper",
+  "title": "The Trapper",
+  "realName": "Evan MacMillan",
+  "aliases": [
+   "Chuckles"
+  ],
+  "gender": "Man",
+  "origin": "American",
+  "weapon": "The Cleaver",
+  "power": "Bear Trap",
+  "powerText": "Armed with a bag of Bear Traps, The Trapper specialises in catching unsuspecting Survivors. By placing traps in high-traffic areas and thick patches of grass, he creates a deadly area that forces Survivors to move with caution. When dealing with The Trapper, a simple misstep can prove fatal. The Trapper is an area-control Killer, able to apply pressure across the Map by placing deadly Bear Traps for Survivors to step into. His personal Perks, Unnerving Presence , Brutal Strength , and Agitation , allow him to chase and carry Survivors more effectively. He is focused on physical attributes and making use of his strength and the Survivors' fear.",
+  "powerStats": {
+   "haste": "+7.5 %"
+  },
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Alto",
+  "difficulty": 1,
+  "chapter": null,
+  "actor": [
+   "Filip Ivanovic (BHVR)"
+  ],
+  "perks": [
+   "Agitation",
+   "Brutal Strength",
+   "Unnerving Presence"
+  ],
+  "comp": {
+   "tier": "D",
+   "win": "9+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/trapper.png"
+ },
+ {
+  "slug": "wraith",
+  "id": 2,
+  "name": "Wraith",
+  "title": "The Wraith",
+  "realName": "Philip Ojomo",
+  "aliases": [
+   "Banshee",
+   "Bob"
+  ],
+  "gender": "Man",
+  "origin": "Nigerian",
+  "weapon": "Azarov's Skull",
+  "power": "Wailing Bell",
+  "powerText": "Using his Wailing Bell to render himself invisible, The Wraith tracks his prey and strikes with little warning. Upon hearing the Bell’s fateful chime, Survivors must think fast or suffer the consequences. A hit-and-run specialist, The Wraith is adept at keeping everybody injured. The Wraith is a stealth Killer, able to cloak and uncloak at the ringing of his Wailing Bell . His personal Perks, Predator , Bloodhound , and Shadowborn , give him extra abilities to track and locate Survivors, making him a very efficient Hunter. He focuses on tracking and hunting Survivors, making it easier to catch and kill them.",
+  "powerStats": {},
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": "Uncloaked",
+  "altSpeeds": [
+   {
+    "speed": 6,
+    "label": "Cloaked"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Alto",
+  "difficulty": 1,
+  "chapter": null,
+  "actor": [
+   "Filip Ivanovic (BHVR)"
+  ],
+  "perks": [
+   "Bloodhound",
+   "Predator",
+   "Shadowborn"
+  ],
+  "comp": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/wraith.png"
+ },
+ {
+  "slug": "hillbilly",
+  "id": 3,
+  "name": "Hillbilly",
+  "title": "The Hillbilly",
+  "realName": "Max Thompson Jr.",
+  "aliases": [
+   "The Crooked"
+  ],
+  "gender": "Man",
+  "origin": "American",
+  "weapon": "The Hammer",
+  "power": "Chainsaw",
+  "powerText": "The sound of a revving motor, followed by a bloodthirsty scream of rage. The Hillbilly isn’t exactly subtle, but he makes up for it in brutal efficiency. Capable of traversing great distances at a rapid pace, those in his path will be rudely introduced to one-hundred gnashing chainsaw blades. The Hillbilly is a high-mobility Killer, able to cover large distances in a short amount of time and instantly down Survivors using his Chainsaw . His personal Perks, Enduring , Lightborn , and Tinkerer , allow him to enhance his Power and make him harder to lose during chases. He is about persistence and resilience. This will make it harder for Survivors to foil him.",
+  "powerStats": {},
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [
+   {
+    "speed": 10.12,
+    "label": "Chainsaw Sprint"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 40,
+    "label": null
+   }
+  ],
+  "height": "Alto",
+  "difficulty": 2,
+  "chapter": null,
+  "actor": [
+   "Filip Ivanovic (BHVR)"
+  ],
+  "perks": [
+   "Enduring",
+   "Lightborn",
+   "Tinkerer"
+  ],
+  "comp": {
+   "tier": "A",
+   "win": "4K (cualquier número de gens)",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/hillbilly.png"
+ },
+ {
+  "slug": "nurse",
+  "id": 4,
+  "name": "Nurse",
+  "title": "The Nurse",
+  "realName": "Sally Smithson",
+  "aliases": [],
+  "gender": "Woman",
+  "origin": "American of English descent",
+  "weapon": "The Bonesaw",
+  "power": "Spencer's Last Breath",
+  "powerText": "Using her Blink ability, The Nurse can teleport great distances in moments, predicting and cutting off Survivor routes. A powerful process best honed by experience, careless Blinks are punished with a wave of fatigue. The epitome of high risk, high reward, The Nurse can end chases with surgical precision. The Nurse is a warping Killer, able to blink through obstacles and quickly close gaps with her Power. Her personal Perks, Stridor , Thanatophobia , and A Nurse's Calling , allow her to decrease Survivor abilities and track them when they are injured. She is focused on spotting and tracking, making it harder for Survivors to hide.",
+  "powerStats": {},
+  "speed": 3.85,
+  "speedPct": 96,
+  "speedNote": null,
+  "altSpeeds": [
+   {
+    "speed": 13.33,
+    "label": "Blink"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Medio",
+  "difficulty": 4,
+  "chapter": {
+   "id": 1,
+   "name": "The Last Breath Chapter",
+   "date": "18.08.2016",
+   "patch": "1.1.0"
+  },
+  "actor": [
+   "Anais Renevey (BHVR)"
+  ],
+  "perks": [
+   "A Nurse's Calling",
+   "Stridor",
+   "Thanatophobia"
+  ],
+  "comp": {
+   "tier": "S",
+   "win": "4K con al menos 1 generador restante",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/nurse.png"
+ },
+ {
+  "slug": "shape",
+  "id": 5,
+  "name": "Shape",
+  "title": "The Shape",
+  "realName": "Michael Myers",
+  "aliases": [
+   "Boogeyman",
+   "Stalker"
+  ],
+  "gender": "Man",
+  "origin": "American",
+  "weapon": "Kitchen Knife",
+  "power": "Evil Within",
+  "powerText": "The Shape lurks in the distance, patiently biding his time. His evil builds while stalking Survivors, fuelling him with malevolent power. As the Trial progresses, The Shape evolves from a quiet menace to an unstoppable juggernaut capable of shredding through even the most resilient teams. The Shape is a haunting Killer who stalks Survivors to feed his power. His personal Perks, Save the Best for Last , Play with Your Food , and Dying Light , select one Survivor to become his Obsession and will trigger deadly effects based on their status.",
+  "powerStats": {
+   "modes": 3,
+   "hookStageCount": 2,
+   "strike": [
+    "1.5 seconds",
+    "4 seconds"
+   ],
+   "evilIncarnate": "60 seconds",
+   "bonus": "+20 %",
+   "stalking": [
+    "60 %",
+    "2.5–32 metres",
+    "-25 %",
+    "20 seconds",
+    "50 %"
+   ],
+   "movementSpeed": [
+    "4.2 m/s",
+    "4.6 m/s",
+    "7.5 m/s"
+   ],
+   "vaulting": [
+    "1.7 seconds",
+    "1.42 seconds"
+   ],
+   "terrorRadius": [
+    "16 metres",
+    "32 metres"
+   ]
+  },
+  "speed": 4.2,
+  "speedPct": 105,
+  "speedNote": "Stalker Mode",
+  "altSpeeds": [
+   {
+    "speed": 4.6,
+    "label": "Pursuer Mode & Evil Incarnate"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 32,
+    "label": "Stalker Mode"
+   },
+   {
+    "radius": 16,
+    "label": "Pursuer Mode"
+   },
+   {
+    "radius": 32,
+    "label": "Evil Incarnate"
+   }
+  ],
+  "height": "Alto",
+  "difficulty": 2,
+  "chapter": {
+   "id": 2,
+   "name": "The HALLOWEEN® Chapter",
+   "date": "25.10.2016",
+   "patch": "1.2.1"
+  },
+  "actor": [
+   "Frédéric Poirier (BHVR)"
+  ],
+  "perks": [
+   "Dying Light",
+   "Save the Best for Last",
+   "Play with Your Food"
+  ],
+  "comp": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/shape.png"
+ },
+ {
+  "slug": "hag",
+  "id": 6,
+  "name": "Hag",
+  "title": "The Hag",
+  "realName": "Lisa Sherwood",
+  "aliases": [
+   "Witch"
+  ],
+  "gender": "Woman",
+  "origin": "African American",
+  "weapon": "The Claw",
+  "power": "Blackened Catalyst",
+  "powerText": "The Hag specialises in creating a dangerous web of Phantasm Traps, to be triggered by unsuspecting Survivors. She can instantly teleport to a triggered Trap, striking the Survivor that sprung it. Lock down key areas, make rescues a deadly gamble, and end chases quickly with strategic Phantasm Trap placement. The Hag is a cursed Killer, able to place Phantasm Traps and then teleport to them upon activation, using her Power. Her personal Perks, Hex: The Third Seal , Hex: Ruin , and Hex: Devour Hope , apply crippling penalties to Survivors as long as the associated Totem remains uncleansed. Her Perks revolve around Hex Totems . They are focused on cursing the Survivors and sapping their abilities. The curse lasts until the Survivors manage to track the Hex Totem down and cleanse it.",
+  "powerStats": {},
+  "speed": 4.4,
+  "speedPct": 110,
+  "speedNote": null,
+  "altSpeeds": [],
+  "terror": [
+   {
+    "radius": 24,
+    "label": null
+   }
+  ],
+  "height": "Medio",
+  "difficulty": 4,
+  "chapter": {
+   "id": 3,
+   "name": "Of Flesh and Mud",
+   "date": "08.12.2016",
+   "patch": "1.3.1"
+  },
+  "actor": [
+   "Eliane Pregent"
+  ],
+  "perks": [
+   "Hex: Devour Hope",
+   "Hex: Ruin",
+   "Hex: The Third Seal"
+  ],
+  "comp": {
+   "tier": "C",
+   "win": "10+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/hag.png"
+ },
+ {
+  "slug": "doctor",
+  "id": 7,
+  "name": "Doctor",
+  "title": "The Doctor",
+  "realName": "Herman Carter",
+  "aliases": [
+   "Mu Yi"
+  ],
+  "gender": "Man",
+  "origin": "African American",
+  "weapon": "The Stick",
+  "power": "Carter's Spark",
+  "powerText": "Even the simplest tasks become exceedingly difficult in the clutches of madness. The Doctor’s disturbing methods drive Survivors deep into insanity, filling the air with their deranged screams and revealing their locations. Nothing stops a window vault in its tracks like a healthy dose of Shock Therapy. The Doctor is a madness-inducing Killer, able to use his Power - Carter's Spark , incapacitating Survivors and causing them to hallucinate and scream in terror, revealing their position. His personal Perks, Overwhelming Presence , Monitor & Abuse , and Overcharge , encourage chases, impact Survivors' ability to repair effectively and make him harder to detect when not in a Chase. His Perks are about hindering and creating problems for the Survivors. The sheer stature of The Doctor infuses fear and terror in those around him.",
+  "powerStats": {},
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [
+   {
+    "speed": 3.08,
+    "label": "Shock Therapy"
+   },
+   {
+    "speed": 2.99,
+    "label": "Static Blast"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Alto",
+  "difficulty": 3,
+  "chapter": {
+   "id": 4,
+   "name": "Spark of Madness",
+   "date": "11.05.2017",
+   "patch": "1.5.1"
+  },
+  "actor": [
+   "Alex Lin (BHVR)"
+  ],
+  "perks": [
+   "Monitor & Abuse",
+   "Overcharge",
+   "Overwhelming Presence"
+  ],
+  "comp": {
+   "tier": "C",
+   "win": "10+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/doctor.png"
+ },
+ {
+  "slug": "huntress",
+  "id": 8,
+  "name": "Huntress",
+  "title": "The Huntress",
+  "realName": "Anna",
+  "aliases": [
+   "Анна",
+   "Bear"
+  ],
+  "gender": "Woman",
+  "origin": "Russian",
+  "weapon": "Broad Axe",
+  "power": "Hunting Hatchets",
+  "powerText": "Armed with throwable hatchets, The Huntress is a constant threat to Survivors, even those at a great distance. With patience and precision, chases can end as quickly as they begin. Predict Survivor movement and let your hatchet fly – there's nothing quite like the rewarding sound of a target struck. The Huntress is a ranged Killer, able to throw Hunting Hatchets at Survivors to injure them from a distance. Her personal Perks, Beast of Prey , Territorial Imperative , and Hex: Huntress Lullaby , allow her to apply pressure through better Map awareness and enhanced chasing abilities. Her Perks revolve around the hunt of the prey, to track and find so that she can get close enough to make the kill.",
+  "powerStats": {},
+  "speed": 4.4,
+  "speedPct": 110,
+  "speedNote": null,
+  "altSpeeds": [
+   {
+    "speed": 3.08,
+    "label": "Wind-up"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 20,
+    "label": null
+   }
+  ],
+  "height": "Alto",
+  "difficulty": 2,
+  "chapter": {
+   "id": 5,
+   "name": "A Lullaby for the Dark",
+   "date": "27.07.2017",
+   "patch": "1.6.0"
+  },
+  "actor": [
+   "Amélie Leguiader (BHVR)"
+  ],
+  "perks": [
+   "Beast of Prey",
+   "Hex: Huntress Lullaby",
+   "Territorial Imperative"
+  ],
+  "comp": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/huntress.png"
+ },
+ {
+  "slug": "cannibal",
+  "id": 9,
+  "name": "Cannibal",
+  "title": "The Cannibal",
+  "realName": "Bubba Sawyer",
+  "aliases": [
+   "Leatherface"
+  ],
+  "gender": "Man",
+  "origin": "American",
+  "weapon": "The Sledge",
+  "power": "Bubba's Chainsaw",
+  "powerText": "\"An incredibly powerful and heavy Chainsaw which sank its teeth into countless victims. A suitable birthday gift for The Cannibal.\" SPECIAL WEAPON: BUBBA'S CHAINSAW The Cannibal starts the Trial with 3 Tokens . Tokens automatically recharge at a rate of 0.25 c/s while the Chainsaw is not in use. SPECIAL ABILITY: CHAINSAW SWEEP Press and hold the Power button to charge the Chainsaw and break into a Chainsaw Sweep for 2.5 seconds : Increases his Movement speed gradually to 5.35 m/s . Hitting Survivors with the Chainsaw inflicts double damage. The Chainsaw can hit multiple targets in one sweep. Using Bubba's Chainsaw consumes 1 Token . SPECIAL ABILITY: CHAINSAW DASH Press the Power button again during an on-going Chainsaw Sweep to chain a Chainsaw Dash : Resets the Power Gauge timer, extending the Chainsaw Sweep . Increases the Cool-down time of the Chainsaw by +1 second per consumed Token . SPECIAL STATE: TANTRUM Revving the Chainsaw fills the Tantrum Meter by +33 % per second , with it discharging at the same rate when stopping to rev. Once the meter is full, or after hitting an obstacle during a Chainsaw Sweep , The Cannibal unleashes a Tantrum for a minimum of 3 seconds , wildly slashing out and damaging any Survivors in close proximity, dealing double damage: Extends the Tantrum duration by +1 second per consumed Token . Removes any remaining Tokens. Reduces his Movement speed by -90 % .",
+  "powerStats": {},
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [
+   {
+    "speed": 5.35,
+    "label": "Chainsaw Sweep"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Alto",
+  "difficulty": 2,
+  "chapter": {
+   "id": 17,
+   "name": "LEATHERFACE™",
+   "date": "14.09.2017",
+   "patch": "1.7.0"
+  },
+  "actor": [
+   "Filip Ivanovic (BHVR)"
+  ],
+  "perks": [
+   "Barbecue & Chilli",
+   "Franklin's Demise",
+   "Knock Out"
+  ],
+  "comp": {
+   "tier": "C",
+   "win": "10+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/cannibal.png"
+ },
+ {
+  "slug": "nightmare",
+  "id": 10,
+  "name": "Nightmare",
+  "title": "The Nightmare",
+  "realName": "Freddy Krueger",
+  "aliases": [
+   "The Sandman"
+  ],
+  "gender": "Man",
+  "origin": "American",
+  "weapon": "Clawed Glove",
+  "power": "Dream Demon",
+  "powerText": "\"Death won't accept him and thus he remains, a calamity, indisputable master of his victims' nightmares.\" SPECIAL ABILITY: DREAM DEMON The Nightmare is cloaked from awake Survivors. While they can hear his Terror Radius , he is not always visible to them: The Nightmare is invisible to Survivors farther than 32 metres away. The Nightmare is intermittently visible to Survivors from 16 to 32 metres away. The Nightmare is fully visible to Survivors closer than 16 metres . SPECIAL STATE: MICROSLEEP The mere presence of The Nightmare induces Microsleep in awake Survivors, causing them to passively fall asleep over 60 seconds . Survivors who woke up with an Alarm Clock are protected from Microsleep for 30 seconds . SPECIAL STATE: ASLEEP Survivors who fall asleep automatically enter the Dream World and suffer from the following effects while inside it: Changes the penalty of interacting with Dream Traps . Triggers Killer Instinct while performing a Healing action or while an Awake Survivor is performing one on them. Causes them to suffer from the Oblivious Status Effect . Causes them to hear a non-directional Lullaby instead. Hitting Survivors with a Basic Attack immediately pulls them into the Dream World , unless they are protected by the temporary Sleep Immunity granted by an Alarm Clock . SPECIAL INTERACTION: WAKING UP Survivors have several ways to wake up and leave the Dream World : Failing a Skill Check . Having an Awake Survivor perform the Wake Up interaction on them for 5 seconds . Interacting with an Alarm Clock for 2 seconds . Entering the Dying State by any means. SPECIAL ABILITIES: DREAM TRAPS The Nightmare has access to 2 types of Dream Traps : Dream Snares and Dream Pallets . Press the Secondary Power button to switch between the two. SPECIAL TRAP: DREAM SNARES Press and hold the Power button to charge a Dream Snare over 0.35 seconds . While charged, press the Attack button to launch the Dream Snare forwards: Reduces his Movement speed to 4.0 m/s . Moves at a speed of 12 m/s . Has a maximum range of 18 metres . Can go through walls and follow slopes, but does not go off ledges. When a Dream Snare collides with a Survivor, it inflicts either of the following effects, depending on their state: Awake : Advances their Microsleep timer by +30 seconds . Asleep : Causes them to suffer from a -12 % Hindered Status Effect for 4.5 seconds and while hindered, suppress the ability to perform Fast Vaults . Dream Snares have a cool-down of 7 seconds . SPECIAL TRAP: DREAM PALLETS The Nightmare can create up to 8 Dream Pallets at a time. Press the Power button to enter Pallet Focus Mode . While in this mode, press the Attack button to spawn a Dream Pallet at any valid location within 24 metres Press the Attack button while targetting any Dream Pallet within that same range to Rupture it: Has a delay of 1.5 seconds . Has an Area of Effect of 3.5 metres . When a Dream Pallet ruptures while a Survivor is inside its Area of Effect , it inflicts either of the",
+  "powerStats": {
+   "invisibilityFar": "32 metres",
+   "invisibilityIntermittent": "16 to 32 metres",
+   "invisibilityNear": "16 metres",
+   "microsleep": "60 seconds",
+   "immunityMicrosleep": "30 seconds",
+   "wakeUp": "5 seconds",
+   "alarmClockInteraction": "2 seconds",
+   "dreamTraps": 2,
+   "dreamSnareChargeTime": "0.35 seconds",
+   "dreamSnareSpeed": "12 m/s",
+   "dreamSnareRange": "18 metres",
+   "dreamSnarePenalty": "+30 seconds",
+   "dreamSnareCooldown": "7 seconds",
+   "castingDreamSnares": "4.0 m/s",
+   "hindered": "-12 %",
+   "durationHindered": "4.5 seconds",
+   "dreamPallets": 8,
+   "dreamPalletRange": "24 metres",
+   "dreamPalletDelay": "1.5 seconds",
+   "dreamPalletPenalty": "+60 seconds",
+   "dreamPalletAOE": "3.5 metres",
+   "dreamPalletCooldown": "1.5 seconds",
+   "dreamProjectionRange": "8 to 12 metres",
+   "dreamProjectionThreshold": "0.5 seconds",
+   "dreamProjectionDuration": "2.5 seconds",
+   "dreamProjectionBonus": "-15 %",
+   "dreamProjectionMaxBonus": "-60 %",
+   "dreamProjectionCooldown": "30 seconds",
+   "dreamProjectionPenalty": "+15 seconds",
+   "castingDreamProjection": "3.86 m/s",
+   "dreamProjectionAOE": "8 metres",
+   "killerInstinct": "3 seconds"
+  },
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [
+   {
+    "speed": 4,
+    "label": " placing '''Dream Snares'''"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Medio",
+  "difficulty": 2,
+  "chapter": {
+   "id": 6,
+   "name": "A Nightmare on Elm Street™",
+   "date": "26.10.2017",
+   "patch": "1.8.0"
+  },
+  "actor": [
+   "Filip Ivanovic (BHVR)"
+  ],
+  "perks": [
+   "Blood Warden",
+   "Fire Up",
+   "Remember Me"
+  ],
+  "comp": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/nightmare.png"
+ },
+ {
+  "slug": "pig",
+  "id": 11,
+  "name": "Pig",
+  "title": "The Pig",
+  "realName": "Amanda Young",
+  "aliases": [],
+  "gender": "Woman",
+  "origin": "American",
+  "weapon": "Hidden Blade",
+  "power": "Jigsaw's Baptism",
+  "powerText": "Creep up and ambush Survivors with The Pig, the stealthy successor to the legendary Jigsaw. But simply hooking them isn’t enough. Survivors can first be punished with a Reverse Bear Trap, which they must race to remove at Jigsaw Boxes across the map. Suddenly, repairing generators isn’t quite so pressing... The Pig is a tormenting Killer, able to crouch into stealth mode, then ambush Survivors from a short distance. She can also apply Reverse Bear Traps to downed Survivors, forcing them to remove it before the timer runs out, triggering an instant death. Her personal Perks, Scourge Hook: Hangman's Trick , Surveillance , and Make Your Choice , give her more Map control and expose altruistic Survivors.",
+  "powerStats": {},
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [
+   {
+    "speed": 4,
+    "label": "Crouched"
+   },
+   {
+    "speed": 7.1,
+    "label": "Ambush Dash"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 24,
+    "label": null
+   }
+  ],
+  "height": "Medio",
+  "difficulty": 3,
+  "chapter": {
+   "id": 7,
+   "name": "The SAW™ Chapter",
+   "date": "23.01.2018",
+   "patch": "1.9.0"
+  },
+  "actor": [
+   "Christine Marsh (BHVR)"
+  ],
+  "perks": [
+   "Make Your Choice",
+   "Scourge Hook: Hangman's Trick",
+   "Surveillance"
+  ],
+  "comp": {
+   "tier": "C",
+   "win": "10+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/pig.png"
+ },
+ {
+  "slug": "clown",
+  "id": 12,
+  "name": "Clown",
+  "title": "The Clown",
+  "realName": "Kenneth Chase alias Jeffrey Hawk",
+  "aliases": [
+   "Jeffrey Hawk",
+   "The Ringmaster",
+   "The Medicine Man"
+  ],
+  "gender": "Man",
+  "origin": "American",
+  "weapon": "Madame Butterfly",
+  "power": "The Afterpiece Tonic",
+  "powerText": "Using his Afterpiece concoctions, The Clown can steer Survivors into dangerous areas and shorten chases. His purple bottle emits a cloud of noxious gas that disorients, slows down, and hinders Survivors. Throwing the yellow bottle requires foresight, as anyone who passes through the gas experiences a speed burst. The Clown is a strategic Killer, able to control and corral Survivors by throwing bottles of The Afterpiece Tonic to create clouds of noxious gas that cover large areas for a short amount of time. Survivors intoxicated by the gas are inflicted with impaired vision and movement speed, and give away their location by coughing loudly. His personal Perks, Bamboozle , Coulrophobia , and Pop Goes the Weasel , provide vaulting advantages and negatively impact Survivor Healing speed and Repairs. He has a surprising agility for a man of his size, along with a terrifying appearance and the ability to sabotage the Survivor's efforts.",
+  "powerStats": {
+   "bottles": 6,
+   "reloading": [
+    "2.5 seconds",
+    "2.3 m/s"
+   ],
+   "hindered": "-14 %",
+   "linger": "1.6 seconds",
+   "delay": "1.6 seconds",
+   "haste": "+12 %",
+   "durationHaste": "6 seconds"
+  },
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [
+   {
+    "speed": 2.3,
+    "label": "Reloading"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Alto",
+  "difficulty": 2,
+  "chapter": {
+   "id": 8,
+   "name": "Curtain Call",
+   "date": "12.06.2018",
+   "patch": "2.0.0"
+  },
+  "actor": [
+   "Sébastien Duval (BHVR)"
+  ],
+  "perks": [
+   "Bamboozle",
+   "Coulrophobia",
+   "Pop Goes the Weasel"
+  ],
+  "comp": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/clown.png"
+ },
+ {
+  "slug": "spirit",
+  "id": 13,
+  "name": "Spirit",
+  "title": "The Spirit",
+  "realName": "Rin Yamaoka",
+  "aliases": [],
+  "gender": "Woman",
+  "origin": "Japanese",
+  "weapon": "Shattered Katana",
+  "power": "Yamaoka's Haunting",
+  "powerText": "While using her Yamaoka’s Haunting Power, both The Spirit and Survivors cannot be seen by one another. Instead, Survivors are revealed by their Scratch Marks, breathing, and interactions with the environment. Each chase becomes a battle of wits, a duel where only the sharpest mind-games prevail. The Spirit is a phase-walking Killer, able to catch Survivors off-guard with her traversal Power, Yamaoka's Haunting . Her Power allows her to teleport from one place to another without being seen. Her personal Perks, Spirit Fury , Hex: Haunted Ground , and Rancor , give her tools to observe and bait Survivors, and deal with obstacles directly in her path. She inherited incredible fury from her ancestors. The wrath that flows through her veins is her legacy. The terrible pain she suffered set it off. Swift and lethal, The Spirit exacts her revenge endlessly.",
+  "powerStats": {},
+  "speed": 4.4,
+  "speedPct": 110,
+  "speedNote": null,
+  "altSpeeds": [
+   {
+    "speed": 7.04,
+    "label": "Phase-Walk"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 24,
+    "label": null
+   }
+  ],
+  "height": "Medio",
+  "difficulty": 3,
+  "chapter": {
+   "id": 9,
+   "name": "Shattered Bloodline",
+   "date": "18.09.2018",
+   "patch": "2.2.0"
+  },
+  "actor": [
+   "Gabrielle Murphy (BHVR)"
+  ],
+  "perks": [
+   "Hex: Haunted Ground",
+   "Rancor",
+   "Spirit Fury"
+  ],
+  "comp": {
+   "tier": "A",
+   "win": "4K (cualquier número de gens)",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/spirit.png"
+ },
+ {
+  "slug": "legion",
+  "id": 14,
+  "name": "Legion",
+  "title": "The Legion",
+  "realName": "Frank Morrison, Julie Kostenko, Susie Lavoie, Joey Cadogan",
+  "aliases": [],
+  "gender": "Men (Frank, Joey), Women (Julie, Susie)",
+  "origin": "Canadian",
+  "weapon": "Hunting Knife",
+  "power": "Feral Frenzy",
+  "powerText": "The Legion are a close-knit group of murderous Killers, linked by the desire to dole out pain in equal measure. Keep the injuries coming with Feral Frenzy, a high-intensity sprint that can set off a devastating chain reaction. Survivors will be constantly tending to their wounds, leaving them vulnerable to be picked off one by one. The Legion are a band of merciless Killers, able to rush down helpless Survivors with their power, Feral Frenzy . Attacks made during their frenzy inflict lingering internal damage, downing any Survivors that are not quick enough to react. Their personal Perks, Discordance , Mad Grit , and Iron Maiden , give them the ability to locate their prey and attack savagely while transporting Survivors to the Hook.",
+  "powerStats": {
+   "frenzyDuration": "11 seconds",
+   "frenzyRecharge": "15 seconds",
+   "frenzySpeedDefault": "5.2 m/s",
+   "frenzySpeedBonus": "+0.24 m/s",
+   "frenzySpeedMax": "+0.96 m/s",
+   "terrorRadiusBonus": "+8 metres",
+   "feralVault": "0.9 seconds",
+   "fatigueSpeed": "2.3 m/s",
+   "fatigueDuration": "2.5 seconds"
+  },
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [
+   {
+    "speed": 5.2,
+    "label": "Feral Frenzy"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Medio",
+  "difficulty": 1,
+  "chapter": {
+   "id": 10,
+   "name": "Darkness Among Us",
+   "date": "11.12.2018",
+   "patch": "2.4.0"
+  },
+  "actor": [
+   "Julie/Susie: Emilie Deschamps",
+   "Frank/Joey: Nicolas Brassard",
+   "(both BHVR)"
+  ],
+  "perks": [
+   "Discordance",
+   "Iron Maiden",
+   "Mad Grit"
+  ],
+  "comp": {
+   "tier": "C",
+   "win": "10+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/legion.png"
+ },
+ {
+  "slug": "plague",
+  "id": 15,
+  "name": "Plague",
+  "title": "The Plague",
+  "realName": "Adiris",
+  "aliases": [
+   "High Priestess of Babylon"
+  ],
+  "gender": "Woman",
+  "origin": "Babylonian (Ancient Mesopotamia)",
+  "weapon": "Profane Censer",
+  "power": "Vile Purge",
+  "powerText": "Traditional healing methods are ineffective against The Plague’s vile Purge, which can infect generators and Survivors. Pools of Devotion are the only respite from the spreading pestilence. The more Survivors heal, the stronger The Plague’s power becomes, transforming her Purge into a sickening projectile of pain. The Plague is a devout Killer, able to infect Survivors from a short distance using her Power, Vile Purge . Survivors inflicted by this contamination risk becoming injured or broken, unless they find a way to cure themselves in a Pool of Devotion . Her personal Perks, Corrupt Intervention , Infectious Fright , and Dark Devotion , give her the ability to hinder Survivor objectives, while simultaneously confusing and frightening those within her presence.",
+  "powerStats": {},
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Alto",
+  "difficulty": 3,
+  "chapter": {
+   "id": 11,
+   "name": "Demise of the Faithful",
+   "date": "19.03.2019",
+   "patch": "2.6.0"
+  },
+  "actor": [
+   "Undisclosed Voice Actress"
+  ],
+  "perks": [
+   "Corrupt Intervention",
+   "Dark Devotion",
+   "Infectious Fright"
+  ],
+  "comp": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/plague.png"
+ },
+ {
+  "slug": "ghost-face",
+  "id": 16,
+  "name": "Ghost Face",
+  "title": "The Ghost Face",
+  "realName": "Danny Johnson alias Jed Olsen",
+  "aliases": [
+   "Jed Olsen"
+  ],
+  "gender": "Man",
+  "origin": "American",
+  "weapon": "Tactical Knife",
+  "power": "Night Shroud",
+  "powerText": "A stealth-focused Killer capable of approaching unseen, The Ghost Face is adept at stalking his prey. Keep tabs on each individual Survivor, patiently marking them for death – provided you can remain hidden. Lie in wait until the perfect time to strike, and down Survivors before they know what hit them. The Ghost Face is a creepy Killer, able to stalk his victims and sneak up silently using his Power, Night Shroud . Affected Survivors will find themselves vulnerable and oblivious to his presence and must use all of their perception and awareness to protect themselves from his approach. His personal Perks, I'm All Ears , Thrilling Tremors , and Furtive Chase , give him the ability to locate Survivors, defend Generators, and make his Chases unpredictable.",
+  "powerStats": {
+   "powerCooldown": "15 seconds",
+   "crouchingSpeed": "4.0 m/s",
+   "stalkSpeedMultiplierActive": "20 %",
+   "stalkSpeedMultiplierPassive": "50 %",
+   "stalkRange": "40 metres",
+   "stalkRate": "+22.5 pts/s",
+   "stalkRateLean": "+45 pts/s",
+   "stalkCapacity": "100 points",
+   "exposed": "60 seconds",
+   "revealVisibility": "30 %",
+   "revealRange": "32 metres",
+   "revealTime": "1.5 seconds",
+   "killerInstinct": "4 seconds"
+  },
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [
+   {
+    "speed": 4,
+    "label": "Crouch"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 24,
+    "label": null
+   }
+  ],
+  "height": "Medio",
+  "difficulty": 3,
+  "chapter": {
+   "id": 12,
+   "name": "Ghost Face®",
+   "date": "18.06.2019",
+   "patch": "3.0.0"
+  },
+  "actor": [
+   "Filip Ivanovic (Art Director)"
+  ],
+  "perks": [
+   "Furtive Chase",
+   "I'm All Ears",
+   "Thrilling Tremors"
+  ],
+  "comp": {
+   "tier": "D",
+   "win": "9+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/ghost-face.png"
+ },
+ {
+  "slug": "demogorgon",
+  "id": 17,
+  "name": "Demogorgon",
+  "title": "The Demogorgon",
+  "realName": null,
+  "aliases": [
+   "The Monster",
+   "The Beast"
+  ],
+  "gender": "Not applicable (not human)",
+  "origin": "None (Creature, Extradimensional Origin)",
+  "weapon": "Barbarous Claw",
+  "power": "Of the Abyss",
+  "powerText": "The Demogorgon is an unidentified Killer, able to open multiple Portals and traverse between them to cover large distances. Using its Power, Of the Abyss , it can detect any Survivors within a close proximity to the Portals then unleash a leaping attack to inflict damage from a distance. Its personal Perks, Surge , Mindbreaker , and Cruel Limits , impact the environment close to Generators and affect nearby Survivors in unexpected ways. During the Chapter's temporary departure from Dead by Daylight , these Perks were replaced with a generic variant each: Jolt , Fearmonger , and Claustrophobia . These generic perks have been replaced with The Demogorgon's original Teachable Perks with the Chapter's return to Dead by Daylight .",
+  "powerStats": {
+   "undetectable": "12 seconds"
+  },
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [
+   {
+    "speed": 3.86,
+    "label": "Of the Abyss"
+   },
+   {
+    "speed": 18.4,
+    "label": "Shred"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Alto",
+  "difficulty": 3,
+  "chapter": {
+   "id": 13,
+   "name": "Stranger Things",
+   "date": "17.09.2019",
+   "patch": "3.2.0"
+  },
+  "actor": [
+   "None (Digital SFX)"
+  ],
+  "perks": [
+   "Cruel Limits",
+   "Mindbreaker",
+   "Surge"
+  ],
+  "comp": {
+   "tier": "C",
+   "win": "10+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/demogorgon.png"
+ },
+ {
+  "slug": "oni",
+  "id": 18,
+  "name": "Oni",
+  "title": "The Oni",
+  "realName": "Kazan Yamaoka",
+  "aliases": [],
+  "gender": "Man",
+  "origin": "Japanese",
+  "weapon": "Yamaoka Blade",
+  "power": "Yamaoka's Wrath",
+  "powerText": "Redefine wrath with The Oni, a truly formidable force. Injured Survivors leave a trail of Blood Orbs, fuelling The Oni’s rage and sending him into a state of fury. Upon unleashing a bloodcurdling roar, The Oni gains the ability to charge with vengeful purpose, instantly cutting down anyone in his way. The Oni is a monstrous Killer, able to absorb the blood energy of his injured foes, and then use that energy to transform into a brutal demon. Using his power, Yamaoka's Wrath , he can rush down Survivors at great speed and deal deadly strikes with his kanabō. His personal Perks, Zanshin Tactics , Blood Echo , and Nemesis , provide navigational information, punish injured Survivors, and gain advantages over those that interfere.",
+  "powerStats": {},
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [
+   {
+    "speed": 3.45,
+    "label": "Absorption"
+   },
+   {
+    "speed": 7.82,
+    "label": "Demon Dash"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Alto",
+  "difficulty": 4,
+  "chapter": {
+   "id": 14,
+   "name": "Cursed Legacy",
+   "date": "03.12.2019",
+   "patch": "3.4.0"
+  },
+  "actor": [
+   "Jean-Baptiste Garnier (BHVR)"
+  ],
+  "perks": [
+   "Blood Echo",
+   "Nemesis",
+   "Zanshin Tactics"
+  ],
+  "comp": {
+   "tier": "A",
+   "win": "4K (cualquier número de gens)",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/oni.png"
+ },
+ {
+  "slug": "deathslinger",
+  "id": 19,
+  "name": "Deathslinger",
+  "title": "The Deathslinger",
+  "realName": "Caleb Quinn",
+  "aliases": [
+   "The Collector",
+   "Gunslinger",
+   "Mad Mick"
+  ],
+  "gender": "Man",
+  "origin": "American of Irish descent",
+  "weapon": "Death to Bayshore",
+  "power": "The Redeemer",
+  "powerText": "Upon catching prey unaware, the Deathslinger uses his handmade gun – The Redeemer – to skewer fleeing Survivors with a long-distance harpoon. Accurate aim, patient tracking, and sharp predictions are crucial to landing successful shots, but the reward of a Survivor’s scream as they’re reeled in will never sound so sweet. The Deathslinger is a vengeful Killer, able to spear Survivors from a distance and reel them in using his Power, The Redeemer . His personal Perks, Gearhead , Dead Man's Switch , and Hex: Retribution allow him to locate and impede Survivor objectives, and punish Survivors for destroying Totems.",
+  "powerStats": {},
+  "speed": 4.4,
+  "speedPct": 110,
+  "speedNote": null,
+  "altSpeeds": [],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Alto",
+  "difficulty": 3,
+  "chapter": {
+   "id": 15,
+   "name": "Chains of Hate",
+   "date": "10.03.2020",
+   "patch": "3.6.0"
+  },
+  "actor": [
+   "Patrick Harris (BHVR)"
+  ],
+  "perks": [
+   "Dead Man's Switch",
+   "Gearhead",
+   "Hex: Retribution"
+  ],
+  "comp": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/deathslinger.png"
+ },
+ {
+  "slug": "executioner",
+  "id": 20,
+  "name": "Executioner",
+  "title": "The Executioner",
+  "realName": "Pyramid Head",
+  "aliases": [
+   "Red Pyramid Thing"
+  ],
+  "gender": "Man",
+  "origin": "None (Creature, Manifestation of Guilt)",
+  "weapon": "Great Knife",
+  "power": "Rites of Judgement",
+  "powerText": "\"Open the Gates of Suffering and be judged! The Great Knife splits the ground, giving rise to an infernal construct and spreading agony to all who approach.\" SPECIAL ABILITY: RITES OF JUDGEMENT Press and hold the Power button to carve a Torment Trail into the ground beneath you while moving: Reduces his Movement to 4.2 m/s . The Power gauge has a capacity of 8 Charges . Drawing the Torment Trail drains it at a rate of -1 c/s , allowing for a maximum Draw time of 10 seconds . Remaining stationary or stopping to move automatically pauses the Power gauge. Segments of the Torment Trail have a Life time of 90 seconds . Their Auras are revealed to The Executioner in white within 32 metres . SPECIAL ATTACK: PUNISHMENT OF THE DAMNED While performing Rites of Judgement , press the Attack button to trigger Punishment of the Damned , unleashing a propagating Attack Trail in front of The Executioner : Inflicts damage to all Survivors it touches. Depletes the Power Gauge by -2 Charges . Has a range of 16 metres . SPECIAL AFFLICTION: TORMENT If a Survivor touches the Torment Trail while not crouched, it applies the following effects: Inflicts Torment . Triggers Killer Instinct for 3 seconds . Torment is only removed after rescuing or being rescued from a Cage of Atonement . SPECIAL INTERACTION: SEND TO CAGE Press the Secondary Power button while standing over a downed Tormented Survivor to send them to a Cage of Atonement . SPECIAL INTERACTION: FINAL JUDGEMENT Press the Secondary Power button while standing over a downed Tormented Survivor that has reached the second Hook Stage to execute them on the spot, performing a Mini-Mori .",
+  "powerStats": {
+   "killerInstinct": "3 seconds",
+   "ROJ": [
+    "4.2 m/s",
+    "8 Charges",
+    "-1 c/s",
+    "10 seconds",
+    "90 seconds",
+    "32 metres"
+   ],
+   "POTD": [
+    "-2 Charges",
+    "16 metres"
+   ]
+  },
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [
+   {
+    "speed": 4.2,
+    "label": "Rites of Judgement"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Alto",
+  "difficulty": 4,
+  "chapter": {
+   "id": 24,
+   "name": "Silent Hill",
+   "date": "16.06.2020",
+   "patch": "4.0.0"
+  },
+  "actor": [
+   "Jean-Baptiste Garnier (BHVR)"
+  ],
+  "perks": [
+   "Deathbound",
+   "Forced Penance",
+   "Trail of Torment"
+  ],
+  "comp": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/executioner.png"
+ },
+ {
+  "slug": "blight",
+  "id": 21,
+  "name": "Blight",
+  "title": "The Blight",
+  "realName": "Talbot Grimes",
+  "aliases": [],
+  "gender": "Man",
+  "origin": "Scottish",
+  "weapon": "Bonebuster",
+  "power": "Blighted Corruption",
+  "powerText": "Capable of gaining ground on Survivors in mere moments, The Blight’s lethal efficiency must never be underestimated. With the ability to bounce off surfaces and realign his trajectory, his relentless presence forces Survivors into snap decisions. The learning curve may feel steep, but mastering The Blight is a worthwhile pursuit. The Blight is an unpredictable Killer, able to rush forward in a burst of speed and carom off obstacles to injure Survivors using his power, Blighted Corruption . His personal Perks, Dragon's Grip , Hex: Blood Favour , and Hex: Undying , allow him to impose powerful effects on Generators, Totems and Pallets.",
+  "powerStats": {},
+  "speed": 4.4,
+  "speedPct": 110,
+  "speedNote": null,
+  "altSpeeds": [
+   {
+    "speed": 9.2,
+    "label": "Rush"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 40,
+    "label": null
+   }
+  ],
+  "height": "Medio",
+  "difficulty": 4,
+  "chapter": {
+   "id": 26,
+   "name": "Descend Beyond",
+   "date": "08.09.2020",
+   "patch": "4.2.0"
+  },
+  "actor": [
+   "Jean-Baptiste Garnier",
+   "Mathieu Favier",
+   "(both BHVR)"
+  ],
+  "perks": [
+   "Dragon's Grip",
+   "Hex: Blood Favour",
+   "Hex: Undying"
+  ],
+  "comp": {
+   "tier": "S",
+   "win": "4K con al menos 1 generador restante",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/blight.png"
+ },
+ {
+  "slug": "twins",
+  "id": 22,
+  "name": "Twins",
+  "title": "The Twins",
+  "realName": "Charlotte & Victor Deshayes",
+  "aliases": [
+   "The Siblings"
+  ],
+  "gender": "Woman (Charlotte), Man (Victor)",
+  "origin": "French",
+  "weapon": "Blade of Marseille",
+  "power": "Blood Bond",
+  "powerText": "Charlotte Deshayes can unleash her conjoined twin brother Victor, falling dormant until he’s finished hunting. Victor moves at high speeds and strikes with a pounce attack that debilitates and injures. Down Survivors with Victor and hook them with Charlotte, an oppressive tandem that can quickly disrupt even the best-laid plans. The Twins are a cooperative pair of Killers, able to divide and hunt together using their Power, Blood Bond . Their personal Perks, Hoarder , Oppression , and Coup de Grâce , allow them to monitor Survivors' actions, impede their progress, and hunt more effectively.",
+  "powerStats": {},
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": "Charlotte",
+  "altSpeeds": [
+   {
+    "speed": 6,
+    "label": "Victor"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Alto",
+  "difficulty": 4,
+  "chapter": {
+   "id": 27,
+   "name": "A Binding of Kin",
+   "date": "01.12.2020",
+   "patch": "4.4.0"
+  },
+  "actor": [
+   "Charlotte: Catherine Gauthier",
+   "Victor: Jean-Baptiste Garnier",
+   "(both BHVR)"
+  ],
+  "perks": [
+   "Coup de Grâce",
+   "Hoarder",
+   "Oppression"
+  ],
+  "comp": {
+   "tier": "A",
+   "win": "4K (cualquier número de gens)",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/twins.png"
+ },
+ {
+  "slug": "trickster",
+  "id": 23,
+  "name": "Trickster",
+  "title": "The Trickster",
+  "realName": "Hak Ji-woon",
+  "aliases": [],
+  "gender": "Man",
+  "origin": "South Korean",
+  "weapon": "Polished Head-Smasher",
+  "power": "Showstopper",
+  "powerText": "Armed with an arsenal of throwing knives, The Trickster overwhelms fleeing Survivors with a relentless barrage of blades. Seemingly safe actions like vaulting windows and dropping Pallets turn into target practice for this twisted K-Pop Idol, whose stylish showmanship is rivalled only by his gleeful bloodlust. The Trickster is a ranged Killer, able to quickly unleash a flurry of blades by using his power, Showstopper . His personal Perks, Starstruck , Hex: Crowd Control , and No Way Out , allow him to quickly down would-be rescuers and block areas of the environment to his advantage.",
+  "powerStats": {},
+  "speed": 4.4,
+  "speedPct": 110,
+  "speedNote": null,
+  "altSpeeds": [
+   {
+    "speed": 3.86,
+    "label": "Throw State"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 24,
+    "label": "Default"
+   },
+   {
+    "radius": 44,
+    "label": "S-Rank"
+   }
+  ],
+  "height": "Medio",
+  "difficulty": 2,
+  "chapter": {
+   "id": 28,
+   "name": "All-Kill",
+   "date": "30.03.2021",
+   "patch": "4.6.0"
+  },
+  "actor": [
+   "Titus Kim (Voice Actor)"
+  ],
+  "perks": [
+   "Hex: Crowd Control",
+   "No Way Out",
+   "Starstruck"
+  ],
+  "comp": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/trickster.png"
+ },
+ {
+  "slug": "nemesis",
+  "id": 24,
+  "name": "Nemesis",
+  "title": "The Nemesis",
+  "realName": "Nemesis T-Type",
+  "aliases": [
+   "The Pursuer",
+   "The Tyrant",
+   "The Potential"
+  ],
+  "gender": "Man",
+  "origin": "None (Bio-Weapon manufactured by Umbrella Europe)",
+  "weapon": "Raw Fists",
+  "power": "T-Virus",
+  "powerText": "An unstoppable force relentless in his pursuit, nothing can stop The Nemesis from achieving his goal. His sweeping Tentacle infects Survivors with the T-Virus, further enhancing his destructive power in the process. Easily smash through pallets and breakable walls while two A.I-controlled Zombies patrol the map, applying additional pressure. The Nemesis is an unrelenting Killer, capable of attacking at mid-range with his tentacle, while receiving support from Zombies roaming the area. His personal Perks, Lethal Pursuer , Hysteria , and Eruption , allow him to quickly ambush Survivors, while sowing confusion and fear when injuring and hooking them.",
+  "powerStats": {
+   "hindered": "-20 %"
+  },
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [
+   {
+    "speed": 3.8,
+    "label": "MR1/MR2 Tentacle Strike"
+   },
+   {
+    "speed": 4,
+    "label": "MR3 Tentacle Strike"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Alto",
+  "difficulty": 3,
+  "chapter": {
+   "id": 29,
+   "name": "Resident Evil™",
+   "date": "15.06.2021",
+   "patch": "5.0.0"
+  },
+  "actor": [
+   "Nemesis: Sébastien Croteau",
+   "Female Zombie: Roxana B. L.",
+   "Male Zombie: David A. B.",
+   "(all The Monster Factory)"
+  ],
+  "perks": [
+   "Eruption",
+   "Hysteria",
+   "Lethal Pursuer"
+  ],
+  "comp": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/nemesis.png"
+ },
+ {
+  "slug": "cenobite",
+  "id": 25,
+  "name": "Cenobite",
+  "title": "The Cenobite",
+  "realName": "Elliot Spencer",
+  "aliases": [
+   "Pinhead",
+   "Lead Cenobite",
+   "Hell Priest"
+  ],
+  "gender": "Man",
+  "origin": "English",
+  "weapon": "Hook & Chain",
+  "power": "Summons of Pain",
+  "powerText": "\"An extradimensional gateway that leads to pleasure and pain so great it will tear your soul apart.\" SPECIAL ABILITY: SUMMONS OF PAIN Press the Power button to conjure a Gateway up to 16 metres away in front of The Cenobite . Release the Power button to open the Gateway and possess it. SPECIAL ATTACK: POSSESSED CHAIN Press the Attack button while possessing the Gateway to summon forth a guided Possessed Chain under your control. Hitting a Survivor with the Possessed Chain causes the following effects: Binds the Survivor with 3 Chains . Reduces their Movement speed: 1.13 m/s with 3 Chains . 1.695 m/s with 2 Chains . 2.26 m/s with 1 Chain . Causes them to suffer from the Incapacitated Status Effect . Suppresses their ability to run. Blocks the Exit Gates . This effect lingers for 5 seconds after all Chains are removed. SPECIAL INTERACTION: BREAKING CHAINS Bound Survivors can perform the Break Free interaction to remove one Chain at a time, each taking 1 second . Chains are broken upon colliding with the environment, which will spawn a replacement Chain that will attempt to bind the Survivor again. Chains are also broken when colliding with other Players, but this will not spawn a replacement Chain . SPECIAL ITEM: LAMENT CONFIGURATION The Lament Configuration spawns in a random location in the environment at the start of the Trial and slowly charges a Chain Hunt The Aura of the Lament Configuration is revealed to Survivors in white at all times and changes to yellow during an active Chain Hunt . Any Survivor can pick up the Lament Configuration to prevent it from continuing charging a Chain Hunt or ending an on-going one, but not without suffering from the following effects: Causes the Survivor to suffer from a permanent Oblivious Status Effect . Causes all of their ambient sounds to be replaced with a haunting tune. Triggers a Chain Hunt targetting only them. The Lament Configuration cannot be dropped, demanding to be solved to remove it from their possession. If they are downed by The Cenobite , it is dropped from their grasp and respawns after 30 seconds . SPECIAL ABILITY: CHAIN HUNT When left to its own devices, the Lament Configuration charges a Chain Hunt over the course of 90 seconds . During a Chain Hunt , Survivors are repeatedly targetted by Chains spawning from nearby Gateways , which attempt to bind them until 3 Chains are attached to them. This process continues indefinitely until a Survivor picks up the Lament Configuration . If The Cenobite picks it up from the ground himself, or downs a Survivor currently holding it, he instantly starts a Chain Hunt in addition to the following effects: Causes all Survivors to be bound by 3 Chains . Causes all Survivors to scream and reveal their location for 3 seconds . Causes the Lament Configuration to respawn after 10 seconds . If the condition of the Last Survivor Standing is met, Chain Hunts will still activate, but not spawn any Chains , leaving the Last Survivor Standing untouched. SPECIAL IN",
+  "powerStats": {},
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Alto",
+  "difficulty": 4,
+  "chapter": {
+   "id": 32,
+   "name": "Hellraiser™",
+   "date": "07.09.2021",
+   "patch": "5.2.0"
+  },
+  "actor": [
+   "Doug Bradley (Original Actor)"
+  ],
+  "perks": [
+   "Hex: Plaything",
+   "Deadlock",
+   "Scourge Hook: Gift of Pain"
+  ],
+  "comp": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/cenobite.png"
+ },
+ {
+  "slug": "artist",
+  "id": 26,
+  "name": "Artist",
+  "title": "The Artist",
+  "realName": "Carmina Mora",
+  "aliases": [
+   "The Bird Lady",
+   "The Matron of Crows"
+  ],
+  "gender": "Woman",
+  "origin": "Chilean",
+  "weapon": "Sharp Palette Blade",
+  "power": "Birds of Torment",
+  "powerText": "No matter the distance, The Artist and her murder of Dire Crows pose a constant threat to Survivors. Position up to three Crows and unleash them on a lethal trajectory, swarming and injuring anyone caught in their path. Use her Power to shut down key areas, predict and punish Survivor pathing, and gain valuable map-wide information. The Artist is a ranged-reconnaissance Killer, able to launch Birds of Torment across the Map to reveal and attack Survivors. Her personal Perks, Grim Embrace , Scourge Hook: Pain Resonance , and Hex: Pentimento , allow her to interrupt Survivor objectives, torment hooked Survivors, and use destroyed Totems to her advantage.",
+  "powerStats": {},
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Medio",
+  "difficulty": 2,
+  "chapter": {
+   "id": 34,
+   "name": "Portrait of a Murder",
+   "date": "30.11.2021",
+   "patch": "5.4.0"
+  },
+  "actor": [
+   "Beatrix Moersch (BHVR)"
+  ],
+  "perks": [
+   "Grim Embrace",
+   "Hex: Pentimento",
+   "Scourge Hook: Pain Resonance"
+  ],
+  "comp": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/artist.png"
+ },
+ {
+  "slug": "onryo",
+  "id": 27,
+  "name": "Onryō",
+  "title": "The Onryō",
+  "realName": "Sadako Yamamura",
+  "aliases": [
+   "山村 貞子"
+  ],
+  "gender": "Woman",
+  "origin": "Japanese",
+  "weapon": "Ring of Fury",
+  "power": "Deluge of Fear",
+  "powerText": "\"Through the medium of a mysterious videotape, Sadako spreads her curse to unwitting viewers and causes their untimely deaths.\" SPECIAL ABILITY: DELUGE OF FEAR The Onryō starts the Trial in the Demanifested State , which has the following effects: Grants the Undetectable Status Effect . This effect lingers for 1 second after Manifesting . Fully invisible to Survivors who are farther than 24 metres away from her. Intermittently invisible to Survivors who are within 24 metres of her. This effect lingers for 4 seconds after Manifesting . Removes the ability to attack or interact with Survivors. The Onryō is still able to interact with Props. The Onryō cannot be stunned by Pallets . SPECIAL ABILITY: MANIFESTATION / DEMANIFESTATION Press the Power button while Demanifested to Manifest and be able to attack and interact with Survivors. Press the Power button while Manifested to Demanifest again. SPECIAL PROP: TV TVs spawn randomly throughout the environment. They are turned off at the start of the Trial, but turn on automatically after 30 seconds . They become turned off for 70 seconds after a Survivor inserts a VHS Tape or for 45 seconds after The Onryō projects through it. TVs have an Area of Effect of 16 metres around them within which they apply Condemned and any other applicable effects. SPECIAL LOCOMOTION: PROJECTION Press the Secondary Power button while Demanifested to project yourself to any powered TV in the environment. If the Power Gauge is full when projecting, all Survivors within the Area of Effect of any powered TV receive +1 Stack of Condemned . After a Projection , her Movement speed is increased to 6.9 m/s for 2 seconds . SPECIAL AFFLICTION: CONDEMNED Interacting with the Power of The Onryō causes Survivors to gain Condemned , slowly filling their Condemned Meter . Hooking a Survivor locks in some of their Condemned making the affected Stacks impossible to remove: The first time being hooked locks in all current Condemned up to 3 Stacks , leaving a minimum of 4 Stacks empty. The second time being hooked locks in all current Condemned up to 6 Stacks , leaving a minimum of 1 Stack empty. Once the Condemned Meter is full at 7 Stacks , they are in mortal danger from the Inexorable Stare . SPECIAL INTERACTION: INEXORABLE STARE Upon reaching full Condemned the affected Survivors triggers Killer Instinct for 6 seconds . Press the Secondary Power button while standing over a downed and fully Condemned Survivor to execute them on the spot, performing a Mini-Mori . SPECIAL INTERACTIONS: RETRIEVING TAPE / TURNING OFF TV Survivors can walk up to any powered TV and interact with it to retrieve its Cursed Tape , which temporarily turns it off and prevents The Onryō from projecting to it. Inserting the Cursed Tape into a different TV spreads the message of The Onryō and removes -3 Stacks of Condemned .",
+  "powerStats": {},
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [],
+  "terror": [
+   {
+    "radius": 24,
+    "label": null
+   }
+  ],
+  "height": "Bajo",
+  "difficulty": 3,
+  "chapter": {
+   "id": 35,
+   "name": "Sadako Rising",
+   "date": "08.03.2022",
+   "patch": "5.6.0"
+  },
+  "actor": [
+   "None"
+  ],
+  "perks": [
+   "Call of Brine",
+   "Merciless Storm",
+   "Scourge Hook: Floods of Rage"
+  ],
+  "comp": {
+   "tier": "C",
+   "win": "10+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/onryo.png"
+ },
+ {
+  "slug": "dredge",
+  "id": 28,
+  "name": "Dredge",
+  "title": "The Dredge",
+  "realName": null,
+  "aliases": [
+   "The Druanee"
+  ],
+  "gender": "Not applicable (not human)",
+  "origin": "None (Creature, Manifestation of Malthink)",
+  "weapon": "Knotted Appendage",
+  "power": "Reign of Darkness",
+  "powerText": "A twisted abomination too disturbing to bear, The Dredge’s malevolence is palpable. All light slowly drains in its presence, surrounding Survivors in darkness. Using lockers as map-wide gateways, it can emerge at any moment, seemingly everywhere at once. The Dredge is a manifestation of the dark thoughts of a once-vibrant community, able to teleport between Lockers and summon an overwhelming darkness. Its personal Perks, Dissolution , Darkness Revealed , and Septic Touch , allow it to destroy Pallets, spot Survivors near Lockers, and afflict healing Survivors with Blindness and Exhausted .",
+  "powerStats": {},
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Alto",
+  "difficulty": 2,
+  "chapter": {
+   "id": 36,
+   "name": "Roots of Dread",
+   "date": "07.06.2022",
+   "patch": "6.0.0"
+  },
+  "actor": [
+   "Roxana B.L.",
+   "Maude Théberge",
+   "Vanessa Landry",
+   "Misha Standjofski",
+   "Philippe Langelier",
+   "Sébastien Croteau",
+   "(all The Monster Factory)"
+  ],
+  "perks": [
+   "Darkness Revealed",
+   "Dissolution",
+   "Septic Touch"
+  ],
+  "comp": {
+   "tier": "C",
+   "win": "10+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/dredge.png"
+ },
+ {
+  "slug": "mastermind",
+  "id": 29,
+  "name": "Mastermind",
+  "title": "The Mastermind",
+  "realName": "Albert Wesker",
+  "aliases": [],
+  "gender": "Man",
+  "origin": "American",
+  "weapon": "Combat Knife",
+  "power": "Virulent Bound",
+  "powerText": "\"The Mastermind can barrel forwards, infecting Survivors with the Uroboros Virus or leaping over obstacles.\" SPECIAL ABILITY: VIRULENT BOUND The Mastermind starts the Trial with 2 Tokens . SPECIAL ATTACK: BOUND ATTACK Press and hold the Power button to charge Virulent Bound , reducing his Movement speed to 3.68 m/s while he prepares to strike. Press the Attack button to initiate a Bound Attack , consuming -1 Token , or release the Power button to cancel it. Press the Attack button again during the Chain Bound Window of 2 seconds to initiate a second, longer Bound Attack , if there is still a Token available: Increases his Movement speed to 14 m/s during a Bound Attack . The first Bound lasts for 0.5 seconds . The second Bound lasts for 1 second . SPECIAL INTERACTION: SURVIVOR COLLISION Colliding with a Survivor at any point during a Bound Attack has multiple possible effects and interactions, which depend on the Survivor's current state regarding their health, infection, and interaction: If the Survivor is interacting with a Prop or another Survivor, or is protected from entering the Dying State by a third-party effect, The Mastermind attacks them with a quick swipe of his tentacles, infecting them with Uroboros if they are not infected already: Infected Survivors receive damage. Critically Infected Survivors receive double damage and are downed, unless they are protected. If the Survivor is not interacting with a Prop or another Survivor, The Mastermind grabs them with his tentacles, infecting them with Uroboros if they are not infected already, and continues travelling the remaining distance of his Bound Attack . If he collides with an obstacle before ending the Bound Attack , any of the following applies: Infected Survivors receive damage, after which injured Survivors are released and dying Survivors are hoisted onto his shoulder. Critically Infected Survivors receive double damage and are hoisted onto his shoulder. If the obstacle that he collides with is a Survivor, then the Survivor he collided with will become Injured and suffer from the Deep Wound Status Effect . If he does not collide with an obstacle before ending the Bound Attack , he throws the Survivor in a straight line, after which any of the following applies: Survivors receive damage, if they collide with an obstacle during the throw, after which injured Survivors are released and dying Survivors are downed. If the obstacle that the Survivor collides with is another Survivor, then the Survivor that they collided with will become Injured and suffer from the Deep Wound Status Effect . In the case of the Survivor being grabbed, the Exit Gates are blocked to the Survivor for the duration of the Bound Attack . This effect lingers for 5 seconds after they are released. SPECIAL INTERACTION: VIRULENT VAULT Colliding with a dropped Pallet or a Window during a Bound Attack causes The Mastermind to automatically vault over it. Colliding with a Survivor standing on the other side of a Windo",
+  "powerStats": {
+   "hindered": "-4 %"
+  },
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [],
+  "terror": [
+   {
+    "radius": 40,
+    "label": null
+   }
+  ],
+  "height": "Medio",
+  "difficulty": 2,
+  "chapter": {
+   "id": 37,
+   "name": "Resident Evil™: PROJECT W",
+   "date": "30.08.2022",
+   "patch": "6.2.0"
+  },
+  "actor": [
+   "Connor Fogarty (The Monster Factory)"
+  ],
+  "perks": [
+   "Awakened Awareness",
+   "Superior Anatomy",
+   "Terminus"
+  ],
+  "comp": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/mastermind.png"
+ },
+ {
+  "slug": "knight",
+  "id": 30,
+  "name": "Knight",
+  "title": "The Knight",
+  "realName": "Tarhos Kovács",
+  "aliases": [],
+  "gender": "Man",
+  "origin": "Hungarian",
+  "weapon": "Imposing Claymore",
+  "power": "Guardia Compagnia",
+  "powerText": "The Knight is a strategic Killer, able to send his faithful Guards to hunt for Survivors and damage objects on the battlefield. His personal Perks, Nowhere to Hide , Hex: Face the Darkness , and Hubris , allow him to reveal Survivors near Generators, curse Survivors to scream out in fear, and cause a Survivor who stuns you to become Exposed .",
+  "powerStats": {
+   "haste": [
+    "+5 %",
+    "+50 %"
+   ]
+  },
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [
+   {
+    "speed": 15,
+    "label": "Patrol-Path Drawing"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Medio",
+  "difficulty": 2,
+  "chapter": {
+   "id": 38,
+   "name": "Forged in Fog",
+   "date": "22.11.2022",
+   "patch": "6.4.0"
+  },
+  "actor": [
+   "Knight: Misha Standjofski",
+   "Carnifex: David A. B.",
+   "Assassin: Simon Girard",
+   "Jailer: Jeff Mott",
+   "(all The Monster Factory)"
+  ],
+  "perks": [
+   "Hex: Face the Darkness",
+   "Hubris",
+   "Nowhere to Hide"
+  ],
+  "comp": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/knight.png"
+ },
+ {
+  "slug": "skull-merchant",
+  "id": 31,
+  "name": "Skull Merchant",
+  "title": "The Skull Merchant",
+  "realName": "Adriana Imai",
+  "aliases": [],
+  "gender": "Woman",
+  "origin": "Brazilian of Japanese descent",
+  "weapon": "Razor-Sharp Dual Blades",
+  "power": "Eyes in the Sky",
+  "powerText": "The Skull Merchant is a tactical Killer, able to place Drones that detect and debilitate her targets. Her personal Perks, THWACK! , Leverage , and Game Afoot , allow her to gain Haste from pursuing her Obsession , force screams from Survivors when breaking Breakable Walls or Pallets, and reduce Survivors' Healing speed the more times you place them on Hooks.",
+  "powerStats": {
+   "haste": "+5 %",
+   "durationHaste": "8 seconds",
+   "hindered": "-10 %",
+   "durationHindered": "6 seconds",
+   "undetectable": "8 seconds"
+  },
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [],
+  "terror": [
+   {
+    "radius": 24,
+    "label": null
+   }
+  ],
+  "height": "Medio",
+  "difficulty": 3,
+  "chapter": {
+   "id": 39,
+   "name": "Tools of Torment",
+   "date": "07.03.2023",
+   "patch": "6.6.0"
+  },
+  "actor": [
+   "Viky Boyer (The Monster Factory)"
+  ],
+  "perks": [
+   "Game Afoot",
+   "Leverage",
+   "THWACK!"
+  ],
+  "comp": {
+   "tier": "D",
+   "win": "9+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/skull-merchant.png"
+ },
+ {
+  "slug": "singularity",
+  "id": 32,
+  "name": "Singularity",
+  "title": "The Singularity",
+  "realName": "HUX-A7-13",
+  "aliases": [],
+  "gender": "Not applicable (Male AI voice)",
+  "origin": "None (Humanoid Android manufactured by Huxlee Industries Ltd.)",
+  "weapon": "Modular Claw",
+  "power": "Quantum Instantiation",
+  "powerText": "The Singularity is a relentless Killer, able to launch Biopods to move quickly across the map. His personal Perks, Genetic Limits , Forced Hesitation , and Machine Learning , allow him to exhaust newly injured Survivors, hinder anyone close to a survivor put into the dying state, and compromise Generators.",
+  "powerStats": {
+   "OCMode_speed": "+3 %",
+   "hindered": "-50 %"
+  },
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Medio",
+  "difficulty": 3,
+  "chapter": {
+   "id": 40,
+   "name": "End Transmission",
+   "date": "13.06.2023",
+   "patch": "7.0.0"
+  },
+  "actor": [
+   "Modified AI Voice"
+  ],
+  "perks": [
+   "Forced Hesitation",
+   "Genetic Limits",
+   "Machine Learning"
+  ],
+  "comp": {
+   "tier": "A",
+   "win": "4K (cualquier número de gens)",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/singularity.png"
+ },
+ {
+  "slug": "xenomorph",
+  "id": 33,
+  "name": "Xenomorph",
+  "title": "The Xenomorph",
+  "realName": null,
+  "aliases": [],
+  "gender": "Not applicable (not human)",
+  "origin": "None (Creature, Extraterrestrial Origin)",
+  "weapon": "Lithe Arm",
+  "power": "Hidden Pursuit",
+  "powerText": "\"Supposedly responding to a distress signal, the Nostromo's crew landed on LV-426. What they found there became one of humanity's greatest horrors.\" SPECIAL ABILITY: HIDDEN PURSUIT The Xenomorph has a set of intertwining Tunnels available to it beneath the environment that it can access from any of the 7 Control Stations spawning in the environment. SPECIAL OBJECT: CONTROL STATIONS The Auras of Control Stations are revealed to The Xenomorph in white at all times and within 12 metres to nearby Survivors. SPECIAL INTERACTION: HIGHLIGHTING CONTROL STATIONS Press the Secondary Power button while aiming at any Control Station to highlight it in yellow : This reveals the shortest path to that Control Station when navigating through the Tunnels . When near an Exit Gate , the nearest Control Station is automatically highlighted. SPECIAL LOCOMOTION: TUNNELS Press the Interaction button at a Control Station to enter the Tunnels : Grants the Undetectable Status Effect . Increases its Movement speed to 18 m/s . Increases the Charge speed of Crawler Mode to 8 c/s . Press it again while underneath the same or another Control Station to exit the Tunnels , which triggers the following effects within 16 metres of the Control Station : Triggers Killer Instinct for 3 seconds . Deactivates any deployed Turrets for 2.5 seconds . SPECIAL ABILITY: TRACKING FOOTSTEPS While inside the Tunnels , The Xenomorph can detect the movement of Survivors walking or running above it within 16 metres of its location, indicated by reddish footsteps spawning on the ceiling. Survivors can avoid being detected by crouching or standing still. SPECIAL STATE: CRAWLER MODE The Xenomorph passively charges Crawler Mode at a rate of 1 c/s when outside of the Tunnels . Once the Power Gauge is full at 35 Charges , it automatically enters it: Causes The Xenomorph to walk on all fours. Reduces its Terror Radius to 24 metres . Grants the ability to perform a Tail Strike Attack . There are only two ways for The Xenomorph to exit this mode: It picks up and carries a downed Survivor. It receives too much fire damage from Remote Flame Turrets . SPECIAL ATTACK: TAIL STRIKE While in Crawler Mode , press the Power button to perform a Tail Strike , which has an increased reach of 4.8 metres . SPECIAL ITEM: REMOTE FLAME TURRET Survivors can interact with a Control Station to retrieve up to 4 Remote Flame Turrets in total and deploy them in the environment to counteract The Xenomorph Turrets can also be undeployed, carried to a new location, and be redeployed. While carrying a Turret , Survivors experience the following effects: Causes them to suffer from a -35 % Hindered Status Effect and the Exhausted and Incapacitated Status Effects . Grants immunity from being detected by The Xenomorph when it is inside the Tunnels . Reveals their Aura and that of the Turret to other Survivors. Whenever The Xenomorph comes within 10 metres of a Turret while in Crawler Mode and has Line of Sight with it, the Turret attack",
+  "powerStats": {
+   "CS_amount": 7,
+   "CS_auraRange": "12 metres",
+   "CS_AOE": "16 metres",
+   "CS_turretCooldown": "30 seconds",
+   "tunnelSpeed": "18 m/s",
+   "tunnelFootsteps": "16 metres",
+   "CM_chargeRate": "1 c/s",
+   "CM_tunnelChargeRate": "8 c/s",
+   "CM_chargeCapacity": "35 Charges",
+   "CM_terrorRadius": "24 metres",
+   "TS_reach": "4.8 metres",
+   "turret_amount": 4,
+   "turret_attackRange": "10 metres",
+   "turret_respawn": "60 seconds",
+   "flameLimit": "125 Charges",
+   "KI_duration": "3 seconds",
+   "turretTunnelExit": "2.5 seconds",
+   "hindered": "-35 %"
+  },
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [
+   {
+    "speed": 4.6,
+    "label": "Crawler Mode"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Medio",
+  "difficulty": 2,
+  "chapter": {
+   "id": 44,
+   "name": "Alien",
+   "date": "29.08.2023",
+   "patch": "7.2.0"
+  },
+  "actor": [
+   "Sébastien Croteau (The Monster Factory)"
+  ],
+  "perks": [
+   "Alien Instinct",
+   "Rapid Brutality",
+   "Ultimate Weapon"
+  ],
+  "comp": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/xenomorph.png"
+ },
+ {
+  "slug": "good-guy",
+  "id": 34,
+  "name": "Good Guy",
+  "title": "The Good Guy",
+  "realName": "Charles Lee Ray",
+  "aliases": [
+   "Chucky",
+   "The Lakeshore Strangler"
+  ],
+  "gender": "Man",
+  "origin": "American",
+  "weapon": "Chef's Knife",
+  "power": "Playtime's Over",
+  "powerText": "\"After the rage of being trapped in the body of a doll subsided, the Lakeshore Strangler realised this new body was the perfect host to disorient and surprise his kills.\" SPECIAL ABILITY: HIDEY-HO MODE Press the Secondary Power button to enter Hidey-Ho Mode for 14 seconds : Grants the Undetectable Status Effect . Creates Illusionary Footfalls . Press it again to exit the mode prematurely. Hidey-Ho Mode has a cool-down of 10 seconds . SPECIAL ABILITY: ILLUSIONARY FOOTFALLS Illusionary Footfalls generate in a radius of 16 metres around each Survivor and aim to disorient them with sounds and footsteps coming from different directions, hiding the true whereabouts of The Good Guy . SPECIAL LOCOMOTION: SLICE & DICE While in Hidey-Ho Mode , press the Power button to launch a Slice & Dice attack: Increases his Movement speed to 8 m/s for 2 seconds . Increases his Lunge duration to 0.6 seconds . SPECIAL INTERACTION: SCAMPER During a Slice & Dice attack, collide with a dropped Pallet or a Window to perform a Scamper under/over it, which takes 0.8 seconds to complete. \"I'm one of the most notorious slashers in history. And I don't want to give that up.",
+  "powerStats": {
+   "powerDuration": "14 seconds",
+   "powerCooldown": "10 seconds",
+   "illusionRadius": "16 metres",
+   "powerSpeedValue": "8 m/s",
+   "powerSpeedDuration": "2 seconds",
+   "powerLungeDuration": "0.6 seconds",
+   "scamperDuration": "0.8 seconds"
+  },
+  "speed": 4.4,
+  "speedPct": 110,
+  "speedNote": null,
+  "altSpeeds": [],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Bajo",
+  "difficulty": 2,
+  "chapter": {
+   "id": 45,
+   "name": "Chucky",
+   "date": "28.11.2023",
+   "patch": "7.4.0"
+  },
+  "actor": [
+   "Brad Dourif (Blindlight, Original Actor)"
+  ],
+  "perks": [
+   "Batteries Included",
+   "Friends 'til the End",
+   "Hex: Two Can Play"
+  ],
+  "comp": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/good-guy.png"
+ },
+ {
+  "slug": "unknown",
+  "id": 35,
+  "name": "Unknown",
+  "title": "The Unknown",
+  "realName": null,
+  "aliases": [],
+  "gender": "None (inhuman Entity that adapts its appearance as needed)",
+  "origin": "Unknown (Malevolent Entity)",
+  "weapon": "Gently-Used Axe",
+  "power": "UVX",
+  "powerText": "The Unknown is a being beyond understanding, though many have tried. Its personal Perks, Unbound , Unforeseen , and Undone , allow it to move quicker, put its Terror Radius on a Generator , and deplete Repair progress.",
+  "powerStats": {
+   "uvx": [
+    "2.25 metres",
+    "6.25 seconds"
+   ],
+   "weakened": [
+    "8 seconds",
+    "25 metres",
+    "10 seconds"
+   ],
+   "hallucination": [
+    "45 seconds",
+    4,
+    "8 metres",
+    "-10 seconds"
+   ],
+   "dispelling": [
+    "4 seconds",
+    "-25 %"
+   ],
+   "dispelFail_killerInstinct": "5 seconds",
+   "teleport": [
+    "3 metres",
+    "5 seconds",
+    "25 seconds"
+   ],
+   "hindered": "-6 %",
+   "durationHindered": "3 seconds"
+  },
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Medio",
+  "difficulty": 2,
+  "chapter": {
+   "id": 50,
+   "name": "All Things Wicked",
+   "date": "12.03.2024",
+   "patch": "7.6.0"
+  },
+  "actor": [
+   "Zoey Alexandria Wendorf (Blindlight, Transvoice Teacher)"
+  ],
+  "perks": [
+   "Unbound",
+   "Undone",
+   "Unforeseen"
+  ],
+  "comp": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/unknown.png"
+ },
+ {
+  "slug": "lich",
+  "id": 36,
+  "name": "Lich",
+  "title": "The Lich",
+  "realName": "Vecna",
+  "aliases": [],
+  "gender": "Man",
+  "origin": "Oerth (D&D World)",
+  "weapon": "Afterthought Dagger",
+  "power": "Vile Darkness",
+  "powerText": "Few dare speak The Lich's true name, for fear that he may hear — or worse. His personal Perks, Weave Attunement , Languid Touch , and Dark Arrogance , allow him to exploit used Items, exhaust those who disturb the Crows, and increase his Vaulting speed.",
+  "powerStats": {
+   "haste": "+7 %",
+   "durationHaste": "4 seconds",
+   "hookStageCount": 2,
+   "treasureChestCount": 6,
+   "fly_duration": "5 seconds",
+   "fly_cooldown": "2.75 seconds",
+   "FOTD_entities": 5,
+   "FOTD_killerInstinct": "5 seconds",
+   "dispellingSphere_killerInstinct": "5 seconds",
+   "dispellingSphere_magicItemCooldown": "45 seconds",
+   "dispellingSphereSpeeds": [
+    "9.75 m/s",
+    "6.5 m/s"
+   ],
+   "dispellingSphereSpeedTransition": "3 seconds",
+   "mageHand_palletLift": "0.5 seconds",
+   "mageHand_palletHold": "4 seconds",
+   "spellCooldowns": [
+    "20 seconds",
+    "30 seconds",
+    "30 seconds",
+    "35 seconds"
+   ],
+   "magicItem_auraReveal": "2 seconds",
+   "magicItem_skyguardLinger": "0.25 seconds"
+  },
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [
+   {
+    "speed": 8,
+    "label": "Fly Spell"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Medio",
+  "difficulty": 2,
+  "chapter": {
+   "id": 52,
+   "name": "Dungeons & Dragons",
+   "date": "03.06.2024",
+   "patch": "8.0.0"
+  },
+  "actor": [
+   "Matthew Mercer (Blindlight, Voice Actor)"
+  ],
+  "perks": [
+   "Dark Arrogance",
+   "Languid Touch",
+   "Weave Attunement"
+  ],
+  "comp": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/lich.png"
+ },
+ {
+  "slug": "dark-lord",
+  "id": 37,
+  "name": "Dark Lord",
+  "title": "The Dark Lord",
+  "realName": "Dracula",
+  "aliases": [
+   "Vlad Tepes Dracula",
+   "Vlad the Impaler"
+  ],
+  "gender": "Man",
+  "origin": "Wallachian (Romania)",
+  "weapon": "Pale Claws",
+  "power": "Vampiric Shift",
+  "powerText": "The Dark Lord, Dracula , is the embodiment of darkness and tragedy. His personal Perks, Hex: Wretched Fate , Human Greed , and Dominance , allow him to slow the Repair speed of the Obsession , reveal the Auras of unopened Chests and nearby Survivors, and temporarily block Chests and Totems .",
+  "powerStats": {
+   "forms": 3,
+   "movementSpeeds": [
+    "4.6 m/s",
+    "4.8 m/s",
+    "6.5 m/s"
+   ],
+   "shapeshift": "3.5 seconds",
+   "hellfire": [
+    "0.9 seconds",
+    8,
+    "10 metres",
+    "9.5 seconds"
+   ],
+   "pounce": [
+    "0.9 seconds",
+    "2 times",
+    "0.5 seconds",
+    "20 seconds"
+   ],
+   "scentOrbs": [
+    "1 every 6 seconds",
+    "10 seconds",
+    5,
+    "12 metres",
+    "-20 %"
+   ],
+   "haste": "+4.35 %",
+   "durationHaste": "2.5 seconds",
+   "killerInstinct": "2 seconds",
+   "lullaby": "48 metres",
+   "teleport": [
+    "2 to 32 metres",
+    "12 m/s",
+    "15 seconds"
+   ],
+   "footstepSFX": "+50 %"
+  },
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [
+   {
+    "speed": 6.5,
+    "label": "Bat Form"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Alto",
+  "difficulty": 2,
+  "chapter": {
+   "id": 54,
+   "name": "Castlevania",
+   "date": "27.08.2024",
+   "patch": "8.2.0"
+  },
+  "actor": [
+   "Crispin Freeman (Blindlight)"
+  ],
+  "perks": [
+   "Dominance",
+   "Hex: Wretched Fate",
+   "Human Greed"
+  ],
+  "comp": {
+   "tier": "A",
+   "win": "4K (cualquier número de gens)",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/dark-lord.png"
+ },
+ {
+  "slug": "houndmaster",
+  "id": 38,
+  "name": "Houndmaster",
+  "title": "The Houndmaster",
+  "realName": "Portia Maye",
+  "aliases": [],
+  "gender": "Woman",
+  "origin": "Caribbean",
+  "weapon": "Deadly Cane",
+  "power": "Scent of Blood",
+  "powerText": "The Houndmaster is a force to be feared, with an equally fearsome dog at her side. Her personal Perks, All-Shaking Thunder , Scourge Hook: Jagged Compass , and No Quarter , help her increase her lunge attack distance, create scourge hooks, and overwhelm Survivors with healing Skill Checks.",
+  "powerStats": {
+   "hindered": "-10 %",
+   "durationHindered": "5 seconds"
+  },
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [
+   {
+    "speed": 6,
+    "label": "Slipstream"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Medio",
+  "difficulty": 2,
+  "chapter": {
+   "id": 55,
+   "name": "Doomed Course",
+   "date": "28.11.2024",
+   "patch": "8.4.0"
+  },
+  "actor": [
+   "Debra Wilson (Blindlight)"
+  ],
+  "perks": [
+   "All-Shaking Thunder",
+   "No Quarter",
+   "Scourge Hook: Jagged Compass"
+  ],
+  "comp": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/houndmaster.png"
+ },
+ {
+  "slug": "ghoul",
+  "id": 39,
+  "name": "Ghoul",
+  "title": "The Ghoul",
+  "realName": "Ken Kaneki",
+  "aliases": [],
+  "gender": "Man",
+  "origin": "Japanese",
+  "weapon": null,
+  "power": "One-Eyed Terror",
+  "powerText": "SPECIAL ABILITY: ONE-EYED TERROR The Ghoul starts the Trial with 2 Tokens . SPECIAL ABILITY: KAGUNE LEAP Press and hold the Power button to charge a Kagune Leap , while aiming the reticule at any vertical surface or Survivor within 14 metres . Press the Attack button to initiate a Kagune Leap , consuming -1 Token , or release the Power button to cancel it: Attaches the tentacles to the target and quickly pulls The Ghoul forwards. Grants the ability to leap over Windows or dropped Pallets . After performing a Kagune Leap , if there is still a Power Token available, a window of opportunity opens for 5 seconds : Press the Attack button to initiate another Kagune Leap . Press the Secondary Power button to cancel the Power. The button may also already be pressed at any point during the Leap to instantly cancel it upon landing. Kagune Leap automatically enters its cool-down after any of the following: The last Power Token has been consumed. The window of opportunity has elapsed. A Vaulting action has been performed. A Survivor has been grabbed. During the cool-down, Kagune Leap recharges all consumed Power Tokens at a speed of 4 seconds per Token. The Power only becomes available again after fully recharging all Tokens. If Kagune Leap is not already on cool-down, breaking a Pallet causes it to enter a forced cool-down equivalent to 1 Power Token. SPECIAL INTERACTION: TARGETING SURVIVORS Targeting a Survivor and colliding with them directly during a Kagune Leap has multiple possible effects and interactions: If it is the first Leap , indicated by the reticule showing a closed mouth, the Survivor will remain unharmed. If it is the second Leap , indicated by the reticule showing an open mouth, grants the ability to perform a Grab-Attack SPECIAL ATTACK: GRAB-ATTACK While the Grab-Attack occurs automatically when the conditions are met, it features an optional button prompt QTE: Swiftly press the Attack button to perfectly time the attack, extending the subsequent Countdown . Missing the button prompt will apply the regular Countdown . The Grab-Attack applies the following effects to the targeted Survivor: Applies the Injured State when healthy. Causes them to suffer from the Deep Wound Status Effect . Applies the Kagune Mark . Blocks the Exit Gates for the duration of the Grab-Attack . This effect lingers for 5 seconds after they are released. After performing a Grab-Attack , The Ghoul enters Enraged Mode . SPECIAL AFFLICTION: KAGUNE MARK Fully Mending or entering the Dying State removes the Kagune Mark for that Survivor. Marked Survivors cannot be injured by Grab-Attacks , but still suffer its other effects. SPECIAL MODE: ENRAGED MODE While in this mode, The Ghoul is granted these following effects: Increases the number of Power Tokens to 3 . Reduces the Power Recharge time to 2.5 seconds per Token. Reduces the Vaulting time while targeting a Survivor located across it. Increases the Pallet-breaking penalty to 2 Power Tokens. Enraged Mode remains active f",
+  "powerStats": {
+   "tokenCountDefault": "2 Tokens",
+   "tokenCountEM": 3,
+   "tokenCost": "-1 Token",
+   "minPalletPenalty": 1,
+   "maxPalletPenalty": 2,
+   "powerRecharge": [
+    "4 seconds",
+    "2.5 seconds"
+   ],
+   "leapRange": "14 metres",
+   "windowOpenTime": "5 seconds",
+   "countdownDuration": "40 seconds",
+   "countdownExtended": "50 seconds",
+   "gateBlocker": "5 seconds"
+  },
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [],
+  "terror": [
+   {
+    "radius": 40,
+    "label": null
+   }
+  ],
+  "height": "Medio",
+  "difficulty": null,
+  "chapter": {
+   "id": 56,
+   "name": "Tokyo Ghoul",
+   "date": "02.04.2025",
+   "patch": "8.6.0"
+  },
+  "actor": [
+   "Natsuki Hanae (Original Voice Actor)"
+  ],
+  "perks": [
+   "Forever Entwined",
+   "Hex: Nothing but Misery",
+   "None Are Free"
+  ],
+  "comp": {
+   "tier": "A",
+   "win": "4K (cualquier número de gens)",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/ghoul.png"
+ },
+ {
+  "slug": "animatronic",
+  "id": 40,
+  "name": "Animatronic",
+  "title": "The Animatronic",
+  "realName": "William Afton",
+  "aliases": [
+   "Springtrap"
+  ],
+  "gender": "Man",
+  "origin": "American of English descent",
+  "weapon": "Pizza Knife",
+  "power": "Fazbear's Fright",
+  "powerText": "\"The Animatronic lived to kill, even when his mechanical costume became his tomb.\" SPECIAL ABILITY: FAZBEAR'S FRIGHT The Animatronic is armed with a Fire Axe , that he can throw, and causes 7 Security Doors to spawn in the environment. SPECIAL ABILITY: FIRE AXE Press and hold the Power button to initiate Ready Aim . Press the Attack button to throw the Fire Axe or release the Power button to cancel the Power. If the Fire Axe hits a Survivor, the Survivor is damaged for one health state, and, if Healthy, has the Fire Axe embedded into them. Survivors with an embedded Fire Axe are inflicted with the Broken and Oblivious Status Effects . If the Fire Axe hits the environment, the Fire Axe becomes embedded and creates an Area of Effect of 2 metres around it. Any Survivors caught inside the area are revealed by Killer Instinct . If the Fire Axe hits a Security Door , the door becomes disabled for all Survivors until the Fire Axe is removed. SPECIAL INTERACTION: RECLAIM AXE While the Fire Axe is off cool-down, press the Secondary Power button to retrieve the Fire Axe . SPECIAL INTERACTION: GRAB AXE Press the Power button while infront of a Survivor with an embedded Fire Axe to perform a special sequence that instantly carries the Survivor and returns the Fire Axe to The Animatronic . SPECIAL MAP FEATURE: SECURITY SYSTEM The Security Doors found in the enviroment can be accessed by both Survivors and The Animatronic . Upon entering a Security Door , The Animatronic benefits from the following effect: Grants the Undetectable Status Effect . This effect lingers for 20 seconds after travelling to an another Security Door . SPECIAL INTERACTION: CAMERA VIEW Each Security Door has a Camera attached to it. Interacting with the door gives a Survivor access to the Camera View , allowing them to cycle through every Camera : Survivors are able to travel to the selected Security Door by pressing the Secondary Action button Survivors are also able to reveal The Animatronic by looking at him through Camera View , doing so reveals his aura to all Survivors for 10 seconds and removes the Undetectable granted by Security Door travel. SPECIAL MECHANIC: BATTERY POWER Using the Cameras and Security Doors will drain the battery power. Fully depleting the battery power shuts down the Security System for 45 seconds , forcing Survivors to wait until the system reboots. The Animatronic may travel between doors with or without battery power. SPECIAL LOCATION: SECURITY ROOM If The Animatronic enters a Security Door , they may choose to exit from any other door in the environment. Moving to a door already in use by a Survivor will cause The Animatronic to grab that Survivor.",
+  "powerStats": {
+   "SD_amount": 7,
+   "FA_AOE": "2 metres",
+   "linger": "20 seconds"
+  },
+  "speed": 4.4,
+  "speedPct": 110,
+  "speedNote": null,
+  "altSpeeds": [
+   {
+    "speed": 4.6,
+    "label": "No Axe"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 24,
+    "label": null
+   }
+  ],
+  "height": "Medio",
+  "difficulty": null,
+  "chapter": {
+   "id": 58,
+   "name": "Five Nights at Freddy's",
+   "date": "17.06.2025",
+   "patch": "9.0.0"
+  },
+  "actor": [
+   "PJ Heywood (Original Voice Actor)"
+  ],
+  "perks": [
+   "Haywire",
+   "Help Wanted",
+   "Phantom Fear"
+  ],
+  "comp": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/animatronic.png"
+ },
+ {
+  "slug": "krasue",
+  "id": 41,
+  "name": "Krasue",
+  "title": "The Krasue",
+  "realName": "Burong Sukapat",
+  "aliases": [],
+  "gender": "Woman",
+  "origin": "Thai",
+  "weapon": "Larb Knife",
+  "power": "Unbodied Flesh",
+  "powerText": "SPECIAL ABILITY: CORPOREAL WEAVE The Krasue can shift between Body Form and Head Form at will. Press the Secondary Power button to initiate a shift. SPECIAL SHAPE: BODY FORM The Krasue always starts the Trial in this state: Regular Terror Radius of 32 metres . Regular Movement speed of 4.6 m/s . Grants access to the Regurgitate special ability. SPECIAL SHAPE: HEAD FORM This Form provides The Krasue with the following effects and abilities: Larger Terror Radius of 40 metres . Faster Movement speed of 4.8 m/s . Grants access to the Headlong Flight special ability. Grants access to the Intestinal Whip special attack. Replaces the ability to break dropped Pallets with the ability to vault across them. Vaulting times: Pallets : 1.9 seconds Windows : 1.67 seconds Longer Pallet Stun duration of 2.5 seconds . Disables the Bloodlust Status Effect . SPECIAL AFFLICTION: LEECHED Hitting Survivors with a Leeching Gland or the Intestinal Whip fills their Leech Meter , indicated on their HUD portrait. Once the meter is full at 100 Charges , affected Survivors suffer from Leeched I : Causes the Intestinal Whip attack to incur damage. Causes the Leech Meter to charge passively at a rate of +1.665 c/s . If Survivors afflicted with Leeched I passively fill the Leech Meter a second time, they will suffer from Leeched II : Healthy Survivors receive damage and become injured. Incurs the Broken Status Effect , regardless of their Health State. SPECIAL ABILITY: REGURGITATE While in Body Form , press and hold the Power button to initiate the Charge Regurgitate interaction. Releasing the Power button will cancel it. Press the Attack button when fully charged to spew a Leeching Gland : Rebounds off of environmental objects and splits into 4 smaller mini-glands that home-in on nearby Survivors. Adds +100 Charges to the Leech Meter of Survivors hit with either projectile-type, filling it completely. Cannot exeed Leeched I . Regurgitate has a cool-down of 2.5 seconds . SPECIAL ABILITY: HEADLONG FLIGHT While in Head Form , with the Power Gauge filled to at least 25 % , press and hold the Power button to speed through the air at 7.0 m/s : The Power Gauge has a capacity of 12 Charges . Flying depletes the Power Gauge at a rate of -1 c/s . The Power Gauge recharges at a rate of +0.4 c/s . SPECIAL ATTACK: INTESTINAL WHIP While in Head Form , press the Attack button to lash out with your internal organs: Ignores obstructions for the initial 0.35 seconds of the attack. Adds +34 Charges to the Leech Meter of hit Survivors, partially filling it. Cannot exceed Leeched I . Damages Survivors already afflicted with at least Leeched I . SPECIAL ITEM: GLOWING FUNGUS The Glowing Fungus can be found randomly throughout the environment. Can be eaten by Survivors afflicted with Leeched I to lower their Leeched Meter over time. This effect ends after being hit. The Trial starts with 5 Glowing Fungi located throughout the environment, with a maximum of 6 able to exist at the same time. Glowing Fu",
+  "powerStats": {
+   "terrorRadius": [
+    "32 metres",
+    "40 metres"
+   ],
+   "movementSpeed": [
+    "4.6 m/s",
+    "4.8 m/s"
+   ],
+   "flight": [
+    "25 %",
+    "7.0 m/s",
+    "12 Charges",
+    "-1 c/s",
+    "+0.4 c/s"
+   ],
+   "regurgitate": [
+    4,
+    "2.5 seconds"
+   ],
+   "leeched": [
+    "100 Charges",
+    "+1.665 c/s",
+    "+100 Charges",
+    "+34 Charges"
+   ],
+   "fungus": [
+    5,
+    6,
+    "5 metres",
+    "90 seconds"
+   ],
+   "vaulting": [
+    "1.9 seconds",
+    "1.67 seconds"
+   ],
+   "palletStun": "2.5 seconds",
+   "collision": "0.35 seconds"
+  },
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [
+   {
+    "speed": 4.8,
+    "label": "Head Form"
+   },
+   {
+    "speed": 7,
+    "label": "Headlong Flight"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 32,
+    "label": "Body Form"
+   },
+   {
+    "radius": 40,
+    "label": "Head Form"
+   }
+  ],
+  "height": "Medio",
+  "difficulty": 2,
+  "chapter": {
+   "id": 60,
+   "name": "Sinister Grace",
+   "date": "23.09.2025",
+   "patch": "9.2.0"
+  },
+  "actor": [
+   "Body Form: Organ Prawang (Opera Singer)",
+   "Head Form: Roxana B.L. (The Monster Factory)"
+  ],
+  "perks": [
+   "Hex: Overture of Doom",
+   "Ravenous",
+   "Wandering Eye"
+  ],
+  "comp": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/krasue.png"
+ },
+ {
+  "slug": "first",
+  "id": 42,
+  "name": "First",
+  "title": "The First",
+  "realName": "Henry Creel",
+  "aliases": [
+   "Vecna",
+   "One"
+  ],
+  "gender": "Man",
+  "origin": "American",
+  "weapon": "Foul Intent",
+  "power": "Test Subject #001",
+  "powerText": "SPECIAL ABILITY: VINE ATTACK Press and hold Power button to start charging Vine Attack . Release the Power button button to cancel the Power. Press the Attack button while fully charged to create an area of effect on the ground, Survivors caught inside it will be inflicted 1 Worldbreaker Token . SPECIAL ABILITY: THE UPSIDE DOWN The First can enter The Upside Down by pressing the Secondary Power button . While in The Upside Down , The First : Can peform Undergate Attack . Is granted Undetectable . Moves at 8 m/s . Ignores the collisions of: Breakable Walls , Pallets and Windows This ability has a 35 second cool-down after exitting The Upside Down . At the start of the trial, the ability starts at 50% of the base cool-down. SPECIAL ABILITY: UNDERGATE ATTACK Press the Attack button to peform the Undergate Attack . Performing the attack causes an area of effect to grow around The First 's position. Once it reaches the full radius, The First exits The Upside Down . Any Survivors caught inside the radius of the attack are inflicted 2 Worldbreaker tokens. SPECIAL AFFLICTION: WORLDBREAKER & WORLDBREAKER TOKENS Survivors can be inflicted up to 4 Worldbreaker tokens. Worldbreaker is activated when: Any Survivor reaches 2 or 4 Worldbreaker tokens. Any Survivor with 4 Worldbreaker tokens is hit by either Vine Attack or Undergate Attack . While Worldbreaker is active, Vine Attack and Undergate Attack will inflict damage to Survivors instead of inflicting Worldbreaker tokens. Worldbreaker has two durations phases: Phase One and Phase Two. Phase One's duration is determined by the amount of Survivors present in the Trial: 60 seconds for each Survivor present in the Trial. Phase Two lasts for 50 seconds . Worldbreaker 's base count down is paused while carrying a Survivor. SPECIAL OBJECT: GRANDFATHER CLOCK 4 Grandfather Clocks spawn in the Trial. They become available to Survivors during Worldbreaker 's Phase One duration phase. Survivors are able to interact with Grandfather Clocks to speed up the count down of Phase One. SPECIAL INTERACTION: MIND BREAK Survivors who reached the second Hook Stage and have 4 Worldbreaker tokens become exposed to Mind Break . During Worldbreaker , if the Survivor exposed to Mind Break is inflicted damage that would send them to the Dying State by Vine Attack or Undergate Attack , the Survivor will be sent floating into the air. The First is able to perform the Mind Break Mini-Mori while standing next to the floating Survivor by pressing the Secondary Power button .",
+  "powerStats": {},
+  "speed": 4.4,
+  "speedPct": 110,
+  "speedNote": null,
+  "altSpeeds": [],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Medio",
+  "difficulty": null,
+  "chapter": {
+   "id": 61,
+   "name": "Stranger Things Chapter 2",
+   "date": "27.01.2026",
+   "patch": "9.4.0"
+  },
+  "actor": [
+   "Andrew Morgado (Voice Actor)"
+  ],
+  "perks": [
+   "Hex: Hive Mind",
+   "Secret Project",
+   "Turn Back the Clock"
+  ],
+  "comp": {
+   "tier": "A",
+   "win": "4K (cualquier número de gens)",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/first.png"
+ },
+ {
+  "slug": "slasher",
+  "id": 43,
+  "name": "Slasher",
+  "title": "The Slasher",
+  "realName": "Jason Voorhees",
+  "aliases": [],
+  "gender": "Man",
+  "origin": "American",
+  "weapon": "Classic Machete",
+  "power": "Omnipresent Evil",
+  "powerText": "SPECIAL ABILITY: OMNIPRESENT EVIL Press the Secondary Power button to activate Omnipresent Evil . While Omnipresent Evil is activated, The Slasher is granted the following effects: Increased movement speed of 8.0 m/s . Full invisibilty and the Undetectable Status Effect . Ignores collisions of Pallets , Breakable Walls and Windows . Cannot attack, see or hear Survivors (except Generator repair noise). Halves the reload time of Throwing Spikes and prevents the interactable prop from being depleted/destroyed. Survivors within 16 metres are sensed with Mist Clouds if they are idling or with Footprints if they moving around. Survivors who have been crouching for more than 2.5 seconds cannot be sensed by any means. After 2 seconds of activating Omnipresent Evil , Jump Scare becomes available. SPECIAL ABILITY: JUMP SCARE While in Omnipresent Evil , you can target Pallets , Breakable Walls or Windows within 16 metres . Press the Secondary Power button while targetting any valid Prop to perform Jump Scare , this causes The Slasher to exit Omnipresent Evil and re-appear at the targetted location. Press the Power button to switch the direction The Slasher will face when performing a Jump Scare . Re-appearing takes 1.5 seconds , which is multiplied by 3x if the targetted Prop is within 16 metres of a Hooked Survivor. After re-appearing: The Slasher is granted +4.5454 % Haste Status Effect for 25 seconds This increases his base movement speed to 4.6 m/s . Any Survivors within 16 metres that are being sensed by Omnipresent Evil are revealed by Killer Instinct and scream. Performing a Jump Scare puts Omnipresent Evil on a 12 second cool-down. SPECIAL ABILITY: THROWING SPIKES There are 2 types of Throwing Spikes : Hook Spikes and regular Spikes . The Slasher starts the Trial equipped with a Hook Spike . Hook Spikes are obtained by hooking Survivors or by interacting with Hooks , doing so destroys the Hook for 30 seconds . Hooks destroyed this way are immediately repaired when activating Omnipresent Evil . Regular Spikes are obtained by interacting with Scrap Piles scattered around the map. Press the Power button to aim a Spike , release the input to cancel the throw. While aiming, press the Attack button to throw a Spike . When a Survivor is hit by any type of Spike , they lose a Health State and are pushed forward. Survivors who collide with a pushed Survivor will be injured if healthy or affected by Deep Wound if injured. If a healthy Survivor is hit by a Hook Spike , the Hook Spike impales into them, afflicting them with Broken Status Effect . Survivors can remove the impaled Hook Spike by performing an interaction that takes 5 seconds . The Survivor suffers from -10 % Hindered Status Effect while performing the interaction. The Slasher sees the aura of impaled Hook Spikes that are not being removed within 26 metres . If a Survivor is hit by any Spike and they enter the Dying State , colliding with a wall during the push causes the Survivor to be pinned into",
+  "powerStats": {
+   "haste": "25 seconds"
+  },
+  "speed": 4.4,
+  "speedPct": 110,
+  "speedNote": null,
+  "altSpeeds": [
+   {
+    "speed": 8,
+    "label": "Omnipresent Evil"
+   }
+  ],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Medio",
+  "difficulty": null,
+  "chapter": {
+   "id": 63,
+   "name": "Jason",
+   "date": "16.06.2026",
+   "patch": "10.0.0"
+  },
+  "actor": [
+   "None"
+  ],
+  "perks": [
+   "Hex: Scared to Death",
+   "Silent Shadow",
+   "Rampage"
+  ],
+  "comp": {
+   "tier": "B",
+   "win": "11+ etapas de gancho",
+   "source": "DBD Arena"
+  },
+  "icon": "/img/killers/slasher.png"
+ },
+ {
+  "slug": "judgment",
+  "id": 44,
+  "name": "Judgment",
+  "title": "The Judgment",
+  "realName": null,
+  "aliases": [],
+  "gender": "None",
+  "origin": "Celestial",
+  "weapon": "Staff of Absolution",
+  "power": "Will of the Gods",
+  "powerText": "SPECIAL ABILITY: DIVINE LIGHT Press and hold the Power button to start controlling Divine Light . Release the input to stop the interaction. While controlling, a column of Divine Light appears infront of the Killer and follows the direction the Killer is facing while rapidly moving away. It does not affect Survivors during this phase. If the Killer does not cast while controlling for 3 seconds , Divine Light goes on cool-down. Press the Attack button to cast the controlled column forward. After a brief delay, it will deal damage and inflict Heresy to Survivors. Column damage delay and cast duration are improved the longer the Killer has spent controlling the column. If the column passes within 0.5 metres of a Survivor but does not hit them, they are revealed with Killer Instinct . This can disabled/enabled in the game settings. Divine Light goes on a 6 second cool-down after casting the column forward, cancelling the casting or failing to cast in time. SPECIAL AFFLICTION: HERESY Survivors afflicted by Heresy are known as Heretics. Survivors gain Heresy by getting hit by Divine Light or by taunting The Judgment . To taunt The Judgment , the Survivor has to either: Crouch or gesture 3 times within 10 metres Stand within an Exit Threshold for 45 seconds . Heretics suffer from the following effects: Can be sent to the Exile while in the Dying State While repairing Generators , Good Skill Checks will cause the Generator to regress by -3 % If Heresy is gained while within 32 metres of an Exit Gate , it becomes blocked to the Heretic Survivor for 8 seconds . SPECIAL ABILITY: EXILE Heretics who are in the Dying State can be sent to the Exile by pressing the Secondary Power button . When sending a Survivor to the Exile , all Heretics whose Heresy is not being removed are revealed by Killer Instinct for 3 seconds The Exile acts like a Hook , Survivors who are sent to the Exile gain a Hook Stage and lose them at the same rate as being Hooked . Exile is filled with Hazards - Seeds of Punishment . If a Survivor is hit by a hazard, they lose -3 seconds of Hook Stage progress. While in Exile , Survivors are equipped with Searcher's Pendant . Survivors can point their Searcher's Pendant to collect nearby Exiled Souls . Survivors may collect up to 10 Exiled Souls . Each collected Exiled Soul extends the Unhook Protections by +0.5 seconds once rescued from the Exile . Exiled Souls do not extend Unhook Protections once all Generators have been completed. SPECIAL MODE: ZEALOUS Zealous is activated for 60 seconds after sending a Survivor to the Exile . While Zealous , the Divine Light is enhanced with the following effects: Size increased by +10 % Cast duration increased by +50 % . Cool-down decreased by -20 % . Cast column control is retained for 0.6 seconds . SPECIAL OBJECT: SHRINES OF JUDGMENT 7 Shrines of Judgment spawn in the Trial Grounds. Heretics are able to interact with a Shrine to start removing their Heresy over a period of 30 seconds . When a Survivor is",
+  "powerStats": {},
+  "speed": 4.4,
+  "speedPct": 110,
+  "speedNote": null,
+  "altSpeeds": [],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Alto",
+  "difficulty": null,
+  "chapter": {
+   "id": 65,
+   "name": "Chorus of Sin",
+   "date": "25.08.2026",
+   "patch": "10.1.0"
+  },
+  "actor": [
+   "Elsie Lovelock (Voice Actress)"
+  ],
+  "perks": [
+   "Hex: Under Your Thumb",
+   "Celestial Witness",
+   "Lay Waste"
+  ],
+  "comp": null,
+  "icon": "/img/killers/judgment.png"
+ },
+ {
+  "slug": "terrifier",
+  "id": 45,
+  "name": "Terrifier",
+  "title": "The Terrifier",
+  "realName": "Art The Clown",
+  "aliases": [],
+  "gender": "Man",
+  "origin": "American",
+  "weapon": "Spiked Table Leg",
+  "power": "Bag of Toys",
+  "powerText": "SPECIAL ABILITY: BAG OF TOYS Press and hold Secondary Power button to open Bag of Toys . While you have the bag open, you are given an option to select 2 random Toys . Selecting a Toy equips it and puts Bag of Toys on a 10 second cool-down. SPECIAL ABILITY: TOYS There are 5 different, single-use Toys : Acid Bottle Flamethrower Handgun Flail Bike Horn All Toys damage healthy Survivors and inflict injured Survivors with Torture . Tortured Survivors are downed when hit by a different Toy . Toys also feature Deadliness . All Toys start with 0 Deadliness points, and may receive up to 3 . Toys receive a point by inflicting Torture . Once a Toy reaches the Deadliness point limit, the Toy injures and inflicts Torture when hitting healthy Survivors and downs injured Survivors. This also causes the Deadliness point limit to increase by 1 for all other Toys . Downing a Survivor who has reached the second Hook Stage with a Toy that has reached its Deadliness limit with be able to be killed for 15 seconds . TOY - ACID BOTTLE Press and hold Power button to start charging the Acid Bottle . While fully charged, press Attack button to throw Acid Bottle . On environment impact, the bottle leaves an Acid Puddle that lasts for 0.5 seconds . If any Survivor touches the puddle, they are damaged. On Survivor impact, the Survivor is damaged and an Acid Puddle is left at the impact point. TOY - FLAMETHROWER Press and hold Power button to start charging the Flamethrower . While fully charged, press Attack button to ignite the environment. Flames ignite the enviroment in a straight line, the flames persist for 3-8 seconds . Flames also ignite Generators , Windows and downed Pallets for 6 seconds . Survivors are damaged by being hit by the flames being fired by the Flamethrower, walking into the active flames or by interacting with a burning object. TOY - HANDGUN Press and hold Power button to start aiming the Handgun . While fully charged, press Attack button to fire a hitscan bullet, with a range of 120 metres . TOY - FLAIL Press and hold Power button to start charging the Flail . While fully charged, press Attack button to swing the Flail . The Flail has a range of 2 metres and can hit over short obstacles. TOY - BIKE HORN Press and hold Power button to start charging the Bike Horn . While fully charged, press Attack button to squeeze the Bike Horn . Squeezing the Bike Horn detects all Survivors and resets their Tortured timer within 8 metres and a 160 metre forward range. If only 1 Survivor was detected, briefly reveal their location. If 2 or more Survivors were detected, they are instead revealed by Killer Instinct and inflicted with Oblivious Status Effect for 10 seconds . Unlike other Toys , the Bike Horn gets a Deadliness point by detecting more than 1 Survivor. At maximum Deadliness , the Bike Horn 's detection causes all Survivors who are repairing or healing to be interrupted and have the following effects applied: If repairing, the Generator loses -5 % progress.",
+  "powerStats": {
+   "oblivious": "10 seconds"
+  },
+  "speed": 4.6,
+  "speedPct": 115,
+  "speedNote": null,
+  "altSpeeds": [],
+  "terror": [
+   {
+    "radius": 32,
+    "label": null
+   }
+  ],
+  "height": "Medio",
+  "difficulty": null,
+  "chapter": {
+   "id": 66,
+   "name": "Terrifier",
+   "date": "24.11.2026",
+   "patch": "10.3.0"
+  },
+  "actor": [
+   "None"
+  ],
+  "perks": [
+   "Laughingstock",
+   "Kill Spree",
+   "Funny Business"
+  ],
+  "comp": null,
+  "icon": "/img/killers/terrifier.png"
+ }
+]

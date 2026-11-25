@@ -1,0 +1,90 @@
+{
+  "fuente": "Wiki oficial de DBD (deadbydaylight.wiki.gg), parche 10.3.0, nov-2026",
+  "generador": {
+    "cargasTotales": 90,
+    "necesarios": 5,
+    "porNumeroDeSobrevivientes": [
+      {
+        "n": 1,
+        "eficienciaIndividual": 1,
+        "cargasPorSegundo": 1,
+        "segundos": 90
+      },
+      {
+        "n": 2,
+        "eficienciaIndividual": 0.85,
+        "cargasPorSegundo": 1.7,
+        "segundos": 52.94
+      },
+      {
+        "n": 3,
+        "eficienciaIndividual": 0.7,
+        "cargasPorSegundo": 2.1,
+        "segundos": 42.86
+      },
+      {
+        "n": 4,
+        "eficienciaIndividual": 0.55,
+        "cargasPorSegundo": 2.2,
+        "segundos": 40.91
+      }
+    ],
+    "patadaSegundos": 1.8,
+    "patadaPenalizacionPct": 5,
+    "skillCheckFalloPenalizacionPct": 10,
+    "skillCheckGreatBonusPct": 1,
+    "regresionCompletaSegundos": 360
+  },
+  "gancho": {
+    "etapa1Segundos": 70,
+    "etapa2Segundos": 70,
+    "colgarSegundos": 1.5,
+    "autodescolgarseProbabilidadPct": 4,
+    "autodescolgarseFalloPenalizacionSegundos": 20,
+    "autodescolgarseIntentosMax": 3,
+    "ganchoRotoTrasSacrificioSegundos": 60,
+    "forcejeoParaSoltarseSegundos": 16
+  },
+  "salida": {
+    "abrirPuertaSegundos": 20,
+    "killerAbrePuertaSegundos": 0.75,
+    "escotillaSegundos": 2.5
+  },
+  "movimiento": {
+    "sobrevivienteMs": 4,
+    "killerBaseMs": 4.6,
+    "killerBasePct": 115,
+    "killerLentoMs": 4.4,
+    "killerLentoPct": 110,
+    "radioTerrorEstandarM": 32
+  },
+  "objetos": {
+    "romperPalletSegundos": 2.34,
+    "lockerSegundos": 2.333
+  },
+  "escenarios": [
+    {
+      "id": "juntos",
+      "titulo": "Los 4 juntos",
+      "descripcion": "Los 4 sobrevivientes reparan un gen a la vez, sin interrupciones.",
+      "calculo": "5 x 40,91 s",
+      "segundos": 204.55
+    },
+    {
+      "id": "parejas",
+      "titulo": "Dos parejas",
+      "descripcion": "Dos parejas reparan en paralelo: 2 + 2 + 1 gens.",
+      "calculo": "3 rondas x 52,94 s",
+      "segundos": 158.82
+    },
+    {
+      "id": "repartidos",
+      "titulo": "Repartidos (mejor caso teorico)",
+      "descripcion": "4 gens en solitario a la vez y luego los 4 juntos en el quinto.",
+      "calculo": "90 s + 40,91 s",
+      "segundos": 130.91
+    }
+  ],
+  "avisoObjetivos": "Los objetivos de ritmo (por ejemplo primer gancho antes de 1:00) son guias de entrenamiento derivadas de estas cifras, no reglas oficiales.",
+  "avisoEscenarios": "Son tiempos teoricos de reparacion pura. No incluyen traslados, persecuciones, skill checks fallidos ni patadas del killer."
+}

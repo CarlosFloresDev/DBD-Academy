@@ -1,0 +1,65 @@
+{
+  "fuente": "DBD Arena (dbdarena.com), estandar comunitario. DBD no tiene ranking competitivo oficial: cada organizador define sus reglas.",
+  "formato1v1": {
+    "titulo": "Duelo de persecucion 1v1",
+    "pasos": [
+      "No se juegan generadores: es un duelo de persecucion puro.",
+      "Lobby personalizado de 2 jugadores: un Killer y un Survivor.",
+      "Inicio estandar en el Killer Shack: el Survivor junto al pallet, el Killer en la puerta opuesta.",
+      "El Survivor agacha dos veces para iniciar el cronometro.",
+      "El cronometro se detiene cuando el Survivor cae derribado.",
+      "Se intercambian los roles en el mismo mapa (reiniciar el trial para resetear pallets).",
+      "Gana la ronda quien aguanto MAS tiempo como Survivor.",
+      "Mejor de 3 rondas.",
+      "Ban/pick de killer: el ganador del sorteo banea, el rival elige su killer, luego banea el rival y el ganador del sorteo elige al final."
+    ],
+    "killer": [
+      "Hasta 1 perk de persecucion que no este baneado (los killers a distancia pueden llevar 2).",
+      "Sin perks ni add-ons que revelen auras."
+    ],
+    "survivor": [
+      "Hasta 2 perks que no esten baneados.",
+      "Maximo 1 perk de agotamiento (Lithe, Balanced Landing, etc.).",
+      "Medkit sin add-ons permitido; curarse y recargar agotamiento entre persecuciones esta permitido.",
+      "Lockers NO permitidos.",
+      "Linterna morada sin add-ons permitida, excepto contra Trapper y Wraith. No se combina con Champion of Light.",
+      "Petardos (firecrackers) baneados.",
+      "Sin perks ni add-ons que revelen auras (excepcion: Windows of Opportunity + Five Moves Ahead)."
+    ]
+  },
+  "perksKillerBaneados": ["Beast of Prey", "Dissolution", "Game Afoot", "Hex: Blood Favor", "Hex: Crowd Control", "Hex: Undying", "I'm All Ears", "Knock Out", "Languid Touch", "Play With Your Food", "Predator", "Superior Anatomy", "Spirit Fury", "Zanshin Tactics"],
+  "perksSurvivorBaneados": ["Alert", "Dance with Me", "Deception", "Distortion", "Dramaturgy", "Ghost Notes", "Last Stand", "Lightweight", "Low Profile", "Lucky Break", "Object of Obsession", "Overcome", "Parental Guidance", "Scene Partner", "Sprint Burst", "Troubleshooter"],
+  "reglasPorKiller": [
+    { "killer": "Blight", "mapa": "Suffocation Pit", "regla": "Debe usar 1 rush en el sitio y asumir la fatiga antes de iniciar la persecucion.", "baneados": "Todos los add-ons Ultra Rare, Compound 21, Adrenaline Vial" },
+    { "killer": "Cannibal", "mapa": "Wreckers' Yard", "regla": "", "baneados": "Light Chassis" },
+    { "killer": "Clown", "mapa": "Wreckers' Yard", "regla": "", "baneados": "Sin baneos de add-ons" },
+    { "killer": "Demogorgon", "mapa": "Wreckers' Yard", "regla": "", "baneados": "Sin baneos de add-ons" },
+    { "killer": "Doctor", "mapa": "Wreckers' Yard", "regla": "", "baneados": "Todos los add-ons Restraint" },
+    { "killer": "Dark Lord", "mapa": "Wretched Shop", "regla": "", "baneados": "Todos los Ultra Rare, Lapis Lazuli, Medusa Hair" },
+    { "killer": "Hillbilly", "mapa": "Blood Lodge", "regla": "Debe iniciar la persecucion con 0 % de overdrive (caminar al shack o dejar que expire).", "baneados": "Lo Pro Chains" },
+    { "killer": "Mastermind", "mapa": "Coal Tower", "regla": "", "baneados": "Todos los Ultra Rare, Uroboros Virus" },
+    { "killer": "Oni", "mapa": "Coal Tower", "regla": "", "baneados": "Todos los add-ons de aura y los Ultra Rare" },
+    { "killer": "Pig", "mapa": "Wreckers' Yard", "regla": "", "baneados": "Amanda's Letter" },
+    { "killer": "Trapper", "mapa": "Suffocation Pit", "regla": "No se pueden colocar trampas.", "baneados": "Todos los add-ons Iridescent" },
+    { "killer": "Wraith", "mapa": "Coal Tower", "regla": "", "baneados": "Sin baneos de add-ons" },
+    { "killer": "Nightmare", "mapa": "Dead Dawg Saloon", "regla": "Los Survivors pueden llevar Visionary + 2 perks.", "baneados": "Sin baneos de add-ons" },
+    { "killer": "Nurse", "mapa": "Coal Tower", "regla": "Se juega sin perks.", "baneados": "Todos los add-ons" }
+  ],
+  "condicionesVictoria4v1": [
+    { "tier": "S", "condicion": "4K con al menos 1 generador restante" },
+    { "tier": "A", "condicion": "4K (cualquier numero de gens)" },
+    { "tier": "B", "condicion": "11 o mas etapas de gancho" },
+    { "tier": "C", "condicion": "10 o mas etapas de gancho" },
+    { "tier": "D", "condicion": "9 o mas etapas de gancho" }
+  ],
+  "glosario": [
+    { "t": "4K", "d": "El killer sacrifica a los 4 sobrevivientes." },
+    { "t": "Etapa de gancho", "d": "Cada vez que un survivor pasa a una nueva etapa del gancho (1 o 2) cuenta como 1 etapa; 4 survivors x 3 etapas = 12 maximo practico en el conteo de DBD Arena." },
+    { "t": "Chase", "d": "Persecucion: el tiempo que el killer pasa persiguiendo a un survivor." },
+    { "t": "Loop", "d": "Estructura o pallet alrededor del cual el survivor corre para estirar la persecucion." },
+    { "t": "Tile", "d": "Cuadro de 8 x 8 metros que usa el generador de mapas." },
+    { "t": "Pallet", "d": "Tabla que el survivor tira para aturdir al killer." },
+    { "t": "Gen / Generador", "d": "Objetivo principal de los sobrevivientes: hacen falta 5 para abrir las puertas." },
+    { "t": "Ban / Pick", "d": "Fase previa de eleccion y baneo de killers entre los dos jugadores." }
+  ]
+}

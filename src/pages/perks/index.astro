@@ -1,0 +1,233 @@
+---
+import Base from '../../layouts/Base.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import PerkCard from '../../components/PerkCard.astro';
+import perks from '../../data/perks.json';
+import rules from '../../data/comp-rules.json';
+
+const format = new Intl.NumberFormat('es-PE');
+const norm = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('es');
+const normName = (name: string) => norm(name).replace(/^hex:\s*/, '').replace(/favour/g, 'favor');
+const killerBanned = new Set(rules.perksKillerBaneados.map(normName));
+const survivorBanned = new Set(rules.perksSurvivorBaneados.map(normName));
+const isBanned = (perk: typeof perks[number]) =>
+  (perk.side === 'killer' ? killerBanned : survivorBanned).has(normName(perk.name));
+const bannedCount = perks.filter(isBanned).length;
+const killerCount = perks.filter((perk) => perk.side === 'killer').length;
+const survivorCount = perks.length - killerCount;
+const tagCounts = new Map<string, number>();
+for (const perk of perks) {
+  for (const tag of perk.tags) tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1);
+}
+const tags = [...tagCounts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'es'));
+const active = 'perks' as unknown as 'inicio';
+---
+
+<Base
+  title="Perks"
+  description={`Biblioteca de ${perks.length} perks de Dead by Daylight, con filtros por bando, etiqueta y baneos 1v1 de DBD Arena.`}
+  active={active}
+>
+  <section class="hero container">
+    <div class="hero-copy">
+      <p class="eyebrow">Sala de análisis / Perks</p>
+      <h1 class="display">BIBLIOTECA<br /><span>DE PERKS</span></h1>
+      <p class="hero-lede">Todas las perks del juego, con sus tres valores y sus etiquetas. Filtra por bando, texto o baneo competitivo.</p>
+      <div class="hero-figures">
+        <div class="stat"><strong data-count={perks.length}>{format.format(perks.length)}</strong><span>Perks</span></div>
+        <div class="stat"><strong data-count={killerCount}>{format.format(killerCount)}</strong><span>Killer</span></div>
+        <div class="stat"><strong data-count={survivorCount}>{format.format(survivorCount)}</strong><span>Survivor</span></div>
+        <div class="stat"><strong data-count={bannedCount}>{format.format(bannedCount)}</strong><span>Baneadas 1v1</span></div>
+      </div>
+    </div>
+    <div class="hero-aside" data-reveal>
+      <span class="aside-label">Baneos</span>
+      <span class="aside-number mono">1V1</span>
+      <p>Lista de DBD Arena, estándar comunitario, no oficial. El baneo se calcula por bando y por nombre de la perk.</p>
+      <a class="btn btn-secondary" href="/competitivo/">Ver reglas</a>
+    </div>
+  </section>
+
+  <section class="library container" id="library" aria-label="Biblioteca de perks">
+    <SectionHead eyebrow="Filtros" title="BUSCAR PERK" description="El texto oficial está en inglés, como en la wiki. Busca por nombre o etiqueta; los baneos se marcan sobre la lista general de DBD Arena." />
+    <div class="filters">
+      <div class="search-field">
+        <label for="perk-search">Buscar perk</label>
+        <input id="perk-search" type="search" placeholder="Nombre o etiqueta" autocomplete="off" />
+      </div>
+      <div class="tag-field">
+        <label for="perk-tag">Etiqueta</label>
+        <select id="perk-tag">
+          <option value="todas">Todas las etiquetas</option>
+          {tags.map(([tag, count]) => (
+            <option value={norm(tag)}>{tag} ({count})</option>
+          ))}
+        </select>
+      </div>
+      <label class="switch" for="hide-banned">
+        <input id="hide-banned" type="checkbox" />
+        <span>Ocultar baneados en 1v1</span>
+      </label>
+      <p class="counter mono" id="perk-counter" aria-live="polite">{perks.length} perks visibles de {perks.length}</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Filtrar perks por bando">
+      <button class="tab" type="button" id="tab-todos" role="tab" data-side="todos" aria-selected="true" aria-controls="perk-grid" tabindex="0">Todos <span class="mono">{perks.length}</span></button>
+      <button class="tab" type="button" id="tab-killer" role="tab" data-side="killer" aria-selected="false" aria-controls="perk-grid" tabindex="-1">Killer <span class="mono">{killerCount}</span></button>
+      <button class="tab" type="button" id="tab-survivor" role="tab" data-side="survivor" aria-selected="false" aria-controls="perk-grid" tabindex="-1">Survivor <span class="mono">{survivorCount}</span></button>
+    </div>
+    <p class="empty mono" id="perk-empty" hidden>No hay perks con estos filtros. Prueba otro nombre o etiqueta.</p>
+    <div class="perk-grid" id="perk-grid" role="tabpanel" aria-labelledby="tab-todos" tabindex="0">
+      {perks.map((perk) => (
+        <div
+          class="perk-item"
+          id={perk.slug}
+          data-side={perk.side}
+          data-name={norm(perk.name)}
+          data-tags={perk.tags.map(norm).join('|')}
+          data-banned={isBanned(perk) ? '1' : '0'}
+        >
+          {isBanned(perk) && <div class="ban-strip">Baneado 1v1</div>}
+          <PerkCard perk={perk} compact />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <script>
+    const root = document.querySelector<HTMLElement>('#library');
+    if (root) {
+      const cards = Array.from(root.querySelectorAll<HTMLElement>('.perk-item'));
+      const search = root.querySelector<HTMLInputElement>('#perk-search');
+      const tagSelect = root.querySelector<HTMLSelectElement>('#perk-tag');
+      const hideBanned = root.querySelector<HTMLInputElement>('#hide-banned');
+      const counter = root.querySelector<HTMLElement>('#perk-counter');
+      const empty = root.querySelector<HTMLElement>('#perk-empty');
+      const grid = root.querySelector<HTMLElement>('#perk-grid');
+      const tabs = Array.from(root.querySelectorAll<HTMLButtonElement>('.tab'));
+      const normalize = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('es');
+      const items = cards.map((card) => ({
+        card,
+        name: card.dataset.name || '',
+        tags: (card.dataset.tags || '').split('|'),
+        side: card.dataset.side || '',
+        banned: card.dataset.banned === '1',
+      }));
+      const state = { side: 'todos', tag: 'todas', query: '', hideBanned: false };
+      let frame = 0;
+
+      const apply = () => {
+        let visible = 0;
+        for (const item of items) {
+          const matchesSide = state.side === 'todos' || item.side === state.side;
+          const matchesTag = state.tag === 'todas' || item.tags.includes(state.tag);
+          const matchesQuery = item.name.includes(state.query);
+          const matchesBan = !state.hideBanned || !item.banned;
+          item.card.hidden = !(matchesSide && matchesTag && matchesQuery && matchesBan);
+          if (!item.card.hidden) visible += 1;
+        }
+        if (counter) counter.textContent = `${visible} perks visibles de ${items.length}`;
+        if (empty) empty.hidden = visible !== 0;
+      };
+
+      const schedule = () => {
+        cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(apply);
+      };
+
+      const setSide = (side: string | undefined) => {
+        state.side = side || 'todos';
+        for (const tab of tabs) {
+          const selected = tab.dataset.side === state.side;
+          tab.setAttribute('aria-selected', String(selected));
+          tab.tabIndex = selected ? 0 : -1;
+          if (selected && grid) grid.setAttribute('aria-labelledby', tab.id);
+        }
+        schedule();
+      };
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => setSide(tab.dataset.side));
+        tab.addEventListener('keydown', (event) => {
+          let target: HTMLButtonElement | null = null;
+          if (event.key === 'ArrowRight') target = tabs[(index + 1) % tabs.length];
+          if (event.key === 'ArrowLeft') target = tabs[(index - 1 + tabs.length) % tabs.length];
+          if (event.key === 'Home') target = tabs[0];
+          if (event.key === 'End') target = tabs[tabs.length - 1];
+          if (target) {
+            event.preventDefault();
+            setSide(target.dataset.side);
+            target.focus();
+          }
+        });
+      });
+      if (search) {
+        search.addEventListener('input', () => {
+          state.query = normalize(search.value.trim());
+          schedule();
+        });
+      }
+      if (tagSelect) {
+        tagSelect.addEventListener('change', () => {
+          state.tag = tagSelect.value;
+          schedule();
+        });
+      }
+      if (hideBanned) {
+        hideBanned.addEventListener('change', () => {
+          state.hideBanned = hideBanned.checked;
+          schedule();
+        });
+      }
+    }
+  </script>
+  <style>
+    .hero { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, .7fr); gap: 40px; align-items: end; padding: 148px 0 96px; }
+    .hero-copy { min-width: 0; }
+    h1 { margin: 12px 0 24px; font-size: clamp(3.6rem, 10vw, 8rem); }
+    h1 span { color: var(--blood-2); }
+    .hero-lede { max-width: 52ch; margin: 0; color: var(--muted); }
+    .hero-figures { display: flex; flex-wrap: wrap; gap: 32px; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); }
+    .hero-figures .stat strong { font-size: clamp(1.8rem, 4vw, 3rem); }
+    .hero-aside { display: grid; align-content: start; gap: 12px; min-width: 0; padding: 24px; border: 1px solid var(--line); border-left: 2px solid var(--amber); background: var(--panel); }
+    .aside-label { color: var(--muted); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; }
+    .aside-number { color: var(--amber); font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1; }
+    .hero-aside p { margin: 0; color: var(--muted); font-size: .8rem; }
+    .hero-aside .btn { margin-top: 8px; }
+
+    .library { padding: 96px 0; border-top: 1px solid var(--line); }
+    .filters { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 260px) minmax(0, 240px); gap: 16px; align-items: end; margin-bottom: 24px; }
+    .search-field, .tag-field { display: grid; gap: 8px; min-width: 0; }
+    label { color: var(--muted); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
+    input, select { width: 100%; min-height: 46px; border: 1px solid var(--line); border-radius: var(--r); background: var(--bg-2); padding: 10px 12px; color: var(--text); }
+    input::placeholder { color: var(--muted); }
+    input:hover, select:hover { border-color: var(--blood); }
+    .switch { display: flex; min-height: 46px; align-items: center; gap: 10px; padding: 0 12px; border: 1px solid var(--line); border-radius: var(--r); background: var(--bg-2); font-size: .8rem; letter-spacing: 0; text-transform: none; cursor: pointer; }
+    .switch input { width: 18px; min-height: 18px; accent-color: var(--blood); }
+    .switch:hover { border-color: var(--blood); }
+    .counter { grid-column: 1 / -1; margin: 0; color: var(--amber); font-size: .74rem; }
+    .tabs { display: flex; flex-wrap: wrap; gap: 24px; margin-bottom: 24px; border-bottom: 1px solid var(--line); }
+    .tab { display: flex; align-items: baseline; gap: 8px; min-height: 48px; border: 0; border-bottom: 2px solid transparent; background: none; padding: 8px 0; color: var(--muted); font-family: "Barlow Condensed", sans-serif; font-size: 1.2rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; cursor: pointer; }
+    .tab span { color: var(--muted); font-size: .68rem; }
+    .tab:hover { color: var(--text); }
+    .tab[aria-selected="true"] { border-bottom-color: var(--blood); color: var(--text); }
+    .tab[aria-selected="true"] span { color: var(--amber); }
+    .empty { padding: 24px; border: 1px dashed var(--line); color: var(--muted); }
+    .perk-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); gap: 16px; }
+    .perk-item { min-width: 0; scroll-margin-top: 96px; }
+    .ban-strip { border-bottom: 1px solid var(--blood); background: rgba(193,18,31,.12); padding: 5px 16px; color: var(--blood-2); font-family: "JetBrains Mono Variable", monospace; font-size: .66rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    [hidden] { display: none !important; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding: 120px 0 64px; }
+      .filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .switch { grid-column: 1 / -1; }
+    }
+    @media (max-width: 620px) {
+      .hero-figures { gap: 20px; }
+      .filters { grid-template-columns: 1fr; }
+      .switch { grid-column: auto; }
+      .tabs { gap: 16px; }
+      .library { padding: 64px 0; }
+    }
+  </style>
+</Base>

@@ -1,0 +1,326 @@
+---
+import rules from '../../data/comp-rules.json';
+import killers from '../../data/killers.json';
+import maps from '../../data/maps.json';
+import Portrait from '../Portrait.astro';
+import TierBadge from '../TierBadge.astro';
+import SectionHead from '../SectionHead.astro';
+import Chip from '../Chip.astro';
+
+const slugify = (value: string) => value.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const tiers = ['S', 'A', 'B', 'C', 'D'] as const;
+const tierRule = (tier: string) => rules.condicionesVictoria4v1.find((entry) => entry.tier === tier);
+const noTierKillers = killers.filter((killer) => killer.comp === null);
+const mapsByName = new Map(maps.map((map) => [map.name, map] as const));
+const mapFilterOptions = [...new Set(rules.reglasPorKiller.map((rule) => rule.mapa))].sort();
+const starterSteps = [
+  'Entrena el 1v1 en el mapa asignado al killer.',
+  'Mide la duración de tus persecuciones y revisa dónde pierdes distancia.',
+  'Domina loops: calcula cuándo seguir y cuándo abandonar un pallet.',
+  'Elige 2 o 3 killers del pool y practica sus reglas específicas.',
+  'Busca torneos y partidas organizadas dentro de la comunidad.',
+];
+---
+
+<div class="competition-page">
+  <header class="competition-hero container">
+    <div>
+      <p class="eyebrow">Reglas comunitarias · DBD Arena</p>
+      <h1 class="display">Juega<br /><span>con criterio</span></h1>
+    </div>
+    <div class="hero-disclaimer">
+      <p class="eyebrow">Transparencia competitiva</p>
+      <p><strong>DBD no tiene ranking competitivo oficial.</strong> Cada organizador define sus reglas. Aquí usamos el estándar comunitario de DBD Arena (dbdarena.com).</p>
+      <span>Referencia comunitaria, no oficial.</span>
+    </div>
+  </header>
+
+  <section class="container section-block" aria-label="Formato competitivo 1v1">
+    <SectionHead eyebrow="01 / Formato" title={rules.formato1v1.titulo} description="Una persecución medida con las mismas condiciones para ambos jugadores." />
+    <ol class="format-steps" data-format-steps>
+      {rules.formato1v1.pasos.map((step, index) => (
+        <li class="format-step" data-step>
+          <span class="step-number mono">{String(index + 1).padStart(2, '0')}</span>
+          <p>{step}</p>
+          <span class="step-track" aria-hidden="true"></span>
+        </li>
+      ))}
+    </ol>
+    <div class="rules-columns">
+      <article class="rules-column">
+        <p class="eyebrow">Reglas del killer</p>
+        <ul>{rules.formato1v1.killer.map((rule) => <li>{rule}</li>)}</ul>
+      </article>
+      <article class="rules-column">
+        <p class="eyebrow">Reglas del survivor</p>
+        <ul>{rules.formato1v1.survivor.map((rule) => <li>{rule}</li>)}</ul>
+      </article>
+    </div>
+    <p class="source-note">Estas reglas reflejan el formato comunitario citado y pueden cambiar si el organizador del torneo establece otra normativa.</p>
+  </section>
+
+  <section class="container section-block" aria-label="Perks baneados">
+    <SectionHead eyebrow="02 / Preparación" title="Perks baneados" description="Busca perks concretas para identificarlas antes de preparar la build." />
+    <label class="ban-search" for="ban-search">Buscar en la lista<input id="ban-search" type="search" placeholder="Nombre de perk" autocomplete="off" data-ban-search /></label>
+    <p class="search-hint" data-search-status aria-live="polite">Escribe para resaltar coincidencias en las dos listas.</p>
+    <div class="ban-columns">
+      {[
+        { title: 'Baneados de killer', list: rules.perksKillerBaneados, side: 'killer' },
+        { title: 'Baneados de survivor', list: rules.perksSurvivorBaneados, side: 'survivor' },
+      ].map((group) => (
+        <article class="ban-list">
+          <div class="ban-heading"><h3 class="display">{group.title}</h3><span class="mono">{group.list.length}</span></div>
+          <div class="ban-chips" data-ban-group={group.side}>
+            {group.list.map((name) => {
+              const slug = slugify(name);
+              return <a class="ban-chip" href={`/perks/#${slug}`} data-ban-name={name.toLowerCase()}><Chip text={name} /></a>;
+            })}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="container section-block tiers-section" aria-label="Escalera de tiers 4v1">
+    <div>
+      <SectionHead eyebrow="03 / 4v1 · DBD Arena" title="Escalera de tiers" description="La condición de victoria cambia por tier; no compares resultados sin considerar el killer." />
+      <div class="tier-rows">
+        {tiers.map((tier) => {
+          const condition = tierRule(tier);
+          const tierKillers = killers.filter((killer) => killer.comp?.tier === tier);
+          return (
+            <article class:list={['tier-row', `tier-row-${tier.toLowerCase()}`]}>
+              <div class="tier-condition"><TierBadge tier={tier} /><p>{condition?.condicion}</p></div>
+              <div class="tier-killers">
+                {tierKillers.length ? tierKillers.map((killer) => (
+                  <a class="tier-killer" href={`/killers/${killer.slug}/`}>
+                    <Portrait src={killer.icon} alt={`Retrato de ${killer.name}`} size="sm" />
+                    <span>{killer.name}</span>
+                  </a>
+                )) : <span class="empty-tier">Sin killers asignados en los datos.</span>}
+              </div>
+            </article>
+          );
+        })}
+      </div>
+      <div class="untiered">
+        <div><TierBadge /><strong>Sin tier todavía</strong><span>Sin clasificación comunitaria disponible</span></div>
+        <div class="tier-killers">
+          {noTierKillers.map((killer) => (
+            <a class="tier-killer" href={`/killers/${killer.slug}/`}>
+              <Portrait src={killer.icon} alt={`Retrato de ${killer.name}`} size="sm" />
+              <span>{killer.name}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+    <aside class="tier-explainer">
+      <p class="eyebrow">Por que separar tiers</p>
+      <h3 class="display">El contexto cambia el resultado</h3>
+      <p>Un 4K con Nurse no mide lo mismo que un 4K con Trapper. Los tiers ajustan la condición de victoria a la fuerza del killer para comparar el rendimiento con más contexto.</p>
+      <span class="mono">ESTANDAR COMUNITARIO · NO OFICIAL</span>
+    </aside>
+  </section>
+
+  <section class="container section-block" aria-label="Pool de mapas y reglas por killer">
+    <SectionHead eyebrow="04 / Pool 1v1" title="Mapas y reglas por killer" description="Consulta el mapa fijo, la regla especial y los add-ons restringidos para cada killer del pool." />
+    <label class="map-filter" for="map-filter">Filtrar por mapa<select id="map-filter" data-map-filter><option value="">Todos los mapas</option>{mapFilterOptions.map((name) => <option value={name}>{name}</option>)}</select></label>
+    <div class="pool-table-wrap">
+      <table class="pool-table">
+        <thead><tr><th>Killer</th><th>Mapa fijo</th><th>Regla especial</th><th>Add-ons baneados</th></tr></thead>
+        <tbody>
+          {rules.reglasPorKiller.map((entry) => {
+            const killer = killers.find((item) => item.name === entry.killer);
+            const map = mapsByName.get(entry.mapa);
+            return (
+              <tr data-pool-row data-map={entry.mapa}>
+                <th scope="row">{killer ? <a href={`/killers/${killer.slug}/`}>{entry.killer}</a> : entry.killer}</th>
+                <td>{map ? <a href={`/mapas/${map.slug}/`}>{map.name}</a> : entry.mapa}</td>
+                <td>{entry.regla || 'Sin regla especial indicada.'}</td>
+                <td>{entry.baneados}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+      <p class="empty-filter" data-empty-filter hidden>No hay reglas en el pool para este mapa.</p>
+    </div>
+  </section>
+
+  <section class="container section-block" aria-label="Glosario competitivo">
+    <SectionHead eyebrow="05 / Vocabulario" title="Glosario competitivo" description="Terminos habituales para leer reglas y comunicar decisiones durante una partida." />
+    <dl class="glossary">
+      {rules.glosario.map((entry, index) => <div class="glossary-card"><dt><span class="mono">0{index + 1}</span>{entry.t}</dt><dd>{entry.d}</dd></div>)}
+    </dl>
+  </section>
+
+  <section class="container section-block getting-started" aria-label="Como empezar a competir">
+    <div>
+      <SectionHead eyebrow="06 / Aplicación" title="Cómo empezar a competir" description="Una ruta concreta para convertir partidas casuales en práctica deliberada." />
+      <ol class="start-steps">{starterSteps.map((step, index) => <li><span class="mono">0{index + 1}</span><p>{step}</p></li>)}</ol>
+    </div>
+    <aside class="sources">
+      <p class="eyebrow">Fuentes y alcance</p>
+      <p>El formato, los tiers y el pool mostrados son una referencia comunitaria; verifica las reglas vigentes con cada organizador.</p>
+      <a href="https://www.dbdarena.com/tier-list" target="_blank" rel="noopener noreferrer">DBD Arena · Tier list <span aria-hidden="true">↗</span></a>
+      <a href="https://www.dbdarena.com/maps" target="_blank" rel="noopener noreferrer">DBD Arena · Mapas <span aria-hidden="true">↗</span></a>
+      <a href="https://deadbydaylight.wiki.gg" target="_blank" rel="noopener noreferrer">Dead by Daylight Wiki <span aria-hidden="true">↗</span></a>
+      <span class="community-notice">DBD Arena es un estándar comunitario, no oficial.</span>
+    </aside>
+  </section>
+</div>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+  const competition = document.querySelector<HTMLElement>('.competition-page');
+  if (competition) {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reducedMotion) {
+      gsap.fromTo(competition.querySelectorAll<HTMLElement>('[data-step]'), { y: 14, opacity: 0.45 }, {
+        y: 0, opacity: 1, duration: 0.38, stagger: 0.07, ease: 'power3.out',
+        scrollTrigger: { trigger: competition.querySelector<HTMLElement>('[data-format-steps]')!, start: 'top 82%' },
+      });
+    }
+
+    const banSearch = competition.querySelector<HTMLInputElement>('[data-ban-search]')!;
+    const banChips = [...competition.querySelectorAll<HTMLAnchorElement>('[data-ban-name]')];
+    const searchStatus = competition.querySelector<HTMLElement>('[data-search-status]')!;
+    banSearch.addEventListener('input', () => {
+      const query = banSearch.value.trim().toLowerCase();
+      let matches = 0;
+      banChips.forEach((chip) => {
+        const matched = query.length > 0 && (chip.getAttribute('data-ban-name') || '').includes(query);
+        chip.classList.toggle('is-match', matched);
+        chip.classList.toggle('is-dim', query.length > 0 && !matched);
+        if (matched) matches += 1;
+      });
+      searchStatus.textContent = query ? `${matches} coincidencia${matches === 1 ? '' : 's'} en la lista de baneos.` : 'Escribe para resaltar coincidencias en las dos listas.';
+    });
+
+    const mapFilter = competition.querySelector<HTMLSelectElement>('[data-map-filter]')!;
+    const poolRows = [...competition.querySelectorAll<HTMLTableRowElement>('[data-pool-row]')];
+    const emptyFilter = competition.querySelector<HTMLElement>('[data-empty-filter]')!;
+    mapFilter.addEventListener('change', () => {
+      let visible = 0;
+      poolRows.forEach((row) => {
+        const show = !mapFilter.value || (row.getAttribute('data-map') || '') === mapFilter.value;
+        row.hidden = !show;
+        if (show) visible += 1;
+      });
+      emptyFilter.hidden = visible > 0;
+    });
+  }
+</script>
+
+<style>
+  .competition-hero { display:grid; grid-template-columns:1.15fr .85fr; align-items:end; gap:40px; padding-top:120px; padding-bottom:64px; border-bottom:1px solid var(--line); }
+  .competition-hero h1 { margin:14px 0 0; font-size:clamp(5rem,12vw,9rem); }
+  .competition-hero h1 span { color:var(--blood-2); }
+  .hero-disclaimer { max-width:470px; border-left:3px solid var(--blood); background:var(--panel); padding:22px; }
+  .hero-disclaimer p:not(.eyebrow) { margin:10px 0 12px; font-size:1.04rem; }
+  .hero-disclaimer strong { color:var(--text); }
+  .hero-disclaimer > span { color:var(--muted); font-size:.72rem; }
+  .section-block { margin-top:96px; }
+  .format-steps { display:grid; grid-template-columns:repeat(3,1fr); list-style:none; margin:0; padding:0; border-top:1px solid var(--line); }
+  .format-step { position:relative; min-height:146px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); padding:18px 20px; }
+  .format-step:nth-child(3n) { border-right:0; }
+  .step-number { color:var(--blood-2); font-size:2.5rem; line-height:1; }
+  .format-step p { max-width:330px; margin:14px 0 0; font-size:.86rem; }
+  .step-track { position:absolute; right:20px; bottom:18px; width:24px; height:2px; background:var(--blood); }
+  .rules-columns { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:24px; }
+  .rules-column { border:1px solid var(--line); background:var(--panel); padding:20px; }
+  .rules-column ul { display:grid; gap:10px; margin:14px 0 0; padding-left:19px; }
+  .rules-column li { padding-left:3px; color:var(--muted); font-size:.82rem; }
+  .rules-column li::marker { color:var(--blood-2); }
+  .source-note,.search-hint { color:var(--muted); font-size:.74rem; }
+  .ban-search,.map-filter { display:grid; gap:8px; max-width:420px; color:var(--muted); font-size:.76rem; }
+  .ban-search input { min-height:46px; border:1px solid var(--line); border-radius:var(--r); background:var(--bg-2); color:var(--text); padding:10px 12px; }
+  .search-hint { min-height:1.3em; margin:8px 0 16px; }
+  .ban-columns { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .ban-list { min-width:0; border:1px solid var(--line); background:var(--panel); padding:18px; }
+  .ban-heading { display:flex; align-items:center; justify-content:space-between; gap:10px; border-bottom:1px solid var(--line); padding-bottom:12px; }
+  .ban-heading h3 { margin:0; font-size:1.8rem; }
+  .ban-heading > span { color:var(--amber); }
+  .ban-chips { display:flex; flex-wrap:wrap; gap:7px; padding-top:14px; }
+  .ban-chip { border-radius:999px; transition:opacity .18s ease, box-shadow .18s ease; }
+  .ban-chip :global(.chip) { color:var(--text); }
+  .ban-chip.is-match { box-shadow:0 0 0 2px var(--amber); }
+  .ban-chip.is-dim { opacity:.32; }
+  .tiers-section { display:grid; grid-template-columns:1.4fr .6fr; gap:28px; align-items:start; }
+  .tiers-section :global(.section-head) { margin-bottom:22px; }
+  .tier-row { display:grid; grid-template-columns:minmax(180px,.44fr) 1fr; border-top:1px solid var(--line); }
+  .tier-condition { display:flex; align-items:center; gap:12px; border-right:1px solid var(--line); padding:14px 12px 14px 0; }
+  .tier-condition p { margin:0; color:var(--muted); font-size:.78rem; }
+  .tier-killers { display:flex; flex-wrap:wrap; gap:8px; align-items:center; padding:10px; }
+  .tier-killer { display:flex; align-items:center; gap:8px; min-width:0; border:1px solid var(--line); background:var(--panel); padding:5px 10px 5px 5px; font-size:.76rem; transition:border-color .18s ease; }
+  .tier-killer:hover { border-color:var(--blood); }
+  .tier-killer :global(.portrait) { width:38px; height:44px; flex:none; border-radius:3px; }
+  .tier-killer :global(.portrait img),.tier-killer :global(.portrait svg) { width:100%; height:100%; }
+  .empty-tier { color:var(--muted); font-size:.75rem; }
+  .untiered { margin-top:14px; border:1px solid var(--line); padding:14px; }
+  .untiered > div:first-child { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .untiered > div:first-child strong { font-family:"Barlow Condensed",sans-serif; font-size:1.15rem; text-transform:uppercase; }
+  .untiered > div:first-child span { color:var(--muted); font-size:.7rem; }
+  .untiered .tier-killers { padding:10px 0 0; }
+  .tier-explainer { position:sticky; top:96px; border-left:3px solid var(--amber); background:var(--panel); padding:22px; }
+  .tier-explainer h3 { margin:12px 0; font-size:2.25rem; }
+  .tier-explainer p:not(.eyebrow) { color:var(--muted); font-size:.86rem; }
+  .tier-explainer > span { display:block; margin-top:20px; color:var(--amber); font-size:.65rem; }
+  .map-filter { margin-bottom:14px; }
+  .pool-table-wrap { overflow-x:auto; border:1px solid var(--line); }
+  .pool-table { width:100%; min-width:750px; border-collapse:collapse; }
+  .pool-table th,.pool-table td { border-bottom:1px solid var(--line); padding:13px 14px; text-align:left; vertical-align:top; font-size:.78rem; }
+  .pool-table thead th { background:var(--panel); color:var(--muted); font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; }
+  .pool-table tbody th { white-space:nowrap; }
+  .pool-table a { text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:3px; }
+  .pool-table a:hover { color:var(--amber); }
+  .pool-table tr[hidden] { display:none; }
+  .empty-filter { margin:0; padding:20px; color:var(--muted); }
+  .glossary { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:0; }
+  .glossary-card { min-height:140px; border:1px solid var(--line); background:var(--panel); padding:16px; }
+  .glossary-card dt { display:flex; align-items:center; gap:10px; font-family:"Barlow Condensed",sans-serif; font-size:1.35rem; font-weight:700; text-transform:uppercase; }
+  .glossary-card dt span { color:var(--blood-2); font-size:.68rem; }
+  .glossary-card dd { margin:8px 0 0; color:var(--muted); font-size:.76rem; }
+  .getting-started { display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:start; padding-bottom:96px; }
+  .getting-started :global(.section-head) { margin-bottom:22px; }
+  .start-steps { list-style:none; margin:0; padding:0; border-top:1px solid var(--line); }
+  .start-steps li { display:grid; grid-template-columns:46px 1fr; align-items:start; gap:8px; border-bottom:1px solid var(--line); padding:14px 8px; }
+  .start-steps li span { color:var(--blood-2); }
+  .start-steps p { margin:0; font-size:.86rem; }
+  .sources { display:grid; gap:0; border:1px solid var(--line); background:var(--panel); padding:20px; }
+  .sources > p:not(.eyebrow) { margin:8px 0 12px; color:var(--muted); font-size:.78rem; }
+  .sources > a { display:flex; justify-content:space-between; border-top:1px solid var(--line); padding:12px 0; font-size:.8rem; }
+  .sources > a span { color:var(--amber); }
+  .sources > a:hover { color:var(--amber); }
+  .community-notice { margin-top:8px; color:var(--muted); font-size:.68rem; }
+  @media (max-width:900px) {
+    .competition-hero { grid-template-columns:1fr; gap:24px; }
+    .tiers-section { grid-template-columns:1fr; }
+    .tier-explainer { position:static; }
+    .glossary { grid-template-columns:repeat(2,1fr); }
+  }
+  @media (max-width:600px) {
+    .competition-hero { padding-top:105px; }
+    .competition-hero h1 { font-size:clamp(4.5rem,19vw,7rem); }
+    .section-block { margin-top:64px; }
+    .format-steps { grid-template-columns:repeat(2,1fr); }
+    .format-step { min-height:140px; padding:14px 12px; }
+    .format-step:nth-child(3n) { border-right:1px solid var(--line); }
+    .format-step:nth-child(2n) { border-right:0; }
+    .rules-columns,.ban-columns { grid-template-columns:1fr; }
+    .tier-row { grid-template-columns:1fr; }
+    .tier-condition { border-right:0; }
+    .tier-killers { padding-left:0; }
+    .glossary { grid-template-columns:1fr 1fr; gap:7px; }
+    .glossary-card { min-height:150px; padding:12px; }
+    .glossary-card dt { font-size:1.1rem; }
+    .getting-started { grid-template-columns:1fr; padding-bottom:64px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ban-chip { transition:none; }
+  }
+</style>

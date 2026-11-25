@@ -1,0 +1,217 @@
+---
+import Base from '../../layouts/Base.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import KillerCard from '../../components/killers/KillerCard.astro';
+import killers from '../../data/killers.json';
+import compRules from '../../data/comp-rules.json';
+
+const tiers = [
+  { label: 'Todos', value: 'all' },
+  { label: 'S', value: 'S' },
+  { label: 'A', value: 'A' },
+  { label: 'B', value: 'B' },
+  { label: 'C', value: 'C' },
+  { label: 'D', value: 'D' },
+  { label: 'Sin tier', value: 'none' },
+] as const;
+---
+
+<Base title="Killers" description="Los 45 killers de Dead by Daylight con velocidad real, radio de terror, poder, perks propios y tier competitivo." active="killers">
+  <section class="page-intro container">
+    <div class="intro-head">
+      <p class="eyebrow">Roster · {killers.length} killers</p>
+      <h1 class="display">Killers</h1>
+    </div>
+    <p class="intro-copy">Ficha, numeros y poder de cada killer hasta Terrifier (24.11.2026). Busca por nombre, alias o nombre real y ordena el roster con un solo toque.</p>
+  </section>
+
+  <div class="toolbar-shell">
+    <div class="container toolbar">
+      <label class="field search-field" for="q">
+        <span class="field-label">Buscar</span>
+        <input id="q" type="search" autocomplete="off" placeholder="Nombre, alias o nombre real" />
+      </label>
+      <div class="field tier-field" role="group" aria-label="Filtrar por tier competitivo">
+        <span class="field-label" id="tier-label">Tier</span>
+        <div class="chips" aria-labelledby="tier-label">
+          {tiers.map(({ label, value }) => (
+            <button type="button" class="chip tier-chip" data-filter-tier={value} aria-pressed={value === 'all'}>{label}</button>
+          ))}
+        </div>
+      </div>
+      <label class="field sort-field" for="orden">
+        <span class="field-label">Ordenar por</span>
+        <select id="orden">
+          <option value="nombre">Nombre</option>
+          <option value="velocidad">Velocidad</option>
+          <option value="dificultad">Dificultad</option>
+          <option value="reciente">Mas reciente</option>
+        </select>
+      </label>
+      <p class="count mono" id="contador" aria-live="polite">Mostrando {killers.length} de {killers.length}</p>
+    </div>
+  </div>
+
+  <section class="container roster" aria-label="Listado de killers">
+    <div class="killer-grid" id="killer-grid" data-reveal>
+      {killers.map((killer) => <KillerCard killer={killer} />)}
+    </div>
+    <p class="empty" id="vacio" hidden>Ningun killer coincide con la busqueda. Prueba otro nombre o vuelve a "Todos".</p>
+  </section>
+
+  <section class="container tier-guide">
+    <SectionHead eyebrow="DBD Arena · estandar comunitario" title="Como leer los tiers" description="Cada tier resume una condicion de victoria medible en partidas 4v1. No es un ranking oficial de Behaviour Interactive." />
+    <ol class="tier-rows">
+      {compRules.condicionesVictoria4v1.map((row) => (
+        <li data-reveal>
+          <span class="tier-key mono">{row.tier}</span>
+          <p>{row.condicion}</p>
+          <span class="tier-source mono">DBD Arena</span>
+        </li>
+      ))}
+    </ol>
+    <p class="disclaimer">{compRules.fuente}. Los killers recientes sin condicion publicada aparecen como "Sin tier".</p>
+  </section>
+</Base>
+
+<script>
+  const grid = document.querySelector<HTMLElement>('#killer-grid')!;
+  const cards = Array.from(grid.querySelectorAll<HTMLElement>('[data-killer]'));
+  const input = document.querySelector<HTMLInputElement>('#q')!;
+  const select = document.querySelector<HTMLSelectElement>('#orden')!;
+  const counter = document.querySelector<HTMLElement>('#contador')!;
+  const empty = document.querySelector<HTMLElement>('#vacio')!;
+  const chips = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-filter-tier]'));
+
+  const validTiers = ['all', 'S', 'A', 'B', 'C', 'D', 'none'];
+  const validOrders = ['nombre', 'velocidad', 'dificultad', 'reciente'];
+  const params = new URLSearchParams(window.location.search);
+
+  input.value = params.get('q') ?? '';
+  let orden = params.get('orden') ?? 'nombre';
+  if (!validOrders.includes(orden)) orden = 'nombre';
+  select.value = orden;
+
+  let tier = params.get('tier') ?? 'all';
+  if (!validTiers.includes(tier)) tier = 'all';
+
+  const nameOf = (card: HTMLElement) => card.dataset.name ?? '';
+  const compareName = (a: HTMLElement, b: HTMLElement) => nameOf(a).localeCompare(nameOf(b), 'es', { sensitivity: 'base' });
+
+  const refresh = () => {
+    const bridge = window as unknown as { DBD?: { refresh?: () => void } };
+    bridge.DBD?.refresh?.();
+  };
+
+  function apply(updateUrl: boolean) {
+    const query = input.value.trim().toLocaleLowerCase('es');
+    const matches = cards.filter((card) => {
+      const text = `${nameOf(card)} ${card.dataset.alias ?? ''} ${card.dataset.real ?? ''}`.toLocaleLowerCase('es');
+      const byText = query.length === 0 || text.includes(query);
+      const byTier = tier === 'all' || card.dataset.tier === tier;
+      return byText && byTier;
+    });
+
+    cards.forEach((card) => { card.style.display = 'none'; });
+
+    const sorted = [...matches];
+    if (orden === 'nombre') {
+      sorted.sort(compareName);
+    } else if (orden === 'velocidad') {
+      sorted.sort((a, b) => Number(b.dataset.speed ?? 0) - Number(a.dataset.speed ?? 0) || compareName(a, b));
+    } else if (orden === 'dificultad') {
+      sorted.sort((a, b) => Number(b.dataset.difficulty || -1) - Number(a.dataset.difficulty || -1) || compareName(a, b));
+    } else {
+      sorted.sort((a, b) => {
+        const aDate = a.dataset.release ?? '';
+        const bDate = b.dataset.release ?? '';
+        if (aDate && bDate) return bDate.localeCompare(aDate) || compareName(a, b);
+        if (aDate) return -1;
+        if (bDate) return 1;
+        return compareName(a, b);
+      });
+    }
+
+    sorted.forEach((card) => {
+      card.style.display = '';
+      grid.appendChild(card);
+    });
+
+    chips.forEach((chip) => chip.setAttribute('aria-pressed', String(chip.dataset.filterTier === tier)));
+    counter.textContent = `Mostrando ${matches.length} de ${cards.length}`;
+    empty.hidden = matches.length !== 0;
+
+    if (updateUrl) {
+      const url = new URL(window.location.href);
+      const values: Record<string, string> = { q: input.value.trim(), tier, orden };
+      Object.entries(values).forEach(([key, value]) => {
+        if (value && !(key === 'tier' && value === 'all') && !(key === 'orden' && value === 'nombre')) {
+          url.searchParams.set(key, value);
+        } else {
+          url.searchParams.delete(key);
+        }
+      });
+      history.replaceState(null, '', url);
+    }
+
+    refresh();
+  }
+
+  chips.forEach((chip) => chip.addEventListener('click', () => {
+    tier = chip.dataset.filterTier ?? 'all';
+    apply(true);
+  }));
+  input.addEventListener('input', () => apply(true));
+  select.addEventListener('change', () => {
+    orden = select.value;
+    apply(true);
+  });
+
+  apply(false);
+</script>
+
+<style>
+  .page-intro { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,420px); align-items:end; gap:40px; margin-top:72px; padding-block:64px 40px; border-bottom:1px solid var(--line); }
+  .intro-head h1 { margin:8px 0 0; font-size:clamp(5rem,12vw,10rem); }
+  .intro-copy { margin:0 0 10px; max-width:52ch; color:var(--muted); font-size:clamp(.92rem,1.4vw,1.05rem); }
+  .toolbar-shell { position:sticky; top:72px; z-index:500; border-bottom:1px solid var(--line); background:rgba(12,16,21,.97); }
+  .toolbar { display:grid; grid-template-columns:minmax(170px,1.5fr) minmax(300px,3fr) minmax(140px,1fr) auto; align-items:end; gap:16px; padding-block:12px; }
+  .field { display:grid; min-width:0; gap:6px; }
+  .field-label { color:var(--muted); font-size:.66rem; letter-spacing:.12em; text-transform:uppercase; }
+  .search-field input,.sort-field select { width:100%; min-width:0; min-height:38px; border:1px solid var(--line); border-radius:var(--r); background:var(--bg); padding:8px 10px; color:var(--text); font-size:.82rem; }
+  .search-field input::placeholder { color:var(--muted); }
+  .chips { display:flex; flex-wrap:wrap; gap:6px; }
+  .tier-chip { min-height:30px; cursor:pointer; }
+  .tier-chip:hover { border-color:var(--blood); }
+  .tier-chip[aria-pressed="true"] { border-color:var(--blood-2); background:rgba(193,18,31,.24); color:var(--text); }
+  .count { align-self:end; margin:0 0 9px; color:var(--amber); font-size:.74rem; white-space:nowrap; }
+  .roster { padding-block:24px 40px; }
+  .killer-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
+  .empty { border:1px dashed var(--line); border-radius:var(--r); padding:40px 24px; color:var(--muted); text-align:center; }
+  .tier-guide { margin-bottom:96px; border-top:1px solid var(--line); padding-top:64px; }
+  .tier-rows { margin:0; padding:0; border-top:1px solid var(--line); list-style:none; }
+  .tier-rows li { display:grid; grid-template-columns:56px minmax(0,1fr) auto; align-items:center; gap:16px; border-bottom:1px solid var(--line); padding:14px 8px; }
+  .tier-key { color:var(--amber); font-size:1.5rem; font-weight:800; }
+  .tier-rows p { margin:0; font-size:.94rem; }
+  .tier-source { color:var(--muted); font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; }
+  .disclaimer { max-width:82ch; margin:20px 0 0; border-left:2px solid var(--blood); padding-left:16px; color:var(--muted); font-size:.8rem; }
+  @media (max-width:1100px) {
+    .toolbar { grid-template-columns:minmax(160px,1fr) minmax(260px,2fr); }
+    .count { grid-column:1/-1; margin:0; }
+    .killer-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  }
+  @media (max-width:800px) {
+    .page-intro { grid-template-columns:1fr; gap:16px; padding-block:40px 24px; }
+    .intro-copy { margin:0; }
+    .killer-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  }
+  @media (max-width:600px) {
+    .toolbar { grid-template-columns:minmax(0,1fr); gap:12px; }
+    .count { grid-column:auto; }
+    .killer-grid { grid-template-columns:minmax(0,1fr); }
+    .tier-guide { margin-bottom:64px; padding-top:40px; }
+    .tier-rows li { grid-template-columns:40px minmax(0,1fr); gap:12px; }
+    .tier-key { font-size:1.2rem; }
+    .tier-source { grid-column:2; }
+  }
+</style>

@@ -1,0 +1,135 @@
+---
+import Base from '../../layouts/Base.astro';
+import BuildCard from '../../components/builds/BuildCard.astro';
+import BuildLab from '../../components/builds/BuildLab.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import builds from '../../data/builds.json';
+import killers from '../../data/killers.json';
+
+const archetypes = [...new Set(builds.map((build) => build.arquetipo))].sort((a, b) => a.localeCompare(b, 'es'));
+---
+
+<Base title="Builds" description="Builds sugeridos de killer y survivor para Dead by Daylight, con perks, estilo de juego y restricciones competitivas." active="builds">
+  <section class="hero container">
+    <p class="eyebrow">Preparación de partida / 10.x</p>
+    <h1 class="display">Builds para<br /><span>cada plan.</span></h1>
+    <p class="intro">Combinaciones de perks explicadas por objetivo, con notas de uso y restricciones del formato comunitario 1v1.</p>
+    <p class="notice"><strong>AVISO EDITORIAL</strong> Builds sugeridos por criterio editorial segun la meta comunitaria de nov-2026; no son oficiales y cambian con cada parche.</p>
+  </section>
+
+  <section class="container library" aria-label="Biblioteca de builds">
+    <SectionHead eyebrow="Biblioteca táctica" title="Elige tu build" description="Filtra por bando, arquetipo o killer. Abre una build para consultar los pasos y el estado de cada perk." />
+    <div class="tabs" role="tablist" aria-label="Bando de las builds">
+      <button id="tab-killer" type="button" role="tab" aria-selected="true" aria-controls="build-panel" data-side="killer">Killer <span>16</span></button>
+      <button id="tab-survivor" type="button" role="tab" aria-selected="false" aria-controls="build-panel" data-side="survivor" tabindex="-1">Survivor <span>12</span></button>
+    </div>
+    <div class="filters">
+      <label for="filter-archetype">Arquetipo</label>
+      <select id="filter-archetype">
+        <option value="">Todos los arquetipos</option>
+        {archetypes.map((archetype) => <option value={archetype}>{archetype}</option>)}
+      </select>
+      <label for="filter-killer">Killer</label>
+      <select id="filter-killer">
+        <option value="">Todos los killers</option>
+        {killers.map((killer) => <option value={killer.slug}>{killer.name}</option>)}
+      </select>
+    </div>
+    <div id="build-panel" role="tabpanel" aria-labelledby="tab-killer">
+      <div class="build-grid">
+        {builds.map((build) => <BuildCard build={build} />)}
+      </div>
+      <p class="no-results" hidden>No hay builds que coincidan con esos filtros.</p>
+    </div>
+  </section>
+
+  <div class="container lab-wrap"><BuildLab /></div>
+</Base>
+
+<script>
+  const tabs = [...document.querySelectorAll<HTMLButtonElement>('[role="tab"][data-side]')];
+  const cards = [...document.querySelectorAll<HTMLElement>('.build-card')];
+  const archetypeSelect = document.querySelector<HTMLSelectElement>('#filter-archetype');
+  const killerSelect = document.querySelector<HTMLSelectElement>('#filter-killer');
+  const panel = document.querySelector<HTMLElement>('#build-panel');
+  const empty = document.querySelector<HTMLElement>('.no-results');
+  let side: 'killer' | 'survivor' = new URLSearchParams(location.search).get('lado') === 'survivor' ? 'survivor' : 'killer';
+  const params = new URLSearchParams(location.search);
+  if (killerSelect && params.has('killer')) killerSelect.value = params.get('killer') ?? '';
+
+  const updateQuery = () => {
+    const query = new URLSearchParams(location.search);
+    query.set('lado', side);
+    if (killerSelect?.value && side === 'killer') query.set('killer', killerSelect.value);
+    else query.delete('killer');
+    history.replaceState(null, '', `${location.pathname}?${query.toString()}`);
+  };
+  const applyFilters = () => {
+    const archetype = archetypeSelect?.value ?? '';
+    const killer = side === 'killer' ? killerSelect?.value ?? '' : '';
+    let visible = 0;
+    cards.forEach((card) => {
+      const matches = card.dataset.lado === side &&
+        (!archetype || card.dataset.arquetipo === archetype) &&
+        (!killer || card.dataset.killer === killer);
+      card.hidden = !matches;
+      if (matches) visible += 1;
+    });
+    if (empty) empty.hidden = visible > 0;
+    if (panel) panel.setAttribute('aria-labelledby', `tab-${side}`);
+    tabs.forEach((tab) => {
+      const selected = tab.dataset.side === side;
+      tab.setAttribute('aria-selected', String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+    });
+    if (killerSelect) killerSelect.disabled = side !== 'killer';
+    updateQuery();
+  };
+  tabs.forEach((tab) => tab.addEventListener('click', () => {
+    side = tab.dataset.side === 'survivor' ? 'survivor' : 'killer';
+    if (archetypeSelect) archetypeSelect.value = '';
+    if (killerSelect) killerSelect.value = '';
+    applyFilters();
+  }));
+  tabs.forEach((tab) => tab.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault();
+      const next = tabs.find((candidate) => candidate !== tab);
+      next?.focus();
+      next?.click();
+    }
+  }));
+  archetypeSelect?.addEventListener('change', applyFilters);
+  killerSelect?.addEventListener('change', applyFilters);
+  applyFilters();
+</script>
+
+<style>
+  .hero { padding-block: clamp(56px, 10vw, 112px) 48px; }
+  .hero h1 { margin-top: 20px; font-size: clamp(4.5rem, 13vw, 9.5rem); }
+  .hero h1 span { color: var(--blood-2); }
+  .intro { max-width: 540px; margin: 22px 0 30px; color: var(--muted); font-size: 1.05rem; }
+  .notice { max-width: 780px; border-left: 3px solid var(--amber); margin: 0; padding: 14px 18px; background: var(--bg-2); color: var(--text); font-size: .82rem; }
+  .notice strong { display: block; margin-bottom: 5px; color: var(--amber); font: 700 .7rem "JetBrains Mono Variable", monospace; letter-spacing: .12em; }
+  .library { padding-block: 36px 64px; }
+  .tabs { display: flex; width: max-content; max-width: 100%; gap: 4px; border-bottom: 1px solid var(--line); margin-bottom: 18px; }
+  .tabs button { min-height: 48px; border: 0; border-bottom: 2px solid transparent; padding: 10px 18px; background: transparent; color: var(--muted); font: 700 1.05rem "Barlow Condensed", sans-serif; letter-spacing: .06em; text-transform: uppercase; cursor: pointer; }
+  .tabs button[aria-selected="true"] { border-color: var(--blood-2); color: var(--text); }
+  .tabs span { margin-left: 6px; color: var(--amber); font:  .7rem "JetBrains Mono Variable", monospace; }
+  .filters { display: grid; grid-template-columns: auto minmax(180px, 1fr) auto minmax(180px, 1fr); align-items: center; gap: 10px; margin: 0 0 22px; }
+  .filters label { margin: 0; color: var(--muted); font-size: .76rem; }
+  .filters select { min-width: 0; min-height: 42px; border: 1px solid var(--line); border-radius: var(--r); padding: 8px 10px; background: var(--bg-2); color: var(--text); }
+  .filters select:disabled { opacity: .48; }
+  .build-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .build-card[hidden] { display: none; }
+  .no-results { padding: 28px 0; color: var(--muted); }
+  .lab-wrap { padding-bottom: 80px; }
+  @media (max-width: 800px) { .build-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 560px) {
+    .filters { grid-template-columns: 1fr; gap: 6px; }
+    .filters select { margin-bottom: 8px; }
+    .build-grid { grid-template-columns: 1fr; }
+    .tabs { width: 100%; }
+    .tabs button { flex: 1; }
+  }
+</style>

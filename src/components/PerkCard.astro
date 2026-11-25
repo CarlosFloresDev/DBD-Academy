@@ -1,0 +1,42 @@
+---
+import PerkIcon from './PerkIcon.astro';
+interface Props {
+  perk: {name:string;side:string;icon?:string|null;desc:string;values:number[];tags:string[]};
+  compact?: boolean;
+}
+const { perk, compact=false } = Astro.props;
+---
+<article class:list={['perk-card','card',{'compact':compact}]}>
+  <PerkIcon perk={perk} size={compact ? 44 : 56} />
+  <div class="perk-main">
+    <div class="perk-head">
+      <h3>{perk.name}</h3>
+      <span class="chip">{perk.side === 'killer' ? 'Killer' : 'Survivor'}</span>
+    </div>
+    {compact ? (
+      <p class="clamp">{perk.desc}</p>
+    ) : (
+      <details>
+        <summary>Ver descripcion</summary>
+        <p>{perk.desc}</p>
+      </details>
+    )}
+    <span class="official">Texto oficial en ingles</span>
+    <div class="perk-data">
+      <div class="values">{perk.values.map((value,i) => <span class="chip mono">N{ i+1 } {value}</span>)}</div>
+      <div class="tags">{perk.tags.map((tag) => <span class="chip">{tag}</span>)}</div>
+    </div>
+  </div>
+</article>
+<style>
+ .perk-card { display:grid; grid-template-columns:auto 1fr; gap:16px; padding:16px; }
+ .perk-main { min-width:0; }
+ .perk-head { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+ .perk-head h3 { margin:0; font-family:"Barlow Condensed",sans-serif; font-size:1.15rem; letter-spacing:.02em; text-transform:uppercase; }
+ details p,.clamp { color:var(--muted); font-size:.78rem; line-height:1.55; }
+ details summary { width:max-content; cursor:pointer; color:var(--text); font-size:.78rem; }
+ .clamp { display:-webkit-box; overflow:hidden; -webkit-line-clamp:4; -webkit-box-orient:vertical; }
+ .official { display:block; margin:8px 0; color:var(--muted); font-size:.68rem; }
+ .perk-data { display:grid; gap:8px; }
+ .values,.tags { display:flex; flex-wrap:wrap; gap:6px; }
+</style>

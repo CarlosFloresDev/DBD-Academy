@@ -1,0 +1,69 @@
+Voy a verificar la estructura existente y los datos necesarios antes de crear la fundación, para respetar las rutas y firmas reales del proyecto.
+
+ {} Read src\data\maps.json L1:40 (40 lines read)
+
+ {} Read src\data\clock.json 90 lines read
+
+ {} Read src\data\survivors.json L1:40 (40 lines read)
+
+ {} Read src\data\killers.json L1:40 (40 lines read)
+
+ {} Read src\data\perks.json L1:30 (30 lines read)
+
+ / Search "{src/**,public/**,package.json,_common.md}" 479 files found
+
+ {} Read package.json 25 lines read
+
+ / Search "src/**/*" 7 files found
+
+ / Search ""slug": "terrifier"|"slug": "sienna-shaw"|"slug": "hartshorne-mall"" (src\… 3 lines found
+
+ {} Read src\data\survivors.json L1175:1200 (22 lines read)
+
+ {} Read src\data\maps.json L1101:1130 (16 lines read)
+
+ {} Read src\data\killers.json L2587:2630 (44 lines read)
+
+ / Search "tests/**/*" No matches found
+
+Ya confirmé los datos de Terrifier, Sienna Shaw y Hartshorne Mall. Ahora voy a crear los archivos de base y portada como una sola unidad visual coherente.
+
+ ● Edit  Create src/styles/global.css (+170)  Create src/layouts/Base.astro (+47)  Create src/scrip…
+
+ ● Edit  Edit src/styles/global.css (+13)  Create src/components/Nav.astro (+80)  Create src/compon…
+
+ ● Edit  Create src/components/Portrait.astro (+19)  Create src/components/TierBadge.astro (+18)  C…
+
+ ● Edit  Create src/components/HeroArt.astro (+63)  Create src/pages/index.astro (+215)
+
+ ● Edit  Create src/pages/404.astro (+19)  Create public/favicon.svg (+8)  Create public/og.svg (+1…
+
+ ● Edit  Edit src/scripts/motion.js (+9)
+
+ ● Edit  Edit src/scripts/motion.js (+17 -22)  Edit src/pages/index.astro (-1)
+
+ ● Read src\pages\index.astro L75:95 (21 lines read)
+
+ ● Edit  Edit src/pages/index.astro (+1)
+
+ ● Read src\pages\index.astro L55:115 (61 lines read)
+
+Creé la fundación visual y la portada:
+
+- `src/styles/global.css`
+- `src/layouts/Base.astro`
+- `src/scripts/motion.js`
+- Componentes en `src/components/`
+- `src/pages/index.astro`
+- `src/pages/404.astro`
+- `public/favicon.svg`
+- `public/og.svg`
+
+**Supuesto:** las rutas de secciones enlazadas serán completadas por las tareas posteriores.
+
+
+
+Changes    +971 -23
+AI Credits 2.77 (3m 9s)
+Tokens     ↑ 548.6k (400.9k cached) • ↓ 17.8k (1.3k reasoning)
+Resume     copilot --resume=014fa6a6-64c7-4f12-8373-ac2371f9ecc6

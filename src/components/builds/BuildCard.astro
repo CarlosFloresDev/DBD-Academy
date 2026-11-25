@@ -1,0 +1,50 @@
+---
+import perks from '../../data/perks.json';
+import PerkIcon from '../PerkIcon.astro';
+
+interface Build {
+  id: string;
+  lado: 'killer' | 'survivor';
+  nombre: string;
+  killer: string | null;
+  arquetipo: string;
+  perks: string[];
+  dificultad: number;
+}
+
+interface Props { build: Build }
+const { build } = Astro.props;
+const icons = build.perks.map((name) => perks.find((perk) => perk.name === name));
+---
+
+<article class="build-card card" data-lado={build.lado} data-arquetipo={build.arquetipo} data-killer={build.killer ?? ''}>
+  <a class="build-link" href={`/builds/${build.id}/`} aria-label={`Ver build: ${build.nombre}`}>
+    <div class="build-icons" aria-hidden="true">
+      {icons.map((perk) => perk && <PerkIcon perk={perk} size={38} />)}
+    </div>
+    <div class="build-heading">
+      <div>
+        <p class="eyebrow">{build.arquetipo}</p>
+        <h3>{build.nombre}</h3>
+      </div>
+      <span class="arrow" aria-hidden="true">↗</span>
+    </div>
+    <div class="build-meta">
+      <span>{build.lado === 'killer' ? 'Killer' : 'Survivor'}</span>
+      <span class="difficulty" aria-label={`Dificultad ${build.dificultad} de 3`}>
+        {'●'.repeat(build.dificultad)}{'○'.repeat(3 - build.dificultad)}
+      </span>
+    </div>
+  </a>
+</article>
+
+<style>
+  .build-card { min-width: 0; }
+  .build-link { display: flex; min-height: 220px; flex-direction: column; padding: 18px; }
+  .build-icons { display: flex; min-height: 46px; gap: 7px; align-items: center; }
+  .build-heading { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; margin-top: 20px; }
+  .build-heading h3 { margin: 6px 0 0; font: 700 1.55rem/1 "Barlow Condensed", sans-serif; letter-spacing: .02em; text-transform: uppercase; }
+  .arrow { color: var(--blood-2); font: 700 1.4rem "JetBrains Mono Variable", monospace; }
+  .build-meta { display: flex; justify-content: space-between; gap: 8px; margin-top: auto; padding-top: 18px; color: var(--muted); font-size: .75rem; }
+  .difficulty { color: var(--amber); font-family: "JetBrains Mono Variable", monospace; letter-spacing: .12em; }
+</style>

@@ -1,0 +1,39 @@
+---
+const cols = [
+  {title:'Aprende', links:[['Killers','/killers/'],['Mapas','/mapas/'],['Survivors','/survivors/']]},
+  {title:'Herramientas', links:[['Perks','/perks/'],['Builds','/builds/'],['Reloj','/reloj/']]},
+  {title:'Formato', links:[['Competitivo','/competitivo/'],['Inicio','/']]},
+];
+---
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <a class="footer-brand" href="/">DBD <b>ACADEMY</b></a>
+      <p>Proyecto de fans, no afiliado a Behaviour Interactive.</p>
+      <p>Datos: wiki oficial de DBD y DBD Arena.</p>
+    </div>
+    {cols.map((col) => (
+      <div>
+        <h2>{col.title}</h2>
+        {col.links.map(([label,href]) => <a href={href}>{label}</a>)}
+      </div>
+    ))}
+  </div>
+  <div class="container footer-meta">
+    <span>Parche 10.3.0 - Terrifier (24 nov 2026)</span>
+  </div>
+</footer>
+
+<style>
+ footer { margin-top:96px; border-top:1px solid var(--line); background:var(--bg-2); }
+ .footer-grid { display:grid; grid-template-columns:2fr repeat(3,1fr); gap:24px; padding-block:40px; }
+ .footer-brand { display:inline-block; margin-bottom:16px; font-family:"Barlow Condensed",sans-serif; font-size:1.35rem; font-weight:800; letter-spacing:.08em; }
+ .footer-brand b { color:var(--blood-2); }
+ footer p { max-width:420px; margin:4px 0; color:var(--muted); font-size:.78rem; }
+ footer h2 { margin:0 0 12px; color:var(--text); font-family:"Barlow Condensed",sans-serif; font-size:.9rem; letter-spacing:.08em; text-transform:uppercase; }
+ footer div div > a:not(.footer-brand) { display:block; width:max-content; margin:8px 0; color:var(--muted); font-size:.86rem; }
+ footer a:hover { color:var(--text); }
+ .footer-meta { border-top:1px solid var(--line); padding-block:16px; color:var(--muted); font-family:"JetBrains Mono Variable",monospace; font-size:.68rem; }
+ @media (max-width:700px) { .footer-grid { grid-template-columns:1fr 1fr; } .footer-grid > div:first-child { grid-column:1/-1; } }
+</style>

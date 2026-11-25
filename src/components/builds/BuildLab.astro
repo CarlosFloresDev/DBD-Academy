@@ -1,0 +1,271 @@
+---
+import perks from '../../data/perks.json';
+import compRules from '../../data/comp-rules.json';
+
+const banned = {
+  killer: compRules.perksKillerBaneados,
+  survivor: compRules.perksSurvivorBaneados
+};
+const normalized = (name: string) => name.toLocaleLowerCase('en').replace('favour', 'favor');
+const revealsAuras = (tags: string[], desc: string) =>
+  tags.some((tag) => tag.toLocaleLowerCase('en').includes('aura')) ||
+  /(?:aura.{0,120}(?:reveal|see|shown|visible)|(?:reveal|revealed|see|show).{0,120}aura)/i.test(desc);
+---
+
+<section class="lab" aria-labelledby="lab-title">
+  <div class="lab-heading">
+    <p class="eyebrow">Herramienta interactiva</p>
+    <h2 class="display" id="lab-title">Laboratorio de builds</h2>
+    <p>Prueba hasta cuatro perks del mismo bando. Las reglas 1v1 mostradas son el estándar comunitario de DBD Arena, no oficial.</p>
+  </div>
+  <div class="lab-controls">
+    <label for="lab-side">Bando</label>
+    <select id="lab-side">
+      <option value="killer">Killer</option>
+      <option value="survivor">Survivor</option>
+    </select>
+    <label for="lab-search">Buscar perk</label>
+    <input id="lab-search" type="search" autocomplete="off" placeholder="Escribe el nombre de una perk" aria-describedby="lab-help" />
+    <span id="lab-help" class="help">Selecciona un resultado para añadirlo. Máximo cuatro.</span>
+    <div id="lab-results" class="results" role="group" aria-label="Resultados de búsqueda de perks">
+      {perks.map((perk) => (
+        <button
+          type="button"
+          class="result"
+          hidden
+          data-side={perk.side}
+          data-name={perk.name}
+          data-slug={perk.slug}
+          data-icon={perk.icon ?? ''}
+          data-tags={perk.tags.join('|')}
+          data-aura={revealsAuras(perk.tags, perk.desc) ? 'true' : 'false'}
+          data-banned={(banned[perk.side as 'killer' | 'survivor'] as string[]).some((name) => normalized(name) === normalized(perk.name)) ? 'true' : 'false'}
+        >{perk.name}</button>
+      ))}
+    </div>
+  </div>
+
+  <div class="lab-build">
+    <h3>Tu selección <span id="lab-count" class="mono">0 / 4</span></h3>
+    <div id="lab-slots" class="slots" aria-label="Perks seleccionadas">
+      {[0, 1, 2, 3].map((slot) => <div class="slot" data-slot={slot}><span class="empty-diamond" aria-hidden="true"></span><span class="slot-label">Vacío</span></div>)}
+    </div>
+    <div id="lab-alerts" class="alerts" aria-live="polite" aria-atomic="true"></div>
+    <div class="tag-summary"><strong>Tags</strong><span id="lab-tags">Sin tags todavía.</span></div>
+    <div class="lab-actions">
+      <button class="btn btn-primary" id="lab-copy" type="button">Copiar</button>
+      <a class="btn btn-secondary" id="lab-share" href="#lab=">Compartir enlace</a>
+      <button class="btn btn-secondary" id="lab-clear" type="button">Vaciar</button>
+    </div>
+  </div>
+  <p id="lab-status" class="status" aria-live="polite"></p>
+</section>
+
+<script>
+  const sideInput = document.querySelector<HTMLSelectElement>('#lab-side');
+  const searchInput = document.querySelector<HTMLInputElement>('#lab-search');
+  const resultButtons = [...document.querySelectorAll<HTMLButtonElement>('.result')];
+  const slots = [...document.querySelectorAll<HTMLElement>('.slot')];
+  const count = document.querySelector<HTMLElement>('#lab-count');
+  const alerts = document.querySelector<HTMLElement>('#lab-alerts');
+  const tagsOutput = document.querySelector<HTMLElement>('#lab-tags');
+  const status = document.querySelector<HTMLElement>('#lab-status');
+  const share = document.querySelector<HTMLAnchorElement>('#lab-share');
+  const selected: string[] = [];
+
+  const selectedData = () => selected.map((slug) => resultButtons.find((button) => button.dataset.slug === slug)).filter((button): button is HTMLButtonElement => Boolean(button));
+  const updateResults = () => {
+    const side = sideInput?.value ?? 'killer';
+    const query = searchInput?.value.trim().toLocaleLowerCase('es') ?? '';
+    resultButtons.forEach((button) => {
+      button.hidden = !query || button.dataset.side !== side ||
+        !button.dataset.name?.toLocaleLowerCase('es').includes(query);
+    });
+  };
+  const updateHash = () => {
+    const hash = `#lab=${selected.join(',')}`;
+    history.replaceState(null, '', `${location.pathname}${location.search}${hash}`);
+    if (share) share.href = hash;
+  };
+  const draw = () => {
+    const data = selectedData();
+    slots.forEach((slot, index) => {
+      const item = data[index];
+      slot.replaceChildren();
+      if (!item) {
+        const diamond = document.createElement('span');
+        diamond.className = 'empty-diamond';
+        diamond.setAttribute('aria-hidden', 'true');
+        const label = document.createElement('span');
+        label.className = 'slot-label';
+        label.textContent = 'Vacío';
+        slot.append(diamond, label);
+        slot.classList.remove('filled');
+        return;
+      }
+
+      const icon = document.createElement('span');
+      icon.className = 'perk-diamond';
+      icon.setAttribute('aria-hidden', 'true');
+      if (item.dataset.icon) {
+        const image = document.createElement('img');
+        image.src = item.dataset.icon;
+        image.alt = '';
+        image.width = 42;
+        image.height = 42;
+        image.loading = 'lazy';
+        icon.append(image);
+      } else {
+        icon.textContent = item.dataset.name?.trim().charAt(0).toUpperCase() ?? 'P';
+      }
+      const label = document.createElement('span');
+      label.className = 'slot-label';
+      label.textContent = item.dataset.name ?? '';
+      const remove = document.createElement('button');
+      remove.type = 'button';
+      remove.className = 'remove';
+      remove.textContent = 'Quitar';
+      remove.setAttribute('aria-label', `Quitar ${item.dataset.name}`);
+      remove.addEventListener('click', () => {
+        selected.splice(selected.indexOf(item.dataset.slug ?? ''), 1);
+        draw();
+      });
+      slot.append(icon, label, remove);
+      slot.classList.add('filled');
+    });
+    if (count) count.textContent = `${data.length} / 4`;
+    if (alerts) {
+      const warnings: string[] = [];
+      const names = data.map((item) => item.dataset.name ?? '');
+      const repeated = [...new Set(names.filter((name, index) => names.indexOf(name) !== index))];
+      if (repeated.length) warnings.push(`Perk repetida: ${repeated.join(', ')}.`);
+      const bannedNames = data.filter((item) => item.dataset.banned === 'true').map((item) => item.dataset.name);
+      if (bannedNames.length) warnings.push(`Baneada en 1v1: ${bannedNames.join(', ')}.`);
+      const auraException = sideInput?.value === 'survivor' && data.length === 2 &&
+        names.includes('Windows of Opportunity') && names.includes('Five Moves Ahead');
+      const auraNames = auraException ? [] : data.filter((item) => item.dataset.aura === 'true').map((item) => item.dataset.name);
+      if (auraNames.length) warnings.push(`Revela auras, no permitido en 1v1: ${auraNames.join(', ')}.`);
+      const exhausted = data.filter((item) => (item.dataset.tags ?? '').split('|').includes('Exhausted'));
+      if (exhausted.length > 1) warnings.push(`Hay ${exhausted.length} perks de agotamiento; el formato 1v1 permite como máximo una.`);
+      alerts.replaceChildren(...warnings.map((message) => {
+        const warning = document.createElement('p');
+        warning.className = 'warning';
+        warning.textContent = message;
+        return warning;
+      }));
+      if (!warnings.length) alerts.textContent = data.length ? 'Sin conflictos detectados en la selección.' : 'Añade perks para revisar restricciones.';
+    }
+    if (tagsOutput) {
+      const tags = [...new Set(data.flatMap((item) => (item.dataset.tags ?? '').split('|').filter(Boolean)))].sort();
+      tagsOutput.textContent = tags.length ? tags.join(' · ') : 'Sin tags todavía.';
+    }
+    updateResults();
+    updateHash();
+  };
+
+  const addResult = (button: HTMLButtonElement) => {
+    if (selected.length >= 4) {
+      if (status) status.textContent = 'La build ya tiene cuatro perks. Quita una para añadir otra.';
+      return;
+    }
+    selected.push(button.dataset.slug ?? '');
+    if (searchInput) searchInput.value = '';
+    if (status) status.textContent = `${button.dataset.name} añadida.`;
+    draw();
+  };
+
+  resultButtons.forEach((button) => button.addEventListener('click', () => addResult(button)));
+  searchInput?.addEventListener('input', updateResults);
+  searchInput?.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      const match = resultButtons.find((button) => !button.hidden);
+      if (match) addResult(match);
+    }
+  });
+  sideInput?.addEventListener('change', () => {
+    selected.splice(0, selected.length);
+    if (status) status.textContent = 'Se vació la selección al cambiar de bando.';
+    draw();
+  });
+  document.querySelector('#lab-clear')?.addEventListener('click', () => {
+    selected.splice(0, selected.length);
+    if (status) status.textContent = 'Selección vaciada.';
+    draw();
+  });
+  document.querySelector('#lab-copy')?.addEventListener('click', async () => {
+    const names = selectedData().map((item) => item.dataset.name).join('\n');
+    if (!names) {
+      if (status) status.textContent = 'Añade al menos una perk antes de copiar.';
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(names);
+      if (status) status.textContent = 'Nombres de perks copiados.';
+    } catch {
+      if (status) status.textContent = 'No se pudo acceder al portapapeles. Selecciona las perks para copiarlas manualmente.';
+    }
+  });
+  share?.addEventListener('click', async (event) => {
+    event.preventDefault();
+    updateHash();
+    const url = `${location.origin}${location.pathname}${location.search}${location.hash}`;
+    try {
+      await navigator.clipboard.writeText(url);
+      if (status) status.textContent = 'Enlace de la build copiado.';
+    } catch {
+      if (status) status.textContent = 'El enlace está en la barra de direcciones; cópialo para compartirlo.';
+    }
+  });
+
+  const hash = new URLSearchParams(location.hash.slice(1));
+  const fromHash = hash.get('lab');
+  if (fromHash) {
+    const firstSharedPerk = resultButtons.find((button) => button.dataset.slug === fromHash.split(',')[0]);
+    if (firstSharedPerk && sideInput) sideInput.value = firstSharedPerk.dataset.side ?? 'killer';
+    const valid = fromHash.split(',').filter((slug) =>
+      resultButtons.some((button) => button.dataset.slug === slug && button.dataset.side === sideInput?.value)
+    ).slice(0, 4);
+    selected.push(...valid);
+  }
+  draw();
+</script>
+
+<style>
+  .lab { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 28px 48px; border-top: 1px solid var(--blood); padding-top: 28px; }
+  .lab-heading h2 { margin: 10px 0 16px; font-size: clamp(2.4rem, 6vw, 4.5rem); }
+  .lab-heading > p:last-child { max-width: 430px; color: var(--muted); }
+  .lab-controls { display: grid; align-content: start; gap: 8px; }
+  label { margin-top: 8px; color: var(--text); font-size: .8rem; font-weight: 700; }
+  select, input { width: 100%; min-height: 46px; border: 1px solid var(--line); border-radius: var(--r); padding: 10px 12px; background: var(--bg-2); color: var(--text); }
+  .help { color: var(--muted); font-size: .75rem; }
+  .results { display: grid; max-height: 220px; overflow-y: auto; border: 1px solid var(--line); background: var(--bg-2); }
+  .result { min-height: 40px; border: 0; border-bottom: 1px solid var(--line); padding: 8px 12px; background: transparent; color: var(--text); text-align: left; cursor: pointer; }
+  .result:hover, .result:focus-visible { background: var(--panel); color: var(--amber); }
+  .result[hidden] { display: none; }
+  .lab-build { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 20px; }
+  .lab-build h3 { display: flex; justify-content: space-between; gap: 12px; margin: 0 0 16px; font: 700 1.5rem "Barlow Condensed", sans-serif; letter-spacing: .04em; text-transform: uppercase; }
+  #lab-count { color: var(--amber); font-size: .85rem; }
+  .slots { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+  .slot { display: flex; min-width: 0; min-height: 104px; flex-direction: column; align-items: center; justify-content: center; gap: 9px; border: 1px dashed var(--line); border-radius: var(--r); padding: 10px 6px; color: var(--muted); text-align: center; }
+  .slot.filled { border-style: solid; border-color: var(--blood); color: var(--text); animation: slot-in 240ms ease-out both; }
+  .empty-diamond, .perk-diamond { display: grid; width: 42px; height: 42px; flex: none; place-items: center; transform: rotate(45deg); border: 2px solid var(--line); background: var(--panel); }
+  .perk-diamond { border-color: var(--blood); color: var(--text); font: 700 1rem "Barlow Condensed", sans-serif; }
+  .perk-diamond img { width: 100%; height: 100%; transform: rotate(-45deg) scale(1.35); object-fit: cover; }
+  .slot-label { max-width: 100%; overflow-wrap: anywhere; font-size: .72rem; }
+  .remove { border: 0; padding: 2px 6px; background: none; color: var(--muted); font-size: .68rem; text-decoration: underline; cursor: pointer; }
+  .remove:hover { color: var(--blood-2); }
+  .alerts { min-height: 28px; margin-top: 14px; color: var(--ok); font-size: .8rem; }
+  .alerts p { margin: 4px 0; color: var(--amber); }
+  .tag-summary { display: flex; flex-wrap: wrap; gap: 10px; border-top: 1px solid var(--line); padding-top: 12px; color: var(--muted); font-size: .78rem; }
+  .tag-summary strong { color: var(--text); text-transform: uppercase; }
+  .lab-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+  .status { min-height: 1.5em; grid-column: 1 / -1; margin: -20px 0 0; color: var(--amber); font-size: .78rem; }
+  @keyframes slot-in { from { opacity: .4; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 700px) {
+    .lab { grid-template-columns: 1fr; gap: 20px; }
+    .lab-build, .status { grid-column: 1; }
+    .slots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (prefers-reduced-motion: reduce) { .slot.filled { animation: none; } }
+</style>

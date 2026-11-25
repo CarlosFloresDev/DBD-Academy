@@ -1,0 +1,341 @@
+---
+import Base from '../../layouts/Base.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import MapThumb from '../../components/MapThumb.astro';
+import MapCard from '../../components/mapas/MapCard.astro';
+import StatBar from '../../components/StatBar.astro';
+import maps from '../../data/maps.json';
+import realms from '../../data/realms.json';
+import killers from '../../data/killers.json';
+
+const format = new Intl.NumberFormat('es-PE');
+const norm = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('es');
+const normKiller = (text: string) => norm(text).replace(/^the\s+/, '').trim();
+
+const withArea = maps.filter((map) => map.areaM2 !== null);
+const maxArea = Math.max(...withArea.map((map) => map.areaM2 as number));
+const poolMaps = maps.filter((map) => map.comp !== null);
+const killerByName = new Map(killers.map((killer) => [normKiller(killer.name), killer]));
+const pool = poolMaps.map((map) => ({
+  map,
+  killers: (map.comp?.killers1v1 ?? []).map((name) => killerByName.get(normKiller(name)) ?? null),
+}));
+const byArea = [...withArea].sort((a, b) => (a.areaM2 as number) - (b.areaM2 as number));
+const smallest = byArea.slice(0, 5);
+const largest = [...byArea].reverse().slice(0, 5);
+const noscriptCss = [...new Set(withArea.map((map) => `${((map.areaM2 as number) / maxArea) * 100}%`))]
+  .map((width) => `.stat-bar-fill[data-width="${width}"]{width:${width} !important}`)
+  .join('');
+const groups = realms
+  .map((realm) => ({ realm, maps: maps.filter((map) => map.realmId === realm.id) }))
+  .filter((group) => group.maps.length > 0);
+const realmCount = realms.length;
+---
+
+<Base
+  title="Mapas"
+  description={`Los ${maps.length} mapas de Dead by Daylight medidos en tiles y metros cuadrados, con el pool competitivo 1v1 y comparativas de tamaño.`}
+  active="mapas"
+>
+  <section class="hero container">
+    <div class="hero-copy">
+      <p class="eyebrow">Sala de análisis / Mapas</p>
+      <h1 class="display">MAPAS<br /><span>MEDIDOS</span></h1>
+      <p class="hero-lede">Cada mapa, su tamaño real en tiles de 8 × 8 m y su superficie. Sin estimaciones: los números del generador de mapas.</p>
+      <div class="hero-figures">
+        <div class="stat"><strong data-count={maps.length}>{maps.length}</strong><span>Mapas</span></div>
+        <div class="stat"><strong data-count={realmCount}>{realmCount}</strong><span>Reinos</span></div>
+        <div class="stat"><strong data-count={poolMaps.length}>{poolMaps.length}</strong><span>Pool 1v1</span></div>
+      </div>
+    </div>
+    <div class="hero-aside" data-reveal>
+      <span class="aside-label">Un tile</span>
+      <span class="aside-number mono">8 × 8 m</span>
+      <span class="aside-note">La unidad con la que se construyen todos los mapas. Un tile ocupa 64 m².</span>
+      <a class="btn btn-secondary" href="#explorador">Explorar mapas</a>
+    </div>
+  </section>
+
+  <section class="pool container" aria-labelledby="pool-title" data-reveal>
+    <header class="pool-head">
+      <div>
+        <p class="eyebrow">Estándar comunitario</p>
+        <h2 class="display" id="pool-title">POOL COMPETITIVO 1V1</h2>
+      </div>
+      <p>{poolMaps.length} mapas fijos para duelo de persecución. Cada uno con los killers que lo usan. Fuente: DBD Arena, estándar comunitario, no oficial.</p>
+    </header>
+    <div class="pool-grid">
+      {pool.map(({ map, killers: poolKillers }) => (
+        <article class="pool-card">
+          <a href={`/mapas/${map.slug}/`} aria-label={`Ver ficha del mapa ${map.name}`}>
+            <MapThumb map={map} />
+          </a>
+          <div class="pool-card-body">
+            <h3><a href={`/mapas/${map.slug}/`}>{map.name}</a></h3>
+            <p class="mono pool-size">{map.sizeTiles === null ? 'Tamaño no publicado' : `${format.format(map.sizeTiles)} tiles`}</p>
+            <ul class="killer-list">
+              {poolKillers.map((killer, index) => (
+                <li>
+                  {killer ? (
+                    <a href={`/killers/${killer.slug}/`}>{killer.name}</a>
+                  ) : (
+                    <span>{map.comp?.killers1v1[index] ?? 'Killer'}</span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="explorer container" id="explorador" aria-label="Explorador de mapas">
+    <SectionHead
+      eyebrow="Explorador"
+      title="TODOS LOS MAPAS"
+      description={`Filtra por ${realmCount} reinos, busca por nombre y ordena por superficie. Los mapas sin tamaño publicado van siempre al final.`}
+    />
+    <div class="filters">
+      <div class="search-field">
+        <label for="map-search">Buscar mapa o reino</label>
+        <input id="map-search" type="search" placeholder="Nombre del mapa, código o reino" autocomplete="off" />
+      </div>
+      <div class="sort-field">
+        <label for="map-order">Ordenar</label>
+        <select id="map-order">
+          <option value="realm">Por reino</option>
+          <option value="name">Nombre A-Z</option>
+          <option value="desc">Mayor superficie</option>
+          <option value="asc">Menor superficie</option>
+        </select>
+      </div>
+      <p class="counter mono" id="map-counter" aria-live="polite">{maps.length} mapas visibles de {maps.length}</p>
+    </div>
+    <div class="realm-chips" role="group" aria-label="Filtrar mapas por reino">
+      <button class="realm-chip" type="button" data-realm="todos" aria-pressed="true">Todos</button>
+      {realms.map((realm) => (
+        <button class="realm-chip" type="button" data-realm={realm.slug} aria-pressed="false">{realm.name}</button>
+      ))}
+    </div>
+    <p class="empty mono" id="map-empty" hidden>No hay mapas con estos filtros. Prueba otro nombre o reino.</p>
+    <div class="realm-groups" id="map-groups">
+      {groups.map(({ realm, maps: realmMaps }) => (
+        <section class="realm-group" data-group={realm.slug} aria-labelledby={`realm-${realm.slug}`}>
+          <header class="realm-head" style={`--realm:${realm.color || 'var(--line)'}`}>
+            <h3 id={`realm-${realm.slug}`}>{realm.name}</h3>
+            <p>{realm.location} <span class="mono">{realmMaps.length} mapas</span></p>
+          </header>
+          <div class="map-grid">
+            {realmMaps.map((map) => (
+              <div
+                class="map-item"
+                data-name={norm(`${map.name} ${map.codeName}`)}
+                data-realm={realm.slug}
+                data-realm-name={norm(realm.name)}
+                data-size={map.sizeTiles ?? '-1'}
+              >
+                <MapCard
+                  map={map}
+                  maxArea={maxArea}
+                  realmColor={realm.color}
+                  isNew={map.slug === 'hartshorne-mall'}
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </section>
+
+  <section class="extremes container" aria-label="Comparativa de tamaños">
+    <SectionHead
+      eyebrow="Comparativa"
+      title="PEQUEÑOS VS GRANDES"
+      description="Los cinco extremos de la superficie publicada. La barra mide cada área frente al mapa más grande de la lista."
+    />
+    <div class="extreme-grid">
+      <div class="extreme-col">
+        <h3>Más pequeños</h3>
+        <ol>
+          {smallest.map((map) => (
+            <li class="extreme-row">
+              <div class="extreme-top">
+                <a href={`/mapas/${map.slug}/`}>{map.name}</a>
+                <span class="mono">{format.format(map.areaM2 as number)} m²</span>
+              </div>
+              <StatBar label="Área relativa" value={((map.areaM2 as number) / maxArea) * 100} max={100} suffix="%" />
+            </li>
+          ))}
+        </ol>
+      </div>
+      <div class="extreme-col">
+        <h3>Más grandes</h3>
+        <ol>
+          {largest.map((map) => (
+            <li class="extreme-row">
+              <div class="extreme-top">
+                <a href={`/mapas/${map.slug}/`}>{map.name}</a>
+                <span class="mono">{format.format(map.areaM2 as number)} m²</span>
+              </div>
+              <StatBar label="Área relativa" value={((map.areaM2 as number) / maxArea) * 100} max={100} suffix="%" />
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <noscript set:html={`<style>${noscriptCss}</style>`}></noscript>
+  <script>
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll<HTMLElement>('.stat-bar-fill').forEach((bar) => {
+        bar.style.width = bar.dataset.width || '0%';
+      });
+    }
+
+    const root = document.querySelector<HTMLElement>('#explorador');
+    if (root) {
+      const cards = Array.from(root.querySelectorAll<HTMLElement>('.map-item'));
+      const groups = Array.from(root.querySelectorAll<HTMLElement>('.realm-group'));
+      const search = root.querySelector<HTMLInputElement>('#map-search');
+      const order = root.querySelector<HTMLSelectElement>('#map-order');
+      const counter = root.querySelector<HTMLElement>('#map-counter');
+      const empty = root.querySelector<HTMLElement>('#map-empty');
+      const chips = Array.from(root.querySelectorAll<HTMLButtonElement>('.realm-chip'));
+      const normalize = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('es');
+      const state = { query: '', realm: 'todos', order: 'realm' };
+      let frame = 0;
+
+      const apply = () => {
+        let visible = 0;
+        for (const card of cards) {
+          const matchesQuery = card.dataset.name?.includes(state.query) || card.dataset.realmName?.includes(state.query);
+          const matchesRealm = state.realm === 'todos' || card.dataset.realm === state.realm;
+          card.hidden = !(matchesQuery && matchesRealm);
+          if (!card.hidden) visible += 1;
+        }
+        for (const group of groups) {
+          const shown = Array.from(group.querySelectorAll<HTMLElement>('.map-item')).filter((card) => !card.hidden).length;
+          group.hidden = shown === 0;
+          if (state.order === 'realm') continue;
+          const grid = group.querySelector<HTMLElement>('.map-grid');
+          if (!grid) continue;
+          const sorted = Array.from(grid.querySelectorAll<HTMLElement>('.map-item')).sort((a, b) => {
+            const nameA = a.dataset.name || '';
+            const nameB = b.dataset.name || '';
+            if (state.order === 'name') return nameA.localeCompare(nameB, 'es');
+            const sizeA = Number(a.dataset.size);
+            const sizeB = Number(b.dataset.size);
+            if (sizeA < 0 && sizeB < 0) return 0;
+            if (sizeA < 0) return 1;
+            if (sizeB < 0) return -1;
+            return state.order === 'asc' ? sizeA - sizeB : sizeB - sizeA;
+          });
+          sorted.forEach((card) => grid.appendChild(card));
+        }
+        if (counter) counter.textContent = `${visible} mapas visibles de ${cards.length}`;
+        if (empty) empty.hidden = visible !== 0;
+      };
+
+      const schedule = () => {
+        cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(apply);
+      };
+
+      if (search) {
+        search.addEventListener('input', () => {
+          state.query = normalize(search.value.trim());
+          schedule();
+        });
+      }
+      if (order) {
+        order.addEventListener('change', () => {
+          state.order = order.value;
+          schedule();
+        });
+      }
+      chips.forEach((chip) => {
+        chip.addEventListener('click', () => {
+          state.realm = chip.dataset.realm || 'todos';
+          chips.forEach((other) => other.setAttribute('aria-pressed', String(other === chip)));
+          schedule();
+        });
+      });
+    }
+  </script>
+  <style>
+    .hero { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, .8fr); gap: 40px; align-items: end; padding: 148px 0 96px; }
+    .hero-copy { min-width: 0; }
+    h1 { margin: 12px 0 24px; font-size: clamp(4rem, 12vw, 10rem); }
+    h1 span { color: var(--blood-2); }
+    .hero-lede { max-width: 52ch; margin: 0; color: var(--muted); font-size: clamp(.95rem, 1.5vw, 1.1rem); }
+    .hero-figures { display: flex; flex-wrap: wrap; gap: 40px; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); }
+    .hero-aside { display: grid; gap: 12px; min-width: 0; padding: 24px; border: 1px solid var(--line); border-left: 2px solid var(--amber); background: var(--panel); }
+    .aside-label { color: var(--muted); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; }
+    .aside-number { color: var(--amber); font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1; }
+    .aside-note { margin: 0; color: var(--muted); font-size: .82rem; }
+    .hero-aside .btn { margin-top: 12px; }
+
+    .pool { padding: 40px 0 96px; border-top: 1px solid var(--line); }
+    .pool-head { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, .9fr); gap: 40px; align-items: end; margin-bottom: 32px; }
+    .pool-head h2 { margin: 12px 0 0; font-size: clamp(2.4rem, 6vw, 5rem); }
+    .pool-head > p { margin: 0; color: var(--muted); font-size: .88rem; }
+    .pool-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .pool-card { min-width: 0; border: 1px solid var(--line); background: var(--panel); }
+    .pool-card > a { display: block; }
+    .pool-card-body { padding: 16px; }
+    .pool-card h3 { margin: 0; font-family: "Barlow Condensed", sans-serif; font-size: 1.5rem; font-weight: 800; letter-spacing: .02em; text-transform: uppercase; }
+    .pool-size { margin: 6px 0 12px; color: var(--amber); font-size: .75rem; }
+    .killer-list { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+    .killer-list a, .killer-list span { display: inline-block; border: 1px solid var(--line); padding: 3px 8px; color: var(--ice); font-size: .72rem; }
+    .killer-list a:hover { border-color: var(--blood); color: var(--text); }
+
+    .explorer { padding: 96px 0; border-top: 1px solid var(--line); }
+    .filters { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 220px); gap: 16px; align-items: end; margin-bottom: 16px; }
+    .search-field, .sort-field { display: grid; gap: 8px; min-width: 0; }
+    label { color: var(--muted); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
+    input, select { width: 100%; min-height: 46px; border: 1px solid var(--line); border-radius: var(--r); background: var(--bg-2); padding: 10px 12px; color: var(--text); }
+    input::placeholder { color: var(--muted); }
+    input:hover, select:hover { border-color: var(--blood); }
+    .counter { grid-column: 1 / -1; margin: 0; color: var(--amber); font-size: .74rem; }
+    .realm-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+    .realm-chip { border: 1px solid var(--line); border-radius: 999px; background: transparent; padding: 6px 12px; color: var(--muted); font-size: .74rem; cursor: pointer; }
+    .realm-chip:hover { border-color: var(--blood); color: var(--text); }
+    .realm-chip[aria-pressed="true"] { border-color: var(--blood); background: var(--blood); color: #fff; }
+    .empty { padding: 24px; border: 1px dashed var(--line); color: var(--muted); }
+    .realm-group { margin-top: 64px; scroll-margin-top: 96px; }
+    .realm-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 16px; padding: 12px 0 12px 16px; border-left: 3px solid var(--realm); }
+    .realm-head h3 { margin: 0; font-family: "Barlow Condensed", sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: .02em; text-transform: uppercase; }
+    .realm-head p { margin: 0; color: var(--muted); font-size: .8rem; }
+    .realm-head span { margin-left: 12px; color: var(--ice); }
+    .map-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 1fr)); gap: 16px; }
+    .map-item { min-width: 0; }
+    [hidden] { display: none !important; }
+
+    .extremes { padding: 0 0 96px; }
+    .extreme-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; }
+    .extreme-col h3 { margin: 0 0 24px; padding-bottom: 12px; border-bottom: 1px solid var(--blood); font-family: "Barlow Condensed", sans-serif; font-size: 1.8rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+    .extreme-col ol { display: grid; gap: 24px; margin: 0; padding: 0; list-style: none; counter-reset: extreme; }
+    .extreme-row { min-width: 0; counter-increment: extreme; }
+    .extreme-top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 10px; }
+    .extreme-top::before { content: counter(extreme, decimal-leading-zero); margin-right: 8px; color: var(--blood-2); font-family: "JetBrains Mono Variable", monospace; font-size: .8rem; }
+    .extreme-top a { font-weight: 600; }
+    .extreme-top a:hover { color: var(--blood-2); }
+    .extreme-top span { color: var(--amber); font-size: .78rem; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; gap: 32px; padding: 120px 0 64px; }
+      .pool-head { grid-template-columns: 1fr; gap: 16px; }
+      .pool-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 620px) {
+      .pool-grid, .filters, .extreme-grid { grid-template-columns: 1fr; }
+      .hero-figures { gap: 24px; }
+      .realm-head { flex-direction: column; }
+      .pool { padding-bottom: 64px; }
+      .explorer { padding: 64px 0; }
+    }
+  </style>
+</Base>

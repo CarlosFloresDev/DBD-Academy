@@ -1,0 +1,506 @@
+[0m
+> build · big-pickle
+[0m
+[0m# [0mTodos
+[•] Explorar estructura, componentes compartidos y esquemas de datos
+[ ] Crear MapCard, index de mapas y paginas [slug] (47)
+[ ] Crear SurvivorCard, index de survivors y paginas [slug] (55)
+[ ] Crear index de perks con filtros JS (342)
+[ ] Verificar consistencia y revisar archivos creados
+[0m
+I'll start by exploring the codebase structure and reading the shared components and data files.
+[0m→ [0mRead .
+[0m→ [0mRead src/styles/global.css
+[0m✱ [0mGlob "src/**/*"[90m in . · 23 matches[0m
+[0m→ [0mRead src/layouts/Base.astro
+[0m→ [0mRead src/components/PerkCard.astro
+[0m→ [0mRead src/components/StatBar.astro
+[0m→ [0mRead src/components/MapThumb.astro
+[0m→ [0mRead src/components/PerkIcon.astro
+[0m→ [0mRead src/components/SectionHead.astro
+[0m→ [0mRead src/components/Portrait.astro
+[0m→ [0mRead src/components/Chip.astro
+[0m→ [0mRead astro.config.mjs
+[0m→ [0mRead src/scripts/motion.js
+[0m→ [0mRead src/components/Nav.astro
+[0m→ [0mRead package.json
+[0m→ [0mRead src/data/realms.json[90m [limit=80][0m
+[0m→ [0mRead src/data/maps.json[90m [limit=40][0m
+[0m→ [0mRead src/data/survivors.json[90m [limit=25][0m
+[0m→ [0mRead src/data/perks.json[90m [limit=20][0m
+[0m→ [0mRead src/data/comp-rules.json[90m [limit=120][0m
+[0m✱ [0mGrep "Hartshorne|Sienna|Terrifier|Judgment"[90m in src/data · 19 matches[0m
+[0m✱ [0mGlob "tests/*"[90m in . · 1 match[0m
+[0m→ [0mRead tsconfig.json
+[0m→ [0mRead src/data/realms.json[90m [offset=240, limit=55][0m
+[0m→ [0mRead src/data/killers.json[90m [limit=60][0m
+[0m→ [0mRead src/data/maps.json[90m [offset=1080, limit=40][0m
+[0m→ [0mRead src/data/survivors.json[90m [offset=1170, limit=30][0m
+[0m→ [0mRead tests/data.test.mjs[90m [limit=120][0m
+[0m✱ [0mGrep ""sizeTiles": null|"icon": null|"floors": \[|"comp": null|"landmark": null"[90m in src/data/maps.json · 100 matches[0m
+[0m→ [0mRead src/data/maps.json[90m [offset=626, limit=35][0m
+[0m→ [0mRead src/data/maps.json[90m [offset=800, limit=30][0m
+[0m✱ [0mGrep ""killers1v1""[90m in src/data/maps.json · 6 matches[0m
+[0m→ [0mRead src/data/perks.json[90m [offset=6650, limit=50][0m
+[0m✱ [0mGrep ""chapter": \{"[90m in src/data/survivors.json · 93 matches[0m
+[0m→ [0mRead src/data/maps.json[90m [offset=150, limit=170][0m
+[0m→ [0mSkill "design-taste-frontend"
+[0m→ [0mRead src/data/clock.json[90m [limit=120][0m
+Reading this as: a dark esports analysis reference for competitive Spanish-speaking DBD players, with a dense data-driven editorial language and restrained GSAP reveals.
+
+I'll build the three sections now, starting with the shared map card.
+[0m
+[0m← [0mWrite src/components/mapas/MapCard.astro
+Wrote file successfully.
+[0m
+[0m← [0mWrite src/pages/mapas/index.astro
+Wrote file successfully.
+[0m
+[0m← [0mEdit src/pages/mapas/index.astro
+Index: D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\index.astro
+===================================================================
+--- D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\index.astro
++++ D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\index.astro
+@@ -72,14 +72,14 @@
+ <div class="pool-card-body">
+   <h3><a href={`/mapas/${map.slug}/`}>{map.name}</a></h3>
+   <p class="mono pool-size">{map.sizeTiles === null ? 'Tamaño no publicado' : `${format.format(map.sizeTiles)} tiles`}</p>
+   <ul class="killer-list">
+-    {poolKillers.map((killer) => (
++    {poolKillers.map((killer, index) => (
+       <li>
+         {killer ? (
+           <a href={`/killers/${killer.slug}/`}>{killer.name}</a>
+         ) : (
+-          <span>{map.comp?.killers1v1.find((name) => normKiller(name) !== normKiller(killer?.name ?? '')) ?? 'Killer'}</span>
++          <span>{map.comp?.killers1v1[index] ?? 'Killer'}</span>
+         )}
+       </li>
+     ))}
+   </ul>
+
+[0m
+[0m← [0mEdit src/pages/mapas/index.astro
+Index: D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\index.astro
+===================================================================
+--- D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\index.astro
++++ D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\index.astro
+@@ -147,9 +147,9 @@
+     ))}
+   </div>
+ </section>
+ 
+-<section class="extremes container" aria-labelledby="extremes-title">
++<section class="extremes container" aria-label="Comparativa de tamaños">
+   <SectionHead
+     eyebrow="Comparativa"
+     title="PEQUEÑOS VS GRANDES"
+     description="Los cinco extremos de la superficie publicada. La barra mide cada área frente al mapa más grande de la lista."
+
+[0m
+[0m← [0mEdit src/pages/mapas/index.astro
+Index: D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\index.astro
+===================================================================
+--- D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\index.astro
++++ D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\index.astro
+@@ -154,9 +154,9 @@
+   title="PEQUEÑOS VS GRANDES"
+   description="Los cinco extremos de la superficie publicada. La barra mide cada área frente al mapa más grande de la lista."
+ />
+ <div class="extreme-grid">
+-  <div class="extreme-col" id="extremes-title">
++  <div class="extreme-col">
+     <h3>Más pequeños</h3>
+     <ol>
+       {smallest.map((map) => (
+         <li class="extreme-row">
+
+[0m
+[0m← [0mWrite src/pages/mapas/[slug].astro
+Wrote file successfully.
+[0m
+[0m← [0mEdit src/pages/mapas/[slug].astro
+Index: D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\[slug].astro
+===================================================================
+--- D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\[slug].astro
++++ D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\[slug].astro
+@@ -60,9 +60,9 @@
+     </nav>
+   </div>
+ </section>
+ 
+-<section class="numbers container" aria-labelledby="numbers-title">
++<section class="numbers container" aria-label="Números del mapa">
+   <SectionHead eyebrow="Datos" title="NÚMEROS DEL MAPA" />
+   {published ? (
+     <div class="number-grid" id="numbers-title">
+       <div class="stat">
+
+[0m
+[0m← [0mEdit src/pages/mapas/[slug].astro
+Index: D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\[slug].astro
+===================================================================
+--- D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\[slug].astro
++++ D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\[slug].astro
+@@ -63,15 +63,15 @@
+ 
+ <section class="numbers container" aria-label="Números del mapa">
+   <SectionHead eyebrow="Datos" title="NÚMEROS DEL MAPA" />
+   {published ? (
+-    <div class="number-grid" id="numbers-title">
++    <div class="number-grid">
+       <div class="stat">
+-        <strong data-count={map.sizeTiles}>{format.format(map.sizeTiles as number)}</strong>
++        <strong data-count={map.sizeTiles as number}>{format.format(map.sizeTiles as number)}</strong>
+         <span>Tiles de 8 × 8 m</span>
+       </div>
+       <div class="stat">
+-        <strong data-count={map.areaM2}>{format.format(map.areaM2 as number)}</strong>
++        <strong data-count={map.areaM2 as number}>{format.format(map.areaM2 as number)}</strong>
+         <span>Metros cuadrados</span>
+       </div>
+       <div class="stat">
+         <strong>{format1.format(side as number)}</strong>
+
+[0m
+[0m← [0mEdit src/pages/mapas/[slug].astro
+Index: D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\[slug].astro
+===================================================================
+--- D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\[slug].astro
++++ D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\[slug].astro
+@@ -86,9 +86,9 @@
+         <span>Killer a {format1.format(killerSpeed)} m/s</span>
+       </div>
+     </div>
+   ) : (
+-    <p class="not-published" id="numbers-title">Tamaño no publicado. Este mapa no tiene superficie oficial en la base de datos: no hay tiles, área ni tiempos de cruce fiables.</p>
++    <p class="not-published">Tamaño no publicado. Este mapa no tiene superficie oficial en la base de datos: no hay tiles, área ni tiempos de cruce fiables.</p>
+   )}
+   <p class="formula mono">Lado = √área · Tiempo = lado / velocidad · 1 tile = 8 × 8 m = 64 m²</p>
+ </section>
+ 
+
+[0m
+[0m← [0mWrite src/components/survivors/SurvivorCard.astro
+Wrote file successfully.
+[0m
+[0m← [0mWrite src/pages/survivors/index.astro
+Wrote file successfully.
+[0m
+[0m← [0mWrite src/pages/survivors/[slug].astro
+Wrote file successfully.
+[0m
+[0m← [0mWrite src/pages/perks/index.astro
+Wrote file successfully.
+[0m
+[0m# [0mTodos
+[✓] Explorar estructura, componentes compartidos y esquemas de datos
+[✓] Crear MapCard, index de mapas y paginas [slug] (47)
+[✓] Crear SurvivorCard, index de survivors y paginas [slug] (55)
+[✓] Crear index de perks con filtros JS (342)
+[•] Verificar consistencia y revisar archivos creados
+[0m
+[0m• [0mVerify data assumptions[90m Explore Agent[0m
+[0m✓ [0mVerify data assumptions[90m Explore Agent[0m
+[0m
+[0m← [0mEdit src/pages/survivors/index.astro
+Index: D:\descargas\Proyectos personales\DBD-Academy\src\pages\survivors\index.astro
+===================================================================
+--- D:\descargas\Proyectos personales\DBD-Academy\src\pages\survivors\index.astro
++++ D:\descargas\Proyectos personales\DBD-Academy\src\pages\survivors\index.astro
+@@ -5,9 +5,13 @@
+ import survivors from '../../data/survivors.json';
+ 
+ const format = new Intl.NumberFormat('es-PE');
+ const norm = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('es');
+-const genderLabels: Record<string, string> = { Man: 'Hombre', Woman: 'Mujer' };
++const genderLabel = (gender: string) => gender
++  .replace(/<br\s*\/?>/gi, ' / ')
++  .replace(/Trans Woman/gi, 'Mujer trans')
++  .replace(/\bWoman\b/gi, 'Mujer')
++  .replace(/\bMan\b/gi, 'Hombre');
+ const genders = [...new Set(survivors.map((survivor) => survivor.gender))];
+ const chapterCount = new Set(survivors.map((survivor) => survivor.chapter?.id).filter((id) => id !== undefined)).size;
+ ---
+ 
+
+[0m
+[0m← [0mEdit src/pages/survivors/index.astro
+Index: D:\descargas\Proyectos personales\DBD-Academy\src\pages\survivors\index.astro
+===================================================================
+--- D:\descargas\Proyectos personales\DBD-Academy\src\pages\survivors\index.astro
++++ D:\descargas\Proyectos personales\DBD-Academy\src\pages\survivors\index.astro
+@@ -64,9 +64,9 @@
+ </div>
+ <div class="gender-chips" role="group" aria-label="Filtrar survivors por género">
+   <button class="gender-chip" type="button" data-gender="todos" aria-pressed="true">Todos</button>
+   {genders.map((gender) => (
+-    <button class="gender-chip" type="button" data-gender={gender} aria-pressed="false">{genderLabels[gender] ?? gender}</button>
++    <button class="gender-chip" type="button" data-gender={gender} aria-pressed="false">{genderLabel(gender)}</button>
+   ))}
+ </div>
+ <p class="empty mono" id="survivor-empty" hidden>No hay survivors con estos filtros. Cambia la búsqueda o el género.</p>
+ <div class="survivor-grid" id="survivor-grid">
+
+[0m
+[0m✱ [0mGlob "src/{pages,components}/{mapas,survivors,perks}/**/*"[90m in . · 7 matches[0m
+[0m
+[0m← [0mEdit src/pages/mapas/index.astro
+Index: D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\index.astro
+===================================================================
+--- D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\index.astro
++++ D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\index.astro
+@@ -246,16 +246,20 @@
+   cancelAnimationFrame(frame);
+   frame = requestAnimationFrame(apply);
+ };
+ 
+-search?.addEventListener('input', () => {
+-  state.query = normalize(search.value.trim());
+-  schedule();
+-});
+-order?.addEventListener('change', () => {
+-  state.order = order.value;
+-  schedule();
+-});
++if (search) {
++  search.addEventListener('input', () => {
++    state.query = normalize(search.value.trim());
++    schedule();
++  });
++}
++if (order) {
++  order.addEventListener('change', () => {
++    state.order = order.value;
++    schedule();
++  });
++}
+ chips.forEach((chip) => {
+   chip.addEventListener('click', () => {
+     state.realm = chip.dataset.realm || 'todos';
+     chips.forEach((other) => other.setAttribute('aria-pressed', String(other === chip)));
+
+[0m
+[0m← [0mEdit src/pages/survivors/index.astro
+Index: D:\descargas\Proyectos personales\DBD-Academy\src\pages\survivors\index.astro
+===================================================================
+--- D:\descargas\Proyectos personales\DBD-Academy\src\pages\survivors\index.astro
++++ D:\descargas\Proyectos personales\DBD-Academy\src\pages\survivors\index.astro
+@@ -125,16 +125,20 @@
+   cancelAnimationFrame(frame);
+   frame = requestAnimationFrame(apply);
+ };
+ 
+-search?.addEventListener('input', () => {
+-  state.query = normalize(search.value.trim());
+-  schedule();
+-});
+-order?.addEventListener('change', () => {
+-  state.order = order.value;
+-  schedule();
+-});
++if (search) {
++  search.addEventListener('input', () => {
++    state.query = normalize(search.value.trim());
++    schedule();
++  });
++}
++if (order) {
++  order.addEventListener('change', () => {
++    state.order = order.value;
++    schedule();
++  });
++}
+ chips.forEach((chip) => {
+   chip.addEventListener('click', () => {
+     state.gender = chip.dataset.gender || 'todos';
+     chips.forEach((other) => other.setAttribute('aria-pressed', String(other === chip)));
+
+[0m
+[0m← [0mEdit src/pages/perks/index.astro
+Index: D:\descargas\Proyectos personales\DBD-Academy\src\pages\perks\index.astro
+===================================================================
+--- D:\descargas\Proyectos personales\DBD-Academy\src\pages\perks\index.astro
++++ D:\descargas\Proyectos personales\DBD-Academy\src\pages\perks\index.astro
+@@ -159,20 +159,26 @@
+           target.focus();
+         }
+       });
+     });
+-    search?.addEventListener('input', () => {
+-      state.query = normalize(search.value.trim());
+-      schedule();
+-    });
+-    tagSelect?.addEventListener('change', () => {
+-      state.tag = tagSelect.value;
+-      schedule();
+-    });
+-    hideBanned?.addEventListener('change', () => {
+-      state.hideBanned = hideBanned.checked;
+-      schedule();
+-    });
++    if (search) {
++      search.addEventListener('input', () => {
++        state.query = normalize(search.value.trim());
++        schedule();
++      });
++    }
++    if (tagSelect) {
++      tagSelect.addEventListener('change', () => {
++        state.tag = tagSelect.value;
++        schedule();
++      });
++    }
++    if (hideBanned) {
++      hideBanned.addEventListener('change', () => {
++        state.hideBanned = hideBanned.checked;
++        schedule();
++      });
++    }
+   }
+ </script>
+ <style>
+   .hero { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, .7fr); gap: 40px; align-items: end; padding: 148px 0 96px; }
+
+[0m
+[0m← [0mEdit src/pages/mapas/[slug].astro
+Index: D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\[slug].astro
+===================================================================
+--- D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\[slug].astro
++++ D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\[slug].astro
+@@ -69,9 +69,9 @@
+   <strong data-count={map.sizeTiles as number}>{format.format(map.sizeTiles as number)}</strong>
+   <span>Tiles de 8 × 8 m</span>
+ </div>
+ <div class="stat">
+-  <strong data-count={map.areaM2 as number}>{format.format(map.areaM2 as number)}</strong>
++  <strong>{format.format(map.areaM2 as number)}</strong>
+   <span>Metros cuadrados</span>
+ </div>
+ <div class="stat">
+   <strong>{format1.format(side as number)}</strong>
+
+[0m
+[0m← [0mEdit src/components/mapas/MapCard.astro
+Index: D:\descargas\Proyectos personales\DBD-Academy\src\components\mapas\MapCard.astro
+===================================================================
+--- D:\descargas\Proyectos personales\DBD-Academy\src\components\mapas\MapCard.astro
++++ D:\descargas\Proyectos personales\DBD-Academy\src\components\mapas\MapCard.astro
+@@ -49,13 +49,15 @@
+         <dd class="mono">{map.areaM2 === null ? '—' : `${format.format(map.areaM2)} m²`}</dd>
+       </div>
+     </dl>
+     {map.areaM2 !== null ? (
+-      <StatBar label="Área frente al mayor" value={pct} max={100} suffix="%" />
++      <>
++        <StatBar label="Área frente al mayor" value={pct} max={100} suffix="%" />
++        <span class="pct mono">{pctLabel}% del mapa más grande</span>
++      </>
+     ) : (
+       <p class="no-area">Superficie no publicada</p>
+     )}
+-    <span class="pct mono">{pctLabel}% del mapa más grande</span>
+     <a class="open" href={`/mapas/${map.slug}/`}>Abrir ficha <span aria-hidden="true">→</span></a>
+   </div>
+ </article>
+ 
+
+[0m
+[0m← [0mEdit src/pages/mapas/index.astro
+Index: D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\index.astro
+===================================================================
+--- D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\index.astro
++++ D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\index.astro
+@@ -8,9 +8,8 @@
+ import realms from '../../data/realms.json';
+ import killers from '../../data/killers.json';
+ 
+ const format = new Intl.NumberFormat('es-PE');
+-const formatPct = new Intl.NumberFormat('es-PE', { maximumFractionDigits: 1 });
+ const norm = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('es');
+ const normKiller = (text: string) => norm(text).replace(/^the\s+/, '').trim();
+ 
+ const withArea = maps.filter((map) => map.areaM2 !== null);
+
+[0m
+[0m→ [0mRead src/pages/mapas/index.astro[90m [offset=1, limit=130][0m
+[0m
+[0m← [0mEdit src/pages/mapas/index.astro
+Index: D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\index.astro
+===================================================================
+--- D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\index.astro
++++ D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\index.astro
+@@ -87,9 +87,9 @@
+     ))}
+   </div>
+ </section>
+ 
+-<section class="explorer container" id="explorador" aria-labelledby="explorer-title">
++<section class="explorer container" id="explorador" aria-label="Explorador de mapas">
+   <SectionHead
+     eyebrow="Explorador"
+     title="TODOS LOS MAPAS"
+     description={`Filtra por ${realmCount} reinos, busca por nombre y ordena por superficie. Los mapas sin tamaño publicado van siempre al final.`}
+
+[0m
+[0m• [0mReview Astro file correctness[90m Explore Agent[0m
+[0m✓ [0mReview Astro file correctness[90m Explore Agent[0m
+[0m
+[0m← [0mEdit src/pages/mapas/index.astro
+Index: D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\index.astro
+===================================================================
+--- D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\index.astro
++++ D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\index.astro
+@@ -22,9 +22,11 @@
+ }));
+ const byArea = [...withArea].sort((a, b) => (a.areaM2 as number) - (b.areaM2 as number));
+ const smallest = byArea.slice(0, 5);
+ const largest = [...byArea].reverse().slice(0, 5);
+-const barWidths = [...new Set(withArea.map((map) => `${((map.areaM2 as number) / maxArea) * 100}%`))];
++const noscriptCss = [...new Set(withArea.map((map) => `${((map.areaM2 as number) / maxArea) * 100}%`))]
++  .map((width) => `.stat-bar-fill[data-width="${width}"]{width:${width} !important}`)
++  .join('');
+ const groups = realms
+   .map((realm) => ({ realm, maps: maps.filter((map) => map.realmId === realm.id) }))
+   .filter((group) => group.maps.length > 0);
+ const realmCount = realms.length;
+
+[0m
+[0m← [0mEdit src/pages/mapas/index.astro
+Index: D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\index.astro
+===================================================================
+--- D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\index.astro
++++ D:\descargas\Proyectos personales\DBD-Academy\src\pages\mapas\index.astro
+@@ -186,13 +186,9 @@
+     </div>
+   </div>
+ </section>
+ 
+-<noscript>
+-  <style is:inline>
+-    {barWidths.map((width) => `.stat-bar-fill[data-width="${width}"]{width:${width} !important}`).join('\n')}
+-  </style>
+-</noscript>
++<noscript set:html={`<style>${noscriptCss}</style>`}></noscript>
+ <script>
+   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+     document.querySelectorAll<HTMLElement>('.stat-bar-fill').forEach((bar) => {
+       bar.style.width = bar.dataset.width || '0%';
+
+[0m
+[0m• [0mRecheck noscript fallback[90m Explore Agent[0m
+[0m✓ [0mRecheck noscript fallback[90m Explore Agent[0m
+[0m
+[0m# [0mTodos
+[✓] Explorar estructura, componentes compartidos y esquemas de datos
+[✓] Crear MapCard, index de mapas y paginas [slug] (47)
+[✓] Crear SurvivorCard, index de survivors y paginas [slug] (55)
+[✓] Crear index de perks con filtros JS (342)
+[✓] Verificar consistencia y revisar archivos creados
+[0m
+Archivos creados:
+- `src/components/mapas/MapCard.astro`, `src/pages/mapas/index.astro`, `src/pages/mapas/[slug].astro`
+- `src/components/survivors/SurvivorCard.astro`, `src/pages/survivors/index.astro`, `src/pages/survivors/[slug].astro`
+- `src/pages/perks/index.astro`
+
+Suposiciones: `Base.astro` no acepta `"perks"` en su tipo `active`, así que la página de perks usa un cast interno para resaltar esa entrada del nav sin modificar el componente compartido. Los baneos se comparan por bando, ignorando mayúsculas y la variante Favour/Favor; los géneros con `<br>` en los datos se muestran como texto sanitizado en español. No se ejecutaron build ni tests (sin shell, según el brief).

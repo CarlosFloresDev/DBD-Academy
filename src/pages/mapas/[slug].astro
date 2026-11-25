@@ -1,0 +1,262 @@
+---
+import Base from '../../layouts/Base.astro';
+import MapThumb from '../../components/MapThumb.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import maps from '../../data/maps.json';
+import realms from '../../data/realms.json';
+import killers from '../../data/killers.json';
+import clock from '../../data/clock.json';
+
+export function getStaticPaths() {
+  return maps.map((map, index) => ({ params: { slug: map.slug }, props: { map, index } }));
+}
+
+interface Props { map: typeof maps[number]; index: number }
+const { map, index } = Astro.props as Props;
+
+const format = new Intl.NumberFormat('es-PE');
+const format1 = new Intl.NumberFormat('es-PE', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+const realm = realms.find((entry) => entry.id === map.realmId) ?? null;
+const realmColor = realm?.color || '#c1121f';
+const survivorSpeed = clock.movimiento.sobrevivienteMs;
+const killerSpeed = clock.movimiento.killerBaseMs;
+const published = map.sizeTiles !== null && map.areaM2 !== null;
+const side = map.areaM2 !== null ? Math.sqrt(map.areaM2) : null;
+const survivorCross = side !== null ? side / survivorSpeed : null;
+const killerCross = side !== null ? side / killerSpeed : null;
+const normKiller = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/^the\s+/, '').trim().toLocaleLowerCase('es');
+const killerByName = new Map(killers.map((killer) => [normKiller(killer.name), killer]));
+const compKillers = (map.comp?.killers1v1 ?? []).map((name) => ({
+  label: name,
+  killer: killerByName.get(normKiller(name)) ?? null,
+}));
+const prev = index > 0 ? maps[index - 1] : null;
+const next = index < maps.length - 1 ? maps[index + 1] : null;
+---
+
+<Base
+  title={map.name}
+  description={`Ficha de ${map.name}: ${map.sizeTiles === null ? 'tamaño no publicado' : `${map.sizeTiles} tiles y ${format.format(map.areaM2 as number)} m²`}, reino ${map.realm} y su uso en el pool 1v1.`}
+  active="mapas"
+>
+  <section class="hero container" style={`--realm:${realmColor}`} aria-labelledby="map-title">
+    <div class="hero-media" data-reveal>
+      <MapThumb map={map} />
+      <span class="hero-index mono">MAPA {String(index + 1).padStart(2, '0')} / {maps.length}</span>
+    </div>
+    <div class="hero-copy">
+      <p class="eyebrow">Ficha de mapa / {map.codeName}</p>
+      <h1 class="display" id="map-title">{map.name}</h1>
+      <dl class="hero-meta">
+        <div><dt>Reino</dt><dd>{map.realm}</dd></div>
+        <div><dt>Lanzamiento</dt><dd class="mono">Parche {map.release}</dd></div>
+        <div><dt>Punto de referencia</dt><dd>{map.landmark ?? 'No publicado'}</dd></div>
+      </dl>
+      <p class="hero-note">Archivo de análisis. Los tiempos son recorridos rectos teóricos: no incluyen obstáculos, pallets ni persecución.</p>
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="/mapas/">Mapas</a>
+        <span aria-hidden="true">/</span>
+        <span>{map.name}</span>
+      </nav>
+    </div>
+  </section>
+
+  <section class="numbers container" aria-label="Números del mapa">
+    <SectionHead eyebrow="Datos" title="NÚMEROS DEL MAPA" />
+    {published ? (
+      <div class="number-grid">
+        <div class="stat">
+          <strong data-count={map.sizeTiles as number}>{format.format(map.sizeTiles as number)}</strong>
+          <span>Tiles de 8 × 8 m</span>
+        </div>
+        <div class="stat">
+          <strong>{format.format(map.areaM2 as number)}</strong>
+          <span>Metros cuadrados</span>
+        </div>
+        <div class="stat">
+          <strong>{format1.format(side as number)}</strong>
+          <span>Lado equivalente en m</span>
+        </div>
+        <div class="stat secondary">
+          <strong>{format1.format(survivorCross as number)}<small>s</small></strong>
+          <span>Survivor a {format1.format(survivorSpeed)} m/s</span>
+        </div>
+        <div class="stat secondary">
+          <strong>{format1.format(killerCross as number)}<small>s</small></strong>
+          <span>Killer a {format1.format(killerSpeed)} m/s</span>
+        </div>
+      </div>
+    ) : (
+      <p class="not-published">Tamaño no publicado. Este mapa no tiene superficie oficial en la base de datos: no hay tiles, área ni tiempos de cruce fiables.</p>
+    )}
+    <p class="formula mono">Lado = √área · Tiempo = lado / velocidad · 1 tile = 8 × 8 m = 64 m²</p>
+  </section>
+
+  {(map.variations !== null || map.floors !== null) && (
+    <section class="layouts container" aria-label="Variaciones y pisos del mapa">
+      <SectionHead eyebrow="Estructura" title="VARIACIONES Y PISOS" />
+      <div class="layout-grid">
+        {map.variations !== null && (
+          <div class="table-block">
+            <h3>Variaciones por parche</h3>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th scope="col">Parche</th><th scope="col">Tiles</th><th scope="col">2v8</th></tr></thead>
+                <tbody>
+                  {map.variations.map((variation) => (
+                    <tr>
+                      <td class="mono">{variation.patch}</td>
+                      <td class="mono">{format.format(variation.tiles)}</td>
+                      <td>{variation.twoVsEight ? <span class="tag">Sí, 2v8</span> : 'No'}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+        {map.floors !== null && (
+          <div class="table-block">
+            <h3>Superficie por piso</h3>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th scope="col">Piso</th><th scope="col">Tiles</th><th scope="col">m²</th></tr></thead>
+                <tbody>
+                  {map.floors.map((floor) => (
+                    <tr>
+                      <td>{floor.label}</td>
+                      <td class="mono">{format1.format(floor.tiles)}</td>
+                      <td class="mono">{format1.format(floor.tiles * 64)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p class="table-note">Los mapas con varios pisos no publican un área total única.</p>
+          </div>
+        )}
+      </div>
+    </section>
+  )}
+
+  {map.comp !== null && (
+    <section class="competitive container" aria-labelledby="comp-title" data-reveal>
+      <div class="comp-label">
+        <p class="eyebrow">DBD Arena · no oficial</p>
+        <h2 class="display" id="comp-title">MAPA COMPETITIVO 1V1</h2>
+      </div>
+      <div class="comp-body">
+        <p>{map.comp.note}</p>
+        <ul class="comp-killers">
+          {compKillers.map(({ label, killer }) => (
+            <li>
+              {killer ? (
+                <a href={`/killers/${killer.slug}/`}>
+                  <span class="mono">{label}</span>
+                  <strong>{killer.title}</strong>
+                </a>
+              ) : (
+                <span class="mono">{label}</span>
+              )}
+            </li>
+          ))}
+        </ul>
+        <p class="source">Fuente: DBD Arena, estándar comunitario. DBD no tiene ranking competitivo oficial. <a href="/competitivo/">Ver reglas 1v1</a></p>
+      </div>
+    </section>
+  )}
+
+  <nav class="pager container" aria-label="Navegación entre mapas">
+    {prev ? (
+      <a class="pager-link" href={`/mapas/${prev.slug}/`}>
+        <span>Anterior</span>
+        <strong>{prev.name}</strong>
+      </a>
+    ) : (
+      <span class="pager-empty">No hay mapa anterior</span>
+    )}
+    <a class="pager-index mono" href="/mapas/">Índice</a>
+    {next ? (
+      <a class="pager-link next" href={`/mapas/${next.slug}/`}>
+        <span>Siguiente</span>
+        <strong>{next.name}</strong>
+      </a>
+    ) : (
+      <span class="pager-empty next">No hay mapa siguiente</span>
+    )}
+  </nav>
+
+  <style>
+    .hero { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .85fr); gap: 40px; align-items: center; padding: 132px 0 64px; }
+    .hero-media { position: relative; min-width: 0; border-left: 3px solid var(--realm); }
+    .hero-index { position: absolute; right: 0; bottom: 0; padding: 6px 10px; background: var(--bg); color: var(--amber); font-size: .7rem; letter-spacing: .1em; }
+    .hero-copy { min-width: 0; }
+    .eyebrow { margin: 0; }
+    h1 { margin: 12px 0 32px; font-size: clamp(3rem, 8vw, 7rem); overflow-wrap: anywhere; }
+    .hero-meta { display: grid; gap: 16px; margin: 0; padding: 24px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .hero-meta dt { color: var(--muted); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; }
+    .hero-meta dd { margin: 4px 0 0; font-size: .95rem; }
+    .hero-note { margin: 20px 0 0; color: var(--muted); font-size: .8rem; }
+    .breadcrumb { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; color: var(--muted); font-size: .74rem; }
+    .breadcrumb a { color: var(--ice); }
+    .breadcrumb a:hover { color: var(--text); }
+
+    .numbers, .layouts { padding: 64px 0; border-top: 1px solid var(--line); }
+    .number-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+    .number-grid .stat { padding: 20px; border: 1px solid var(--line); background: var(--panel); }
+    .number-grid .stat strong { font-size: clamp(1.7rem, 3.3vw, 3rem); overflow-wrap: anywhere; }
+    .number-grid .stat strong small { margin-left: 4px; color: var(--muted); font-size: .4em; }
+    .number-grid .secondary { border-top: 2px solid var(--amber); }
+    .not-published { margin: 0; padding: 24px; border: 1px solid var(--line); border-left: 3px solid var(--amber); background: var(--panel); color: var(--text); }
+    .formula { margin: 24px 0 0; color: var(--muted); font-size: .72rem; }
+
+    .layout-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; }
+    .table-block { min-width: 0; }
+    .table-block h3 { margin: 0 0 16px; font-family: "Barlow Condensed", sans-serif; font-size: 1.6rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; min-width: 400px; border-collapse: collapse; font-size: .84rem; }
+    th, td { padding: 12px 8px; border-bottom: 1px solid var(--line); text-align: left; }
+    th { color: var(--muted); font-size: .68rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+    td { color: var(--text); }
+    .tag { display: inline-block; border: 1px solid var(--blood); padding: 2px 8px; color: var(--blood-2); font-size: .72rem; }
+    .table-note { margin: 12px 0 0; color: var(--muted); font-size: .74rem; }
+
+    .competitive { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 40px; padding: 40px; border: 1px solid var(--line); border-top: 3px solid var(--blood); background: var(--panel); }
+    .comp-label h2 { margin: 12px 0 0; font-size: clamp(2.2rem, 5vw, 3.6rem); }
+    .comp-body > p:first-child { margin: 0 0 24px; color: var(--text); }
+    .comp-killers { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 24px; padding: 0; list-style: none; }
+    .comp-killers a { display: grid; gap: 2px; border: 1px solid var(--line); padding: 8px 12px; }
+    .comp-killers a:hover { border-color: var(--blood); }
+    .comp-killers a span { color: var(--amber); font-size: .7rem; }
+    .comp-killers a strong { font-family: "Barlow Condensed", sans-serif; font-size: 1rem; text-transform: uppercase; }
+    .comp-killers li > span { display: inline-block; border: 1px solid var(--line); padding: 8px 12px; color: var(--muted); font-size: .72rem; }
+    .source { margin: 0; color: var(--muted); font-size: .76rem; }
+    .source a { color: var(--ice); text-decoration: underline; }
+
+    .pager { display: flex; align-items: stretch; justify-content: space-between; gap: 16px; padding: 64px 0 96px; }
+    .pager-link { display: grid; gap: 4px; min-width: 0; max-width: 40%; padding: 12px 16px; border: 1px solid var(--line); }
+    .pager-link:hover { border-color: var(--blood); }
+    .pager-link span { color: var(--muted); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; }
+    .pager-link strong { font-family: "Barlow Condensed", sans-serif; font-size: 1.3rem; font-weight: 700; text-transform: uppercase; overflow-wrap: anywhere; }
+    .pager-link.next { text-align: right; }
+    .pager-empty { max-width: 40%; padding: 12px 16px; color: var(--muted); font-size: .76rem; }
+    .pager-empty.next { text-align: right; }
+    .pager-index { align-self: center; color: var(--amber); font-size: .74rem; }
+
+    @media (max-width: 1000px) {
+      .number-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 900px) {
+      .hero, .competitive { grid-template-columns: 1fr; gap: 32px; }
+      .hero { padding-top: 110px; }
+      .competitive { padding: 24px; }
+      .layout-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 620px) {
+      .number-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .pager { flex-wrap: wrap; padding-bottom: 64px; }
+      .pager-link, .pager-empty { max-width: calc(50% - 8px); }
+      .pager-index { order: 3; width: 100%; text-align: center; }
+    }
+  </style>
+</Base>

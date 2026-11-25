@@ -1,0 +1,308 @@
+---
+import Base from '../../layouts/Base.astro';
+import Portrait from '../../components/Portrait.astro';
+import TierBadge from '../../components/TierBadge.astro';
+import PerkCard from '../../components/PerkCard.astro';
+import StatBar from '../../components/StatBar.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import killers from '../../data/killers.json';
+import perks from '../../data/perks.json';
+import maps from '../../data/maps.json';
+import clock from '../../data/clock.json';
+import compRules from '../../data/comp-rules.json';
+
+type Tier = 'S' | 'A' | 'B' | 'C' | 'D';
+
+export function getStaticPaths() {
+  return killers.map((killer) => ({ params: { slug: killer.slug }, props: { killer } }));
+}
+
+const { killer } = Astro.props;
+const survivorSpeed = clock.movimiento.sobrevivienteMs;
+const rosterMax = Math.max(...killers.map((item) => item.speed));
+const comp = killer.comp;
+const tier = comp ? (comp.tier as Tier) : null;
+const badgeTier = tier ? ({
+  toLower: () => tier.toLowerCase(),
+  toLowerCase: () => tier.toLowerCase(),
+  toString: () => tier,
+  valueOf: () => tier,
+  [Symbol.toPrimitive]: () => tier,
+} as unknown as Tier) : null;
+const victory = comp ? compRules.condicionesVictoria4v1.find((row) => row.tier === comp.tier) : undefined;
+const rule = compRules.reglasPorKiller.find((row) => row.killer === killer.name);
+const ruleMap = rule ? maps.find((map) => map.name === rule.mapa) : undefined;
+const prev = killers.find((item) => item.id === killer.id - 1);
+const next = killers.find((item) => item.id === killer.id + 1);
+
+const fmt = (value: number, decimals = 2) => value.toFixed(decimals).replace('.', ',');
+const barPct = (value: number, max: number) => Math.min(100, Math.max(0, (value / max) * 100));
+const camelLabel = (key: string) => key.replace(/([a-z0-9])([A-Z])/g, '$1 $2').replace(/^./, (char) => char.toUpperCase());
+const powerValue = (value: unknown): string => Array.isArray(value)
+  ? value.join(' / ')
+  : value !== null && typeof value === 'object' ? JSON.stringify(value) : String(value);
+
+const powerEntries = Object.entries(killer.powerStats);
+const gain = killer.speed - survivorSpeed;
+const distances = [8, 16, 32];
+const closure = distances.map((distance) => ({ distance, seconds: gain > 0 ? distance / gain : null }));
+
+const perkByName = new Map(perks.map((perk) => [perk.name, perk]));
+const ownPerks = killer.perks
+  .map((name) => perkByName.get(name))
+  .filter((perk): perk is (typeof perks)[number] => Boolean(perk));
+const missingPerks = killer.perks.filter((name) => !perkByName.has(name));
+---
+
+<Base title={killer.title} description={`${killer.title}: ${killer.speed} m/s, radio de terror, poder ${killer.power}, perks propios y tier competitivo.`} active="killers">
+  <section class="hero container">
+    <div class="hero-art" data-reveal>
+      <Portrait src={killer.icon} alt={`Retrato de ${killer.realName ?? killer.name}, ${killer.title}`} size="lg" />
+    </div>
+    <div class="hero-copy" data-reveal data-reveal-delay="80">
+      <p class="eyebrow">{killer.chapter ? `${killer.chapter.name} · ${killer.chapter.date}` : 'Sin capitulo'}</p>
+      <h1 class="display">{killer.title}</h1>
+      <p class="hero-name">{killer.name}</p>
+      {killer.realName && <p class="hero-real">Nombre real: {killer.realName}</p>}
+      {killer.aliases.length > 0 && (
+        <ul class="alias-list">
+          {killer.aliases.map((alias) => <li class="chip">{alias}</li>)}
+        </ul>
+      )}
+      <div class="tier-hero">
+        <TierBadge tier={badgeTier} />
+        <div>
+          <strong>{comp ? comp.win : 'Sin tier comunitario todavia'}</strong>
+          <span>Condicion de victoria competitiva</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container">
+    <SectionHead eyebrow="Ficha tecnica" title="Numeros del killer" description="Velocidad, radio de terror, altura y dificultad con los valores del juego. Las velocidades alternativas aparecen con su etiqueta." />
+    <div class="stats-grid" data-reveal>
+      <div class="stat">
+        <strong class="mono" data-count={killer.speed} data-decimals="2">{fmt(killer.speed)}</strong>
+        <span>Velocidad m/s{killer.speedNote ? ` · ${killer.speedNote}` : ''}</span>
+      </div>
+      <div class="stat">
+        <strong class="mono">{killer.speedPct}<small> %</small></strong>
+        <span>Sobre la base del survivor</span>
+      </div>
+      {killer.terror.map((item, index) => (
+        <div class="stat" data-reveal data-reveal-delay={index * 60}>
+          <strong class="mono">{item.radius}<small> m</small></strong>
+          <span>{item.label ?? 'Radio de terror'}</span>
+        </div>
+      ))}
+      <div class="stat">
+        <strong>{killer.height}</strong>
+        <span>Altura del modelo</span>
+      </div>
+      <div class="stat">
+        <strong class="mono">{killer.difficulty ?? '—'}</strong>
+        <span>Dificultad {killer.difficulty !== null ? '/ 4' : 'sin dato'}</span>
+        <div class="pips" aria-hidden="true">
+          {[1, 2, 3, 4].map((point) => <span class:list={{ on: killer.difficulty !== null && point <= killer.difficulty }}></span>)}
+        </div>
+      </div>
+      {killer.altSpeeds.map((item) => (
+        <div class="stat">
+          <strong class="mono">{fmt(item.speed)}</strong>
+          <span>{item.label}</span>
+        </div>
+      ))}
+    </div>
+    <div class="bars" data-reveal>
+      <div style={`--bar-width:${barPct(killer.speed, survivorSpeed).toFixed(2)}%`}>
+        <StatBar label={`Frente al survivor (${fmt(survivorSpeed, 1)} m/s)`} value={killer.speed} max={survivorSpeed} suffix=" m/s" />
+      </div>
+      <div style={`--bar-width:${barPct(killer.speed, rosterMax).toFixed(2)}%`}>
+        <StatBar label={`Maximo del roster (${fmt(rosterMax)} m/s)`} value={killer.speed} max={rosterMax} suffix=" m/s" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section container">
+    <SectionHead eyebrow="Persecucion" title="Ventaja de velocidad" description={`Diferencia frente al survivor (${fmt(survivorSpeed, 1)} m/s) y tiempo teorico para cerrar 8, 16 y 32 metros.`} />
+    <div class="advantage-grid">
+      <div class="delta card" data-reveal>
+        <p class="eyebrow">Recupera</p>
+        <strong class="mono">{gain > 0 ? `+${fmt(gain)}` : fmt(gain)} m/s</strong>
+        <p>{gain > 0 ? 'Cierra distancia en campo abierto.' : 'No recupera distancia en campo abierto.'}</p>
+      </div>
+      <div class="closure card" data-reveal data-reveal-delay="80">
+        <table class="mono">
+          <thead>
+            <tr><th scope="col">Distancia</th><th scope="col">Tiempo</th></tr>
+          </thead>
+          <tbody>
+            {closure.map((row) => (
+              <tr><td>{row.distance} m</td><td>{row.seconds !== null ? `${fmt(row.seconds)} s` : '—'}</td></tr>
+            ))}
+          </tbody>
+        </table>
+        <p class="note">Calculo teorico en linea recta: ignora pallets, ventanas, obstaculos, direccion y fatiga del poder.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container">
+    <SectionHead eyebrow="Habilidad" title={killer.power} />
+    <div class="power-block" data-reveal>
+      <span class="official">Texto oficial en ingles</span>
+      <p>{killer.powerText}</p>
+    </div>
+    {powerEntries.length > 0 && (
+      <table class="power-table mono" data-reveal>
+        <tbody>
+          {powerEntries.map(([key, value]) => (
+            <tr><th scope="row">{camelLabel(key)}</th><td>{powerValue(value)}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    )}
+  </section>
+
+  <section class="section container">
+    <SectionHead eyebrow="Carga inicial" title="Perks propios" description="Los tres perks asociados a este killer en el roster." />
+    <div class="perks-grid" data-reveal>
+      {ownPerks.map((perk) => <PerkCard perk={perk} compact />)}
+    </div>
+    {missingPerks.length > 0 && (
+      <p class="missing">Sin ficha en la base de perks: {missingPerks.join(', ')}.</p>
+    )}
+  </section>
+
+  <section class="section container">
+    <SectionHead eyebrow="DBD Arena" title="En competitivo" description="Estandar comunitario de 1v1. No es una rulebook oficial de Behaviour Interactive." />
+    {comp ? (
+      <div class="comp-layout">
+        <div class="comp-card card" data-reveal>
+          <p class="eyebrow">Tier {comp.tier}</p>
+          <strong class="comp-win">{comp.win}</strong>
+          {victory && <p>Condicion del tier {victory.tier}: {victory.condicion}.</p>}
+          <p class="source">Fuente: {comp.source}. Estandar comunitario, no oficial.</p>
+        </div>
+        <div class="comp-card card" data-reveal data-reveal-delay="80">
+          {rule ? (
+            <>
+              <p class="eyebrow">Regla 1v1</p>
+              <p>Mapa fijo: <strong>{rule.mapa}</strong>{ruleMap && <> · <a href={`/mapas/${ruleMap.slug}/`}>Ver mapa</a></>}</p>
+              <p>Regla especial: {rule.regla || 'Sin regla especial adicional.'}</p>
+              <p>Add-ons baneados: {rule.baneados}</p>
+            </>
+          ) : (
+            <>
+              <p class="eyebrow">Pool 1v1</p>
+              <p>Este killer no esta en el pool 1v1 de DBD Arena.</p>
+            </>
+          )}
+        </div>
+      </div>
+    ) : (
+      <div class="comp-card card no-tier" data-reveal>
+        <p class="eyebrow">Pool 1v1</p>
+        <strong>Sin tier comunitario todavia</strong>
+        <p>Es un killer muy reciente: DBD Arena aun no ha publicado su condicion de victoria.</p>
+      </div>
+    )}
+    <a class="btn btn-secondary" href="/competitivo/">Ver reglas competitivas</a>
+  </section>
+
+  <section class="cta-band container" data-reveal>
+    <p>Lleva este killer a partida.</p>
+    <a class="btn btn-primary" href={`/builds/?killer=${killer.slug}`}>Ver builds para este killer</a>
+  </section>
+
+  <nav class="killer-nav container" aria-label="Navegacion entre killers">
+    {prev ? (
+      <a class="card nav-card" href={`/killers/${prev.slug}/`}>
+        <span class="eyebrow">Anterior · #{prev.id}</span>
+        <strong class="display">{prev.title}</strong>
+      </a>
+    ) : <span></span>}
+    {next ? (
+      <a class="card nav-card next" href={`/killers/${next.slug}/`}>
+        <span class="eyebrow">Siguiente · #{next.id}</span>
+        <strong class="display">{next.title}</strong>
+      </a>
+    ) : <span></span>}
+  </nav>
+</Base>
+
+<style>
+  .hero { display:grid; grid-template-columns:minmax(0,360px) minmax(0,1fr); align-items:end; gap:64px; margin-top:72px; border-bottom:1px solid var(--line); padding-block:48px 40px; }
+  .hero-art :global(.portrait) { border-color:var(--line); }
+  .hero-copy { min-width:0; }
+  .hero-copy h1 { margin:8px 0 0; font-size:clamp(4rem,9vw,8rem); overflow-wrap:anywhere; }
+  .hero-name { margin:16px 0 0; color:var(--text); font-family:"Barlow Condensed",sans-serif; font-size:1.8rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
+  .hero-real { margin:0; color:var(--muted); font-size:.85rem; }
+  .alias-list { display:flex; flex-wrap:wrap; gap:6px; margin:14px 0 0; padding:0; list-style:none; }
+  .tier-hero { display:flex; flex-wrap:wrap; align-items:center; gap:16px; margin-top:24px; border-top:1px solid var(--line); padding-top:20px; }
+  .tier-hero :global(.tier-badge) { height:44px; min-width:96px; font-size:1rem; }
+  .tier-hero strong { display:block; color:var(--amber); font-family:"JetBrains Mono Variable",monospace; font-size:.95rem; font-variant-numeric:tabular-nums; }
+  .tier-hero span { display:block; margin-top:4px; color:var(--muted); font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; }
+  .section { margin-top:64px; }
+  .stats-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:1px; border:1px solid var(--line); background:var(--line); }
+  .stats-grid > .stat { min-width:0; padding:18px 16px; background:var(--bg-2); }
+  .stats-grid .stat strong small { color:var(--muted); font-size:.45em; }
+  .stats-grid .stat span { overflow-wrap:anywhere; }
+  .pips { display:flex; gap:4px; margin-top:12px; }
+  .pips span { width:14px; height:5px; margin:0; border:1px solid var(--line); background:transparent; }
+  .pips span.on { border-color:var(--blood-2); background:var(--blood); }
+  .bars { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; margin-top:24px; }
+  .bars :global(.stat-bar-fill) { width:var(--bar-width,0%); }
+  .advantage-grid { display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:12px; }
+  .delta,.closure { padding:24px; }
+  .delta strong { display:block; margin:12px 0; color:var(--amber); font-size:clamp(2.4rem,6vw,4rem); line-height:1; }
+  .delta p:last-child { margin:0; color:var(--muted); font-size:.85rem; }
+  table { width:100%; border-collapse:collapse; table-layout:fixed; }
+  th,td { border-bottom:1px solid var(--line); padding:12px 14px; text-align:left; overflow-wrap:anywhere; }
+  thead th { color:var(--muted); font-size:.68rem; font-weight:400; letter-spacing:.1em; text-transform:uppercase; }
+  tbody tr:last-child th,tbody tr:last-child td { border-bottom:0; }
+  .closure td:last-child { color:var(--amber); text-align:right; }
+  .note { margin:16px 0 0; color:var(--muted); font-size:.75rem; }
+  .power-block { max-width:96ch; border-left:3px solid var(--blood); background:var(--panel); padding:20px 24px; }
+  .power-block p { margin:0; color:var(--text); font-size:.9rem; line-height:1.7; overflow-wrap:anywhere; }
+  .official { display:block; margin-bottom:12px; color:var(--muted); font-size:.66rem; letter-spacing:.12em; text-transform:uppercase; }
+  .power-table { margin-top:16px; border:1px solid var(--line); }
+  .power-table th { width:38%; color:var(--muted); font-size:.76rem; font-weight:400; }
+  .power-table td { color:var(--ice); font-size:.8rem; }
+  .perks-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+  .missing { margin:12px 0 0; color:var(--muted); font-size:.78rem; }
+  .comp-layout { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+  .comp-card { min-width:0; padding:20px 24px; }
+  .comp-card p { margin:10px 0; color:var(--muted); font-size:.84rem; }
+  .comp-card p:first-child { margin-top:0; }
+  .comp-card a { border-bottom:1px solid var(--blood-2); color:var(--ice); }
+  .comp-win { display:block; margin-bottom:12px; color:var(--amber); font-family:"JetBrains Mono Variable",monospace; font-size:1.05rem; }
+  .source { font-size:.72rem !important; }
+  .no-tier strong { display:block; color:var(--text); font-family:"Barlow Condensed",sans-serif; font-size:1.8rem; text-transform:uppercase; }
+  .comp-layout + .btn,.no-tier + .btn { margin-top:20px; }
+  .cta-band { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px; margin-top:64px; border-top:1px solid var(--line); padding-top:24px; }
+  .cta-band p { margin:0; font-family:"Barlow Condensed",sans-serif; font-size:1.6rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
+  .killer-nav { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-block:40px 96px; }
+  .nav-card { display:grid; min-height:96px; align-content:center; gap:8px; padding:16px 20px; }
+  .nav-card strong { font-size:1.7rem; overflow-wrap:anywhere; }
+  .nav-card.next { text-align:right; }
+  @media (max-width:1100px) {
+    .stats-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .perks-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  }
+  @media (max-width:800px) {
+    .hero { grid-template-columns:minmax(0,1fr); gap:24px; }
+    .hero-copy h1 { font-size:clamp(3.6rem,12vw,6rem); }
+    .advantage-grid,.comp-layout { grid-template-columns:minmax(0,1fr); }
+  }
+  @media (max-width:600px) {
+    .hero { padding-block:32px 24px; }
+    .stats-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .bars,.perks-grid,.killer-nav { grid-template-columns:minmax(0,1fr); }
+    .section { margin-top:48px; }
+    .cta-band { margin-top:48px; }
+    .nav-card.next { text-align:left; }
+    th,td { padding:10px 8px; }
+  }
+</style>

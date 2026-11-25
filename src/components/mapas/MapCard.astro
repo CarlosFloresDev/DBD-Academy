@@ -1,0 +1,81 @@
+---
+import MapThumb from '../MapThumb.astro';
+import StatBar from '../StatBar.astro';
+import Chip from '../Chip.astro';
+
+interface MapData {
+  slug: string;
+  name: string;
+  codeName: string;
+  realm: string;
+  sizeTiles: number | null;
+  areaM2: number | null;
+  icon: string | null;
+  comp: { killers1v1: string[]; note: string } | null;
+}
+
+interface Props {
+  map: MapData;
+  maxArea: number;
+  realmColor?: string | null;
+  isNew?: boolean;
+}
+
+const { map, maxArea, realmColor, isNew = false } = Astro.props;
+const format = new Intl.NumberFormat('es-PE');
+const pct = map.areaM2 && maxArea ? (map.areaM2 / maxArea) * 100 : 0;
+const pctLabel = new Intl.NumberFormat('es-PE', { maximumFractionDigits: 1 }).format(pct);
+---
+
+<article class="map-card card" style={`--realm:${realmColor || 'var(--blood)'}`}>
+  <a class="map-card-media" href={`/mapas/${map.slug}/`} aria-label={`Ver ficha del mapa ${map.name}`}>
+    <MapThumb map={map} />
+    {isNew && <span class="ribbon">NUEVO</span>}
+  </a>
+  <div class="map-card-body">
+    <div class="map-card-top">
+      <span class="realm-name">{map.realm}</span>
+      {map.comp && <Chip text="Pool 1v1" />}
+    </div>
+    <h3><a href={`/mapas/${map.slug}/`}>{map.name}</a></h3>
+    <p class="code mono">{map.codeName}</p>
+    <dl class="map-card-numbers">
+      <div>
+        <dt>Tiles</dt>
+        <dd class="mono">{map.sizeTiles === null ? '—' : format.format(map.sizeTiles)}</dd>
+      </div>
+      <div>
+        <dt>Área</dt>
+        <dd class="mono">{map.areaM2 === null ? '—' : `${format.format(map.areaM2)} m²`}</dd>
+      </div>
+    </dl>
+    {map.areaM2 !== null ? (
+      <>
+        <StatBar label="Área frente al mayor" value={pct} max={100} suffix="%" />
+        <span class="pct mono">{pctLabel}% del mapa más grande</span>
+      </>
+    ) : (
+      <p class="no-area">Superficie no publicada</p>
+    )}
+    <a class="open" href={`/mapas/${map.slug}/`}>Abrir ficha <span aria-hidden="true">→</span></a>
+  </div>
+</article>
+
+<style>
+  .map-card { display: flex; flex-direction: column; min-width: 0; overflow: hidden; border-left: 2px solid var(--realm); }
+  .map-card-media { position: relative; display: block; }
+  .map-card-media :global(.map-thumb) { border: 0; border-radius: 0; }
+  .ribbon { position: absolute; top: 0; left: 0; padding: 5px 10px; background: var(--blood); color: #fff; font-family: "JetBrains Mono Variable", monospace; font-size: .68rem; font-weight: 700; letter-spacing: .14em; }
+  .map-card-body { display: flex; flex: 1; flex-direction: column; gap: 10px; min-width: 0; padding: 16px; }
+  .map-card-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+  .realm-name { color: var(--muted); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; }
+  h3 { margin: 0; font-family: "Barlow Condensed", sans-serif; font-size: clamp(1.35rem, 2.5vw, 1.7rem); font-weight: 800; letter-spacing: .02em; line-height: 1; text-transform: uppercase; overflow-wrap: anywhere; }
+  h3 a:hover { color: var(--blood-2); }
+  .code { margin: 0; color: var(--ice); font-size: .7rem; }
+  .map-card-numbers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 12px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .map-card-numbers dt { color: var(--muted); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; }
+  .map-card-numbers dd { margin: 4px 0 0; color: var(--text); font-size: .92rem; overflow-wrap: anywhere; }
+  .no-area, .pct { margin: 0; color: var(--muted); font-size: .7rem; }
+  .open { margin-top: auto; color: var(--amber); font-family: "Barlow Condensed", sans-serif; font-size: .95rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .open:hover { color: var(--text); }
+</style>

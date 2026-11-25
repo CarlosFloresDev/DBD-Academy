@@ -1,0 +1,217 @@
+[0m
+> build · big-pickle
+[0m
+[0m# [0mTodos
+[•] Explore codebase: existing components, data shapes, styles, config
+[ ] Create KillerCard.astro component
+[ ] Create killers/index.astro with filters, sorting, tiers section
+[ ] Create killers/[slug].astro detail pages with all sections
+[ ] Verify code correctness (imports, data fields, responsive, a11y)
+[0m
+I'll start by reading the shared context and examining the codebase structure and data shapes before writing any code.
+[0m→ [0mRead .
+[0m→ [0mRead src
+[0m→ [0mRead src/components
+[0m→ [0mRead src/data
+[0m→ [0mRead astro.config.mjs
+[0m→ [0mRead src/layouts
+[0m→ [0mRead src/pages
+[0m→ [0mRead src/styles
+[0m→ [0mRead src/scripts
+[0m→ [0mRead src/layouts/Base.astro
+[0m→ [0mRead src/styles/global.css
+[0m→ [0mRead src/scripts/motion.js
+[0m→ [0mRead src/components/Portrait.astro
+[0m→ [0mRead src/components/TierBadge.astro
+[0m→ [0mRead src/components/PerkCard.astro
+[0m→ [0mRead src/components/PerkIcon.astro
+[0m→ [0mRead src/components/Chip.astro
+[0m→ [0mRead src/components/StatBar.astro
+[0m→ [0mRead src/components/SectionHead.astro
+[0m→ [0mRead src/components/MapThumb.astro
+[0m→ [0mRead src/data/killers.json[90m [limit=180][0m
+[0m→ [0mRead src/data/comp-rules.json
+[0m✱ [0mGrep ""slug"|"comp": null|"licen|"chapter"|"name": "Terrifier|"name": "Judgment|"altSpeeds"|"terror""[90m in src/data/killers.json · 100 matches[0m
+[0m✱ [0mGrep "licen|"comp": null|"slug": "terrifier|"slug": "judgment"[90m in src/data/killers.json · 4 matches[0m
+[0m✱ [0mGrep ""slug":|"name":"[90m in src/data/maps.json · 94 matches[0m
+[0m→ [0mRead src/data/killers.json[90m [offset=2530, limit=100][0m
+[0m→ [0mRead src/data/perks.json[90m [limit=60][0m
+[0m✱ [0mGrep ""label": ""[90m in src/data/killers.json · 41 matches[0m
+[0m→ [0mRead src/pages/index.astro[90m [limit=120][0m
+[0m→ [0mRead tsconfig.json
+[0m→ [0mRead package.json
+[0m→ [0mRead src/components/Nav.astro
+[0m✱ [0mGrep "toLower\b"[90m in . · 1 match[0m
+[0m✱ [0mGrep ""name": "(None|Kill Spree|Funny Business|Laughingstock|Silent Shadow|Rampage|Hex: Scared to Death|Lay Waste|Celestial Witness|Hex: Under Your Thumb)""[90m in src/data/perks.json · 9 matches[0m
+[0m✱ [0mGrep ""powerStats": \{|"speedNote": ""[90m in src/data/killers.json · 48 matches[0m
+[0m→ [0mRead src/data/killers.json[90m [offset=2490, limit=55][0m
+[0m→ [0mRead src/data/killers.json[90m [offset=196, limit=70][0m
+[0m→ [0mRead src/data/killers.json[90m [offset=1640, limit=30][0m
+[0m✱ [0mGrep ""name": "(Blight|Cannibal|Clown|Demogorgon|Doctor|Dark Lord|Hillbilly|Mastermind|Oni|Pig|Trapper|Wraith|Nightmare|Nurse)""[90m in src/data/killers.json · 14 matches[0m
+[0m→ [0mRead src/pages/index.astro[90m [offset=120, limit=96][0m
+[0m→ [0mSkill "design-taste-frontend"
+[0m→ [0mRead src/data/clock.json[90m [limit=60][0m
+[0m
+[0m# [0mTodos
+[✓] Explore codebase: existing components, data shapes, styles, config
+[•] Create KillerCard.astro component
+[ ] Create killers/index.astro with filters, sorting, tiers section
+[ ] Create killers/[slug].astro detail pages with all sections
+[ ] Verify code correctness (imports, data fields, responsive, a11y)
+[0m
+Design read: dark esports-analysis catalog for competitive Spanish-speaking DBD players, with mono numerals, thin borders and restrained GSAP reveals.
+[0m← [0mWrite src/components/killers/KillerCard.astro
+Wrote file successfully.
+[0m
+[0m← [0mWrite src/pages/killers/index.astro
+Wrote file successfully.
+[0m
+[0m# [0mTodos
+[✓] Explore codebase: existing components, data shapes, styles, config
+[✓] Create KillerCard.astro component
+[✓] Create killers/index.astro with filters, sorting, tiers section
+[•] Create killers/[slug].astro detail pages with all sections
+[ ] Verify code correctness (imports, data fields, responsive, a11y)
+[0m
+[0m← [0mWrite src/pages/killers/[slug].astro
+Wrote file successfully.
+[0m
+[0m← [0mEdit src/pages/killers/[slug].astro
+Index: D:\descargas\Proyectos personales\DBD-Academy\src\pages\killers\[slug].astro
+===================================================================
+--- D:\descargas\Proyectos personales\DBD-Academy\src\pages\killers\[slug].astro
++++ D:\descargas\Proyectos personales\DBD-Academy\src\pages\killers\[slug].astro
+@@ -250,9 +250,9 @@
+ .pips { display:flex; gap:4px; margin-top:12px; }
+ .pips span { width:14px; height:5px; margin:0; border:1px solid var(--line); background:transparent; }
+ .pips span.on { border-color:var(--blood-2); background:var(--blood); }
+ .bars { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; margin-top:24px; }
+-:global(.stat-bar-track) :global(.stat-bar-fill) { width:var(--bar-width,0%); }
++.bars :global(.stat-bar-fill) { width:var(--bar-width,0%); }
+ .advantage-grid { display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:12px; }
+ .delta,.closure { padding:24px; }
+ .delta strong { display:block; margin:12px 0; color:var(--amber); font-size:clamp(2.4rem,6vw,4rem); line-height:1; }
+ .delta p:last-child { margin:0; color:var(--muted); font-size:.85rem; }
+
+[0m
+[0m✱ [0mGrep "killers|TierBadge|tier"[90m in tests · 8 matches[0m
+[0m→ [0mRead src/pages/killers/index.astro[90m [offset=1, limit=130][0m
+[0m→ [0mRead src/pages/killers/[slug].astro[90m [offset=1, limit=150][0m
+[0m
+[0m← [0mEdit src/components/killers/KillerCard.astro
+Index: D:\descargas\Proyectos personales\DBD-Academy\src\components\killers\KillerCard.astro
+===================================================================
+--- D:\descargas\Proyectos personales\DBD-Academy\src\components\killers\KillerCard.astro
++++ D:\descargas\Proyectos personales\DBD-Academy\src\components\killers\KillerCard.astro
+@@ -30,8 +30,15 @@
+   valueOf: () => tier,
+   [Symbol.toPrimitive]: () => tier,
+ } as unknown as Tier) : null;
+ const release = killer.chapter?.date.split('.').reverse().join('-') ?? '';
++const ribbonDate = killer.chapter
++  ? (() => {
++      const [day, month, year] = killer.chapter!.date.split('.');
++      const months = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
++      return `${day} ${months[Number(month) - 1]} ${year}`;
++    })()
++  : '';
+ const terror = killer.terror[0];
+ ---
+ 
+ <a
+
+[0m
+[0m← [0mEdit src/components/killers/KillerCard.astro
+Index: D:\descargas\Proyectos personales\DBD-Academy\src\components\killers\KillerCard.astro
+===================================================================
+--- D:\descargas\Proyectos personales\DBD-Academy\src\components\killers\KillerCard.astro
++++ D:\descargas\Proyectos personales\DBD-Academy\src\components\killers\KillerCard.astro
+@@ -56,9 +56,9 @@
+ >
+   <div class="portrait-wrap">
+     <Portrait src={killer.icon} alt={`Retrato de ${killer.realName ?? killer.name}, ${killer.title}`} size="md" />
+     {killer.slug === 'terrifier' && killer.chapter && (
+-      <span class="ribbon">NUEVO · {killer.chapter.date}</span>
++      <span class="ribbon">NUEVO · {ribbonDate}</span>
+     )}
+   </div>
+   <div class="info">
+     <p class="chapter">{killer.chapter ? killer.chapter.name : 'Sin capitulo'}</p>
+
+[0m
+[0m← [0mEdit src/pages/killers/[slug].astro
+Index: D:\descargas\Proyectos personales\DBD-Academy\src\pages\killers\[slug].astro
+===================================================================
+--- D:\descargas\Proyectos personales\DBD-Academy\src\pages\killers\[slug].astro
++++ D:\descargas\Proyectos personales\DBD-Academy\src\pages\killers\[slug].astro
+@@ -57,9 +57,9 @@
+ <div class="hero-art" data-reveal>
+   <Portrait src={killer.icon} alt={`Retrato de ${killer.realName ?? killer.name}, ${killer.title}`} size="lg" />
+ </div>
+ <div class="hero-copy" data-reveal data-reveal-delay="80">
+-  <p class="eyebrow">{killer.chapter ? `${killer.chapter.name} · ${killer.chapter.date}` : 'Roster base · sin capitulo asignado'}</p>
++  <p class="eyebrow">{killer.chapter ? `${killer.chapter.name} · ${killer.chapter.date}` : 'Sin capitulo'}</p>
+   <h1 class="display">{killer.title}</h1>
+   <p class="hero-name">{killer.name}</p>
+   {killer.realName && <p class="hero-real">Nombre real: {killer.realName}</p>}
+   {killer.aliases.length > 0 && (
+
+[0m
+[0m→ [0mRead src/pages/killers/[slug].astro[90m [offset=149, limit=160][0m
+[0m→ [0mRead src/components/killers/KillerCard.astro[90m [offset=1, limit=100][0m
+[0m→ [0mRead src/pages/killers/index.astro[90m [offset=130, limit=90][0m
+[0m
+[0m← [0mEdit src/pages/killers/[slug].astro
+Index: D:\descargas\Proyectos personales\DBD-Academy\src\pages\killers\[slug].astro
+===================================================================
+--- D:\descargas\Proyectos personales\DBD-Academy\src\pages\killers\[slug].astro
++++ D:\descargas\Proyectos personales\DBD-Academy\src\pages\killers\[slug].astro
+@@ -37,9 +37,11 @@
+ 
+ const fmt = (value: number, decimals = 2) => value.toFixed(decimals).replace('.', ',');
+ const barPct = (value: number, max: number) => Math.min(100, Math.max(0, (value / max) * 100));
+ const camelLabel = (key: string) => key.replace(/([a-z0-9])([A-Z])/g, '$1 $2').replace(/^./, (char) => char.toUpperCase());
+-const powerValue = (value: unknown): string => Array.isArray(value) ? value.join(' / ') : String(value);
++const powerValue = (value: unknown): string => Array.isArray(value)
++  ? value.join(' / ')
++  : value !== null && typeof value === 'object' ? JSON.stringify(value) : String(value);
+ 
+ const powerEntries = Object.entries(killer.powerStats);
+ const gain = killer.speed - survivorSpeed;
+ const distances = [8, 16, 32];
+
+[0m
+[0m← [0mEdit src/pages/killers/[slug].astro
+Index: D:\descargas\Proyectos personales\DBD-Academy\src\pages\killers\[slug].astro
+===================================================================
+--- D:\descargas\Proyectos personales\DBD-Academy\src\pages\killers\[slug].astro
++++ D:\descargas\Proyectos personales\DBD-Academy\src\pages\killers\[slug].astro
+@@ -264,9 +264,9 @@
+ tbody tr:last-child th,tbody tr:last-child td { border-bottom:0; }
+ .closure td:last-child { color:var(--amber); text-align:right; }
+ .note { margin:16px 0 0; color:var(--muted); font-size:.75rem; }
+ .power-block { max-width:96ch; border-left:3px solid var(--blood); background:var(--panel); padding:20px 24px; }
+-.power-block p { margin:0; color:var(--text); font-size:.9rem; line-height:1.7; }
++.power-block p { margin:0; color:var(--text); font-size:.9rem; line-height:1.7; overflow-wrap:anywhere; }
+ .official { display:block; margin-bottom:12px; color:var(--muted); font-size:.66rem; letter-spacing:.12em; text-transform:uppercase; }
+ .power-table { margin-top:16px; border:1px solid var(--line); }
+ .power-table th { width:38%; color:var(--muted); font-size:.76rem; font-weight:400; }
+ .power-table td { color:var(--ice); font-size:.8rem; }
+
+[0m
+[0m✱ [0mGlob "src/**/killers/**/*.astro"[90m in . · 3 matches[0m
+[0m✱ [0mGrep "TODO|lorem|https?://|console\.|#[0-9a-fA-F]{6}"[90m in src/pages/killers · 0 matches[0m
+[0m
+[0m# [0mTodos
+[✓] Explore codebase: existing components, data shapes, styles, config
+[✓] Create KillerCard.astro component
+[✓] Create killers/index.astro with filters, sorting, tiers section
+[✓] Create killers/[slug].astro detail pages with all sections
+[✓] Verify code correctness (imports, data fields, responsive, a11y)
+[0m
+Archivos creados:
+- `src/components/killers/KillerCard.astro`
+- `src/pages/killers/index.astro`
+- `src/pages/killers/[slug].astro`
+
+Suposiciones: `killers.json` no tiene campo de licencia, así que omití el conmutador licenciados/originales; la velocidad del survivor se lee de `clock.json`. `TierBadge.astro` (tarea 01) llama a `tier.toLower()`, inexistente en JS; pasé un valor compatible desde mis archivos sin modificar el componente compartido. No ejecuté comandos por instrucción.

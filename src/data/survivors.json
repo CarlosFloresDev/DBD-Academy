@@ -1,0 +1,1196 @@
+[
+ {
+  "slug": "dwight-fairfield",
+  "id": 1,
+  "name": "Dwight Fairfield",
+  "role": "Nervous Leader",
+  "gender": "Man",
+  "origin": "American",
+  "actor": [
+   "Ian Chuprun (BHVR)"
+  ],
+  "chapter": null,
+  "perks": [
+   "Bond",
+   "Leader",
+   "Prove Thyself"
+  ],
+  "icon": "/img/survivors/dwight-fairfield.png"
+ },
+ {
+  "slug": "meg-thomas",
+  "id": 2,
+  "name": "Meg Thomas",
+  "role": "Energetic Athlete",
+  "gender": "Woman",
+  "origin": "American",
+  "actor": [
+   "Ingrid Blemur (BHVR)"
+  ],
+  "chapter": null,
+  "perks": [
+   "Adrenaline",
+   "Quick & Quiet",
+   "Sprint Burst"
+  ],
+  "icon": "/img/survivors/meg-thomas.png"
+ },
+ {
+  "slug": "claudette-morel",
+  "id": 3,
+  "name": "Claudette Morel",
+  "role": "Studious Botanist",
+  "gender": "Woman",
+  "origin": "Canadian",
+  "actor": [
+   "Sarah Robinson (BHVR)"
+  ],
+  "chapter": null,
+  "perks": [
+   "Botany Knowledge",
+   "Empathy",
+   "Self-Care"
+  ],
+  "icon": "/img/survivors/claudette-morel.png"
+ },
+ {
+  "slug": "jake-park",
+  "id": 4,
+  "name": "Jake Park",
+  "role": "Solitary Survivalist",
+  "gender": "Man",
+  "origin": "South Korean",
+  "actor": [
+   "Kevin Boissonneault (BHVR)"
+  ],
+  "chapter": null,
+  "perks": [
+   "Calm Spirit",
+   "Iron Will",
+   "Saboteur"
+  ],
+  "icon": "/img/survivors/jake-park.png"
+ },
+ {
+  "slug": "nea-karlsson",
+  "id": 5,
+  "name": "Nea Karlsson",
+  "role": "Urban Artist",
+  "gender": "Woman",
+  "origin": "Swedish",
+  "actor": [
+   "Morgane Ravasi (BHVR)"
+  ],
+  "chapter": {
+   "id": 1,
+   "name": "The Last Breath Chapter",
+   "date": "18.08.2016"
+  },
+  "perks": [
+   "Balanced Landing",
+   "Streetwise",
+   "Urban Evasion"
+  ],
+  "icon": "/img/survivors/nea-karlsson.png"
+ },
+ {
+  "slug": "laurie-strode",
+  "id": 6,
+  "name": "Laurie Strode",
+  "role": "Determined Survivor",
+  "gender": "Woman",
+  "origin": "American",
+  "actor": [
+   "Catherine Lecours (BHVR)"
+  ],
+  "chapter": {
+   "id": 2,
+   "name": "The HALLOWEEN® Chapter",
+   "date": "25.10.2016"
+  },
+  "perks": [
+   "Object of Obsession",
+   "Sole Survivor",
+   "Decisive Strike"
+  ],
+  "icon": "/img/survivors/laurie-strode.png"
+ },
+ {
+  "slug": "ace-visconti",
+  "id": 7,
+  "name": "Ace Visconti",
+  "role": "Lucky Gambler",
+  "gender": "Man",
+  "origin": "Argentinian of Italian descent",
+  "actor": [
+   "Sébastien Varas (BVHR)"
+  ],
+  "chapter": {
+   "id": 3,
+   "name": "Of Flesh and Mud",
+   "date": "08.12.2016"
+  },
+  "perks": [
+   "Ace in the Hole",
+   "Open-Handed",
+   "Up the Ante"
+  ],
+  "icon": "/img/survivors/ace-visconti.png"
+ },
+ {
+  "slug": "william-bill-overbeck",
+  "id": 8,
+  "name": "William \"Bill\" Overbeck",
+  "role": "Old Soldier",
+  "gender": "Man",
+  "origin": "American",
+  "actor": [
+   "Ricardo Gomez (BHVR)"
+  ],
+  "chapter": {
+   "id": 16,
+   "name": "Left Behind",
+   "date": "08.03.2017"
+  },
+  "perks": [
+   "Borrowed Time",
+   "Left Behind",
+   "Unbreakable"
+  ],
+  "icon": "/img/survivors/william-bill-overbeck.png"
+ },
+ {
+  "slug": "feng-min",
+  "id": 9,
+  "name": "Feng Min",
+  "role": "Focused Competitor",
+  "gender": "Woman",
+  "origin": "Chinese",
+  "actor": [
+   "Bianca Lavric (BHVR)"
+  ],
+  "chapter": {
+   "id": 4,
+   "name": "Spark of Madness",
+   "date": "11.05.2017"
+  },
+  "perks": [
+   "Alert",
+   "Lithe",
+   "Technician"
+  ],
+  "icon": "/img/survivors/feng-min.png"
+ },
+ {
+  "slug": "david-king",
+  "id": 10,
+  "name": "David King",
+  "role": "Rugged Scrapper",
+  "gender": "Man",
+  "origin": "English",
+  "actor": [
+   "Stefan Horvath (BHVR)"
+  ],
+  "chapter": {
+   "id": 5,
+   "name": "A Lullaby for the Dark",
+   "date": "27.07.2017"
+  },
+  "perks": [
+   "Dead Hard",
+   "No Mither",
+   "We're Gonna Live Forever"
+  ],
+  "icon": "/img/survivors/david-king.png"
+ },
+ {
+  "slug": "quentin-smith",
+  "id": 11,
+  "name": "Quentin Smith",
+  "role": "Resolute Dreamwalker",
+  "gender": "Man",
+  "origin": "American",
+  "actor": [
+   "Louis McLean (BHVR)"
+  ],
+  "chapter": {
+   "id": 6,
+   "name": "A Nightmare on Elm Street™",
+   "date": "26.10.2017"
+  },
+  "perks": [
+   "Pharmacy",
+   "Vigil",
+   "Wake Up!"
+  ],
+  "icon": "/img/survivors/quentin-smith.png"
+ },
+ {
+  "slug": "detective-david-tapp",
+  "id": 12,
+  "name": "Detective David Tapp",
+  "role": "Obsessed Detective",
+  "gender": "Man",
+  "origin": "African American",
+  "actor": [
+   "Dave Blake (BHVR)"
+  ],
+  "chapter": {
+   "id": 7,
+   "name": "The SAW™ Chapter",
+   "date": "23.01.2018"
+  },
+  "perks": [
+   "Detective's Hunch",
+   "Stake Out",
+   "Tenacity"
+  ],
+  "icon": "/img/survivors/detective-david-tapp.png"
+ },
+ {
+  "slug": "kate-denson",
+  "id": 13,
+  "name": "Kate Denson",
+  "role": "Hopeful Songbird",
+  "gender": "Woman",
+  "origin": "American",
+  "actor": [
+   "Daphné Poulin Gourdeau (BHVR)"
+  ],
+  "chapter": {
+   "id": 8,
+   "name": "Curtain Call",
+   "date": "12.06.2018"
+  },
+  "perks": [
+   "Boil Over",
+   "Dance With Me",
+   "Windows of Opportunity"
+  ],
+  "icon": "/img/survivors/kate-denson.png"
+ },
+ {
+  "slug": "adam-francis",
+  "id": 14,
+  "name": "Adam Francis",
+  "role": "Resourceful Teacher",
+  "gender": "Man",
+  "origin": "Jamaican",
+  "actor": [
+   "Bourbaki Joseph (BHVR)"
+  ],
+  "chapter": {
+   "id": 9,
+   "name": "Shattered Bloodline",
+   "date": "18.09.2018"
+  },
+  "perks": [
+   "Autodidact",
+   "Deliverance",
+   "Diversion"
+  ],
+  "icon": "/img/survivors/adam-francis.png"
+ },
+ {
+  "slug": "jeffrey-jeff-johansen",
+  "id": 15,
+  "name": "Jeffrey \"Jeff\" Johansen",
+  "role": "Quiet Artist",
+  "gender": "Man",
+  "origin": "Canadian of Norwegian descent",
+  "actor": [
+   "Filip Ivanovic (BHVR)"
+  ],
+  "chapter": {
+   "id": 10,
+   "name": "Darkness Among Us",
+   "date": "11.12.2018"
+  },
+  "perks": [
+   "Aftercare",
+   "Breakdown",
+   "Distortion"
+  ],
+  "icon": "/img/survivors/jeffrey-jeff-johansen.png"
+ },
+ {
+  "slug": "jane-romero",
+  "id": 16,
+  "name": "Jane Romero",
+  "role": "Influential Celebrity",
+  "gender": "Woman",
+  "origin": "Latin American",
+  "actor": [
+   "Patricia Brochu-Gagné (BHVR)"
+  ],
+  "chapter": {
+   "id": 11,
+   "name": "Demise of the Faithful",
+   "date": "19.03.2019"
+  },
+  "perks": [
+   "Head On",
+   "Poised",
+   "Solidarity"
+  ],
+  "icon": "/img/survivors/jane-romero.png"
+ },
+ {
+  "slug": "ashley-j-williams",
+  "id": 17,
+  "name": "Ashley J. Williams",
+  "role": "Alone Wolf",
+  "gender": "Man",
+  "origin": "American",
+  "actor": [
+   "Bruce Campbell (Original Actor)"
+  ],
+  "chapter": {
+   "id": 18,
+   "name": "Ash vs Evil Dead",
+   "date": "02.04.2019"
+  },
+  "perks": [
+   "Buckle Up",
+   "Flip-Flop",
+   "Mettle of Man"
+  ],
+  "icon": "/img/survivors/ashley-j-williams.png"
+ },
+ {
+  "slug": "nancy-wheeler",
+  "id": 18,
+  "name": "Nancy Wheeler",
+  "role": "Aspiring Journalist",
+  "gender": "Woman",
+  "origin": "American",
+  "actor": [
+   "Madison Lee (Voice Actress)"
+  ],
+  "chapter": {
+   "id": 13,
+   "name": "Stranger Things",
+   "date": "17.09.2019"
+  },
+  "perks": [
+   "Better Together",
+   "Fixated",
+   "Inner Strength"
+  ],
+  "icon": "/img/survivors/nancy-wheeler.png"
+ },
+ {
+  "slug": "steve-harrington",
+  "id": 19,
+  "name": "Steve Harrington",
+  "role": "Former Jock",
+  "gender": "Man",
+  "origin": "American",
+  "actor": [
+   "TBA"
+  ],
+  "chapter": {
+   "id": 13,
+   "name": "Stranger Things",
+   "date": "17.09.2019"
+  },
+  "perks": [
+   "Babysitter",
+   "Camaraderie",
+   "Second Wind"
+  ],
+  "icon": "/img/survivors/steve-harrington.png"
+ },
+ {
+  "slug": "yui-kimura",
+  "id": 20,
+  "name": "Yui Kimura",
+  "role": "Hardened Streetracer",
+  "gender": "Woman",
+  "origin": "Japanese",
+  "actor": [
+   "Daniela Pinto (BHVR)"
+  ],
+  "chapter": {
+   "id": 14,
+   "name": "Cursed Legacy",
+   "date": "03.12.2019"
+  },
+  "perks": [
+   "Any Means Necessary",
+   "Breakout",
+   "Lucky Break"
+  ],
+  "icon": "/img/survivors/yui-kimura.png"
+ },
+ {
+  "slug": "zarina-kassir",
+  "id": 21,
+  "name": "Zarina Kassir",
+  "role": "Plucky Documentarian",
+  "gender": "Woman",
+  "origin": "Lebanese American",
+  "actor": [
+   "Émilie Paquin (BHVR)"
+  ],
+  "chapter": {
+   "id": 15,
+   "name": "Chains of Hate",
+   "date": "10.03.2020"
+  },
+  "perks": [
+   "For the People",
+   "Off the Record",
+   "Red Herring"
+  ],
+  "icon": "/img/survivors/zarina-kassir.png"
+ },
+ {
+  "slug": "cheryl-mason",
+  "id": 22,
+  "name": "Cheryl Mason",
+  "role": "Young Veteran of Terror",
+  "gender": "Woman",
+  "origin": "American",
+  "actor": [
+   "Undisclosed Voice Actress"
+  ],
+  "chapter": {
+   "id": 24,
+   "name": "Silent Hill",
+   "date": "16.06.2020"
+  },
+  "perks": [
+   "Blood Pact",
+   "Repressed Alliance",
+   "Soul Guard"
+  ],
+  "icon": "/img/survivors/cheryl-mason.png"
+ },
+ {
+  "slug": "felix-richter",
+  "id": 23,
+  "name": "Felix Richter",
+  "role": "Visionary Architect ",
+  "gender": "Man",
+  "origin": "German",
+  "actor": [
+   "Frédéric Poirier (BHVR)"
+  ],
+  "chapter": {
+   "id": 26,
+   "name": "Descend Beyond",
+   "date": "08.09.2020"
+  },
+  "perks": [
+   "Built to Last",
+   "Desperate Measures",
+   "Visionary"
+  ],
+  "icon": "/img/survivors/felix-richter.png"
+ },
+ {
+  "slug": "elodie-rakoto",
+  "id": 24,
+  "name": "Élodie Rakoto",
+  "role": "Occult Investigator",
+  "gender": "Woman",
+  "origin": "French, Malagasy",
+  "actor": [
+   "Beatrix Moersch (BHVR)"
+  ],
+  "chapter": {
+   "id": 27,
+   "name": "A Binding of Kin",
+   "date": "01.12.2020"
+  },
+  "perks": [
+   "Appraisal",
+   "Deception",
+   "Power Struggle"
+  ],
+  "icon": "/img/survivors/elodie-rakoto.png"
+ },
+ {
+  "slug": "lee-yun-jin",
+  "id": 25,
+  "name": "Lee Yun-jin",
+  "role": "Self-Interested Music Producer",
+  "gender": "Woman",
+  "origin": "South Korean",
+  "actor": [
+   "Kim So-hee  (Voice Actor)"
+  ],
+  "chapter": {
+   "id": 28,
+   "name": "All-Kill",
+   "date": "30.03.2021"
+  },
+  "perks": [
+   "Fast Track",
+   "Self-Preservation",
+   "Smash Hit"
+  ],
+  "icon": "/img/survivors/lee-yun-jin.png"
+ },
+ {
+  "slug": "jill-valentine",
+  "id": 26,
+  "name": "Jill Valentine",
+  "role": "Founding Member of S.T.A.R.S.",
+  "gender": "Woman",
+  "origin": "American",
+  "actor": [
+   "Chaney Crabb (The Monster Factory)"
+  ],
+  "chapter": {
+   "id": 29,
+   "name": "Resident Evil™",
+   "date": "15.06.2021"
+  },
+  "perks": [
+   "Blast Mine",
+   "Counterforce",
+   "Resurgence"
+  ],
+  "icon": "/img/survivors/jill-valentine.png"
+ },
+ {
+  "slug": "leon-scott-kennedy",
+  "id": 27,
+  "name": "Leon Scott Kennedy",
+  "role": "Rookie Police Officer",
+  "gender": "Man",
+  "origin": "American",
+  "actor": [
+   "Riley McShane (The Monster Factory)"
+  ],
+  "chapter": {
+   "id": 29,
+   "name": "Resident Evil™",
+   "date": "15.06.2021"
+  },
+  "perks": [
+   "Bite the Bullet",
+   "Flashbang",
+   "Rookie Spirit"
+  ],
+  "icon": "/img/survivors/leon-scott-kennedy.png"
+ },
+ {
+  "slug": "mikaela-reid",
+  "id": 28,
+  "name": "Mikaela Reid",
+  "role": "Young Mystic",
+  "gender": "Woman",
+  "origin": "American",
+  "actor": [
+   "Adrienne Cowan (The Monster Factory)"
+  ],
+  "chapter": {
+   "id": 33,
+   "name": "Hour of the Witch",
+   "date": "19.10.2021"
+  },
+  "perks": [
+   "Boon: Circle of Healing",
+   "Boon: Shadow Step",
+   "Clairvoyance"
+  ],
+  "icon": "/img/survivors/mikaela-reid.png"
+ },
+ {
+  "slug": "jonah-vasquez",
+  "id": 29,
+  "name": "Jonah Vasquez",
+  "role": "Mathematical Mastermind",
+  "gender": "Man",
+  "origin": "American of Hispanic descent",
+  "actor": [
+   "Felipe Quinzaños (The Monster Factory)"
+  ],
+  "chapter": {
+   "id": 34,
+   "name": "Portrait of a Murder",
+   "date": "30.11.2021"
+  },
+  "perks": [
+   "Boon: Exponential",
+   "Corrective Action",
+   "Overcome"
+  ],
+  "icon": "/img/survivors/jonah-vasquez.png"
+ },
+ {
+  "slug": "yoichi-asakawa",
+  "id": 30,
+  "name": "Yoichi Asakawa",
+  "role": "Brilliant Marine Biologist",
+  "gender": "Man",
+  "origin": "Japanese",
+  "actor": [
+   "Mirai Kawashima (The Monster Factory)"
+  ],
+  "chapter": {
+   "id": 35,
+   "name": "Sadako Rising",
+   "date": "08.03.2022"
+  },
+  "perks": [
+   "Boon: Dark Theory",
+   "Empathic Connection",
+   "Parental Guidance"
+  ],
+  "icon": "/img/survivors/yoichi-asakawa.png"
+ },
+ {
+  "slug": "haddie-kaur",
+  "id": 31,
+  "name": "Haddie Kaur",
+  "role": "Brave and Determined Podcaster",
+  "gender": "Woman",
+  "origin": "Canadian of Indian descent",
+  "actor": [
+   "Ashavari Anna Joshi (The Monster Factory)"
+  ],
+  "chapter": {
+   "id": 36,
+   "name": "Roots of Dread",
+   "date": "07.06.2022"
+  },
+  "perks": [
+   "Inner Focus",
+   "Overzealous",
+   "Residual Manifest"
+  ],
+  "icon": "/img/survivors/haddie-kaur.png"
+ },
+ {
+  "slug": "ada-wong",
+  "id": 32,
+  "name": "Ada Wong",
+  "role": "Mysterious Secret Agent",
+  "gender": "Woman",
+  "origin": "Unknown (Redacted)",
+  "actor": [
+   "Vicky Psarakis (The Monster Factory)"
+  ],
+  "chapter": {
+   "id": 37,
+   "name": "Resident Evil™: PROJECT W",
+   "date": "30.08.2022"
+  },
+  "perks": [
+   "Low Profile",
+   "Reactive Healing",
+   "Wiretap"
+  ],
+  "icon": "/img/survivors/ada-wong.png"
+ },
+ {
+  "slug": "rebecca-chambers",
+  "id": 33,
+  "name": "Rebecca Chambers",
+  "role": "Gifted Medic and Squad Member",
+  "gender": "Woman",
+  "origin": "American",
+  "actor": [
+   "Megan Orvold-Scheider (The Monster Factory)"
+  ],
+  "chapter": {
+   "id": 37,
+   "name": "Resident Evil™: PROJECT W",
+   "date": "30.08.2022"
+  },
+  "perks": [
+   "Better than New",
+   "Hyperfocus",
+   "Reassurance"
+  ],
+  "icon": "/img/survivors/rebecca-chambers.png"
+ },
+ {
+  "slug": "vittorio-toscano",
+  "id": 34,
+  "name": "Vittorio Toscano",
+  "role": "Endless Wanderer",
+  "gender": "Man",
+  "origin": "Italian",
+  "actor": [
+   "Luc de Villars (The Monster Factory)"
+  ],
+  "chapter": {
+   "id": 38,
+   "name": "Forged in Fog",
+   "date": "22.11.2022"
+  },
+  "perks": [
+   "Fogwise",
+   "Potential Energy",
+   "Quick Gambit"
+  ],
+  "icon": "/img/survivors/vittorio-toscano.png"
+ },
+ {
+  "slug": "thalita-lyra",
+  "id": 35,
+  "name": "Thalita Lyra",
+  "role": "Competitive Kite Fighter",
+  "gender": "Woman",
+  "origin": "Brazilian",
+  "actor": [
+   "Sylvia Salustti (Brazilian Voice Actress)"
+  ],
+  "chapter": {
+   "id": 39,
+   "name": "Tools of Torment",
+   "date": "07.03.2023"
+  },
+  "perks": [
+   "Cut Loose",
+   "Friendly Competition",
+   "Teamwork: Power of Two"
+  ],
+  "icon": "/img/survivors/thalita-lyra.png"
+ },
+ {
+  "slug": "renato-lyra",
+  "id": 36,
+  "name": "Renato Lyra",
+  "role": "Skilled Kite Fighter",
+  "gender": "Man",
+  "origin": "Brazilian",
+  "actor": [
+   "Felipe Grinnan (Brazilian Voice Actor)"
+  ],
+  "chapter": {
+   "id": 39,
+   "name": "Tools of Torment",
+   "date": "07.03.2023"
+  },
+  "perks": [
+   "Background Player",
+   "Blood Rush",
+   "Teamwork: Collective Stealth"
+  ],
+  "icon": "/img/survivors/renato-lyra.png"
+ },
+ {
+  "slug": "gabriel-soma",
+  "id": 37,
+  "name": "Gabriel Soma",
+  "role": "Resourceful Engineer",
+  "gender": "Man",
+  "origin": "Proxima Centauri C",
+  "actor": [
+   "Stevie Boiser (The Monster Factory)"
+  ],
+  "chapter": {
+   "id": 40,
+   "name": "End Transmission",
+   "date": "13.06.2023"
+  },
+  "perks": [
+   "Made for This",
+   "Scavenger",
+   "Troubleshooter"
+  ],
+  "icon": "/img/survivors/gabriel-soma.png"
+ },
+ {
+  "slug": "nicolas-cage",
+  "id": 38,
+  "name": "Nicolas Cage",
+  "role": "Superstar",
+  "gender": "Man",
+  "origin": "American",
+  "actor": [
+   "Nicolas Cage (Himself)"
+  ],
+  "chapter": {
+   "id": 43,
+   "name": "Nicolas Cage",
+   "date": "25.07.2023"
+  },
+  "perks": [
+   "Dramaturgy",
+   "Plot Twist",
+   "Scene Partner"
+  ],
+  "icon": "/img/survivors/nicolas-cage.png"
+ },
+ {
+  "slug": "ellen-ripley",
+  "id": 39,
+  "name": "Ellen Ripley",
+  "role": "Nostromo Warrant Officer",
+  "gender": "Woman",
+  "origin": "American",
+  "actor": [
+   "Molly Daisy (The Monster Factory)"
+  ],
+  "chapter": {
+   "id": 44,
+   "name": "Alien",
+   "date": "29.08.2023"
+  },
+  "perks": [
+   "Chemical Trap",
+   "Light-Footed",
+   "Lucky Star"
+  ],
+  "icon": "/img/survivors/ellen-ripley.png"
+ },
+ {
+  "slug": "alan-wake",
+  "id": 40,
+  "name": "Alan Wake",
+  "role": "Bestselling Author",
+  "gender": "Man",
+  "origin": "American",
+  "actor": [
+   "Matthew Porretta (Original Voice Actor, Blindlight)"
+  ],
+  "chapter": {
+   "id": 49,
+   "name": "Alan Wake®",
+   "date": "30.01.2024"
+  },
+  "perks": [
+   "Boon: Illumination",
+   "Champion of Light",
+   "Deadline"
+  ],
+  "icon": "/img/survivors/alan-wake.png"
+ },
+ {
+  "slug": "sable-ward",
+  "id": 41,
+  "name": "Sable Ward",
+  "role": "Embracer of Darkness",
+  "gender": "Woman",
+  "origin": "American",
+  "actor": [
+   "Liz Morey (Blindlight)"
+  ],
+  "chapter": {
+   "id": 50,
+   "name": "All Things Wicked",
+   "date": "12.03.2024"
+  },
+  "perks": [
+   "Invocation: Weaving Spiders",
+   "Strength in Shadows",
+   "Wicked"
+  ],
+  "icon": "/img/survivors/sable-ward.png"
+ },
+ {
+  "slug": "aestri-yazar-and-baermar-uraz",
+  "id": 42,
+  "name": "Aestri Yazar & Baermar Uraz",
+  "role": "Bard Troupe",
+  "gender": "Woman (Aestri)<br>Man (Baermar)",
+  "origin": "Oerth (D&D World)",
+  "actor": [
+   "Aestri: Jesse Vilinsky, Baermar: Robbie Daymond, (both Blindlight)"
+  ],
+  "chapter": {
+   "id": 52,
+   "name": "Dungeons & Dragons",
+   "date": "03.06.2024"
+  },
+  "perks": [
+   "Bardic Inspiration",
+   "Mirrored Illusion",
+   "Still Sight"
+  ],
+  "icon": "/img/survivors/aestri-yazar-and-baermar-uraz.png"
+ },
+ {
+  "slug": "lara-croft",
+  "id": 43,
+  "name": "Lara Croft",
+  "role": "Harded Archaeologist",
+  "gender": "Woman",
+  "origin": "English",
+  "actor": [
+   "Emily O'Brien (Blindlight)"
+  ],
+  "chapter": {
+   "id": 53,
+   "name": "Tomb Raider™",
+   "date": "16.07.2024"
+  },
+  "perks": [
+   "Finesse",
+   "Hardened",
+   "Specialist"
+  ],
+  "icon": "/img/survivors/lara-croft.png"
+ },
+ {
+  "slug": "trevor-belmont",
+  "id": 44,
+  "name": "Trevor Belmont",
+  "role": "Vampire Hunter",
+  "gender": "Man",
+  "origin": "Wallachian (Romania)",
+  "actor": [
+   "Andrew Wheildon-Dennis (Blindlight)"
+  ],
+  "chapter": {
+   "id": 54,
+   "name": "Castlevania",
+   "date": "27.08.2024"
+  },
+  "perks": [
+   "Eyes of Belmont",
+   "Exultation",
+   "Moment of Glory"
+  ],
+  "icon": "/img/survivors/trevor-belmont.png"
+ },
+ {
+  "slug": "taurie-cain",
+  "id": 45,
+  "name": "Taurie Cain",
+  "role": "Disciple of the Black Talon",
+  "gender": "Woman",
+  "origin": "Scottish",
+  "actor": [
+   "Arianna Ratner (Blindlight, Voice-Over Artist)"
+  ],
+  "chapter": {
+   "id": 55,
+   "name": "Doomed Course",
+   "date": "28.11.2024"
+  },
+  "perks": [
+   "Clean Break",
+   "Invocation: Treacherous Crows",
+   "Shoulder the Burden"
+  ],
+  "icon": "/img/survivors/taurie-cain.png"
+ },
+ {
+  "slug": "orela-rose",
+  "id": 46,
+  "name": "Orela Rose",
+  "role": "Calming Paramedic",
+  "gender": "Trans Woman",
+  "origin": "African American",
+  "actor": [
+   "Angelica Ross (Blindlight, Actress and Transgender Rights Advocate)"
+  ],
+  "chapter": {
+   "id": 57,
+   "name": "Steady Pulse",
+   "date": "06.05.2025"
+  },
+  "perks": [
+   "Do No Harm",
+   "Duty of Care",
+   "Rapid Response"
+  ],
+  "icon": "/img/survivors/orela-rose.png"
+ },
+ {
+  "slug": "rick-grimes",
+  "id": 47,
+  "name": "Rick Grimes",
+  "role": "Post-Apocalyptic Group Leader",
+  "gender": "Man",
+  "origin": "American",
+  "actor": [
+   "Andrew Lincoln (Original Actor)"
+  ],
+  "chapter": {
+   "id": 59,
+   "name": "The Walking Dead",
+   "date": "29.07.2025"
+  },
+  "perks": [
+   "Apocalyptic Ingenuity",
+   "Come and Get Me!",
+   "Teamwork: Toughen Up"
+  ],
+  "icon": "/img/survivors/rick-grimes.png"
+ },
+ {
+  "slug": "michonne-grimes",
+  "id": 48,
+  "name": "Michonne Grimes",
+  "role": "Relentless Protector",
+  "gender": "Woman",
+  "origin": "African American",
+  "actor": [
+   "Erikka J. (Voice Actress)"
+  ],
+  "chapter": {
+   "id": 59,
+   "name": "The Walking Dead",
+   "date": "29.07.2025"
+  },
+  "perks": [
+   "Conviction",
+   "Last Stand",
+   "Teamwork: Throw Down"
+  ],
+  "icon": "/img/survivors/michonne-grimes.png"
+ },
+ {
+  "slug": "vee-boonyasak",
+  "id": 49,
+  "name": "Vee Boonyasak",
+  "role": "Energetic Drummer",
+  "gender": "Woman",
+  "origin": "Thai",
+  "actor": [
+   "Sura Siu (Voice-Over Artist)"
+  ],
+  "chapter": {
+   "id": 60,
+   "name": "Sinister Grace",
+   "date": "23.09.2025"
+  },
+  "perks": [
+   "Ghost Notes",
+   "One-Two-Three-Four!",
+   "Road Life"
+  ],
+  "icon": "/img/survivors/vee-boonyasak.png"
+ },
+ {
+  "slug": "dustin-henderson",
+  "id": 50,
+  "name": "Dustin Henderson",
+  "role": "Brillant High School Student",
+  "gender": "Man",
+  "origin": "American",
+  "actor": [
+   "Jacob Craner (Voice Actor)"
+  ],
+  "chapter": {
+   "id": 61,
+   "name": "Stranger Things Chapter 2",
+   "date": "27.01.2026"
+  },
+  "perks": [
+   "Bada Bada Boom",
+   "Change of Plan",
+   "Teamwork: Full Circuit"
+  ],
+  "icon": "/img/survivors/dustin-henderson.png"
+ },
+ {
+  "slug": "eleven",
+  "id": 51,
+  "name": "Eleven",
+  "role": "Former Test Subject",
+  "gender": "Woman",
+  "origin": "American",
+  "actor": [
+   "Abby Espiritu (Voice Actress)"
+  ],
+  "chapter": {
+   "id": 61,
+   "name": "Stranger Things Chapter 2",
+   "date": "27.01.2026"
+  },
+  "perks": [
+   "Extrasensory Perception",
+   "Teamwork: Soft-Spoken",
+   "We See You"
+  ],
+  "icon": "/img/survivors/eleven.png"
+ },
+ {
+  "slug": "kwon-tae-young",
+  "id": 52,
+  "name": "Kwon Tae-young",
+  "role": "Hard-Working Perfectionist",
+  "gender": "Man",
+  "origin": "South Korean",
+  "actor": [
+   "Kevin Woo (Singer-Songwriter)"
+  ],
+  "chapter": {
+   "id": 62,
+   "name": "All-Kill: Comeback",
+   "date": "17.03.2026"
+  },
+  "perks": [
+   "A Place For Us",
+   "Five Moves Ahead",
+   "Flow State"
+  ],
+  "icon": "/img/survivors/kwon-tae-young.png"
+ },
+ {
+  "slug": "shane-wiigwaas",
+  "id": 53,
+  "name": "Shane Wiigwaas",
+  "role": "Atoning Defense Attorney",
+  "gender": "Man",
+  "origin": "Native American",
+  "actor": [
+   "Dallas Goldtooth (Actor)"
+  ],
+  "chapter": {
+   "id": 64,
+   "name": "The Life Road",
+   "date": "25.06.2026"
+  },
+  "perks": [
+   "Wide Open Throttle",
+   "Lend a Hand",
+   "Cross-Examination"
+  ],
+  "icon": "/img/survivors/shane-wiigwaas.png"
+ },
+ {
+  "slug": "aurora-stardotter",
+  "id": 54,
+  "name": "Aurora Stardotter",
+  "role": "Saviour of the People",
+  "gender": "Woman",
+  "origin": "Terra Primus",
+  "actor": [
+   "Claire Vousden (Voice Actress)"
+  ],
+  "chapter": {
+   "id": 65,
+   "name": "Chorus of Sin",
+   "date": "25.08.2026"
+  },
+  "perks": [
+   "Fruits of Your Labor",
+   "Salvation's Cry",
+   "Boon: Steadfast"
+  ],
+  "icon": "/img/survivors/aurora-stardotter.png"
+ },
+ {
+  "slug": "sienna-shaw",
+  "id": 55,
+  "name": "Sienna Shaw",
+  "role": "Resilient Survivor",
+  "gender": "Woman",
+  "origin": "American",
+  "actor": [
+   "Lauren LaVera (Original Actress)"
+  ],
+  "chapter": {
+   "id": 66,
+   "name": "Terrifier",
+   "date": "24.11.2026"
+  },
+  "perks": [
+   "Valkyrie's Rage",
+   "Shared Trauma",
+   "Best Gift Ever"
+  ],
+  "icon": "/img/survivors/sienna-shaw.png"
+ }
+]

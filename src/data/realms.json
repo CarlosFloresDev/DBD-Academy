@@ -1,0 +1,291 @@
+[
+ {
+  "slug": "the-macmillan-estate",
+  "id": 1,
+  "name": "The MacMillan Estate",
+  "codeName": "Industrial",
+  "location": "Washington State, United States",
+  "color": "#4982a2",
+  "maps": [
+   "coal-tower",
+   "groaning-storehouse",
+   "ironworks-of-misery",
+   "shelter-woods",
+   "suffocation-pit"
+  ],
+  "icon": "/img/realms/the-macmillan-estate.png"
+ },
+ {
+  "slug": "autohaven-wreckers",
+  "id": 2,
+  "name": "Autohaven Wreckers",
+  "codeName": "Junkyard",
+  "location": "United States",
+  "color": "#75d277",
+  "maps": [
+   "azarov-s-resting-place",
+   "blood-lodge",
+   "gas-heaven",
+   "wreckers-yard",
+   "wretched-shop"
+  ],
+  "icon": "/img/realms/autohaven-wreckers.png"
+ },
+ {
+  "slug": "coldwind-farm",
+  "id": 3,
+  "name": "Coldwind Farm",
+  "codeName": "Farm",
+  "location": "United States",
+  "color": "#fccf6b",
+  "maps": [
+   "fractured-cowshed",
+   "rancid-abattoir",
+   "rotten-fields",
+   "the-thompson-house",
+   "torment-creek"
+  ],
+  "icon": "/img/realms/coldwind-farm.png"
+ },
+ {
+  "slug": "crotus-prenn-asylum",
+  "id": 4,
+  "name": "Crotus Prenn Asylum",
+  "codeName": "Asylum",
+  "location": "United States",
+  "color": "#cccfbc",
+  "maps": [
+   "disturbed-ward",
+   "father-campbell-s-chapel"
+  ],
+  "icon": "/img/realms/crotus-prenn-asylum.png"
+ },
+ {
+  "slug": "haddonfield",
+  "id": 5,
+  "name": "Haddonfield",
+  "codeName": "Suburbs",
+  "location": "Illinois, United States",
+  "color": "#033755",
+  "maps": [
+   "lampkin-lane"
+  ],
+  "icon": "/img/realms/haddonfield.png"
+ },
+ {
+  "slug": "backwater-swamp",
+  "id": 6,
+  "name": "Backwater Swamp",
+  "codeName": "Swamp",
+  "location": "United States",
+  "color": "#adadad",
+  "maps": [
+   "the-pale-rose",
+   "grim-pantry"
+  ],
+  "icon": "/img/realms/backwater-swamp.png"
+ },
+ {
+  "slug": "lery-s-memorial-institute",
+  "id": 7,
+  "name": "Léry's Memorial Institute",
+  "codeName": "Hospital",
+  "location": "Illinois, United States",
+  "color": "#92a7ba",
+  "maps": [
+   "treatment-theatre"
+  ],
+  "icon": "/img/realms/lery-s-memorial-institute.png"
+ },
+ {
+  "slug": "red-forest",
+  "id": 8,
+  "name": "Red Forest",
+  "codeName": "Boreal",
+  "location": "Kiev Governorate, Russian Empire",
+  "color": "#39b0d9",
+  "maps": [
+   "mother-s-dwelling",
+   "the-temple-of-purgation"
+  ],
+  "icon": "/img/realms/red-forest.png"
+ },
+ {
+  "slug": "springwood",
+  "id": 9,
+  "name": "Springwood",
+  "codeName": "England",
+  "location": "Ohio, United States",
+  "color": "#b47dca",
+  "maps": [
+   "badham-preschool"
+  ],
+  "icon": "/img/realms/springwood.png"
+ },
+ {
+  "slug": "gideon-meat-plant",
+  "id": 10,
+  "name": "Gideon Meat Plant",
+  "codeName": "Finland",
+  "location": "Brooklyn, New York, United States",
+  "color": "#f6f6f6",
+  "maps": [
+   "the-game"
+  ],
+  "icon": "/img/realms/gideon-meat-plant.png"
+ },
+ {
+  "slug": "yamaoka-estate",
+  "id": 11,
+  "name": "Yamaoka Estate",
+  "codeName": "Haiti",
+  "location": "Kagawa, Japan",
+  "color": "#9d3a2c",
+  "maps": [
+   "family-residence",
+   "sanctum-of-wrath"
+  ],
+  "icon": "/img/realms/yamaoka-estate.png"
+ },
+ {
+  "slug": "ormond",
+  "id": 12,
+  "name": "Ormond",
+  "codeName": "Kenya",
+  "location": "Alberta, Canada",
+  "color": "#a2f2ff",
+  "maps": [
+   "mount-ormond-resort",
+   "ormond-lake-mine"
+  ],
+  "icon": "/img/realms/ormond.png"
+ },
+ {
+  "slug": "hawkins-national-laboratory",
+  "id": 13,
+  "name": "Hawkins National Laboratory",
+  "codeName": "Qatar",
+  "location": "Indiana, United States",
+  "color": "#21b6a8",
+  "maps": [
+   "the-underground-complex"
+  ],
+  "icon": "/img/realms/hawkins-national-laboratory.png"
+ },
+ {
+  "slug": "grave-of-glenvale",
+  "id": 14,
+  "name": "Grave of Glenvale",
+  "codeName": "Ukraine",
+  "location": "Arizona, United States",
+  "color": "#ea9533",
+  "maps": [
+   "dead-dawg-saloon"
+  ],
+  "icon": "/img/realms/grave-of-glenvale.png"
+ },
+ {
+  "slug": "silent-hill",
+  "id": 15,
+  "name": "Silent Hill",
+  "codeName": "Wales",
+  "location": "Maine, United States",
+  "color": "#898989",
+  "maps": [
+   "midwich-elementary-school"
+  ],
+  "icon": "/img/realms/silent-hill.png"
+ },
+ {
+  "slug": "raccoon-city",
+  "id": 16,
+  "name": "Raccoon City",
+  "codeName": "Eclipse",
+  "location": "Arklay County, United States",
+  "color": "#5a7898",
+  "maps": [
+   "raccoon-city-police-station",
+   "raccoon-city-police-station-east-wing",
+   "raccoon-city-police-station-west-wing"
+  ],
+  "icon": "/img/realms/raccoon-city.png"
+ },
+ {
+  "slug": "forsaken-boneyard",
+  "id": 17,
+  "name": "Forsaken Boneyard",
+  "codeName": "Ion",
+  "location": "Tarapacá, Chile",
+  "color": "#ffe3b5",
+  "maps": [
+   "eyrie-of-crows",
+   "dead-sands"
+  ],
+  "icon": "/img/realms/forsaken-boneyard.png"
+ },
+ {
+  "slug": "withered-isle",
+  "id": 18,
+  "name": "Withered Isle",
+  "codeName": "Meteor",
+  "location": "Atlantic Ocean",
+  "color": "#d5755f",
+  "maps": [
+   "garden-of-joy",
+   "greenville-square",
+   "freddy-fazbear-s-pizza",
+   "fallen-refuge"
+  ],
+  "icon": "/img/realms/withered-isle.png"
+ },
+ {
+  "slug": "the-decimated-borgo",
+  "id": 19,
+  "name": "The Decimated Borgo",
+  "codeName": "Quantum",
+  "location": "Medieval Italy",
+  "color": "#046276",
+  "maps": [
+   "the-shattered-square",
+   "forgotten-ruins"
+  ],
+  "icon": "/img/realms/the-decimated-borgo.png"
+ },
+ {
+  "slug": "dvarka-deepwood",
+  "id": 20,
+  "name": "Dvarka Deepwood",
+  "codeName": "Umbra",
+  "location": "Dvarka Planet",
+  "color": "#d5755f",
+  "maps": [
+   "toba-landing",
+   "nostromo-wreckage"
+  ],
+  "icon": "/img/realms/dvarka-deepwood.png"
+ },
+ {
+  "slug": "sleepless-district",
+  "id": 21,
+  "name": "Sleepless District",
+  "codeName": "Quiche",
+  "location": "Seoul, South Korea",
+  "color": "#b5fcff",
+  "maps": [
+   "trickster-s-delusion"
+  ],
+  "icon": "/img/realms/sleepless-district.png"
+ },
+ {
+  "slug": "the-subdivisions",
+  "id": 22,
+  "name": "The Subdivisions",
+  "codeName": "Liminal",
+  "location": "United States",
+  "color": null,
+  "maps": [
+   "hartshorne-mall"
+  ],
+  "icon": "/img/realms/the-subdivisions.png"
+ }
+]

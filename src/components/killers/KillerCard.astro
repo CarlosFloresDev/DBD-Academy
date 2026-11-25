@@ -1,0 +1,109 @@
+---
+import Portrait from '../Portrait.astro';
+import TierBadge from '../TierBadge.astro';
+
+type Tier = 'S' | 'A' | 'B' | 'C' | 'D';
+
+interface Props {
+  killer: {
+    slug: string;
+    name: string;
+    title: string;
+    aliases: string[];
+    realName: string | null;
+    chapter: { name: string; date: string } | null;
+    speed: number;
+    speedPct: number;
+    terror: { radius: number; label: string | null }[];
+    difficulty: number | null;
+    comp: { tier: string } | null;
+    icon: string;
+  };
+}
+
+const { killer } = Astro.props;
+const tier = killer.comp ? (killer.comp.tier as Tier) : null;
+const badgeTier = tier ? ({
+  toLower: () => tier.toLowerCase(),
+  toLowerCase: () => tier.toLowerCase(),
+  toString: () => tier,
+  valueOf: () => tier,
+  [Symbol.toPrimitive]: () => tier,
+} as unknown as Tier) : null;
+const release = killer.chapter?.date.split('.').reverse().join('-') ?? '';
+const ribbonDate = killer.chapter
+  ? (() => {
+      const [day, month, year] = killer.chapter!.date.split('.');
+      const months = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+      return `${day} ${months[Number(month) - 1]} ${year}`;
+    })()
+  : '';
+const terror = killer.terror[0];
+---
+
+<a
+  class="killer-card card"
+  href={`/killers/${killer.slug}/`}
+  data-killer
+  data-name={killer.name}
+  data-alias={killer.aliases.join(' | ')}
+  data-real={killer.realName ?? ''}
+  data-tier={tier ?? 'none'}
+  data-speed={killer.speed}
+  data-difficulty={killer.difficulty ?? ''}
+  data-release={release}
+  aria-label={`${killer.title}, ${killer.name}. Abrir ficha`}
+>
+  <div class="portrait-wrap">
+    <Portrait src={killer.icon} alt={`Retrato de ${killer.realName ?? killer.name}, ${killer.title}`} size="md" />
+    {killer.slug === 'terrifier' && killer.chapter && (
+      <span class="ribbon">NUEVO · {ribbonDate}</span>
+    )}
+  </div>
+  <div class="info">
+    <p class="chapter">{killer.chapter ? killer.chapter.name : 'Sin capitulo'}</p>
+    <h3 class="display">{killer.name}</h3>
+    <p class="title">{killer.title}</p>
+    <div class="metrics">
+      <div class="metric">
+        <span>Velocidad</span>
+        <strong class="mono">{killer.speed.toFixed(2).replace('.', ',')} m/s</strong>
+        <small class="mono">{killer.speedPct} % base</small>
+      </div>
+      <div class="metric">
+        <span>Terror</span>
+        <strong class="mono">{terror ? `${terror.radius} m` : '—'}</strong>
+        <small>{terror?.label ?? 'Radio estandar'}</small>
+      </div>
+      <div class="metric rank">
+        <span>Tier</span>
+        <TierBadge tier={badgeTier} />
+      </div>
+    </div>
+  </div>
+</a>
+
+<style>
+  .killer-card { position:relative; display:grid; grid-template-columns:minmax(0,1fr); min-width:0; overflow:hidden; }
+  .portrait-wrap { position:relative; min-width:0; }
+  .portrait-wrap :global(.portrait) { width:100%; aspect-ratio:4/3; border:0; border-radius:0; }
+  .ribbon { position:absolute; z-index:2; top:0; left:0; border-right:1px solid rgba(255,255,255,.28); background:var(--blood); padding:7px 10px; color:#fff; font-family:"JetBrains Mono Variable",monospace; font-size:.64rem; font-weight:800; letter-spacing:.12em; }
+  .info { display:flex; min-width:0; flex-direction:column; gap:6px; padding:14px 16px 16px; }
+  .chapter { margin:0; color:var(--muted); font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; overflow-wrap:anywhere; }
+  h3 { margin:0; font-size:1.85rem; line-height:1; overflow-wrap:anywhere; }
+  .title { margin:0; color:var(--ice); font-size:.78rem; }
+  .metrics { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-top:8px; border-top:1px solid var(--line); padding-top:12px; }
+  .metric { min-width:0; }
+  .metric > span { display:block; margin-bottom:5px; color:var(--muted); font-size:.62rem; letter-spacing:.08em; text-transform:uppercase; }
+  .metric strong { display:block; color:var(--amber); font-size:.92rem; line-height:1.2; white-space:nowrap; }
+  .metric small { display:block; margin-top:3px; color:var(--muted); font-size:.62rem; overflow-wrap:anywhere; }
+  .rank :global(.tier-badge) { min-width:48px; height:24px; }
+  @media (max-width:560px) {
+    .killer-card { grid-template-columns:92px minmax(0,1fr); }
+    .portrait-wrap :global(.portrait) { height:100%; aspect-ratio:auto; }
+    .info { padding:12px; }
+    h3 { font-size:1.5rem; }
+    .metrics { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .rank { grid-column:1/-1; }
+  }
+</style>

@@ -1,0 +1,136 @@
+ {} Read src\data\comp-rules.json 65 lines read
+
+ {} Read src\data\perks.json L1:80 (80 lines read)
+
+ {} Read src\data\survivors.json L1:45 (45 lines read)
+
+ {} Read src\data\killers.json L1:45 (45 lines read)
+
+ / Search "src\pages\**\*.astro" 2 files found
+
+ / Search "src\components\**\*.astro" 11 files found
+
+ ● Read src\components\PerkCard.astro 42 lines read
+
+ ● Read src\components\PerkIcon.astro 20 lines read
+
+ ● Read src\components\Portrait.astro 19 lines read
+
+ ● Read src\components\Chip.astro 5 lines read
+
+ ● Read src\components\SectionHead.astro 14 lines read
+
+ / Search "Sienna Shaw|Aurora Stardotter" (src\data\survivors.json) 23 lines found
+
+ / Search "src\layouts\**\*.astro" 1 file found
+
+ ● Read src\layouts\Base.astro 47 lines read
+
+ SS Read src\styles\global.css L1:180 (180 lines read)
+
+ {} Read src\data\survivors.json L1050:1125 (76 lines read)
+
+ / Search "Sienna Shaw|Aurora Stardotter" (src\data\perks.json) 11 lines found
+
+ / Search "src\components\builds\**\*.astro" No matches found
+
+ / Search "export const|interface Props" in *.astro (src\components) 9 files found
+
+ / Search "Sienna Shaw|Aurora Stardotter" (src\data\perks.json) 13 lines found
+
+ / Search "src\pages\builds\**\*" No matches found
+
+ / Search ""slug": "(aurora-stardotter|sienna-shaw)"" (src\data\survivors.json) 39 lines found
+
+ ● Edit  Create src/data/builds.json
+
+ ● Edit  Create src/components/builds/BuildCard.astro (+50)  Create src/components/builds/BuildLab.…
+
+ ● Edit  Create src/pages/builds/index.astro (+135)  Create src/pages/builds/[id].astro (+148)
+
+ ● Edit  Edit src/components/builds/BuildLab.astro (+2 -8)  Edit src/pages/builds/[id].astro (+3 -3)
+
+ ● Edit  Edit src/components/builds/BuildLab.astro (+4 -1)  Edit src/pages/builds/[id].astro (+2 -1)
+
+ / Search ""id":" (src\data\builds.json) 1 file found
+
+ / Search ""name": "(Bond|Kindred|Windows of Opportunity|Déjà Vu|Five Moves Ahead|L… 139 lines found
+
+ / Search "(TODO|lorem ipsum|gradient|<main)" (src\components\builds, src\pages\bu… No matches found
+
+ ✗ Edit  Edit src/components/builds/BuildLab.astro  Edit src/pages/builds/[id].astro  Edit src/data…
+   Error: Failed to find expected lines in D:\descargas\Proyectos 
+   personales\DBD-Academy\src\data\builds.json:
+       "notaCompetitiva": "Los cuatro perks son legales según la lista general de DBD Arena. La 
+   regla de Blight limita add-ons, no estos perks."
+
+ ● Read src\components\builds\BuildLab.astro L1:235 (235 lines read)
+
+ ● Read src\pages\builds\[id].astro L1:125 (125 lines read)
+
+ / Search ""notaCompetitiva"" (src\data\builds.json) 28 lines found
+
+ ● Edit  Edit src/pages/builds/[id].astro (+6 -2)  Edit src/data/builds.json (+26 -26)
+
+ ● Edit  Edit src/components/builds/BuildLab.astro (+2 -4)
+
+ {} Read src\data\builds.json L211:430 (184 lines read)
+
+ {} Read src\data\builds.json L1:210 (210 lines read)
+
+ / Search ""lado": "survivor"" (src\data\builds.json) 1 file found
+
+ / Search ""lado": "killer"" (src\data\builds.json) 1 file found
+
+ / Search ""name": "Wake Up!"" (src\data\perks.json) 27 lines found
+
+ / Search ""killer": "(nurse|blight|hillbilly|spirit|oni|dark-lord|twins|ghoul|first… 12 lines found
+
+ ● Edit  Edit src/data/builds.json (+3 -3)
+
+ / Search ""notaCompetitiva"" (src\data\builds.json) 28 lines found
+
+ ● Edit  Edit src/data/builds.json (+2 -2)
+
+ ● Read src\components\builds\BuildLab.astro L205:330 (64 lines read)
+
+ ● Read src\pages\builds\index.astro L1:220 (135 lines read)
+
+ ● Read src\components\builds\BuildCard.astro 50 lines read
+
+ / Search ""notaCompetitiva"" (src\data\builds.json) 28 lines found
+
+ / Search ""name": "(Laughingstock|Kill Spree|Funny Business|Fruits of Your Labor|S… 168 lines found
+
+ ● Edit  Edit src/components/builds/BuildLab.astro (+4 -1)  Edit src/pages/builds/[id].astro (+4 -3…
+
+ ● Edit  Edit src/pages/builds/index.astro (+2 -2)  Edit src/pages/builds/[id].astro (+2 -2)  Edit …
+
+ / Search ""lado": "killer"" (src\data\builds.json) 1 file found
+
+ / Search "(TODO|lorem ipsum|<main|aria-labelledby="library-title")" (src\componen… No matches found
+
+ / Search ""lado": "survivor"" (src\data\builds.json) 1 file found
+
+ / Search ""id": "(killer|survivor)-|"perks": \[|"notaCompetitiva"" (src\data\builds… 72 lines found
+
+ / Search "src\pages\builds\*.astro" 2 files found
+
+ / Search ""id":" (src\data\builds.json) 1 file found
+
+Implementé **28 builds**: 16 de killer y 12 de survivor, con sus páginas, filtros y laboratorio interactivo. Archivos creados:
+
+- `src/data/builds.json`
+- `src/components/builds/BuildCard.astro`
+- `src/components/builds/BuildLab.astro`
+- `src/pages/builds/index.astro`
+- `src/pages/builds/[id].astro`
+
+**Suposición:** las etiquetas 1v1 también consideran perks que revelan auras, según sus tags y descripciones. No ejecuté comandos ni tests.
+
+
+
+Changes    +1061 -62
+AI Credits 4.9 (5m 26s)
+Tokens     ↑ 1.4m (1.3m cached, 93.6k written) • ↓ 47.8k (20.6k reasoning)
+Resume     copilot --resume=ffd91690-c8ab-4999-8299-ee8e41cc3e19

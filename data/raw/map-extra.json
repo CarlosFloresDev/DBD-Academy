@@ -1,0 +1,143 @@
+{
+ "Coal Tower": {
+  "icon": "/img/maps/coal-tower.png"
+ },
+ "Groaning Storehouse": {
+  "icon": "/img/maps/groaning-storehouse.png"
+ },
+ "Ironworks of Misery": {
+  "icon": "/img/maps/ironworks-of-misery.png"
+ },
+ "Shelter Woods": {
+  "icon": "/img/maps/shelter-woods.png"
+ },
+ "Suffocation Pit": {
+  "icon": "/img/maps/suffocation-pit.png"
+ },
+ "Azarov's Resting Place": {
+  "icon": "/img/maps/azarov-s-resting-place.png"
+ },
+ "Blood Lodge": {
+  "icon": "/img/maps/blood-lodge.png"
+ },
+ "Gas Heaven": {
+  "icon": "/img/maps/gas-heaven.png"
+ },
+ "Wreckers' Yard": {
+  "icon": "/img/maps/wreckers-yard.png"
+ },
+ "Wretched Shop": {
+  "icon": "/img/maps/wretched-shop.png"
+ },
+ "Fractured Cowshed": {
+  "icon": "/img/maps/fractured-cowshed.png"
+ },
+ "Rancid Abattoir": {
+  "icon": "/img/maps/rancid-abattoir.png"
+ },
+ "Rotten Fields": {
+  "icon": "/img/maps/rotten-fields.png"
+ },
+ "The Thompson House": {
+  "icon": "/img/maps/the-thompson-house.png"
+ },
+ "Torment Creek": {
+  "icon": "/img/maps/torment-creek.png"
+ },
+ "Disturbed Ward": {
+  "icon": "/img/maps/disturbed-ward.png"
+ },
+ "Father Campbell's Chapel": {
+  "icon": "/img/maps/father-campbell-s-chapel.png"
+ },
+ "Lampkin Lane": {
+  "icon": "/img/maps/lampkin-lane.png"
+ },
+ "The Pale Rose": {
+  "icon": "/img/maps/the-pale-rose.png"
+ },
+ "Grim Pantry": {
+  "icon": "/img/maps/grim-pantry.png"
+ },
+ "Treatment Theatre": {
+  "icon": "/img/maps/treatment-theatre.png"
+ },
+ "Mother's Dwelling": {
+  "icon": "/img/maps/mother-s-dwelling.png"
+ },
+ "The Temple of Purgation": {
+  "icon": "/img/maps/the-temple-of-purgation.png"
+ },
+ "Badham Preschool": {
+  "icon": "/img/maps/badham-preschool.png"
+ },
+ "The Game": {
+  "icon": null
+ },
+ "Family Residence": {
+  "icon": "/img/maps/family-residence.png"
+ },
+ "Sanctum of Wrath": {
+  "icon": "/img/maps/sanctum-of-wrath.png"
+ },
+ "Mount Ormond Resort": {
+  "icon": "/img/maps/mount-ormond-resort.png"
+ },
+ "The Underground Complex": {
+  "icon": "/img/maps/the-underground-complex.png"
+ },
+ "Dead Dawg Saloon": {
+  "icon": "/img/maps/dead-dawg-saloon.png"
+ },
+ "Midwich Elementary School": {
+  "icon": null
+ },
+ "Raccoon City Police Station": {
+  "icon": null
+ },
+ "Eyrie of Crows": {
+  "icon": "/img/maps/eyrie-of-crows.png"
+ },
+ "Garden of Joy": {
+  "icon": "/img/maps/garden-of-joy.png"
+ },
+ "Raccoon City Police Station East Wing": {
+  "icon": null
+ },
+ "Raccoon City Police Station West Wing": {
+  "icon": null
+ },
+ "The Shattered Square": {
+  "icon": "/img/maps/the-shattered-square.png"
+ },
+ "Toba Landing": {
+  "icon": "/img/maps/toba-landing.png"
+ },
+ "Nostromo Wreckage": {
+  "icon": "/img/maps/nostromo-wreckage.png"
+ },
+ "Greenville Square": {
+  "icon": "/img/maps/greenville-square.png"
+ },
+ "Forgotten Ruins": {
+  "icon": null
+ },
+ "Ormond Lake Mine": {
+  "icon": "/img/maps/ormond-lake-mine.png"
+ },
+ "Dead Sands": {
+  "icon": "/img/maps/dead-sands.png"
+ },
+ "Freddy Fazbear's Pizza": {
+  "icon": "/img/maps/freddy-fazbear-s-pizza.png"
+ },
+ "Fallen Refuge": {
+  "icon": "/img/maps/fallen-refuge.png"
+ },
+ "Trickster's Delusion": {
+  "icon": null
+ },
+ "Hartshorne Mall": {
+  "icon": null
+ }
+}

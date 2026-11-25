@@ -1,0 +1,156 @@
+---
+import Base from '../../layouts/Base.astro';
+import PerkCard from '../../components/PerkCard.astro';
+import Portrait from '../../components/Portrait.astro';
+import Chip from '../../components/Chip.astro';
+import builds from '../../data/builds.json';
+import killers from '../../data/killers.json';
+import perks from '../../data/perks.json';
+import compRules from '../../data/comp-rules.json';
+
+export function getStaticPaths() {
+  return builds.map((build) => ({ params: { id: build.id }, props: { build } }));
+}
+
+const { build } = Astro.props;
+const killer = build.killer ? killers.find((entry) => entry.slug === build.killer) : undefined;
+const perkRecords = build.perks.map((name) => {
+  const perk = perks.find((entry) => entry.name === name);
+  if (!perk) throw new Error(`No se encontró la perk "${name}" para la build "${build.id}".`);
+  return perk;
+});
+const bannedNames = build.lado === 'killer' ? compRules.perksKillerBaneados : compRules.perksSurvivorBaneados;
+const duelBuild = build.id === 'survivor-duelo-1v1-competitivo';
+const normalize = (name: string) => name.toLocaleLowerCase('en').replace('favour', 'favor');
+const perkStatus = (name: string, tags: string[], desc: string) => {
+  if (build.killer === 'nurse' && compRules.reglasPorKiller.some((rule) => rule.killer === 'Nurse' && rule.regla.toLowerCase().includes('sin perks'))) return false;
+  if (duelBuild) return true;
+  const isBanned = bannedNames.some((banned) => normalize(banned) === normalize(name));
+  const revealsAura = tags.some((tag) => tag.toLocaleLowerCase('en').includes('aura')) ||
+    /(?:aura.{0,120}(?:reveal|see|shown|visible)|(?:reveal|revealed|see|show).{0,120}aura)/i.test(desc);
+  return !isBanned && !revealsAura;
+};
+---
+
+<Base title={build.nombre} description={build.objetivo} active="builds">
+  <header class="detail-hero container">
+    <a class="back" href="/builds/">← Volver a builds</a>
+    <p class="eyebrow">{build.lado === 'killer' ? 'Build de killer' : 'Build de survivor'} · {build.arquetipo}</p>
+    <h1 class="display">{build.nombre}</h1>
+    <p class="objective">{build.objetivo}</p>
+    <div class="hero-meta">
+      <span class="difficulty" aria-label={`Dificultad ${build.dificultad} de 3`}>
+        Dificultad <strong>{'●'.repeat(build.dificultad)}{'○'.repeat(3 - build.dificultad)}</strong>
+      </span>
+      {killer && (
+        <a class="killer-link" href={`/killers/${killer.slug}/`}>
+          <Portrait src={killer.icon} alt={`Retrato de ${killer.name}`} size="sm" />
+          <span>Ver guía de {killer.name}</span>
+        </a>
+      )}
+    </div>
+  </header>
+
+  <div class="container detail-content">
+    <section aria-labelledby="perks-title">
+      <div class="section-title"><p class="eyebrow">Configuración</p><h2 class="display" id="perks-title">Perks elegidas</h2></div>
+      <div class="perk-list">
+        {perkRecords.map((perk) => {
+          const legal = perkStatus(perk.name, perk.tags, perk.desc);
+          return (
+            <div class="perk-wrap">
+              <PerkCard perk={perk} />
+              <p class:list={['rule-status', { legal }]}><Chip text={legal ? 'Legal 1v1' : 'Baneado 1v1'} /></p>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+
+    <section class="play-panel" aria-labelledby="play-title">
+      <p class="eyebrow">Ejecución</p>
+      <h2 class="display" id="play-title">Cómo jugarla</h2>
+      <ol>{build.comoJugarla.map((step) => <li>{step}</li>)}</ol>
+    </section>
+
+    <div class="notes-grid">
+      <section>
+        <p class="eyebrow">Contexto</p>
+        <h2>Cuándo usarla</h2>
+        <p>{build.cuandoUsarla}</p>
+      </section>
+      <section>
+        <p class="eyebrow">Límite</p>
+        <h2>Debilidades</h2>
+        <p>{build.debilidades}</p>
+      </section>
+    </div>
+
+    <section class="competitive" aria-labelledby="comp-title">
+      <p class="eyebrow">Formato comunitario · DBD Arena</p>
+      <h2 id="comp-title">Nota competitiva</h2>
+      <p>{build.notaCompetitiva}</p>
+      <small>DBD Arena es un estándar comunitario no oficial; las reglas pueden variar entre organizadores.</small>
+    </section>
+
+    <section class="share-panel" aria-label="Copiar o compartir build">
+      <button class="btn btn-primary" id="copy-build" type="button">Copiar build</button>
+      <button class="btn btn-secondary" id="share-build" type="button">Compartir enlace</button>
+      <span id="share-status" aria-live="polite"></span>
+    </section>
+  </div>
+</Base>
+
+<script define:vars={{ names: build.perks }}>
+  const status = document.querySelector('#share-status');
+  document.querySelector('#copy-build')?.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(names.join('\n'));
+      if (status) status.textContent = 'Build copiada.';
+    } catch {
+      if (status) status.textContent = 'No se pudo acceder al portapapeles. Copia manualmente los nombres de las perks.';
+    }
+  });
+  document.querySelector('#share-build')?.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(location.href);
+      if (status) status.textContent = 'Enlace copiado.';
+    } catch {
+      if (status) status.textContent = 'No se pudo acceder al portapapeles. Copia el enlace desde la barra de direcciones.';
+    }
+  });
+</script>
+
+<style>
+  .detail-hero { padding-block: 42px 44px; border-bottom: 1px solid var(--line); }
+  .back { display: inline-block; margin-bottom: 36px; color: var(--muted); font-size: .8rem; }
+  .back:hover { color: var(--amber); }
+  .detail-hero h1 { max-width: 900px; margin-top: 14px; font-size: clamp(3.2rem, 9vw, 7rem); overflow-wrap: anywhere; }
+  .objective { max-width: 720px; margin: 20px 0; color: var(--muted); font-size: 1.05rem; }
+  .hero-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 30px; }
+  .difficulty { color: var(--muted); font-size: .8rem; }
+  .difficulty strong { margin-left: 8px; color: var(--amber); font: 700 .9rem "JetBrains Mono Variable", monospace; letter-spacing: .12em; }
+  .killer-link { display: flex; align-items: center; gap: 12px; color: var(--text); font-size: .8rem; }
+  .killer-link :global(.portrait.sm) { width: 56px; }
+  .detail-content { display: grid; gap: 52px; padding-block: 42px 80px; }
+  .section-title { margin-bottom: 20px; }
+  .section-title h2, .play-panel h2 { margin: 8px 0 0; font-size: clamp(2.6rem, 7vw, 5rem); }
+  .perk-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .perk-wrap { min-width: 0; }
+  .rule-status { margin: 8px 0 0; }
+  .rule-status :global(.chip) { color: var(--blood-2); border-color: var(--blood); }
+  .rule-status.legal :global(.chip) { color: var(--ok); border-color: rgba(74,222,128,.45); }
+  .play-panel { border-left: 3px solid var(--blood); padding: 4px 0 4px 24px; }
+  .play-panel ol { display: grid; gap: 12px; max-width: 820px; margin: 24px 0 0; padding-left: 24px; }
+  .play-panel li { padding-left: 8px; color: var(--text); }
+  .play-panel li::marker { color: var(--amber); font-family: "JetBrains Mono Variable", monospace; }
+  .notes-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .notes-grid section { border-top: 1px solid var(--line); padding-top: 16px; }
+  .notes-grid h2, .competitive h2 { margin: 8px 0; font: 700 1.65rem "Barlow Condensed", sans-serif; letter-spacing: .03em; text-transform: uppercase; }
+  .notes-grid p:last-child, .competitive > p:not(.eyebrow) { margin: 0; color: var(--muted); }
+  .competitive { max-width: 820px; border-left: 3px solid var(--amber); padding: 4px 0 4px 20px; }
+  .competitive small { display: block; margin-top: 12px; color: var(--muted); font-size: .72rem; }
+  .share-panel { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; border-top: 1px solid var(--line); padding-top: 20px; }
+  #share-status { color: var(--amber); font-size: .8rem; }
+  @media (max-width: 700px) { .perk-list, .notes-grid { grid-template-columns: 1fr; } }
+</style>
