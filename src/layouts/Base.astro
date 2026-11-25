@@ -50,13 +50,13 @@ const { title, description, active } = Astro.props;
 </html>
 
 <style is:global>
-  .low-fog { position:fixed; z-index:1; right:-8vw; bottom:-8vh; left:-8vw; height:30vh; pointer-events:none; opacity:.11; background:radial-gradient(ellipse at 30% 100%,#88919a 0,rgba(136,145,154,.25) 20%,transparent 68%); filter:blur(20px); animation:fog-drift 24s ease-in-out infinite alternate; }
-  .global-flicker { position:fixed; z-index:1; inset:0; pointer-events:none; opacity:0; background:radial-gradient(ellipse at 80% 8%,rgba(193,18,31,.18),transparent 36%); }
-  body.motion-ready .global-flicker { animation:red-flicker 16s 1.8s infinite; }
+  .low-fog { position:fixed; z-index:3; right:-8vw; bottom:-8vh; left:-8vw; height:34vh; pointer-events:none; opacity:.2; background:radial-gradient(ellipse at 24% 100%,rgba(193,18,31,.42),transparent 48%),radial-gradient(ellipse at 76% 100%,rgba(138,75,42,.22),transparent 52%),radial-gradient(ellipse at 48% 100%,rgba(136,145,154,.22),transparent 68%); filter:blur(24px); animation:fog-drift 24s ease-in-out infinite alternate; }
+  .global-flicker { position:fixed; z-index:3; inset:0; pointer-events:none; opacity:0; background:radial-gradient(ellipse at 80% 8%,rgba(193,18,31,.2),transparent 42%); }
+  body.motion-ready .global-flicker { animation:red-flicker 14s 1.8s infinite; }
   .page-cut { display:none; position:fixed; z-index:10001; inset:0; pointer-events:none; background:linear-gradient(112deg,transparent 0 42%,var(--blood) 43% 53%,transparent 54%); transform:translateX(-110%); }
   .page-cut.is-running { display:block; animation:page-cut-sweep 400ms cubic-bezier(.76,0,.24,1) forwards; }
   @keyframes fog-drift { from { transform:translate3d(-2%,0,0); opacity:.07; } to { transform:translate3d(2%,-8px,0); opacity:.14; } }
-  @keyframes red-flicker { 0%,23%,24.2%,60%,61.3%,86%,87.2%,100% { opacity:0; } 23.15%,60.15%,86.15% { opacity:.55; } }
+  @keyframes red-flicker { 0%,26%,28%,31%,33%,100% { opacity:0; } 26.4%,31.4% { opacity:.25; } }
   @keyframes page-cut-sweep { 0% { transform:translateX(-110%); } 55% { transform:translateX(0); } 100% { transform:translateX(110%); } }
-  @media (prefers-reduced-motion:reduce) { .low-fog,.global-flicker,.page-cut { display:none !important; animation:none !important; } }
+  @media (prefers-reduced-motion:reduce) { .low-fog { animation:none !important; opacity:.2; } .global-flicker,.page-cut { display:none !important; animation:none !important; } }
 </style>

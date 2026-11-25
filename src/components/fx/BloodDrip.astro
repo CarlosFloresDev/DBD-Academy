@@ -3,26 +3,25 @@ interface Props { edge?: 'top' | 'bottom'; small?: boolean }
 const { edge = 'bottom', small = false } = Astro.props;
 ---
 <span class:list={['blood-drip', `edge-${edge}`, { small }]} aria-hidden="true">
-  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+  <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
 </span>
 <style>
-  .blood-drip { position:absolute; z-index:2; left:0; right:0; height:18px; overflow:clip; pointer-events:none; }
+  .blood-drip { position:absolute; z-index:2; left:0; right:0; height:26px; overflow:visible; pointer-events:none; }
   .edge-top { top:0; transform:rotate(180deg); }
   .edge-bottom { bottom:0; }
-  .blood-drip i { position:absolute; top:-2px; width:7px; height:calc(7px + var(--drop, 10px)); border-radius:0 0 6px 6px; background:var(--blood); transform-origin:top; animation:drip-fall 4.8s ease-in-out infinite; }
-  .blood-drip i:nth-child(3n) { width:5px; background:var(--gore); }
-  .blood-drip i:nth-child(3n + 1) { width:9px; }
-  .blood-drip i:nth-child(1) { left:8%; --drop:7px; animation-delay:-2.2s; }
-  .blood-drip i:nth-child(2) { left:19%; --drop:13px; animation-delay:-.8s; }
-  .blood-drip i:nth-child(3) { left:31%; --drop:6px; animation-delay:-3.1s; }
-  .blood-drip i:nth-child(4) { left:43%; --drop:16px; animation-delay:-1.6s; }
-  .blood-drip i:nth-child(5) { left:56%; --drop:8px; animation-delay:-4s; }
-  .blood-drip i:nth-child(6) { left:68%; --drop:12px; animation-delay:-2.8s; }
-  .blood-drip i:nth-child(7) { left:77%; --drop:5px; animation-delay:-1.2s; }
-  .blood-drip i:nth-child(8) { left:88%; --drop:15px; animation-delay:-3.6s; }
-  .blood-drip i:nth-child(9) { left:96%; --drop:7px; animation-delay:-.4s; }
-  .blood-drip i:nth-child(n + 4) { animation:none; transform:scaleY(.45); opacity:.58; }
-  .small { height:12px; transform:scale(.72); transform-origin:top left; }
-  @keyframes drip-fall { 0%,72%,100% { transform:translateY(0) scaleY(.28); opacity:.5; } 80% { transform:translateY(3px) scaleY(1.05); opacity:1; } 88% { transform:translateY(8px) scaleY(.55); opacity:.72; } }
-  @media (prefers-reduced-motion:reduce) { .blood-drip i { animation:none; transform:scaleY(.45); } }
+  .blood-drip::before { content:""; position:absolute; inset:0 0 auto; height:15px; background:var(--gore); clip-path:polygon(0 0,100% 0,100% 27%,92% 20%,87% 68%,83% 30%,74% 44%,66% 16%,59% 52%,54% 26%,45% 36%,38% 18%,32% 62%,27% 28%,19% 46%,12% 18%,7% 36%,0 22%); }
+  .blood-drip i { position:absolute; top:7px; width:7px; height:var(--drop,15px); border-radius:45% 45% 55% 55%; background:linear-gradient(90deg,var(--gore),var(--blood-2) 48%,var(--blood)); transform-origin:top center; animation:drip-fall 4.8s ease-in-out infinite; box-shadow:inset -2px 0 2px rgba(20,0,0,.4); }
+  .blood-drip i:nth-child(1) { left:8%; --drop:11px; animation-delay:-2.2s; }
+  .blood-drip i:nth-child(2) { left:22%; --drop:19px; animation-delay:-.8s; }
+  .blood-drip i:nth-child(3) { left:39%; --drop:14px; animation-delay:-3.1s; }
+  .blood-drip i:nth-child(4) { left:58%; --drop:24px; animation-delay:-1.6s; }
+  .blood-drip i:nth-child(5) { left:74%; --drop:12px; animation-delay:-4s; }
+  .blood-drip i:nth-child(6) { left:89%; --drop:18px; animation-delay:-2.8s; }
+  .blood-drip i:nth-child(7) { left:97%; --drop:9px; animation-delay:-1.2s; }
+  .blood-drip i:nth-child(n + 3) { animation:none; transform:scaleY(.68); opacity:.72; }
+  .small { height:18px; }
+  .small::before { height:9px; }
+  .small i { animation:none; opacity:.72; }
+  @keyframes drip-fall { 0%,72%,100% { transform:translateY(0) scaleY(.5); opacity:.62; } 78% { transform:translateY(2px) scaleY(1.04); opacity:1; } 88% { transform:translateY(10px) scaleY(.65); opacity:.75; } }
+  @media (prefers-reduced-motion:reduce) { .blood-drip i { animation:none; transform:scaleY(.68); } }
 </style>

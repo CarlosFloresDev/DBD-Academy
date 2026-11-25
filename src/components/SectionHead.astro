@@ -6,13 +6,13 @@ const { eyebrow,title,description } = Astro.props;
 <header class="section-head" data-reveal>
   <p class="eyebrow">{eyebrow}</p>
   <h2 class="display">{title}</h2>
-  {description && <p>{description}</p>}
   <span class="head-drip"><BloodDrip small /></span>
+  {description && <p>{description}</p>}
 </header>
 <style>
- .section-head { position:relative; max-width:760px; margin-bottom:32px; padding-bottom:12px; counter-increment:section; }
+ .section-head { position:relative; max-width:760px; margin-bottom:32px; counter-increment:section; }
  .section-head::before { content:"// " counter(section,decimal-leading-zero); display:block; margin-bottom:6px; color:var(--muted); font-family:"JetBrains Mono Variable",monospace; font-size:.62rem; letter-spacing:.12em; }
- .section-head h2 { margin-top:8px; font-size:clamp(2.6rem,7vw,5.4rem); }
+ .section-head h2 { margin:8px 0 0; font-size:clamp(2.6rem,7vw,5.4rem); }
  .section-head > p:last-child { max-width:620px; margin:16px 0 0; color:var(--muted); }
- .head-drip { position:absolute; left:0; bottom:0; width:min(180px,45%); height:11px; overflow:clip; border-top:1px solid var(--gore); }
+ .head-drip { position:relative; display:block; width:min(180px,45%); height:22px; margin-top:0; }
 </style>

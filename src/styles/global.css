@@ -43,12 +43,13 @@ body {
   min-width: 360px;
   overflow-x: hidden;
   background:
-    radial-gradient(ellipse at 18% 82%, rgba(122,10,18,.075), transparent 34%),
-    radial-gradient(ellipse at 83% 24%, rgba(138,75,42,.055), transparent 31%),
+    radial-gradient(ellipse at 16% 78%, rgba(122,10,18,.09), transparent 34%),
+    radial-gradient(ellipse at 85% 22%, rgba(138,75,42,.06), transparent 31%),
+    radial-gradient(ellipse at 31% 43%, rgba(193,18,31,.045) 0 1%, transparent 14%),
     linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,.012) 1px, transparent 1px),
     var(--bg);
-  background-size: 720px 720px, 640px 640px, 64px 64px, 64px 64px;
+  background-size: 720px 720px, 640px 640px, 880px 860px, 64px 64px, 64px 64px;
   color: var(--text);
   font-family: "Inter Variable", Inter, sans-serif;
   line-height: 1.55;
@@ -71,17 +72,14 @@ body::after {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: .42;
+  opacity: .56;
   background:
-    radial-gradient(ellipse at center, transparent 48%, rgba(0,0,0,.32) 100%),
+    radial-gradient(ellipse at 50% 108%, rgba(122,10,18,.24), transparent 42%),
+    radial-gradient(ellipse at center, transparent 38%, rgba(0,0,0,.64) 100%),
+    radial-gradient(ellipse at 0 0, rgba(0,0,0,.38), transparent 43%),
+    radial-gradient(ellipse at 100% 0, rgba(0,0,0,.38), transparent 43%),
     url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='rust'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.035' numOctaves='2' seed='8'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='12'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='%238a4b2a' filter='url(%23rust)' opacity='.16'/%3E%3C/svg%3E");
-  background-size: auto, 240px 240px;
-  animation: vignette-breath 12s ease-in-out infinite alternate;
-}
-
-@keyframes vignette-breath {
-  from { opacity: .34; }
-  to { opacity: .5; }
+  background-size: auto, auto, auto, auto, 240px 240px;
 }
 
 ::-webkit-scrollbar { width: 8px; height: 8px; }
@@ -168,6 +166,20 @@ body > footer { position: relative; z-index: 2; }
   transform: translateX(-120%);
   transition: transform 320ms ease;
 }
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  right: -25%;
+  bottom: 0;
+  left: -25%;
+  height: 7px;
+  opacity: 0;
+  background: linear-gradient(105deg, transparent 42%, rgba(255,104,112,.9) 47%, rgba(61,4,9,.9) 50%, transparent 57%);
+  transform: translateX(-45%) skewX(-12deg);
+  transition: opacity 180ms ease, transform 260ms ease;
+}
+.btn-primary:hover::before { opacity: .9; transform: translateX(45%) skewX(-12deg); }
 .btn:hover::after { transform: translateX(120%); }
 .btn:hover { transform: translateY(-2px); }
 .btn-primary { background: var(--blood); color: #fff; }
@@ -176,16 +188,18 @@ body > footer { position: relative; z-index: 2; }
 .btn-secondary:hover { border-color: var(--blood); }
 
 .chip {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(138,75,42,.5);
   border-radius: 999px;
-  padding: 3px 8px;
+  padding: 3px 8px 3px 10px;
   color: var(--muted);
   font-family: "JetBrains Mono Variable", monospace;
   font-size: .72rem;
   line-height: 1.4;
 }
+.chip::before { content:""; width:3px; height:7px; margin-right:5px; background:var(--gore); clip-path:polygon(0 0,100% 0,72% 72%,48% 100%,24% 68%); }
 
 .card {
   position: relative;
@@ -207,18 +221,19 @@ body > footer { position: relative; z-index: 2; }
   position: absolute;
   z-index: 2;
   pointer-events: none;
-  top: 10px;
-  right: 10px;
-  width: 34px;
-  height: 2px;
+  top: 0;
+  right: 0;
+  width: 44px;
+  height: 44px;
   opacity: 0;
-  background: var(--blood-2);
-  box-shadow: 0 5px 0 rgba(193,18,31,.7), 0 10px 0 rgba(193,18,31,.42);
-  transform: rotate(-42deg) translateX(12px);
-  transform-origin: right center;
+  background: linear-gradient(150deg, transparent 0 37%, var(--blood-2) 39% 45%, var(--gore) 47% 54%, transparent 57%),
+    linear-gradient(150deg, transparent 0 59%, var(--blood) 61% 68%, transparent 71%),
+    linear-gradient(150deg, transparent 0 77%, var(--gore) 79% 84%, transparent 87%);
+  filter: drop-shadow(0 0 3px rgba(193,18,31,.7));
+  transform: translate(8px,-8px) rotate(8deg);
   transition: transform 220ms ease, opacity 180ms ease;
 }
-.card:hover::after { opacity: .8; transform: rotate(-42deg) translateX(0); }
+.card:hover::after { opacity: .9; transform: translate(0,0) rotate(0); }
 
 .stat { min-width: 0; }
 .stat strong {
@@ -228,6 +243,7 @@ body > footer { position: relative; z-index: 2; }
   font-size: clamp(2.1rem, 7vw, 4.5rem);
   font-variant-numeric: tabular-nums;
   line-height: 1;
+  text-shadow: 0 0 16px rgba(193,18,31,.18);
 }
 .stat span {
   display: block;
@@ -246,5 +262,5 @@ body > footer { position: relative; z-index: 2; }
     transition-duration: .01ms !important;
   }
   [data-reveal] { opacity: 1 !important; transform: none !important; }
-  body::after { animation: none !important; opacity: .4; }
+  body::after { animation: none !important; }
 }

@@ -10,12 +10,13 @@ const drops = Array.from({ length: 11 }, () => ({
 }));
 ---
 <svg class:list={['splatter', `tone-${tone}`]} width={size} height={size} viewBox="0 0 100 100" aria-hidden="true">
-  <path d="M48 13c4 10 5 15 13 20 9 5 21 3 19 11-2 6-14 3-20 8-7 6-7 20-13 20-7 0-5-15-12-20-8-6-21-3-22-10-1-8 12-6 21-12 6-4 9-10 14-17z"/>
-  {drops.map((drop) => <circle cx={drop.x} cy={drop.y} r={drop.r} />)}
+  <path class="main-splash" d="M49 10 56 24 68 19 66 31 84 32 73 42 88 50 69 55 74 68 60 65 54 86 44 69 32 81 31 64 13 67 24 53 8 45 26 39 20 27 35 31z"/>
+  {drops.map((drop) => <ellipse cx={drop.x} cy={drop.y} rx={drop.r} ry={Math.max(1, Math.round(drop.r * 1.5))} transform={`rotate(${Math.round(rand() * 110 - 55)} ${drop.x} ${drop.y})`} />)}
 </svg>
 <style>
-  .splatter { position:absolute; z-index:-1; overflow:visible; pointer-events:none; opacity:.2; }
-  .splatter path,.splatter circle { fill:var(--splatter-color,var(--blood)); }
-  .tone-gore { --splatter-color:var(--gore); opacity:.3; }
-  .tone-rust { --splatter-color:var(--rust); opacity:.2; }
+  .splatter { position:absolute; z-index:0; overflow:visible; pointer-events:none; opacity:.34; }
+  .splatter path,.splatter ellipse { fill:var(--splatter-color,var(--blood)); }
+  .splatter .main-splash { stroke:var(--blood-2); stroke-width:.7; }
+  .tone-gore { --splatter-color:var(--gore); opacity:.38; }
+  .tone-rust { --splatter-color:var(--rust); opacity:.27; }
 </style>

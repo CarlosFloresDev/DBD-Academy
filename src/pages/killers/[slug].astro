@@ -245,8 +245,8 @@ const missingPerks = killer.perks.filter((name) => !perkByName.has(name));
   .tier-hero strong { display:block; color:var(--amber); font-family:"JetBrains Mono Variable",monospace; font-size:.95rem; font-variant-numeric:tabular-nums; }
   .tier-hero span { display:block; margin-top:4px; color:var(--muted); font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; }
   .section { margin-top:64px; }
-  .stats-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:1px; border:1px solid var(--line); background:var(--line); }
-  .stats-grid > .stat { min-width:0; padding:18px 16px; background:var(--bg-2); }
+  .stats-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:1px; border:1px solid var(--line); background:var(--bg-2); }
+  .stats-grid > .stat { min-width:0; padding:18px 16px; background:var(--bg-2); outline:1px solid var(--line); outline-offset:-0.5px; }
   .stats-grid .stat strong small { color:var(--muted); font-size:.45em; }
   .stats-grid .stat span { overflow-wrap:anywhere; }
   .pips { display:flex; gap:4px; margin-top:12px; }

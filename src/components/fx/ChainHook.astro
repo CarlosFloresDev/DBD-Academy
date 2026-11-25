@@ -4,16 +4,31 @@ const { small = false, position } = Astro.props;
 ---
 <span class:list={['chain-hook', { small }, position && `position-${position}`]} aria-hidden="true">
   <svg viewBox="0 0 90 190">
-    <path d="M24 0v30m18-30v30m18-30v30M24 30l18 11 18-11m-36 0v28m18-28v28m18-28v28M24 58l18 11 18-11m-36 0v28m18-28v28m18-28v28M24 86l18 11 18-11m-36 0v25" fill="none" stroke="currentColor" stroke-width="4"/>
-    <path d="M42 111v16c0 23 25 24 31 5 4-13-5-23-19-22" fill="none" stroke="var(--blood-2)" stroke-width="8" stroke-linecap="round"/>
-    <path d="M42 111v16c0 23 25 24 31 5 4-13-5-23-19-22" fill="none" stroke="var(--rust)" stroke-width="2" stroke-linecap="round"/>
+    <g class="links" fill="none" stroke="#8a4b2a" stroke-width="9">
+      <rect x="34" y="-8" width="17" height="31" rx="8"/>
+      <rect x="34" y="13" width="17" height="31" rx="8" transform="rotate(90 42.5 28.5)"/>
+      <rect x="34" y="34" width="17" height="31" rx="8"/>
+      <rect x="34" y="55" width="17" height="31" rx="8" transform="rotate(90 42.5 70.5)"/>
+      <rect x="34" y="76" width="17" height="31" rx="8"/>
+      <path d="M35 3v15m15 17v11m-15 17v14m15 17v13" stroke="#e0a16c" stroke-width="1.5" opacity=".65"/>
+    </g>
+    <path class="bundle" d="M25 121q-8 9-5 24l5 23q18 14 37 2l8-21-5-22q-18-14-40-6z" fill="#17191a" stroke="#8a4b2a" stroke-width="2"/>
+    <path class="bundle" d="m27 126 36 34m-39-5 38-25m-27-11 20 42" fill="none" stroke="#53311f" stroke-width="3"/>
+    <path d="M42 103v22c0 22 24 25 32 7 6-14-4-26-18-25" fill="none" stroke="#c1121f" stroke-width="13" stroke-linecap="round" filter="drop-shadow(0 0 5px #ff3b47)"/>
+    <path d="M42 105v20c0 17 17 20 25 8" fill="none" stroke="#ff7378" stroke-width="2.5" stroke-linecap="round" opacity=".85"/>
+    <path class="drop" d="M58 157q-6 8 0 13 6-5 0-13z" fill="var(--blood-2)"/>
+    <path class="drop second" d="M29 166q-4 6 0 10 5-4 0-10z" fill="var(--gore)"/>
   </svg>
 </span>
 <style>
-  .chain-hook { display:block; width:90px; color:#687078; transform-origin:28px 0; animation:hook-sway 5.8s ease-in-out infinite alternate; pointer-events:none; }
-  .chain-hook svg { width:100%; height:auto; filter:drop-shadow(0 3px 4px rgba(0,0,0,.7)); }
+  .chain-hook { display:block; width:90px; color:#687078; transform-origin:42px 0; animation:hook-sway 5.8s ease-in-out infinite alternate; pointer-events:none; }
+  .chain-hook svg { width:100%; height:auto; overflow:visible; filter:drop-shadow(0 3px 4px rgba(0,0,0,.7)); }
   .chain-hook.small { width:46px; }
   .chain-hook.small { animation:none; }
-  @keyframes hook-sway { from { transform:rotate(-2deg); } to { transform:rotate(2.2deg); } }
-  @media (prefers-reduced-motion:reduce) { .chain-hook { animation:none; } }
+  .chain-hook.small .bundle,.chain-hook.small .drop { display:none; }
+  .chain-hook .drop { transform-origin:58px 160px; animation:drop-fall 3.8s ease-in infinite; }
+  .chain-hook .second { animation-delay:1.9s; }
+  @keyframes hook-sway { from { transform:rotate(-1.5deg); } to { transform:rotate(1.7deg); } }
+  @keyframes drop-fall { 0%,72%,100% { opacity:0; transform:translateY(0) scale(.8); } 75% { opacity:1; } 90% { opacity:.9; transform:translateY(25px) scale(.7); } }
+  @media (prefers-reduced-motion:reduce) { .chain-hook,.chain-hook .drop { animation:none; } .chain-hook .drop { opacity:.75; } }
 </style>

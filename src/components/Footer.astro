@@ -1,6 +1,7 @@
 ---
 import ChainHook from './fx/ChainHook.astro';
 import Splatter from './fx/Splatter.astro';
+import BloodDrip from './fx/BloodDrip.astro';
 const cols = [
   {title:'Aprende', links:[['Killers','/killers/'],['Mapas','/mapas/'],['Survivors','/survivors/']]},
   {title:'Herramientas', links:[['Perks','/perks/'],['Builds','/builds/'],['Reloj','/reloj/'],['Callouts','/callouts/'],['4v1 competitivo','/competitivo/4v1/']]},
@@ -11,6 +12,7 @@ const cols = [
 <footer>
   <ChainHook small />
   <Splatter seed="footer" size={190} tone="gore" />
+  <BloodDrip small />
   <div class="container footer-grid">
     <div>
       <a class="footer-brand" href="/">DBD <b>ACADEMY</b></a>
@@ -41,5 +43,6 @@ const cols = [
  footer div div > a:not(.footer-brand) { display:block; width:max-content; margin:8px 0; color:var(--muted); font-size:.86rem; }
  footer a:hover { color:var(--text); }
  .footer-meta { border-top:1px solid var(--line); padding-block:16px; color:var(--muted); font-family:"JetBrains Mono Variable",monospace; font-size:.68rem; }
+ footer > :global(.blood-drip) { top:auto; bottom:-1px; transform:none; }
  @media (max-width:700px) { .footer-grid { grid-template-columns:1fr 1fr; } .footer-grid > div:first-child { grid-column:1/-1; } }
 </style>

@@ -1,9 +1,18 @@
-<span class="claw-slash" aria-hidden="true"><i></i><i></i><i></i></span>
+<span class="claw-slash" aria-hidden="true">
+  <svg viewBox="0 0 360 180" preserveAspectRatio="none">
+    <path d="M25 25Q97 44 179 82Q231 107 329 151L337 160Q259 142 175 110Q94 78 19 39Z"/>
+    <path d="M18 82Q102 91 180 103Q250 113 340 119L348 127Q257 130 175 124Q95 117 13 95Z"/>
+    <path d="M30 143Q100 122 182 109Q260 96 326 39L338 32Q280 105 190 130Q105 154 23 153Z"/>
+    <path class="wet" d="M36 34Q115 57 190 91M28 89Q111 101 192 113M39 145Q116 128 194 111"/>
+  </svg>
+</span>
 <style>
-  .claw-slash { position:absolute; z-index:3; inset:0; overflow:clip; pointer-events:none; }
-  .claw-slash i { position:absolute; top:12%; right:14%; width:64%; height:3px; border-radius:50%; background:linear-gradient(90deg,transparent,var(--blood-2) 12%,var(--gore) 70%,transparent); box-shadow:0 0 12px rgba(193,18,31,.38); transform:rotate(-18deg) scaleX(0); transform-origin:left center; animation:slash-cut 680ms cubic-bezier(.16,1,.3,1) forwards; }
-  .claw-slash i:nth-child(2) { top:32%; right:8%; width:76%; animation-delay:100ms; }
-  .claw-slash i:nth-child(3) { top:54%; right:13%; width:68%; animation-delay:200ms; }
-  @keyframes slash-cut { to { transform:rotate(-18deg) scaleX(1); } }
-  @media (prefers-reduced-motion:reduce) { .claw-slash i { animation:none; transform:rotate(-18deg) scaleX(1); opacity:.65; } }
+  .claw-slash { position:absolute; z-index:3; inset:0; overflow:visible; pointer-events:none; }
+  .claw-slash svg { width:100%; height:100%; overflow:visible; filter:drop-shadow(0 2px 2px #06080b); }
+  .claw-slash path { fill:var(--gore); stroke:var(--blood-2); stroke-width:2; stroke-linejoin:round; transform-box:fill-box; transform-origin:left center; animation:slash-open 350ms cubic-bezier(.16,1,.3,1) both; }
+  .claw-slash path:nth-child(2) { animation-delay:45ms; }
+  .claw-slash path:nth-child(3) { animation-delay:90ms; }
+  .claw-slash .wet { fill:none; stroke:#ff6870; stroke-width:2; opacity:.72; filter:drop-shadow(0 0 5px var(--blood-2)); }
+  @keyframes slash-open { from { opacity:.2; transform:scaleX(.08); } to { opacity:.9; transform:scaleX(1); } }
+  @media (prefers-reduced-motion:reduce) { .claw-slash path { animation:none; opacity:.85; } }
 </style>
