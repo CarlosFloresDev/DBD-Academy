@@ -3,8 +3,10 @@ import Base from '../../layouts/Base.astro';
 import SectionHead from '../../components/SectionHead.astro';
 import MapThumb from '../../components/MapThumb.astro';
 import MapCard from '../../components/mapas/MapCard.astro';
+import ClockOverlay from '../../components/callouts/ClockOverlay.astro';
 import StatBar from '../../components/StatBar.astro';
 import maps from '../../data/maps.json';
+import callouts from '../../data/callouts.json';
 import realms from '../../data/realms.json';
 import killers from '../../data/killers.json';
 
@@ -56,6 +58,14 @@ const realmCount = realms.length;
     </div>
   </section>
 
+  <section class="callout-strip container" aria-labelledby="callout-strip-title" data-reveal>
+    <div class="callout-strip-copy">
+      <h2 class="display" id="callout-strip-title">APRENDE A LLAMAR LOS MAPAS</h2>
+      <p>{callouts.regla.puntos[2]}</p>
+    </div>
+    <a class="btn btn-primary" href="/callouts/">Guía de callouts <span aria-hidden="true">→</span></a>
+  </section>
+
   <section class="pool container" aria-labelledby="pool-title" data-reveal>
     <header class="pool-head">
       <div>
@@ -67,9 +77,14 @@ const realmCount = realms.length;
     <div class="pool-grid">
       {pool.map(({ map, killers: poolKillers }) => (
         <article class="pool-card">
-          <a href={`/mapas/${map.slug}/`} aria-label={`Ver ficha del mapa ${map.name}`}>
-            <MapThumb map={map} />
-          </a>
+          <div class="pool-card-visual">
+            <a href={`/mapas/${map.slug}/`} aria-label={`Ver ficha del mapa ${map.name}`}>
+              <MapThumb map={map} />
+            </a>
+            <span class="mini-clock" aria-hidden="true">
+              <ClockOverlay showMain={false} showShack={false} />
+            </span>
+          </div>
           <div class="pool-card-body">
             <h3><a href={`/mapas/${map.slug}/`}>{map.name}</a></h3>
             <p class="mono pool-size">{map.sizeTiles === null ? 'Tamaño no publicado' : `${format.format(map.sizeTiles)} tiles`}</p>
@@ -278,13 +293,21 @@ const realmCount = realms.length;
     .aside-note { margin: 0; color: var(--muted); font-size: .82rem; }
     .hero-aside .btn { margin-top: 12px; }
 
+    .callout-strip { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: center; margin-bottom: 64px; padding: 20px 24px; border: 1px solid var(--line); border-left: 3px solid var(--blood); background: var(--panel); }
+    .callout-strip-copy { min-width: 0; }
+    .callout-strip h2 { margin: 0; font-size: clamp(1.5rem, 3vw, 2.4rem); }
+    .callout-strip p { margin: 6px 0 0; color: var(--muted); font-size: .82rem; }
+    .callout-strip .btn { white-space: nowrap; }
+
     .pool { padding: 40px 0 96px; border-top: 1px solid var(--line); }
     .pool-head { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, .9fr); gap: 40px; align-items: end; margin-bottom: 32px; }
     .pool-head h2 { margin: 12px 0 0; font-size: clamp(2.4rem, 6vw, 5rem); }
     .pool-head > p { margin: 0; color: var(--muted); font-size: .88rem; }
     .pool-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
     .pool-card { min-width: 0; border: 1px solid var(--line); background: var(--panel); }
-    .pool-card > a { display: block; }
+    .pool-card-visual { position: relative; min-width: 0; }
+    .pool-card-visual > a { display: block; }
+    .mini-clock { position: absolute; top: 8px; right: 8px; width: clamp(64px, 9vw, 104px); pointer-events: none; border: 1px solid var(--line); background: rgba(6, 8, 11, .88); }
     .pool-card-body { padding: 16px; }
     .pool-card h3 { margin: 0; font-family: "Barlow Condensed", sans-serif; font-size: 1.5rem; font-weight: 800; letter-spacing: .02em; text-transform: uppercase; }
     .pool-size { margin: 6px 0 12px; color: var(--amber); font-size: .75rem; }
@@ -331,6 +354,8 @@ const realmCount = realms.length;
       .pool-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (max-width: 620px) {
+      .callout-strip { grid-template-columns: 1fr; gap: 16px; }
+      .callout-strip .btn { width: 100%; }
       .pool-grid, .filters, .extreme-grid { grid-template-columns: 1fr; }
       .hero-figures { gap: 24px; }
       .realm-head { flex-direction: column; }

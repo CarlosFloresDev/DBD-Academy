@@ -1,0 +1,194 @@
+---
+import Base from '../../layouts/Base.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import TierBadge from '../../components/TierBadge.astro';
+import BalanceScale from '../../components/competitivo/BalanceScale.astro';
+import TeamChecker from '../../components/competitivo/TeamChecker.astro';
+import balance from '../../data/balance-4v1.json';
+import rules from '../../data/comp-rules.json';
+
+const tiers = ['S', 'A', 'B', 'C', 'D'] as const;
+const conditionByTier = new Map(rules.condicionesVictoria4v1.map((entry) => [entry.tier, entry] as const));
+const ecosystem = balance.ecosistema.map((item, index) => ({
+  ...item,
+  index: index + 1,
+  url: 'url' in item && typeof item.url === 'string' ? item.url : null,
+}));
+const stepLinks = ['/callouts/', '/mapas/', '/competitivo/', '/builds/', '/competitivo/'];
+const stepLabels = ['Abrir callouts', 'Ver mapas', 'Ver formato 1v1', 'Laboratorio de builds', 'Volver a competitivo'];
+---
+
+<Base title="4v1 competitivo" description="Sistema de compensación por tiers, reglas universales, verificador de equipo y ecosistema del 4v1 competitivo de Dead by Daylight." active="competitivo">
+  <div class="four-page">
+    <header class="four-hero container">
+      <div class="hero-copy" data-reveal>
+        <p class="eyebrow">Competitivo · 4v1</p>
+        <h1 class="display">4v1 competitivo:<br /><span>la partida normal, con reglas</span></h1>
+        <p class="hero-lead">{balance.queEs}</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#verificador">Verificador de equipo</a>
+          <a class="btn btn-secondary" href="/competitivo/">Formato 1v1</a>
+        </div>
+      </div>
+      <aside class="hero-notice" role="note" data-reveal>
+        <p class="eyebrow">Aviso</p>
+        <p>{balance.aviso}</p>
+        <span class="mono">REFERENCIA COMUNITARIA · NO OFICIAL</span>
+      </aside>
+    </header>
+
+    <BalanceScale />
+
+    <section class="section container" aria-label="Reglas universales del 4v1">
+      <SectionHead eyebrow="Reglas base" title="Cuatro reglas universales" description="Acuerdos habituales en las salas personalizadas de 4v1." />
+      <div class="rule-grid">
+        {balance.reglasUniversales.map((rule, index) => (
+          <article class="rule-card card" data-reveal data-reveal-delay={index * 60}>
+            {index === 0 && (
+              <svg class="rule-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                <path d="M9 24l7-7 7 7-7 7z" fill="currentColor" opacity=".35" />
+                <path d="M25 24l7-7 7 7-7 7z" opacity=".4" />
+                <path d="M4 42h40" />
+              </svg>
+            )}
+            {index === 1 && (
+              <svg class="rule-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                <circle cx="9" cy="12" r="3.5" /><path d="M3 25c0-5 2.5-8 6-8s6 3 6 8" />
+                <circle cx="24" cy="12" r="3.5" /><path d="M18 25c0-5 2.5-8 6-8s6 3 6 8" />
+                <circle cx="39" cy="12" r="3.5" opacity=".4" /><path d="M33 25c0-5 2.5-8 6-8s6 3 6 8" opacity=".4" />
+                <path d="M32 6l14 24" stroke-width="2" />
+              </svg>
+            )}
+            {index === 2 && (
+              <svg class="rule-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                <path d="M6 8h36v32H6z" />
+                <path d="M18 8v32M30 8v32M6 19h36M6 29h36" opacity=".4" />
+                <circle cx="24" cy="24" r="5" stroke-width="2" />
+                <path d="M24 15v4M24 29v4M15 24h4M29 24h4" />
+              </svg>
+            )}
+            {index === 3 && (
+              <svg class="rule-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                <rect x="10" y="10" width="28" height="28" rx="3" />
+                <circle cx="18" cy="18" r="2" /><circle cx="30" cy="18" r="2" />
+                <circle cx="24" cy="24" r="2" /><circle cx="18" cy="30" r="2" /><circle cx="30" cy="30" r="2" />
+                <path d="M7 41L41 7" stroke-width="2" />
+              </svg>
+            )}
+            <h3>{rule.t}</h3>
+            <p>{rule.d}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <TeamChecker />
+
+    <section class="section container victory" aria-label="Quién gana en 4v1">
+      <div class="victory-copy">
+        <SectionHead eyebrow="Quién gana" title={balance.victoria.titulo} description={balance.victoria.texto} />
+        <p class="source-line mono">{rules.fuente}</p>
+      </div>
+      <ol class="tier-ladder" data-reveal>
+        {tiers.map((tier) => (
+          <li class="ladder-row">
+            <TierBadge tier={tier} />
+            <p>{conditionByTier.get(tier)?.condicion}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="section container" aria-label="Ecosistema competitivo">
+      <SectionHead eyebrow="Ecosistema" title="Ligas y herramientas" description="Referencias citadas por la guía comunitaria para encontrar partidas, scrims y validación de builds." />
+      <div class="eco-grid">
+        {ecosystem.map((item) => (
+          <article class="eco-card card" data-reveal data-reveal-delay={item.index * 50}>
+            <span class="eco-index mono">0{item.index}</span>
+            <div class="eco-body">
+              <p class="eco-type mono">{item.tipo}</p>
+              <h3 class="display">{item.nombre}</h3>
+              <p class="eco-desc">{item.desc}</p>
+              {item.url && (
+                <a class="eco-link" href={item.url} target="_blank" rel="noopener noreferrer">Abrir sitio <span aria-hidden="true">↗</span></a>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+      <p class="eco-note">{balance.ecosistemaAviso}</p>
+    </section>
+
+    <section class="section container" aria-label="Cómo empezar en 4v1">
+      <SectionHead eyebrow="Aplicación" title="Cómo empezar" description="Cinco pasos para pasar de partidas casuales a salas personalizadas con reglas." />
+      <ol class="steps" data-reveal>
+        {balance.pasos.map((step, index) => (
+          <li>
+            <span class="step-number mono">0{index + 1}</span>
+            <p>{step}</p>
+            <a href={stepLinks[index] ?? '/competitivo/'}>{stepLabels[index] ?? 'Competitivo'}</a>
+          </li>
+        ))}
+      </ol>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .four-page { padding-bottom: 96px; }
+  .four-hero { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 40px; align-items: end; padding-top: 104px; padding-bottom: 56px; border-bottom: 1px solid var(--line); }
+  .hero-copy { min-width: 0; }
+  .four-hero h1 { max-width: 20ch; margin: 14px 0 0; font-size: clamp(3.3rem, 6.2vw, 6.2rem); }
+  .four-hero h1 span { color: var(--blood-2); }
+  .hero-lead { max-width: 68ch; margin: 24px 0 0; color: var(--muted); font-size: .98rem; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .hero-notice { min-width: 0; border-left: 3px solid var(--blood); background: var(--panel); padding: 22px; }
+  .hero-notice p:not(.eyebrow) { margin: 10px 0 14px; color: var(--text); font-size: .88rem; }
+  .hero-notice > span { color: var(--amber); font-size: .64rem; }
+  .section { margin-top: 96px; }
+  .rule-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+  .rule-card { min-width: 0; padding: 20px; }
+  .rule-icon { width: 44px; height: 44px; color: var(--blood-2); }
+  .rule-card h3 { margin: 16px 0 8px; font: 700 1.35rem "Barlow Condensed", sans-serif; letter-spacing: .02em; text-transform: uppercase; }
+  .rule-card p { margin: 0; color: var(--muted); font-size: .8rem; overflow-wrap: anywhere; }
+  .victory { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: 40px; align-items: start; }
+  .victory-copy { min-width: 0; }
+  .victory-copy :global(.section-head) { margin-bottom: 0; }
+  .source-line { margin: 20px 0 0; border-left: 2px solid var(--amber); padding-left: 12px; color: var(--muted); font-size: .68rem; }
+  .tier-ladder { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .ladder-row { display: grid; grid-template-columns: 78px minmax(0, 1fr); gap: 16px; align-items: center; border-bottom: 1px solid var(--line); padding: 18px 4px; }
+  .ladder-row p { margin: 0; font-size: .86rem; }
+  .eco-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .eco-card { display: grid; grid-template-columns: 46px minmax(0, 1fr); gap: 16px; min-width: 0; padding: 20px; }
+  .eco-index { color: var(--blood-2); font-size: .72rem; }
+  .eco-body { min-width: 0; }
+  .eco-type { margin: 0; color: var(--amber); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; }
+  .eco-card h3 { margin: 8px 0; font-size: 1.9rem; }
+  .eco-desc { margin: 0; color: var(--muted); font-size: .8rem; overflow-wrap: anywhere; }
+  .eco-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; border-bottom: 1px solid var(--blood); padding-bottom: 3px; color: var(--text); font-size: .78rem; }
+  .eco-link:hover { color: var(--amber); border-color: var(--amber); }
+  .eco-note { max-width: 760px; margin: 18px 0 0; color: var(--muted); font-size: .74rem; }
+  .steps { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .steps li { display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; gap: 16px; align-items: center; border-bottom: 1px solid var(--line); padding: 16px 4px; }
+  .step-number { color: var(--blood-2); font-size: 1.2rem; }
+  .steps p { margin: 0; font-size: .86rem; }
+  .steps a { border: 1px solid var(--line); border-radius: var(--r); padding: 7px 11px; color: var(--text); font-size: .75rem; white-space: nowrap; }
+  .steps a:hover { border-color: var(--blood); color: var(--amber); }
+  @media (max-width: 900px) {
+    .four-hero { grid-template-columns: 1fr; gap: 24px; }
+    .rule-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .victory { grid-template-columns: 1fr; gap: 24px; }
+  }
+  @media (max-width: 600px) {
+    .four-page { padding-bottom: 64px; }
+    .four-hero { padding-top: 88px; padding-bottom: 40px; }
+    .four-hero h1 { font-size: clamp(2.7rem, 11vw, 4.2rem); }
+    .hero-lead { font-size: .9rem; }
+    .section { margin-top: 64px; }
+    .rule-grid, .eco-grid { grid-template-columns: 1fr; }
+    .eco-card { grid-template-columns: 34px minmax(0, 1fr); gap: 10px; }
+    .ladder-row { grid-template-columns: 66px minmax(0, 1fr); gap: 10px; padding: 14px 2px; }
+    .steps li { grid-template-columns: 34px minmax(0, 1fr); gap: 8px 12px; }
+    .steps a { grid-column: 2; width: max-content; max-width: 100%; white-space: normal; }
+  }
+</style>

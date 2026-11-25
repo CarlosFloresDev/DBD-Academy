@@ -4,6 +4,10 @@ import HeroArt from '../components/HeroArt.astro';
 import Portrait from '../components/Portrait.astro';
 import MapThumb from '../components/MapThumb.astro';
 import SectionHead from '../components/SectionHead.astro';
+import ClawSlash from '../components/fx/ClawSlash.astro';
+import BloodDrip from '../components/fx/BloodDrip.astro';
+import Splatter from '../components/fx/Splatter.astro';
+import ThornBorder from '../components/fx/ThornBorder.astro';
 import killers from '../data/killers.json';
 import survivors from '../data/survivors.json';
 import maps from '../data/maps.json';
@@ -21,6 +25,8 @@ const sections = [
   ['Builds','342 perks','Combinaciones por rol y situacion','/builds/'],
   ['Reloj','5 x 90 cargas','Tiempos y velocidad del juego','/reloj/'],
   ['Competitivo','1v1','Reglas y tier comunitario','/competitivo/'],
+  ['Callouts','Lectura del mapa','El mapa como un reloj','/callouts/'],
+  ['4v1 competitivo','4v1','La partida normal, con reglas','/competitivo/4v1/'],
 ] as const;
 
 const steps = [
@@ -34,9 +40,9 @@ const steps = [
 
 <Base title="Inicio" description="Aprende Dead by Daylight competitivo con datos reales, builds, mapas y tiempos." active="inicio">
   <section class="hero">
-    <div class="hero-copy" data-reveal>
+    <div class="hero-copy" data-reveal="splash">
       <p class="eyebrow">Base de conocimiento competitiva</p>
-      <h1 class="display">Aprende DBD<br/>competitivo</h1>
+      <h1 class="display"><span>Aprende DBD</span><span class="hero-final-word">Competitivo<ClawSlash /></span></h1>
       <p class="hero-sub">Datos reales, decisiones claras y ritmo de partido medible.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="/killers/">Ver killers</a>
@@ -44,16 +50,18 @@ const steps = [
       </div>
     </div>
     <div class="hero-visual" data-parallax="0.12"><HeroArt /></div>
+    <BloodDrip />
   </section>
 
   <section class="container counters" aria-label="Contenido disponible">
-    <div class="stat" data-reveal><strong data-count={killers.length}>0</strong><span>Killer</span></div>
-    <div class="stat" data-reveal><strong data-count={survivors.length}>0</strong><span>Survivors</span></div>
-    <div class="stat" data-reveal><strong data-count={maps.length}>0</strong><span>Mapas</span></div>
-    <div class="stat" data-reveal><strong data-count={perks.length}>0</strong><span>Perks</span></div>
+    <div class="stat" data-reveal><Splatter seed="45" size={140} tone="gore" /><strong data-count={killers.length}>{killers.length}</strong><span>Killer</span></div>
+    <div class="stat" data-reveal><Splatter seed="55" size={140} tone="rust" /><strong data-count={survivors.length}>{survivors.length}</strong><span>Survivors</span></div>
+    <div class="stat" data-reveal><Splatter seed="47" size={140} tone="gore" /><strong data-count={maps.length}>{maps.length}</strong><span>Mapas</span></div>
+    <div class="stat" data-reveal><Splatter seed="342" size={140} tone="rust" /><strong data-count={perks.length}>{perks.length}</strong><span>Perks</span></div>
   </section>
 
   <section class="container terrifier-section" data-reveal>
+    <ThornBorder />
     <div class="terrifier-label">
       <p class="eyebrow">Nuevo: Terrifier</p>
       <strong class="mono">24.11.2026</strong>
@@ -79,7 +87,7 @@ const steps = [
   </section>
 
   <section class="container section-block">
-    <SectionHead eyebrow="Nucleo del sitio" title="El sistema completo" description="Seis areas conectadas para pasar del concepto a la decision en partida." />
+    <SectionHead eyebrow="Nucleo del sitio" title="El sistema completo" description="Ocho areas conectadas para pasar del concepto a la decision en partida." />
     <div class="section-cards">
       {sections.map(([title,number,description,href],index) => (
         <a class="card section-card" href={href} data-reveal data-reveal-delay={index * 60}>
@@ -133,18 +141,25 @@ const steps = [
 </Base>
 
 <style>
-  .hero { position:relative; min-height:760px; height:min(860px,calc(100svh - 72px)); margin-top:72px; overflow:hidden; border-bottom:1px solid var(--line); }
+  .hero { position:relative; isolation:isolate; min-height:760px; height:min(860px,calc(100svh - 72px)); margin-top:72px; overflow:clip; border-bottom:1px solid var(--line); }
   .hero-copy { position:absolute; z-index:3; left:max(16px,calc((100% - 1200px)/2)); top:50%; width:min(620px,calc(100% - 32px)); transform:translateY(-54%); }
   .hero-copy h1 { margin:12px 0 20px; font-size:clamp(4.6rem,10vw,9rem); }
+  .hero-copy h1 > span { display:block; }
+  .hero-final-word { position:relative; isolation:isolate; width:max-content; max-width:100%; }
+  .hero-final-word :global(.claw-slash) { z-index:-1; inset:-10% -5% -5% -4%; opacity:.72; }
   .hero-sub { max-width:520px; margin:0 0 28px; color:var(--muted); font-size:clamp(1rem,2vw,1.22rem); }
   .hero-actions { display:flex; flex-wrap:wrap; gap:12px; }
-  .hero-visual { position:absolute; inset:0 0 0 35%; }
+  .hero-visual { position:absolute; z-index:-1; inset:0 0 0 35%; }
   .hero-visual::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,var(--bg) 0%,transparent 36%,transparent 100%); }
   .counters { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:-1px; border-bottom:1px solid var(--line); padding-block:24px; }
-  .counters .stat { border-right:1px solid var(--line); padding-left:16px; }
+  .counters .stat { position:relative; border-right:1px solid var(--line); padding-left:16px; }
+  .counters .stat > :global(.splatter) { top:-26px; left:0; }
+  .counters .stat strong,.counters .stat span { position:relative; z-index:1; }
   .counters .stat:first-child { padding-left:0; }
   .counters .stat:last-child { border-right:0; }
-  .terrifier-section { margin-top:96px; border:1px solid var(--line); border-left:3px solid var(--blood); background:var(--panel); padding:24px; }
+  .terrifier-section { position:relative; isolation:isolate; margin-top:96px; border:1px solid var(--line); border-left:3px solid var(--blood); background:var(--panel); padding:24px; }
+  .terrifier-section > :global(.thorn-border) { opacity:.62; }
+  .terrifier-label,.new-grid,.own-perks { position:relative; z-index:1; }
   .terrifier-label { display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
   .terrifier-label strong { color:var(--amber); }
   .new-grid { display:grid; grid-template-columns:1fr 1fr 1.25fr; gap:12px; }
@@ -159,7 +174,7 @@ const steps = [
   .own-perks { display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--line); margin-top:16px; padding-top:16px; }
   .own-perks > div { display:flex; flex-wrap:wrap; gap:6px; }
   .section-block { margin-top:96px; }
-  .section-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  .section-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
   .section-card { position:relative; min-height:250px; padding:24px; }
   .section-number { position:absolute; right:16px; top:14px; color:var(--line); font-size:2.4rem; }
   .section-card > strong { color:var(--amber); font-family:"JetBrains Mono Variable",monospace; font-size:.8rem; }
@@ -198,7 +213,7 @@ const steps = [
   @media (max-width:600px) {
     .hero { min-height:660px; }
     .hero-copy { top:38%; }
-    .hero-copy h1 { font-size:clamp(4rem,18vw,5.5rem); }
+    .hero-copy h1 { font-size:clamp(3.65rem,17vw,5.5rem); }
     .hero-visual { inset:35% -65% -5% -15%; opacity:.48; }
     .counters { grid-template-columns:1fr 1fr; }
     .counters .stat:nth-child(2) { border-right:0; }

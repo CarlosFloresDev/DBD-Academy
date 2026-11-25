@@ -9,6 +9,7 @@ const links = [
   ['perks','Perks','/perks/'],
   ['builds','Builds','/builds/'],
   ['reloj','Reloj','/reloj/'],
+  ['callouts','Callouts','/callouts/'],
   ['competitivo','Competitivo','/competitivo/'],
 ] as const;
 ---
@@ -54,7 +55,7 @@ const links = [
 </script>
 
 <style>
-  .nav { position: fixed; inset: 0 0 auto; z-index: 1000; height: 72px; border-bottom: 1px solid rgba(31,42,51,.72); background: rgba(6,8,11,.8); backdrop-filter: blur(10px); }
+  .nav { position: fixed; inset: 0 0 auto; z-index: 1000; height: 72px; border-bottom: 1px solid rgba(31,42,51,.72); background: rgba(6,8,11,.94); }
   .nav-inner { width: min(1200px, calc(100% - 32px)); height: 100%; margin-inline: auto; display: flex; align-items: center; justify-content: space-between; }
   .brand { display: flex; align-items: center; gap: 8px; color: var(--text); font-family: "Barlow Condensed",sans-serif; font-size: 1.05rem; letter-spacing:.08em; }
   .brand span { white-space: nowrap; }
@@ -62,7 +63,7 @@ const links = [
   .brand svg { color: var(--text); }
   .nav-links { display: flex; align-items: center; gap: clamp(10px,1.5vw,22px); }
   .nav-links a { position: relative; padding: 25px 0 23px; color: var(--muted); font-family:"Barlow Condensed",sans-serif; font-size:.88rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
-  .nav-links a::after { content:""; position:absolute; left:0; right:100%; bottom:17px; height:2px; background:var(--blood); transition:right 180ms ease; }
+  .nav-links a::after { content:""; position:absolute; left:0; right:100%; bottom:17px; height:3px; background:var(--blood-2); clip-path:polygon(0 40%,100% 0,92% 100%,4% 80%); transition:right 180ms ease; }
   .nav-links a:hover,.nav-links a.active { color:var(--text); }
   .nav-links a.active::after,.nav-links a:hover::after { right:0; }
   .menu-button { display:none; }

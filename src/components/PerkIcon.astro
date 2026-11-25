@@ -8,13 +8,14 @@ const initial = perk.name?.trim().charAt(0).toUpperCase() || 'P';
     <span class="diamond"><img src={perk.icon} alt="" width={size} height={size} loading="lazy" /></span>
   ) : (
     <svg viewBox="0 0 64 64" width={size} height={size}>
-      <rect x="15" y="15" width="34" height="34" rx="2" transform="rotate(45 32 32)" fill="#10161c" stroke="#c1121f" stroke-width="3"/>
+      <rect x="15" y="15" width="34" height="34" rx="2" transform="rotate(45 32 32)" fill="#10161c" stroke="#8a4b2a" stroke-width="3"/>
+      <path d="m22 22 20 20" stroke="#c1121f" stroke-width="1" opacity=".6"/>
       <text x="32" y="39" text-anchor="middle" fill="#e8e3d6" font-family="Barlow Condensed, sans-serif" font-size="24" font-weight="800">{initial}</text>
     </svg>
   )}
 </span>
 <style>
  .perk-icon { display:inline-grid; width:var(--icon-size); height:var(--icon-size); flex:none; place-items:center; }
- .diamond { width:70%; height:70%; overflow:hidden; transform:rotate(45deg); border:2px solid var(--blood); background:var(--panel); }
+ .diamond { width:70%; height:70%; overflow:hidden; transform:rotate(45deg); border:2px solid var(--rust); background:var(--panel); box-shadow:0 0 0 3px rgba(122,10,18,.16); }
  .diamond img { width:100%; height:100%; transform:rotate(-45deg) scale(1.42); object-fit:cover; }
 </style>

@@ -1,0 +1,28 @@
+---
+interface Props { edge?: 'top' | 'bottom'; small?: boolean }
+const { edge = 'bottom', small = false } = Astro.props;
+---
+<span class:list={['blood-drip', `edge-${edge}`, { small }]} aria-hidden="true">
+  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+</span>
+<style>
+  .blood-drip { position:absolute; z-index:2; left:0; right:0; height:18px; overflow:clip; pointer-events:none; }
+  .edge-top { top:0; transform:rotate(180deg); }
+  .edge-bottom { bottom:0; }
+  .blood-drip i { position:absolute; top:-2px; width:7px; height:calc(7px + var(--drop, 10px)); border-radius:0 0 6px 6px; background:var(--blood); transform-origin:top; animation:drip-fall 4.8s ease-in-out infinite; }
+  .blood-drip i:nth-child(3n) { width:5px; background:var(--gore); }
+  .blood-drip i:nth-child(3n + 1) { width:9px; }
+  .blood-drip i:nth-child(1) { left:8%; --drop:7px; animation-delay:-2.2s; }
+  .blood-drip i:nth-child(2) { left:19%; --drop:13px; animation-delay:-.8s; }
+  .blood-drip i:nth-child(3) { left:31%; --drop:6px; animation-delay:-3.1s; }
+  .blood-drip i:nth-child(4) { left:43%; --drop:16px; animation-delay:-1.6s; }
+  .blood-drip i:nth-child(5) { left:56%; --drop:8px; animation-delay:-4s; }
+  .blood-drip i:nth-child(6) { left:68%; --drop:12px; animation-delay:-2.8s; }
+  .blood-drip i:nth-child(7) { left:77%; --drop:5px; animation-delay:-1.2s; }
+  .blood-drip i:nth-child(8) { left:88%; --drop:15px; animation-delay:-3.6s; }
+  .blood-drip i:nth-child(9) { left:96%; --drop:7px; animation-delay:-.4s; }
+  .blood-drip i:nth-child(n + 4) { animation:none; transform:scaleY(.45); opacity:.58; }
+  .small { height:12px; transform:scale(.72); transform-origin:top left; }
+  @keyframes drip-fall { 0%,72%,100% { transform:translateY(0) scaleY(.28); opacity:.5; } 80% { transform:translateY(3px) scaleY(1.05); opacity:1; } 88% { transform:translateY(8px) scaleY(.55); opacity:.72; } }
+  @media (prefers-reduced-motion:reduce) { .blood-drip i { animation:none; transform:scaleY(.45); } }
+</style>

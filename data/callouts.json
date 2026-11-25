@@ -1,0 +1,49 @@
+{
+  "fuentes": [
+    { "t": "Clock Callouts, wiki de la comunidad de DBD", "u": "https://deadbydaylight.fandom.com/wiki/Clock_Callouts" },
+    { "t": "Callouts de Hens (mapas con el reloj aplicado, imagenes de Lethia)", "u": "https://hens333.com/callouts/" },
+    { "t": "DBD Vault: layouts desde arriba de cada mapa", "u": "https://dbdvault.com/comp/maps" },
+    { "t": "Guia comunitaria 'How to Start Playing DBD Competitively' (Steam, jul-2026)", "u": "https://steamcommunity.com/sharedfiles/filedetails/?id=3758693475" }
+  ],
+  "regla": {
+    "titulo": "El mapa es la cara de un reloj",
+    "puntos": [
+      "Se divide el mapa en 12 sectores, como las horas de un reloj.",
+      "El edificio principal del mapa (main), cuando existe, se toma como las 12: arriba al centro.",
+      "Los numeros avanzan en sentido horario: el 1 queda justo a la derecha del main, luego 2, 3... hasta volver al 12.",
+      "El shack suele estar casi en el lado opuesto del main, cerca de las 6, abajo al centro. Como los mapas se generan al azar, no siempre es asi: confirmalo al cargar.",
+      "Si el mapa no tiene main claro, el equipo acuerda antes cual es el 12.",
+      "Algunos equipos definen otro punto como las 12 (por ejemplo el shack): lo importante es acordarlo antes de la partida y usar siempre el mismo."
+    ]
+  },
+  "modificadores": [
+    { "t": "Mid", "d": "El carril central del mapa, entre los dos lados." },
+    { "t": "Top-Mid", "d": "Centro del mapa, mitad superior (hacia las 12)." },
+    { "t": "Bottom-Mid", "d": "Centro del mapa, mitad inferior (hacia las 6)." },
+    { "t": "[N] Mid", "d": "Entre el numero N y el centro del mapa. Ejemplo: '3 mid'." },
+    { "t": "[N] Edge", "d": "Pegado al borde del mapa en el sector N. Ejemplo: '9 edge'." },
+    { "t": "Deep [N]", "d": "Zona mas profunda (hacia el borde, sin llegar) de un sector grande, o la parte de una estructura orientada al borde. Ejemplo: 'deep 3'." }
+  ],
+  "ejemplos": [
+    { "en": "Killer spotted at 8!", "es": "Killer visto en 8." },
+    { "en": "Generator at deep 3 is almost done!", "es": "El gen de deep 3 casi esta listo." },
+    { "en": "I'm looping at 9!", "es": "Estoy corriendo loops en 9." },
+    { "en": "Going down 1 edge!", "es": "Me derriban en 1 edge." }
+  ],
+  "beneficios": [
+    "Funciona igual en todos los mapas, aunque cada partida genere tiles distintos.",
+    "Una llamada de dos palabras reemplaza descripciones largas en medio de una persecucion.",
+    "Entrenas el mapa: sabes que hay a las 3 antes de llegar.",
+    "Es el idioma comun de scrims, streams y torneos."
+  ],
+  "capas": [
+    { "t": "Sector", "d": "Un numero del 1 al 12.", "ej": "'killer en 4'" },
+    { "t": "Profundidad", "d": "mid, edge o deep para afinar.", "ej": "'gen en 4 edge'" },
+    { "t": "Estado", "d": "Que pasa alli: chase, gen, save, patrulla.", "ej": "'chase en 7, voy a 6 mid'" }
+  ],
+  "layouts": {
+    "aviso": "Los layouts desde arriba con el reloj ya aplicado son trabajo de artistas de la comunidad (imagenes de Lethia en la pagina de Hens, y colecciones en DBD Vault). No los alojamos aqui: abrelos en su sitio original.",
+    "hens": "https://hens333.com/callouts/",
+    "vault": "https://dbdvault.com/comp/maps"
+  }
+}

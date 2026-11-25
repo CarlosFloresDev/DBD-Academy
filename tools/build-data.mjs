@@ -32,7 +32,7 @@ for (const [name, p] of Object.entries(lo.perks)) {
     tags: p.tags ?? [],
     patch: p.patch ?? null,
     desc: (perkDesc[name]?.desc ?? '').split(' History [ edit ]')[0].trim(),
-    icon: iconIf(perkDesc[name]?.icon),
+    icon: iconIf('/img/perks/' + slug(name) + '.png'),
   });
 }
 const perkNames = new Set(perks.map((p) => p.name));
@@ -135,6 +135,8 @@ write('maps', maps);
 write('realms', realms);
 fs.copyFileSync('data/clock.json', 'src/data/clock.json');
 fs.copyFileSync('data/comp-rules.json', 'src/data/comp-rules.json');
+fs.copyFileSync('data/callouts.json', 'src/data/callouts.json');
+if (fs.existsSync('data/balance-4v1.json')) fs.copyFileSync('data/balance-4v1.json', 'src/data/balance-4v1.json');
 console.log({ killers: killers.length, survivors: survivors.length, perks: perks.length, maps: maps.length, realms: realms.length });
 console.log('killers sin icono:', killers.filter((k) => !k.icon).map((k) => k.name).join(', ') || '-');
 console.log('mapas sin icono:', maps.filter((m) => !m.icon).length, '| survivors sin icono:', survivors.filter((s) => !s.icon).length, '| perks sin icono:', perks.filter((p) => !p.icon).length, '| perks sin desc:', perks.filter((p) => !p.desc).length);

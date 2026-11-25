@@ -1,0 +1,44 @@
+{
+  "aviso": "Resumen del sistema de balance que usan las ligas comunitarias. Cada liga define sus propias listas y las actualiza con cada parche: confirma siempre la regla vigente del torneo. Fuente principal: guia comunitaria de Steam (jul-2026) y DBD Arena.",
+  "queEs": "El 4v1 competitivo es una partida normal de Dead by Daylight (4 survivors contra 1 killer) jugada en salas personalizadas, con un mapa acordado por killer y restricciones de perks, add-ons e items para que el enfrentamiento sea justo.",
+  "logica": {
+    "titulo": "Compensacion: cuanto mas fuerte el killer, mas libertad para los survivors",
+    "reglas": [
+      "Los killers se ordenan en tiers, de S (los mas fuertes) a D (los mas debiles).",
+      "Un killer S como Nurse tiene su pool de perks muy restringido, y los survivors que la enfrentan pueden llevar perks mas fuertes.",
+      "Un killer D tiene mas libertad, y es el lado survivor el que se restringe: se banean los perks survivor mas fuertes y, a menudo, los de agotamiento.",
+      "El objetivo es acercar cada enfrentamiento a un 50/50, sin importar que killer aparezca."
+    ]
+  },
+  "ejemploEscala": [
+    { "tier": "S", "ejemplo": "Nurse", "killer": "Perks muy limitados; un perk de regresion como Pain Resonance puede estar baneado para ella.", "survivors": "Mas libertad: perks de alto impacto como Decisive Strike o varios de agotamiento." },
+    { "tier": "A", "ejemplo": "Hillbilly, Spirit, Oni", "killer": "Restricciones moderadas-altas.", "survivors": "Libertad amplia, con algunos baneos." },
+    { "tier": "B", "ejemplo": "Wraith, Shape, Huntress", "killer": "Restricciones moderadas.", "survivors": "Restricciones moderadas." },
+    { "tier": "D", "ejemplo": "Trapper, Ghost Face, Skull Merchant", "killer": "Mucha libertad de perks.", "survivors": "Los perks survivor mas fuertes baneados; el agotamiento suele estar prohibido." }
+  ],
+  "ejemploAviso": "Ejemplo ilustrativo del funcionamiento de la escala, tomado de una guia comunitaria. No es la lista oficial de ninguna liga.",
+  "reglasUniversales": [
+    { "t": "Un perk por equipo", "d": "Cada perk solo puede llevarlo un survivor del equipo: si uno lleva Decisive Strike, ninguno de los otros tres puede llevarlo." },
+    { "t": "Personajes distintos", "d": "Los 4 survivors deben ser personajes diferentes en la misma partida." },
+    { "t": "Mapa acordado por killer", "d": "Cada killer se juega en un mapa fijo (por ejemplo Nurse en Coal Tower)." },
+    { "t": "Sin aleatoriedad desequilibrante", "d": "Se suelen prohibir perks, add-ons y mecanicas que introducen azar o revelan auras (por ejemplo, add-ons Ultra Rare o Iridescent segun el killer)." }
+  ],
+  "victoria": {
+    "titulo": "Como se decide quien gana (estandar DBD Arena)",
+    "texto": "La condicion de victoria del killer depende de su tier: S, 4K con al menos 1 gen restante; A, 4K; B, 11 o mas etapas de gancho; C, 10 o mas; D, 9 o mas. Si no la alcanza, ganan los survivors."
+  },
+  "ecosistema": [
+    { "nombre": "DBDLeague", "tipo": "Liga y torneos", "desc": "La mayor organizacion de torneos, fundada en 2018 y con apoyo de Behaviour segun la guia. Su Discord incluye busqueda de equipo (LFT), torneos de distintos niveles y una Ladder 1v1 con Elo." },
+    { "nombre": "DBD Scrims", "tipo": "Practica", "desc": "Servidor para scrims (partidas de practica en salas personalizadas, KYF) con canales de 4v1, 1v1 y listados de ligas activas." },
+    { "nombre": "DBDRanked", "tipo": "Ranked con Elo", "desc": "Colas ranked con Elo (4 vs 4 principalmente), tabla de posiciones, historial y eventos; tambien modos de tiempo limitado como 4v1." },
+    { "nombre": "Balanced by Daylight", "tipo": "Herramienta", "desc": "Sitio que valida si tu build es legal bajo el reglamento de una liga concreta o bajo una hoja de balance personalizada.", "url": "https://balancedbydaylight.com" }
+  ],
+  "ecosistemaAviso": "Datos de una guia comunitaria de julio de 2026; verifica cada servidor y su reglamento actual antes de inscribirte.",
+  "pasos": [
+    "Aprende el reloj de callouts: toda la comunicacion de equipo lo usa.",
+    "Memoriza el mapa fijo de tu killer y practica sus loops.",
+    "Entrena en scrims (salas personalizadas) antes de entrar a un torneo.",
+    "Revisa el reglamento de la liga y valida tu build con una herramienta de legalidad.",
+    "Publica tu busqueda de equipo con tus horas, rol, experiencia y region."
+  ]
+}

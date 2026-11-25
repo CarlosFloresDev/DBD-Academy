@@ -3,3 +3,6 @@ interface Props { text?: string }
 const { text } = Astro.props;
 ---
 <span class="chip"><slot />{text}</span>
+<style>
+ .chip { border-radius:2px; border-color:rgba(138,75,42,.48); background:rgba(61,4,9,.18); }
+</style>

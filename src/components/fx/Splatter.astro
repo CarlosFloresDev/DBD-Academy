@@ -1,0 +1,21 @@
+---
+interface Props { seed?: number | string; size?: number; tone?: 'blood' | 'gore' | 'rust' }
+const { seed = 1, size = 180, tone = 'blood' } = Astro.props;
+let state = String(seed).split('').reduce((value, char) => (value * 31 + char.charCodeAt(0)) >>> 0, 7) || 7;
+const rand = () => { state = (state * 1664525 + 1013904223) >>> 0; return state / 4294967296; };
+const drops = Array.from({ length: 11 }, () => ({
+  x: Math.round(12 + rand() * 76),
+  y: Math.round(12 + rand() * 76),
+  r: Math.round(1 + rand() * 4),
+}));
+---
+<svg class:list={['splatter', `tone-${tone}`]} width={size} height={size} viewBox="0 0 100 100" aria-hidden="true">
+  <path d="M48 13c4 10 5 15 13 20 9 5 21 3 19 11-2 6-14 3-20 8-7 6-7 20-13 20-7 0-5-15-12-20-8-6-21-3-22-10-1-8 12-6 21-12 6-4 9-10 14-17z"/>
+  {drops.map((drop) => <circle cx={drop.x} cy={drop.y} r={drop.r} />)}
+</svg>
+<style>
+  .splatter { position:absolute; z-index:-1; overflow:visible; pointer-events:none; opacity:.2; }
+  .splatter path,.splatter circle { fill:var(--splatter-color,var(--blood)); }
+  .tone-gore { --splatter-color:var(--gore); opacity:.3; }
+  .tone-rust { --splatter-color:var(--rust); opacity:.2; }
+</style>

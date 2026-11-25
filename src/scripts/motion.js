@@ -14,11 +14,13 @@ function revealAll() {
   }
 
   document.querySelectorAll('[data-reveal]').forEach((el) => {
+    const splash = el.dataset.reveal === 'splash';
     gsap.fromTo(el,
-      { opacity: 0, y: 24 },
+      { opacity: 0, y: splash ? 14 : 24, scale: splash ? 0.97 : 1 },
       {
         opacity: 1,
         y: 0,
+        scale: 1,
         duration: 0.6,
         delay: Number(el.dataset.revealDelay || 0) / 1000,
         ease: 'power3.out',
@@ -33,6 +35,14 @@ function revealAll() {
 }
 
 if (!reducedMotion.matches) {
+  document.body.classList.add('motion-ready');
+  const pageCut = document.querySelector('.page-cut');
+  if (pageCut) {
+    pageCut.classList.add('is-running');
+    pageCut.addEventListener('animationend', () => {
+      pageCut.classList.remove('is-running');
+    }, { once: true });
+  }
   lenis = new Lenis({ duration: 1.1, smoothWheel: true });
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add((time) => lenis.raf(time * 1000));
@@ -46,6 +56,7 @@ gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
     const target = Number(el.dataset.count);
     const decimals = Number(el.dataset.decimals || 0);
     const obj = { value: 0 };
+    el.textContent = '0';
     gsap.to(obj, {
       value: target,
       duration: 1.25,
@@ -81,8 +92,9 @@ gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
   });
 
   document.querySelectorAll('.stat-bar-fill').forEach((el) => {
-    gsap.fromTo(el, { width: '0%' }, {
-      width: el.dataset.width || '0%',
+    const fill = Number.parseFloat(el.dataset.width || '0') / 100;
+    gsap.fromTo(el, { scaleX: 0 }, {
+      scaleX: fill,
       duration: 0.7,
       ease: 'power3.out',
       scrollTrigger: { trigger: el, start: 'top 92%', once: true },
@@ -97,6 +109,9 @@ gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
 gsap.matchMedia().add('(prefers-reduced-motion: reduce)', () => {
   if (lenis) lenis.destroy();
   gsap.set('[data-reveal]', { opacity: 1, y: 0 });
+  document.querySelectorAll('.stat-bar-fill').forEach((el) => {
+    gsap.set(el, { scaleX: Number.parseFloat(el.dataset.width || '0') / 100 });
+  });
   document.querySelectorAll('[data-count]').forEach((el) => {
     const target = Number(el.dataset.count);
     const decimals = Number(el.dataset.decimals || 0);
@@ -110,6 +125,8 @@ gsap.matchMedia().add('(prefers-reduced-motion: reduce)', () => {
 reducedMotion.addEventListener('change', () => {
   if (reducedMotion.matches) {
     if (lenis) lenis.destroy();
+    document.body.classList.remove('motion-ready');
+    document.querySelector('.page-cut')?.classList.remove('is-running');
   }
 });
 

@@ -1,0 +1,310 @@
+---
+import perks from '../../data/perks.json';
+import survivors from '../../data/survivors.json';
+import rules from '../../data/comp-rules.json';
+import SectionHead from '../SectionHead.astro';
+
+const rows = [0, 1, 2, 3];
+const slots = [0, 1, 2, 3];
+const survivorPerks = perks.filter((perk) => perk.side === 'survivor');
+const bannedNames = new Set(rules.perksSurvivorBaneados.map((name) => name.toLocaleLowerCase('en')));
+const isBanned = (name: string) => bannedNames.has(name.toLocaleLowerCase('en'));
+const isExhausting = (tags: string[]) => tags.some((tag) => tag.toLocaleLowerCase('en').includes('exhausted'));
+---
+
+<section class="team-checker container" id="verificador" aria-label="Verificador de equipo 4v1">
+  <SectionHead eyebrow="Herramienta" title="Verificador de equipo" description="Monta cuatro survivors con hasta cuatro perks cada uno y revisa las restricciones mientras escribes." />
+
+  <details class="tc-banned">
+    <summary>Lista de perks baneados en el formato 1v1</summary>
+    <p>Esta lista corresponde al formato 1v1 de DBD Arena. En 4v1 cada liga define sus propias listas: úsala solo como referencia.</p>
+    <div class="tc-banned-list">
+      {rules.perksSurvivorBaneados.map((name) => <span class="chip">{name}</span>)}
+    </div>
+  </details>
+
+  <div class="tc-rows">
+    {rows.map((row) => (
+      <article class="tc-row" data-tc-row>
+        <div class="tc-row-head">
+          <span class="tc-row-number mono">0{row + 1}</span>
+          <h3>Survivor {row + 1}</h3>
+          <button class="tc-clear" type="button" data-clear-row aria-label={`Vaciar survivor ${row + 1}`}>Vaciar fila</button>
+        </div>
+
+        <div class="tc-character">
+          <div class="tc-field" data-field>
+            <label for={`tc-survivor-${row}`}>Personaje</label>
+            <div class="tc-combo">
+              <input id={`tc-survivor-${row}`} type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls={`tc-survivor-options-${row}`} autocomplete="off" placeholder="Buscar survivor" data-combo-input data-survivor-input />
+              <ul class="tc-options" id={`tc-survivor-options-${row}`} role="listbox" hidden>
+                {survivors.map((survivor) => (
+                  <li class="tc-option" role="option" id={`tc-survivor-${row}-${survivor.slug}`} data-combo-option data-slug={survivor.slug} data-name={survivor.name}>{survivor.name}</li>
+                ))}
+              </ul>
+            </div>
+            <button class="tc-remove" type="button" data-remove hidden aria-label={`Quitar survivor ${row + 1}`}>Quitar</button>
+          </div>
+          <p class="tc-exhaust mono" data-exhaust>Agotamiento: 0</p>
+        </div>
+
+        <div class="tc-perks">
+          <p class="tc-perks-title">Perks <span class="mono" data-perk-count>0/4</span></p>
+          <div class="tc-perk-grid">
+            {slots.map((slot) => (
+              <div class="tc-field" data-field>
+                <label for={`tc-perk-${row}-${slot}`}>Perk {slot + 1}</label>
+                <div class="tc-combo">
+                  <input id={`tc-perk-${row}-${slot}`} type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls={`tc-perk-options-${row}`} autocomplete="off" placeholder="Buscar perk survivor" data-combo-input data-perk-input />
+                </div>
+                <button class="tc-remove" type="button" data-remove hidden aria-label={`Quitar perk ${slot + 1} del survivor ${row + 1}`}>Quitar</button>
+              </div>
+            ))}
+          </div>
+          <ul class="tc-options tc-perk-options" id={`tc-perk-options-${row}`} role="listbox" hidden>
+            {survivorPerks.map((perk) => (
+              <li class="tc-option" role="option" id={`tc-perk-${row}-${perk.slug}`} data-combo-option data-slug={perk.slug} data-name={perk.name} data-tags={perk.tags.join('|')} data-banned={isBanned(perk.name) ? 'true' : 'false'}>
+                <span>{perk.name}</span>
+                {isBanned(perk.name) && <span class="tc-option-badge mono">1v1</span>}
+                {isExhausting(perk.tags) && <span class="tc-option-badge mono">Agot.</span>}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </article>
+    ))}
+  </div>
+
+  <div class="tc-alerts" data-alerts aria-live="polite" aria-atomic="true">
+    <p class="ok">Elige survivors y perks para revisar el equipo.</p>
+  </div>
+</section>
+
+<script>
+  const root = document.querySelector<HTMLElement>('.team-checker');
+  if (root) {
+    const rows = [...root.querySelectorAll<HTMLElement>('[data-tc-row]')];
+    const inputs = [...root.querySelectorAll<HTMLInputElement>('[data-combo-input]')];
+    const alerts = root.querySelector<HTMLElement>('[data-alerts]');
+    const activeIndex = new WeakMap<HTMLInputElement, number>();
+    const focusedByList = new Map<string, HTMLInputElement>();
+
+    const listFor = (input: HTMLInputElement) => document.getElementById(input.getAttribute('aria-controls') ?? '');
+    const optionsFor = (input: HTMLInputElement) => {
+      const list = listFor(input);
+      return list ? [...list.querySelectorAll<HTMLLIElement>('[data-combo-option]')] : [];
+    };
+    const closeList = (input: HTMLInputElement) => {
+      const list = listFor(input);
+      if (list) list.hidden = true;
+      input.setAttribute('aria-expanded', 'false');
+      input.removeAttribute('aria-activedescendant');
+      activeIndex.delete(input);
+    };
+    const openList = (input: HTMLInputElement) => {
+      const list = listFor(input);
+      if (!list) return;
+      const query = input.value.trim().toLocaleLowerCase('es');
+      optionsFor(input).forEach((option) => {
+        const name = (option.dataset.name ?? '').toLocaleLowerCase('es');
+        option.hidden = query.length > 0 && !name.includes(query);
+        option.classList.remove('is-active');
+      });
+      const visible = optionsFor(input).filter((option) => !option.hidden);
+      list.hidden = visible.length === 0;
+      input.setAttribute('aria-expanded', String(!list.hidden));
+      input.removeAttribute('aria-activedescendant');
+      activeIndex.delete(input);
+    };
+    const setActive = (input: HTMLInputElement, index: number) => {
+      const visible = optionsFor(input).filter((option) => !option.hidden);
+      if (!visible.length) return;
+      const next = Math.max(0, Math.min(index, visible.length - 1));
+      activeIndex.set(input, next);
+      visible.forEach((option, optionIndex) => option.classList.toggle('is-active', optionIndex === next));
+      visible[next].scrollIntoView({ block: 'nearest' });
+      input.setAttribute('aria-activedescendant', visible[next].id);
+    };
+    const fieldFor = (element: Element) => element.closest<HTMLElement>('[data-field]');
+
+    const clearSelection = (input: HTMLInputElement, keepText = false) => {
+      if (!keepText) input.value = '';
+      delete input.dataset.selected;
+      delete input.dataset.name;
+      delete input.dataset.tags;
+      delete input.dataset.banned;
+      const remove = fieldFor(input)?.querySelector<HTMLButtonElement>('[data-remove]');
+      if (remove) remove.hidden = true;
+      closeList(input);
+    };
+
+    const choose = (input: HTMLInputElement, option: HTMLLIElement) => {
+      input.value = option.dataset.name ?? '';
+      input.dataset.selected = option.dataset.slug ?? '';
+      input.dataset.name = option.dataset.name ?? '';
+      input.dataset.tags = option.dataset.tags ?? '';
+      input.dataset.banned = option.dataset.banned ?? 'false';
+      const remove = fieldFor(input)?.querySelector<HTMLButtonElement>('[data-remove]');
+      if (remove) remove.hidden = false;
+      closeList(input);
+      validate();
+    };
+
+    const validate = () => {
+      const team = rows.map((row, rowIndex) => {
+        const survivorInput = row.querySelector<HTMLInputElement>('[data-survivor-input]');
+        const perkInputs = [...row.querySelectorAll<HTMLInputElement>('[data-perk-input]')].filter((input) => input.dataset.selected);
+        const exhausted = perkInputs.filter((input) => (input.dataset.tags ?? '').split('|').some((tag) => tag.toLocaleLowerCase('en') === 'exhausted')).length;
+        const exhaustLabel = row.querySelector<HTMLElement>('[data-exhaust]');
+        const perkCount = row.querySelector<HTMLElement>('[data-perk-count]');
+        if (exhaustLabel) exhaustLabel.textContent = `Agotamiento: ${exhausted}`;
+        if (perkCount) perkCount.textContent = `${perkInputs.length}/4`;
+        return {
+          number: rowIndex + 1,
+          survivor: survivorInput?.dataset.selected ? survivorInput.value : '',
+          perks: perkInputs.map((input) => ({ name: input.value, banned: input.dataset.banned === 'true' })),
+          exhausted,
+        };
+      });
+
+      const repeated = (values: string[]) => [...new Set(values.filter((value, index) => value && values.indexOf(value) !== index))];
+      const conflicts: string[] = [];
+      const repeatedSurvivors = repeated(team.map((member) => member.survivor));
+      if (repeatedSurvivors.length) conflicts.push(`Personajes repetidos: ${repeatedSurvivors.join(', ')}.`);
+      const repeatedPerks = repeated(team.flatMap((member) => member.perks.map((perk) => perk.name)));
+      if (repeatedPerks.length) conflicts.push(`Perk repetido en el equipo (un perk por equipo): ${repeatedPerks.join(', ')}.`);
+      const bannedPerks = [...new Set(team.flatMap((member) => member.perks.filter((perk) => perk.banned).map((perk) => perk.name)))];
+      if (bannedPerks.length) conflicts.push(`Baneados en 1v1: ${bannedPerks.join(', ')}. Esa lista es del formato 1v1; en 4v1 depende de cada liga.`);
+
+      const withPerks = team.filter((member) => member.perks.length);
+      const notes = withPerks.length
+        ? [`Agotamiento por survivor: ${withPerks.map((member) => `S${member.number} ${member.exhausted}`).join(' · ')}.`]
+        : [];
+      const messages = conflicts.length
+        ? [...conflicts, ...notes]
+        : [notes[0] ?? (team.some((member) => member.survivor || member.perks.length) ? 'Sin conflictos detectados.' : 'Elige survivors y perks para revisar el equipo.')];
+
+      if (alerts) {
+        alerts.classList.toggle('has-warnings', conflicts.length > 0);
+        alerts.replaceChildren(...messages.map((message) => {
+          const line = document.createElement('p');
+          line.className = conflicts.length && message === conflicts[0] ? 'warn' : 'note';
+          line.textContent = message;
+          return line;
+        }));
+      }
+    };
+
+    inputs.forEach((input) => {
+      input.addEventListener('focus', () => {
+        inputs.forEach((other) => { if (other !== input) closeList(other); });
+        focusedByList.set(input.getAttribute('aria-controls') ?? '', input);
+        openList(input);
+      });
+      input.addEventListener('blur', () => closeList(input));
+      input.addEventListener('input', () => {
+        if (input.dataset.name && input.value !== input.dataset.name) clearSelection(input, true);
+        openList(input);
+        validate();
+      });
+      input.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowDown') {
+          event.preventDefault();
+          if (listFor(input)?.hidden) openList(input);
+          setActive(input, (activeIndex.get(input) ?? -1) + 1);
+        } else if (event.key === 'ArrowUp') {
+          event.preventDefault();
+          if (listFor(input)?.hidden) openList(input);
+          setActive(input, (activeIndex.get(input) ?? 0) - 1);
+        } else if (event.key === 'Enter') {
+          const visible = optionsFor(input).filter((option) => !option.hidden);
+          const current = activeIndex.get(input);
+          if (!listFor(input)?.hidden && visible.length) {
+            event.preventDefault();
+            choose(input, visible[current ?? 0]);
+          }
+        } else if (event.key === 'Escape') {
+          closeList(input);
+        }
+      });
+    });
+
+    root.querySelectorAll<HTMLLIElement>('[data-combo-option]').forEach((option) => {
+      option.addEventListener('pointerdown', (event) => event.preventDefault());
+      option.addEventListener('click', () => {
+        const list = option.closest<HTMLElement>('[role="listbox"]');
+        const input = list ? (focusedByList.get(list.id) ?? inputs.find((candidate) => candidate.getAttribute('aria-controls') === list.id)) : undefined;
+        if (input) choose(input, option);
+      });
+    });
+
+    root.querySelectorAll<HTMLButtonElement>('[data-remove]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const input = fieldFor(button)?.querySelector<HTMLInputElement>('[data-combo-input]');
+        if (input) clearSelection(input);
+        validate();
+      });
+    });
+
+    root.querySelectorAll<HTMLButtonElement>('[data-clear-row]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const row = button.closest<HTMLElement>('[data-tc-row]');
+        row?.querySelectorAll<HTMLInputElement>('[data-combo-input]').forEach((input) => clearSelection(input));
+        validate();
+      });
+    });
+
+    validate();
+  }
+</script>
+
+<style>
+  .team-checker { margin-top: 96px; }
+  .team-checker :global(.section-head) { max-width: 720px; }
+  .tc-banned { max-width: 760px; border: 1px solid var(--line); border-left: 3px solid var(--amber); background: var(--panel); padding: 14px 18px; }
+  .tc-banned summary { cursor: pointer; font-family: "Barlow Condensed", sans-serif; font-size: 1.1rem; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; }
+  .tc-banned p { margin: 12px 0 0; color: var(--muted); font-size: .78rem; }
+  .tc-banned-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .tc-banned-list :global(.chip) { color: var(--text); }
+  .tc-rows { display: grid; gap: 12px; margin-top: 24px; }
+  .tc-row { min-width: 0; border: 1px solid var(--line); background: var(--bg-2); padding: 18px; }
+  .tc-row-head { display: flex; align-items: baseline; gap: 12px; border-bottom: 1px solid var(--line); padding-bottom: 12px; }
+  .tc-row-number { color: var(--blood-2); font-size: 1.4rem; font-weight: 700; }
+  .tc-row-head h3 { margin: 0; font: 700 1.35rem "Barlow Condensed", sans-serif; letter-spacing: .02em; text-transform: uppercase; }
+  .tc-clear { margin-left: auto; border: 0; background: none; color: var(--muted); cursor: pointer; font-size: .72rem; text-decoration: underline; }
+  .tc-clear:hover { color: var(--blood-2); }
+  .tc-character { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; align-items: end; margin-top: 16px; }
+  .tc-field { position: relative; min-width: 0; }
+  .tc-field label { display: block; margin-bottom: 6px; color: var(--muted); font-size: .72rem; }
+  .tc-combo { position: relative; min-width: 0; }
+  .tc-combo input { width: 100%; min-height: 44px; border: 1px solid var(--line); border-radius: var(--r); background: var(--panel); color: var(--text); padding: 10px 12px; font-size: .84rem; }
+  .tc-combo input::placeholder { color: var(--muted); }
+  .tc-combo input:hover { border-color: var(--muted); }
+  .tc-exhaust { margin: 0 0 12px; color: var(--amber); font-size: .72rem; white-space: nowrap; }
+  .tc-perks { margin-top: 18px; }
+  .tc-perks-title { display: flex; justify-content: space-between; margin: 0 0 10px; color: var(--muted); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
+  .tc-perks-title span { color: var(--amber); }
+  .tc-perk-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .tc-remove { margin-top: 5px; border: 0; background: none; color: var(--muted); cursor: pointer; font-size: .68rem; text-decoration: underline; }
+  .tc-remove:hover { color: var(--blood-2); }
+  .tc-remove[hidden] { display: none; }
+  .tc-options { position: absolute; z-index: 5; top: calc(100% + 4px); left: 0; right: 0; max-height: 220px; overflow-y: auto; border: 1px solid var(--line); border-radius: var(--r); background: var(--bg); list-style: none; margin: 0; padding: 0; }
+  .tc-perk-options { position: static; max-height: 260px; margin-top: 10px; }
+  .tc-options[hidden] { display: none; }
+  .tc-option { display: flex; justify-content: space-between; gap: 8px; padding: 8px 10px; color: var(--text); cursor: pointer; font-size: .78rem; }
+  .tc-option:hover, .tc-option.is-active { background: var(--panel); color: var(--amber); }
+  .tc-option[hidden] { display: none; }
+  .tc-option-badge { color: var(--amber); font-size: .62rem; }
+  .tc-alerts { min-height: 72px; margin-top: 16px; border-left: 3px solid var(--ok); background: var(--panel); padding: 12px 16px; }
+  .tc-alerts.has-warnings { border-left-color: var(--amber); }
+  .tc-alerts p { margin: 4px 0; font-size: .8rem; }
+  .tc-alerts .ok { color: var(--ok); }
+  .tc-alerts .warn, .tc-alerts .note { color: var(--amber); }
+  @media (max-width: 700px) {
+    .team-checker { margin-top: 64px; }
+    .tc-row { padding: 14px; }
+    .tc-character { grid-template-columns: 1fr; gap: 8px; }
+    .tc-exhaust { margin-bottom: 0; }
+    .tc-perk-grid { grid-template-columns: 1fr; }
+  }
+</style>

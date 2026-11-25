@@ -1,12 +1,16 @@
 ---
+import ChainHook from './fx/ChainHook.astro';
+import Splatter from './fx/Splatter.astro';
 const cols = [
   {title:'Aprende', links:[['Killers','/killers/'],['Mapas','/mapas/'],['Survivors','/survivors/']]},
-  {title:'Herramientas', links:[['Perks','/perks/'],['Builds','/builds/'],['Reloj','/reloj/']]},
+  {title:'Herramientas', links:[['Perks','/perks/'],['Builds','/builds/'],['Reloj','/reloj/'],['Callouts','/callouts/'],['4v1 competitivo','/competitivo/4v1/']]},
   {title:'Formato', links:[['Competitivo','/competitivo/'],['Inicio','/']]},
 ];
 ---
 
 <footer>
+  <ChainHook small />
+  <Splatter seed="footer" size={190} tone="gore" />
   <div class="container footer-grid">
     <div>
       <a class="footer-brand" href="/">DBD <b>ACADEMY</b></a>
@@ -26,8 +30,10 @@ const cols = [
 </footer>
 
 <style>
- footer { margin-top:96px; border-top:1px solid var(--line); background:var(--bg-2); }
- .footer-grid { display:grid; grid-template-columns:2fr repeat(3,1fr); gap:24px; padding-block:40px; }
+ footer { position:relative; isolation:isolate; margin-top:96px; border-top:1px solid var(--line); background:linear-gradient(180deg,var(--bg-2),#080a0d); }
+ footer > :global(.chain-hook) { position:absolute; top:-1px; right:max(24px,calc((100% - 1120px)/2)); }
+ footer > :global(.splatter) { top:0; left:4%; }
+ .footer-grid { position:relative; z-index:1; display:grid; grid-template-columns:2fr repeat(3,1fr); gap:24px; padding-block:40px; }
  .footer-brand { display:inline-block; margin-bottom:16px; font-family:"Barlow Condensed",sans-serif; font-size:1.35rem; font-weight:800; letter-spacing:.08em; }
  .footer-brand b { color:var(--blood-2); }
  footer p { max-width:420px; margin:4px 0; color:var(--muted); font-size:.78rem; }

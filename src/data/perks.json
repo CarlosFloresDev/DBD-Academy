@@ -34,7 +34,7 @@
   ],
   "patch": "9.5.0",
   "desc": "While healing an another Survivor, both you and the healed Survivor gain Elusive Status Effect . When you finish healing the Obsession , both you and the Obsession gain Elusive Status Effect for 20 / 25 / 30 seconds . Reduces your chance of becoming the initial Obsession by reducing the default value by -100 % . The Killer can only be obsessed with one Survivor at a time. \"I understand computers… systems. Problems. But this… I wonder if I’ll ever understand.\" — Kwon Tae-young",
-  "icon": null
+  "icon": "/img/perks/a-place-for-us.png"
  },
  {
   "slug": "ace-in-the-hole",
@@ -1059,7 +1059,7 @@
   ],
   "patch": "9.4.0",
   "desc": "\"Rather than give in to danger, you recalculate and adjust your strategy.\" You start the Trial with 2 Tokens . While hiding inside a Locker and holding a non-event Toolbox , press Active Ability button to spend 1 Token and transform your Toolbox into a Med-Kit of the same rarity with a random add-on of the same rarity. The new Med-kit has 80 / 90 / 100 % of its charges. \"Oh my god, oh my god, oh my god, oh my god.\" — Dustin Henderson",
-  "icon": null
+  "icon": "/img/perks/change-of-plan.png"
  },
  {
   "slug": "chemical-trap",
@@ -1750,7 +1750,7 @@
   ],
   "patch": "10.2.0",
   "desc": "\"Helping those in need comes easily, no matter how dire things get.\" When healing another Survivor, depending on their accumulated Hook Stages , you benefit from the following effects: Increases your Altruistic Healing speed by 30 / 35 / 40 % per Hook Stage , up to a maximum of 60 / 70 / 80 % . Increases the Progression bonus of Great Healing Skill Checks by +3 % per Hook Stage , up to a maximum of +6 % . Increases the odds of triggering a Skill Check by +5 % per Hook Stage , up to a maximum of +5 %Max . \"Look at me. My name's Orela, and I'm gonna make sure you're all right.\" — Orela Rose",
-  "icon": null
+  "icon": "/img/perks/do-no-harm.png"
  },
  {
   "slug": "dominance",
@@ -1865,7 +1865,7 @@
   ],
   "patch": "8.7.0",
   "desc": "\"You live by a code of conduct every day of your life, and are all the better for it.\" While healthy, taking a Protection Hit causes all other Survivors within 12 metres of your location to benefit from the following effect: Grants them a +25 % Haste Status Effect for 4 / 5 / 6 seconds . \"Don't worry about me. I've got a knack for bouncing back.\" — Orela Rose",
-  "icon": null
+  "icon": "/img/perks/duty-of-care.png"
  },
  {
   "slug": "empathic-connection",
@@ -1985,7 +1985,7 @@
   ],
   "patch": "9.4.0",
   "desc": "\"By slowing down and focusing, you can sense both ally and enemy.\" Crouch for 4 seconds to activate this perk. While active: You see the Auras of Survivors , the Killer , and a variety of objects. These are revealed in an expanding 44 meter radius.. Revealed objects include Chests , Exit Gate , Generators , Hatch , Items , Pallets , Totems , and Windows . You gain Elusive and Oblivious Status Effects When you stop crouching, or after 11 seconds , all effects of this perk end and it enters a 60 / 50 / 40 seconds cool-down. \"What is friend?\" — Eleven",
-  "icon": null
+  "icon": "/img/perks/extrasensory-perception.png"
  },
  {
   "slug": "exultation",
@@ -2106,7 +2106,7 @@
   ],
   "patch": "10.2.0",
   "desc": "Five Moves Ahead activates while you are being chased by the Killer or are inside the Killer's Terror Radius : After you drop a Pallet , you start moving 50 % earlier. See the auras of the 5 closest Pallets . Five Moves Ahead goes on a 40 / 35 / 30 seconds cool-down when you drop a Pallet. \"Every problem has a solution. It’s only a question of complexity.\" — Kwon Tae-young",
-  "icon": null
+  "icon": "/img/perks/five-moves-ahead.png"
  },
  {
   "slug": "flashbang",
@@ -2165,7 +2165,7 @@
   ],
   "patch": "10.2.0",
   "desc": "Whenever a Generator is completed, gain a token, up to 5 . For each token: Bless and cleanse Totems 13 / 14 / 15 % faster. Heal 13 / 14 / 15 % faster. Unhook Survivors 13 / 14 / 15 % faster. \"I’m sorry… I didn’t realize I was working so late.\" — Kwon Tae-young",
-  "icon": null
+  "icon": "/img/perks/flow-state.png"
  },
  {
   "slug": "fogwise",
@@ -2670,7 +2670,7 @@
   ],
   "patch": "9.4.0",
   "desc": "\"You found yourself connected to something dark and unknowable... and you embraced it.\" The first time you hook any Survivor , a random Dull Totem becomes a Hex Totem , provided that a Dull Totem remains in the Trial Grounds. Generators are highlighted; the intensity of the generator's Auras reveals their repair progress. As soon as a total of 4 generators have been completed in the Trial: All remaining generators explode, lose 6 / 8 / 10 % progess, and start regressing . The associated Hex Totem becomes dull, and this perk becomes disabled for the remainder of the trial. The Hex Effects persist until the Hex Totem is either blessed or cleansed by a Survivor, disabling it for the remainder of the Trial. \"You... let us in. And now, you are going to have to let us stay\" — Henry Creel",
-  "icon": null
+  "icon": "/img/perks/hex-hive-mind.png"
  },
  {
   "slug": "hex-huntress-lullaby",
@@ -3425,7 +3425,7 @@
   ],
   "patch": "3.2.0",
   "desc": "",
-  "icon": null
+  "icon": "/img/perks/left-behind.png"
  },
  {
   "slug": "lethal-pursuer",
@@ -4479,7 +4479,7 @@
   ],
   "patch": "8.7.0",
   "desc": "\"When the moment comes, you give it your all. Your survival depends on it.\" Whenever you become afflicted by the Exhausted Status Effect , Rapid Response triggers its effect: The Aura of the Killer is revealed to you for 2 seconds . Perform a Rushed action to exit a Locker to voluntarily trigger the Status Effect for 30 / 25 / 20 seconds . Rapid Response cannot be used to override an existing Exhausted Status Effect . \"All right. You got this. 3... 2... 1... go!\" — Orela Rose",
-  "icon": null
+  "icon": "/img/perks/rapid-response.png"
  },
  {
   "slug": "ravenous",
@@ -4952,7 +4952,7 @@
   ],
   "patch": "9.4.0",
   "desc": "\"Raised to be weapon, you broke free with the very skills your captors honed within you.\" Whenever a Totem is blessed or cleansed, a random unblocked generator becomes blocked for 20 / 25 / 30 seconds . Whenever any number of Generators become blocked, you gain Undetectable Status Effect for 30 seconds . \"You are a prisoner here, just like me\" — Henry Creel",
-  "icon": null
+  "icon": "/img/perks/secret-project.png"
  },
  {
   "slug": "see-how-they-run",
@@ -5539,7 +5539,7 @@
   ],
   "patch": "9.4.0",
   "desc": "\"You've dabbled with mechanical engineering and show off your abilities to others.\" For each Survivor repairing a generator with you, the size of the good Skill Check zone is increased by 15 / 20 / 25 % . While repairing with at least 1 other Survivor , you repair 5 % faster. \"How many times do I have to be right on the money before you guys just trust me?\" — Dustin Henderson",
-  "icon": null
+  "icon": "/img/perks/teamwork-full-circuit.png"
  },
  {
   "slug": "teamwork-power-of-two",
@@ -5578,7 +5578,7 @@
   ],
   "patch": "9.4.0",
   "desc": "\"You look out for your friends, using your abilities to protect them.\" For each other Survivor repairing a Generator with you, the range at which the Generator 's repair noise is heard is reduced by 15 / 20 / 25 % . While repairing with at least 1 other Survivor , you repair 5 % faster. \"I make my own rules.\" — Eleven",
-  "icon": null
+  "icon": "/img/perks/teamwork-soft-spoken.png"
  },
  {
   "slug": "teamwork-throw-down",
@@ -5881,7 +5881,7 @@
   ],
   "patch": "9.4.0",
   "desc": "\"Resist as they might, time marches on, and your master plan comes closer to fruition.\" After hooking a Survivor, for 40 / 50 / 60 seconds , press the Active Ability button to make a target generator within 20 meters explode, lose -10 % progress, and start regressing. \"Nothing will happen to you... Nothing that you don't deserve!\" — Henry Creel",
-  "icon": null
+  "icon": "/img/perks/turn-back-the-clock.png"
  },
  {
   "slug": "unbound",
@@ -6175,7 +6175,7 @@
   ],
   "patch": "9.4.0",
   "desc": "\"You've honed your powers and can turn the tables on those who try to find you.\" Gain a token when the Killer reveals your Aura . When you have 4 tokens , they are all consumed, and the Killer 's aura is revealed to you and all other Survivors for 10 / 12.5 / 15 seconds . This perk has a 10-second cool-down when gaining a token. \"It is not me. It is you. You are the monster.\" — Eleven",
-  "icon": null
+  "icon": "/img/perks/we-see-you.png"
  },
  {
   "slug": "we-ll-make-it",
@@ -6379,7 +6379,7 @@
   ],
   "patch": null,
   "desc": "When you Hook 3 different Survivors, Hex: Scared to Death activates on a random Dull Totem and triggers its effect: Basic-breaking a Pallet during a chase causes all Survivors within 13 metres to scream and gain -11 / -12 / -13 % Hindered Status Effect for 3 seconds . The Hex Effects persist until the Hex Totem is either blessed or cleansed by a Survivor, disabling it for the remainder of the Trial. \"There was a scream from the forest. Like someone was attacking her.\" — Mount Ormond Missing Person Report",
-  "icon": null
+  "icon": "/img/perks/hex-scared-to-death.png"
  },
  {
   "slug": "silent-shadow",
@@ -6396,7 +6396,7 @@
   ],
   "patch": "10.0.0",
   "desc": "When you hook a Survivor, you are granted Undetectable Status Effect for 11 / 12 / 13 seconds . When the Exit Gates are powered, you are granted Undetectable for the rest of the Trial. \"Did you see him or not? I can't put out an APB for a bad feeling.\" — Sgt. Reyes, Greenville Police",
-  "icon": null
+  "icon": "/img/perks/silent-shadow.png"
  },
  {
   "slug": "rampage",
@@ -6415,7 +6415,7 @@
   ],
   "patch": null,
   "desc": "Whenever you basic-break a Pallet or a Breakable Wall , gain a token, up to 13 . Whenever you are blinded or Pallet-stunned, you are granted +1 % Haste Status Effect for each Token this perk has for 13 seconds . This perk has a cool-down of 30 / 25 / 20 seconds after being blinded or Pallet-stunned while this perk has at least 1 token. \"Signs of a pursuit led deep into the woods where the victim's body was found.\" — Port Henly Herald",
-  "icon": null
+  "icon": "/img/perks/rampage.png"
  },
  {
   "slug": "wide-open-throttle",
@@ -6433,7 +6433,7 @@
   ],
   "patch": null,
   "desc": "Fast-vaulting a Pallet triggers the following effects: Gain 10 / 12.5 / 15 % Haste Status Effect for 3 seconds . The Pallet is immediately reset, blocked by the Entity and revealed to all Survivors for 60 seconds . This perk then goes on a 60 second cool-down. \"Nothing but the open road. Just the way I like it.\" — Shane Wiigwaas",
-  "icon": null
+  "icon": "/img/perks/wide-open-throttle.png"
  },
  {
   "slug": "lend-a-hand",
@@ -6450,7 +6450,7 @@
   ],
   "patch": null,
   "desc": "Cleansing or Blessing a Totem activates Lend a Hand : Once per Survivor, while healing a Survivor, press Activate Ability 2 to give the healed Survivor 2 / 3 / 4 permanent healing charges. \"Walk it off, will you? We still have work to do.\" — Shane Wiigwaas",
-  "icon": null
+  "icon": "/img/perks/lend-a-hand.png"
  },
  {
   "slug": "cross-examination",
@@ -6467,7 +6467,7 @@
   ],
   "patch": null,
   "desc": "While inside the Killer's Terror Radius and not being chased, you can see Light Marks the Killer leaves behind while moving. Light Marks have a duration of 10 seconds . While standing on a Light Mark , gain Elusive Status Effect . This lingers for 3 / 4 / 5 seconds . \"The witness has said enough, Your Honor. No further questions.\" — Shane Wiigwaas",
-  "icon": null
+  "icon": "/img/perks/cross-examination.png"
  },
  {
   "slug": "hex-under-your-thumb",
@@ -6486,7 +6486,7 @@
   ],
   "patch": null,
   "desc": "When a Survivor gains a Hook State, Hex: Under Your Thumb activates on a random Dull Totem : Running Survivors cannot gain more than 25 / 20 / 15 % Haste at once. Whenever a running Survivor within 32 metres gains Haste , the Survivor's location is revealed to you for 4 seconds . The Hex Effects persist until the Hex Totem is either blessed or cleansed by a Survivor, disabling it for the remainder of the Trial. \"They will run, but Judgment will make the very ground they tread turn to ash and smoke.\" — (Visions of Gerhardt, ch. 1)",
-  "icon": null
+  "icon": "/img/perks/hex-under-your-thumb.png"
  },
  {
   "slug": "celestial-witness",
@@ -6523,7 +6523,7 @@
   ],
   "patch": null,
   "desc": "Damaging a Generator makes it regress +2 % faster for each Charge it has. This perk has a cool-down of 55 / 50 / 45 seconds after damaging a Generator . \"They built hypercomputers and skyscrapers and quantum networks, but all of those things trembled and fell under the power of Judgment’s light.\" — (Witness to Koenrad, ch. 8)",
-  "icon": null
+  "icon": "/img/perks/lay-waste.png"
  },
  {
   "slug": "fruits-of-your-labor",
@@ -6542,7 +6542,7 @@
   ],
   "patch": null,
   "desc": "Whenever a Generator is completed, gain a token. Whenever you finish repairing a Generator , for each token this perk has: Gain +5 % Haste Status Effect for 2 seconds . Gain 10 / 15 / 20 % healing progress. \"And as the final brick was laid upon the walls of Stellanatis, the people rejoiced.\" — (Kelglen’s Declaration, 9:9)",
-  "icon": null
+  "icon": "/img/perks/fruits-of-your-labor.png"
  },
  {
   "slug": "salvation-s-cry",
@@ -6559,7 +6559,7 @@
   ],
   "patch": null,
   "desc": "When the Killer starts chasing you: You see the auras of other Survivors for 1 / 2 / 3 seconds . Survivors not being chased see your aura for 5 seconds Survivors not being chased see the Killer's aura for 5 seconds \"May you see as the stars see.\" — (Auroran Blessing)",
-  "icon": null
+  "icon": "/img/perks/salvation-s-cry.png"
  },
  {
   "slug": "boon-steadfast",
@@ -6579,7 +6579,7 @@
   ],
   "patch": null,
   "desc": "Press and hold the Active Ability button on a Dull or Hex Totem to bless it and create a Boon Totem . All Survivors within 24 metres hear soft chimes ringing out and benefit from its Boon Effects : Generators within this Boon's range: Regress -50 % slower. Survivors repair them + 8 / 9 / 10 % faster. Survivors see their auras while inside the Boon's range. Survivors can only be affected by one instance of Boon: Steadfast at a time. Only one Totem can be blessed by your Boon Perks at a time and all of their effects are active on the same Boon Totem . \"That which thine hands deliver shall prosper, for thine hands are guided by faith.\" — (Enlightenments, 2:10)",
-  "icon": null
+  "icon": "/img/perks/boon-steadfast.png"
  },
  {
   "slug": "laughingstock",
@@ -6598,7 +6598,7 @@
   ],
   "patch": null,
   "desc": "Survivors within 12 metres of a completed Generator suffer from: Exhausted and Oblivious Status Effects These effects linger for 3 / 4 / 5 seconds . You also see auras of completed Generators . \"Are you fucking kidding me? No, you’re not fine, you are so completely far from fine right now.\" — Brooke",
-  "icon": null
+  "icon": "/img/perks/laughingstock.png"
  },
  {
   "slug": "kill-spree",
@@ -6616,7 +6616,7 @@
   ],
   "patch": null,
   "desc": "When all Survivors have reached the second Hook Stage and all Generators have been completed, you can kill Survivors. While killing a Survivor, Exit Gate Switches are blocked by The Entity and for 12 / 18 / 20 seconds after. \"He’s killing them, one by one by one like cows.\" — Cat Lady",
-  "icon": null
+  "icon": "/img/perks/kill-spree.png"
  },
  {
   "slug": "funny-business",
@@ -6652,7 +6652,7 @@
   ],
   "patch": null,
   "desc": "Valkyrie's Rage activates after being chased for 40 / 35 / 30 seconds : The next time you Pallet -stun the Killer, they are stunned for +75 % longer. Valkyrie's Rage then deactivates. \"I hope that hurt, fucker!\" — Sienna Shaw",
-  "icon": null
+  "icon": "/img/perks/valkyrie-s-rage.png"
  },
  {
   "slug": "shared-trauma",
@@ -6670,7 +6670,7 @@
   ],
   "patch": null,
   "desc": "Taking a protection hit causes you and all Survivors within 12 metres to recover from Exhausted while running for 30 / 35 / 40 seconds . You also see auras of Survivors suffering from Exhausted within 32 metres . \"What? I like her scars. I think they're cool.\" — Gabbie Shaw",
-  "icon": null
+  "icon": "/img/perks/shared-trauma.png"
  },
  {
   "slug": "best-gift-ever",
@@ -6693,6 +6693,6 @@
   ],
   "patch": null,
   "desc": "Best Gift Ever starts the Trial with 4 / 5 / 6 Tokens : The first time you drop an Item of each type, spend 1 Token to cause the dropped to be consumed by The Entity and benefit from an effect based on the Item: Flashlights : stunning the Killer causes them to be blinded for 2 seconds . Fog Vials : fast-vaulting causes your Scratch Marks to disappear +50 % faster for 5 seconds . Keys : you can rummage each Chest once. Maps : you see auras that last for a duration for +1 second longer. Med-Kits : healing a Survivor causes you to gain healing progress at 25 % speed. Toolboxes : you see auras of the 3 closest Generators . \"If a demon enters this world in the flesh, a counterpoint must be appointed to stop it from becoming too powerful.\" — Jonathan Shaw",
-  "icon": null
+  "icon": "/img/perks/best-gift-ever.png"
  }
 ]

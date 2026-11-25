@@ -1,63 +1,75 @@
-<svg class="hero-art" viewBox="0 0 1200 760" role="img" aria-label="Cronometro, estructura industrial y niebla">
-  <defs>
-    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0" stop-color="#ffb703" stop-opacity=".24"/>
-      <stop offset="1" stop-color="#ffb703" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-  <rect width="1200" height="760" fill="#06080b"/>
-  <circle cx="820" cy="355" r="260" fill="url(#glow)" opacity=".55"/>
-  <g class="fog fog-a" fill="#1f2a33" opacity=".18">
-    <path d="M0 580c180-58 280 18 430-25 170-50 300 24 460-22 130-38 220-4 310 18v209H0z"/>
-  </g>
-  <g class="fog fog-b" fill="#8b97a1" opacity=".08">
-    <path d="M-80 520c160-48 260 20 390-20 170-52 300 18 470-30 160-45 280 10 420 30v260H-80z"/>
-  </g>
-  <g class="fog fog-c" fill="#10161c" opacity=".7">
-    <path d="M-100 640c180-38 280 18 450-12 180-32 340 30 520-10 180-40 300 8 430 22v120H-100z"/>
-  </g>
-  <g fill="#06080b" stroke="#1f2a33" stroke-width="3">
-    <path d="M60 760V350l22-4 22 414zM82 350l-70-122M82 350l75-128M82 350l-36-152M82 350l48-152"/>
-    <path d="M1100 760V310l28-8 28 458zM1128 310l-85-145M1128 310l92-128M1128 310l-40-180M1128 310l48-168"/>
-  </g>
-  <g class="industrial" fill="#0c1015" stroke="#1f2a33" stroke-width="4">
-    <path d="M475 760V510l90-72h210l92 72v250z"/>
-    <path d="M565 438v322M775 438v322M565 438h210"/>
-    <path d="M620 760V610h100v150M646 610v150M694 610v150"/>
-  </g>
-  <g class="hook">
-    <path d="M820 0v170" stroke="#e8e3d6" stroke-width="5"/>
-    <path d="M820 170c-3 70-68 85-68 24 0-26 18-45 43-45" fill="none" stroke="#c1121f" stroke-width="14" stroke-linecap="round"/>
-  </g>
-  <g transform="translate(660 225)">
-    <circle r="142" fill="#06080b" stroke="#1f2a33" stroke-width="8"/>
-    <circle r="125" fill="none" stroke="#8b97a1" stroke-width="2" opacity=".45"/>
-    <path d="M0-112A112 112 0 1 1-78 80" fill="none" stroke="#c1121f" stroke-width="12" stroke-linecap="round" class="draw"/>
-    <g stroke="#8b97a1" stroke-width="3" opacity=".7">
-      <path d="M0-125V-105M0 105v20M125 0h-20M-105 0h-20"/>
-      <path d="M88-88l-14 14M-88 88l14-14M88 88l-14-14M-88-88l14 14"/>
+---
+import BloodDrip from './fx/BloodDrip.astro';
+import ChainHook from './fx/ChainHook.astro';
+import Embers from './fx/Embers.astro';
+---
+<div class="hero-art" role="img" aria-label="Luna roja, cadenas, generador y reloj bajo la niebla">
+  <svg viewBox="0 0 1200 760" aria-hidden="true">
+    <defs>
+      <radialGradient id="moon-glow">
+        <stop offset="0" stop-color="#c1121f" stop-opacity=".42"/>
+        <stop offset=".62" stop-color="#7a0a12" stop-opacity=".18"/>
+        <stop offset="1" stop-color="#7a0a12" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="mist" x2="0" y2="1">
+        <stop stop-color="#8b97a1" stop-opacity="0"/>
+        <stop offset="1" stop-color="#8b97a1" stop-opacity=".12"/>
+      </linearGradient>
+    </defs>
+    <circle cx="850" cy="248" r="290" fill="url(#moon-glow)"/>
+    <circle cx="850" cy="248" r="142" fill="#3d0409" opacity=".8"/>
+    <circle cx="850" cy="248" r="131" fill="#7a0a12" opacity=".54"/>
+    <path d="M744 176q68-42 155-8m-172 35q67-24 131-9m-45 116q62-10 106-45" fill="none" stroke="#ff3b47" stroke-opacity=".16" stroke-width="8"/>
+    <g fill="#06080b" stroke="#1f2a33" stroke-width="3">
+      <path d="M68 760V360l22-6 22 406zM90 360 17 232m73 128 78-124m-78 124-37-162m37 162 48-160"/>
+      <path d="M1100 760V310l28-8 28 458zM1128 310l-85-145m85 145 92-128m-92 128-40-180m40 180 48-168"/>
     </g>
-    <path d="M0 0L0-78" stroke="#e8e3d6" stroke-width="8" stroke-linecap="round"/>
-    <circle r="12" fill="#ffb703"/>
-  </g>
-  <g transform="translate(390 600)">
-    <rect x="-84" y="-52" width="168" height="112" rx="4" fill="#10161c" stroke="#1f2a33" stroke-width="5"/>
-    <path d="M-55-25h110M-55 0h110M-55 25h110M-28-52v112M28-52v112" stroke="#1f2a33" stroke-width="4"/>
-    <circle cx="58" cy="-30" r="5" fill="#ffb703" class="gen-light"/>
-  </g>
-</svg>
-
+    <g fill="#0c1015" stroke="#1f2a33" stroke-width="4">
+      <path d="M490 760V505l94-77h194l98 77v255z"/>
+      <path d="M584 428v332m194-332v332M584 428h194"/>
+      <path d="M635 760V615h94v145m-70-145v145m46-145v145"/>
+    </g>
+    <g fill="none" stroke="#65707a" stroke-width="4" opacity=".85">
+      <path d="M936 0v138m18-138v138m18-138v138M936 138l18 11 18-11m-36 0v35m18-35v35m18-35v35"/>
+      <path d="M300 0v91m15-91v91m15-91v91M300 91l15 10 15-10m-30 0v31m15-31v31m15-31v31"/>
+    </g>
+    <g class="hanging-hook">
+      <path d="M954 173v29c0 54 54 57 70 17 12-29-7-55-39-54" fill="none" stroke="#c1121f" stroke-width="13" stroke-linecap="round"/>
+      <path d="M954 173v29c0 54 54 57 70 17 12-29-7-55-39-54" fill="none" stroke="#8a4b2a" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(685 308)">
+      <circle r="126" fill="#06080b" stroke="#1f2a33" stroke-width="9"/>
+      <circle r="107" fill="none" stroke="#8b97a1" stroke-width="2" opacity=".45"/>
+      <path d="M0-94A94 94 0 1 1-66 67" fill="none" stroke="#c1121f" stroke-width="13" stroke-linecap="round"/>
+      <g stroke="#8b97a1" stroke-width="3" opacity=".8">
+        <path d="M0-106V-90M0 90v16M106 0H90M-90 0h-16"/>
+        <path d="m75-75-11 11m-64 64 11-11m64 11L64 64m-75-75 11 11"/>
+      </g>
+      <path d="M0 0 0-67" stroke="#e8e3d6" stroke-width="7" stroke-linecap="round"/>
+      <circle r="10" fill="#ffb703"/>
+    </g>
+    <g transform="translate(392 604)">
+      <path d="M-89-55h178v120H-89z" fill="#10161c" stroke="#8a4b2a" stroke-width="4"/>
+      <path d="M-62-29h124m-124 27h124m-124 27h124m-32-80v120m62-120v120" stroke="#1f2a33" stroke-width="5"/>
+      <circle cx="63" cy="-34" r="7" fill="#ff6a3d" class="gen-light"/>
+    </g>
+    <path d="M0 565q165-52 324-8t319 0 318-15 239 12v206H0z" fill="url(#mist)"/>
+    <path d="M-30 665q170-55 350-10t350 0 350-9 220 15v110H-30z" fill="#0c1015" opacity=".9"/>
+  </svg>
+  <ChainHook position="left" />
+  <ChainHook position="right" small />
+  <Embers />
+  <BloodDrip edge="top" />
+</div>
 <style>
- .hero-art { width:100%; height:100%; object-fit:cover; }
- .fog-a { animation:fog-a 18s ease-in-out infinite alternate; }
- .fog-b { animation:fog-b 24s ease-in-out infinite alternate; }
- .fog-c { animation:fog-c 14s ease-in-out infinite alternate; }
- .hook { transform-origin:820px 0; animation:hook-swing 5s ease-in-out infinite alternate; }
- .gen-light { filter:drop-shadow(0 0 8px #ffb703); animation:gen-pulse 2.4s steps(2,end) infinite; }
- @keyframes fog-a { from{transform:translateX(-35px)} to{transform:translateX(55px)} }
- @keyframes fog-b { from{transform:translateX(65px)} to{transform:translateX(-45px)} }
- @keyframes fog-c { from{transform:translateX(-20px)} to{transform:translateX(38px)} }
- @keyframes hook-swing { from{transform:rotate(-1deg)} to{transform:rotate(1.5deg)} }
- @keyframes gen-pulse { 0%,70%,100%{opacity:.35} 72%,82%{opacity:1} }
- @media (prefers-reduced-motion:reduce) { .hero-art * { animation:none!important } }
+  .hero-art { position:absolute; inset:0; overflow:clip; background:radial-gradient(ellipse at 70% 34%,rgba(122,10,18,.12),transparent 44%),var(--bg); pointer-events:none; }
+  .hero-art > svg { width:100%; height:100%; object-fit:cover; }
+  .hero-art :global(.position-left) { position:absolute; top:0; left:63%; z-index:2; width:70px; }
+  .hero-art :global(.position-right) { position:absolute; top:0; right:5%; z-index:2; width:45px; }
+  .hero-art :global(.embers) { z-index:3; }
+  .hanging-hook { transform-origin:954px 0; animation:hook-shift 5s ease-in-out infinite alternate; }
+  .gen-light { filter:drop-shadow(0 0 9px #ff6a3d); animation:light-flicker 9s infinite; }
+  @keyframes hook-shift { from { transform:rotate(-1deg); } to { transform:rotate(1.6deg); } }
+  @keyframes light-flicker { 0%,64%,65%,67%,100% { opacity:.4; } 64.3%,66% { opacity:1; } }
+  @media (prefers-reduced-motion:reduce) { .hanging-hook,.gen-light { animation:none; } .gen-light { opacity:.7; } }
 </style>

@@ -1,8 +1,11 @@
 ---
 import Base from '../../layouts/Base.astro';
 import MapThumb from '../../components/MapThumb.astro';
+import MapSchematic from '../../components/mapas/MapSchematic.astro';
+import ClockOverlay from '../../components/callouts/ClockOverlay.astro';
 import SectionHead from '../../components/SectionHead.astro';
 import maps from '../../data/maps.json';
+import callouts from '../../data/callouts.json';
 import realms from '../../data/realms.json';
 import killers from '../../data/killers.json';
 import clock from '../../data/clock.json';
@@ -32,6 +35,23 @@ const compKillers = (map.comp?.killers1v1 ?? []).map((name) => ({
 }));
 const prev = index > 0 ? maps[index - 1] : null;
 const next = index < maps.length - 1 ? maps[index + 1] : null;
+
+const areas = maps.filter((entry) => entry.areaM2 !== null).map((entry) => entry.areaM2 as number);
+const averageArea = areas.reduce((total, area) => total + area, 0) / areas.length;
+const orderedAreas = [...areas].sort((a, b) => a - b);
+const middle = Math.floor(orderedAreas.length / 2);
+const medianArea = orderedAreas.length % 2 === 0
+  ? (orderedAreas[middle - 1] + orderedAreas[middle]) / 2
+  : orderedAreas[middle];
+const compareArea = (value: number, reference: number) => {
+  const difference = ((value - reference) / reference) * 100;
+  const percent = format1.format(Math.abs(difference));
+  if (Math.abs(difference) < 0.05) return 'del mismo tamaño que';
+  return difference > 0 ? `un ${percent} % más grande que` : `un ${percent} % más pequeño que`;
+};
+const sizeComparison = map.areaM2 !== null
+  ? `Con ${format.format(map.areaM2)} m², este mapa es ${compareArea(map.areaM2, averageArea)} el promedio (${format.format(averageArea)} m²) y ${compareArea(map.areaM2, medianArea)} la mediana (${format.format(medianArea)} m²).`
+  : `Este mapa no tiene superficie publicada, así que no se puede comparar. El promedio de los mapas con área publicada es ${format.format(averageArea)} m² y la mediana, ${format.format(medianArea)} m².`;
 ---
 
 <Base
@@ -40,11 +60,8 @@ const next = index < maps.length - 1 ? maps[index + 1] : null;
   active="mapas"
 >
   <section class="hero container" style={`--realm:${realmColor}`} aria-labelledby="map-title">
-    <div class="hero-media" data-reveal>
-      <MapThumb map={map} />
-      <span class="hero-index mono">MAPA {String(index + 1).padStart(2, '0')} / {maps.length}</span>
-    </div>
     <div class="hero-copy">
+      <p class="hero-index mono">MAPA {String(index + 1).padStart(2, '0')} / {maps.length}</p>
       <p class="eyebrow">Ficha de mapa / {map.codeName}</p>
       <h1 class="display" id="map-title">{map.name}</h1>
       <dl class="hero-meta">
@@ -58,6 +75,52 @@ const next = index < maps.length - 1 ? maps[index + 1] : null;
         <span aria-hidden="true">/</span>
         <span>{map.name}</span>
       </nav>
+    </div>
+  </section>
+
+  <section class="lectura container" aria-labelledby="lectura-title" data-reveal>
+    <div class="lectura-head">
+      <h2 class="display" id="lectura-title">FORMA Y RELOJ</h2>
+      <p>Dos lecturas del mismo mapa: el contorno oficial y el reloj de callouts que usan los equipos.</p>
+    </div>
+    <div class="lectura-grid">
+      <figure class="contour">
+        <div class="contour-media">
+          {map.icon ? <MapThumb map={map} /> : <MapSchematic map={map} />}
+        </div>
+        <figcaption>
+          <h3>Contorno oficial: forma y tamaño</h3>
+          <p>Este contorno del wiki muestra la forma y las dimensiones del mapa. No es una vista desde arriba del layout: la posición de generadores, shack y estructuras cambia en cada partida.</p>
+        </figcaption>
+      </figure>
+      <div class="clock-side">
+        <div class="clock-frame">
+          <ClockOverlay mainAt={0} interactive={false} showMain={true} showShack={true} />
+        </div>
+        <div class="callout-copy">
+          <h3>Cómo llamar este mapa</h3>
+          {map.landmark ? (
+            <p>El edificio principal ({map.landmark}) se toma como las 12.</p>
+          ) : (
+            <p>Toma como las 12 el edificio principal del mapa, el más grande o característico. Si no es evidente, acuerden antes cuál es el 12.</p>
+          )}
+          <p>El shack suele quedar cerca de las 6. Como el mapa se genera al azar, confirma su posición al cargar la partida.</p>
+          <a class="callout-link" href="/callouts/">Ver la regla completa del reloj <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="layout-source container" aria-labelledby="layout-source-title" data-reveal>
+    <div class="source-copy">
+      <h2 class="display" id="layout-source-title">LAYOUT REAL DESDE ARRIBA</h2>
+      <p>{callouts.layouts.aviso}</p>
+      <p class="source-hint">En cada web, busca el mapa por el nombre del reino: <strong>{map.realm}</strong>.</p>
+    </div>
+    <div class="source-actions">
+      <a class="btn btn-primary" href={callouts.layouts.hens} target="_blank" rel="noopener noreferrer">Layouts de Hens</a>
+      <a class="btn btn-secondary" href={callouts.layouts.vault} target="_blank" rel="noopener noreferrer">DBD Vault</a>
+      <p class="source-note">Se abren en una pestaña nueva.</p>
     </div>
   </section>
 
@@ -89,6 +152,10 @@ const next = index < maps.length - 1 ? maps[index + 1] : null;
     ) : (
       <p class="not-published">Tamaño no publicado. Este mapa no tiene superficie oficial en la base de datos: no hay tiles, área ni tiempos de cruce fiables.</p>
     )}
+    <aside class="size-tip" aria-labelledby="size-tip-title">
+      <h3 id="size-tip-title">Cómo leer el tamaño</h3>
+      <p>{sizeComparison}</p>
+    </aside>
     <p class="formula mono">Lado = √área · Tiempo = lado / velocidad · 1 tile = 8 × 8 m = 64 m²</p>
   </section>
 
@@ -187,19 +254,44 @@ const next = index < maps.length - 1 ? maps[index + 1] : null;
   </nav>
 
   <style>
-    .hero { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .85fr); gap: 40px; align-items: center; padding: 132px 0 64px; }
-    .hero-media { position: relative; min-width: 0; border-left: 3px solid var(--realm); }
-    .hero-index { position: absolute; right: 0; bottom: 0; padding: 6px 10px; background: var(--bg); color: var(--amber); font-size: .7rem; letter-spacing: .1em; }
+    .hero { padding: 132px 0 32px 24px; border-left: 3px solid var(--realm); }
+    .hero-index { color: var(--amber); font-size: .7rem; letter-spacing: .1em; }
     .hero-copy { min-width: 0; }
     .eyebrow { margin: 0; }
     h1 { margin: 12px 0 32px; font-size: clamp(3rem, 8vw, 7rem); overflow-wrap: anywhere; }
-    .hero-meta { display: grid; gap: 16px; margin: 0; padding: 24px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .hero-meta { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 24px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
     .hero-meta dt { color: var(--muted); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; }
-    .hero-meta dd { margin: 4px 0 0; font-size: .95rem; }
+    .hero-meta dd { margin: 4px 0 0; font-size: .95rem; overflow-wrap: anywhere; }
     .hero-note { margin: 20px 0 0; color: var(--muted); font-size: .8rem; }
     .breadcrumb { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; color: var(--muted); font-size: .74rem; }
     .breadcrumb a { color: var(--ice); }
     .breadcrumb a:hover { color: var(--text); }
+
+    .lectura { padding: 32px 0 64px; }
+    .lectura-head h2 { margin: 0; font-size: clamp(2.2rem, 5vw, 4rem); }
+    .lectura-head p { max-width: 60ch; margin: 8px 0 32px; color: var(--muted); font-size: .86rem; }
+    .lectura-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .85fr); gap: 40px; align-items: start; }
+    .contour { min-width: 0; margin: 0; }
+    .contour-media { border-left: 3px solid var(--realm); }
+    .contour figcaption { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
+    .contour h3, .callout-copy h3, .size-tip h3 { margin: 0; font-family: "Barlow Condensed", sans-serif; font-size: 1.6rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; }
+    .contour figcaption p { margin: 8px 0 0; color: var(--muted); font-size: .8rem; }
+    .clock-side { min-width: 0; padding: 24px; border: 1px solid var(--line); background: var(--panel); }
+    .clock-frame { max-width: 360px; margin-inline: auto; }
+    .callout-copy { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
+    .callout-copy p { margin: 8px 0 0; font-size: .84rem; }
+    .callout-link { display: inline-block; margin-top: 16px; color: var(--amber); font-family: "Barlow Condensed", sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    .callout-link:hover { color: var(--text); }
+
+    .layout-source { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 40px; align-items: center; margin-bottom: 64px; padding: 40px; border: 1px solid var(--line); border-top: 3px solid var(--blood); background: var(--panel); }
+    .source-copy { min-width: 0; }
+    .source-copy h2 { margin: 0 0 16px; font-size: clamp(2rem, 4vw, 3.2rem); }
+    .source-copy p { margin: 0; color: var(--muted); font-size: .84rem; }
+    .source-copy .source-hint { margin-top: 12px; color: var(--text); }
+    .source-hint strong { color: var(--ice); }
+    .source-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .source-actions .btn { white-space: nowrap; }
+    .source-note { width: 100%; margin: 0; color: var(--muted); font-size: .72rem; }
 
     .numbers, .layouts { padding: 64px 0; border-top: 1px solid var(--line); }
     .number-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
@@ -208,6 +300,8 @@ const next = index < maps.length - 1 ? maps[index + 1] : null;
     .number-grid .stat strong small { margin-left: 4px; color: var(--muted); font-size: .4em; }
     .number-grid .secondary { border-top: 2px solid var(--amber); }
     .not-published { margin: 0; padding: 24px; border: 1px solid var(--line); border-left: 3px solid var(--amber); background: var(--panel); color: var(--text); }
+    .size-tip { margin-top: 24px; padding: 16px 20px; border: 1px solid var(--line); border-left: 3px solid var(--amber); background: var(--panel); }
+    .size-tip p { margin: 8px 0 0; font-size: .86rem; }
     .formula { margin: 24px 0 0; color: var(--muted); font-size: .72rem; }
 
     .layout-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; }
@@ -245,15 +339,23 @@ const next = index < maps.length - 1 ? maps[index + 1] : null;
 
     @media (max-width: 1000px) {
       .number-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .hero-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (max-width: 900px) {
-      .hero, .competitive { grid-template-columns: 1fr; gap: 32px; }
-      .hero { padding-top: 110px; }
-      .competitive { padding: 24px; }
+      .competitive { grid-template-columns: 1fr; gap: 32px; }
+      .hero { padding: 110px 0 32px 16px; }
+      .competitive, .layout-source { padding: 24px; }
+      .lectura-grid, .layout-source { grid-template-columns: 1fr; gap: 32px; }
+      .clock-frame { max-width: 340px; }
       .layout-grid { grid-template-columns: 1fr; gap: 32px; }
     }
     @media (max-width: 620px) {
       .number-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero-meta { grid-template-columns: 1fr; }
+      .clock-side { padding: 16px; }
+      .size-tip { padding: 16px; }
+      .source-actions { flex-direction: column; align-items: stretch; }
+      .source-actions .btn { width: 100%; }
       .pager { flex-wrap: wrap; padding-bottom: 64px; }
       .pager-link, .pager-empty { max-width: calc(50% - 8px); }
       .pager-index { order: 3; width: 100%; text-align: center; }

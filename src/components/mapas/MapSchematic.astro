@@ -1,0 +1,141 @@
+---
+interface Props {
+  map: {
+    name: string;
+    sizeTiles: number | null;
+  };
+}
+
+const { map } = Astro.props;
+const tiles = map.sizeTiles;
+const side = tiles === null ? 0 : Math.max(1, Math.round(Math.sqrt(tiles)));
+const cell = side > 0 ? 272 / side : 0;
+const gridSize = side * cell;
+const gridX = 320 - gridSize / 2;
+const gridY = 180 - gridSize / 2;
+const gridLines = Array.from({ length: side + 1 }, (_, index) => index);
+const clockNumbers = Array.from({ length: 12 }, (_, index) => index + 1);
+const clockPoint = (number: number) => {
+  const radians = ((number * 30 - 90) * Math.PI) / 180;
+  return {
+    x: Number((320 + 300 * Math.cos(radians)).toFixed(2)),
+    y: Number((180 + 164 * Math.sin(radians)).toFixed(2)),
+  };
+};
+---
+
+<div class="map-schematic">
+  <svg
+    viewBox="0 0 640 360"
+    role="img"
+    aria-label={`Esquema sin imagen oficial de ${map.name}${tiles === null ? ', tamaño no publicado' : `, ${tiles} tiles`}`}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect class="schematic-bg" x="0" y="0" width="640" height="360" />
+    {side > 0 ? (
+      <g class="schematic-grid">
+        {gridLines.map((line) => (
+          <>
+            <line x1={gridX + line * cell} y1={gridY} x2={gridX + line * cell} y2={gridY + gridSize} />
+            <line x1={gridX} y1={gridY + line * cell} x2={gridX + gridSize} y2={gridY + line * cell} />
+          </>
+        ))}
+        <rect class="schematic-edge" x={gridX} y={gridY} width={gridSize} height={gridSize} />
+        <line class="schematic-axis" x1="320" y1={gridY} x2="320" y2={gridY + gridSize} />
+      </g>
+    ) : (
+      <g class="schematic-unknown">
+        <rect x="184" y="44" width="272" height="272" />
+        <line x1="320" y1="44" x2="320" y2="316" />
+        <line x1="184" y1="180" x2="456" y2="180" />
+        <rect class="schematic-unknown-plate" x="214" y="164" width="212" height="32" />
+        <text class="schematic-unknown-label" x="320" y="180">TAMAÑO NO PUBLICADO</text>
+      </g>
+    )}
+    <g class="schematic-clock">
+      {clockNumbers.map((number) => {
+        const point = clockPoint(number);
+        return (
+          <text
+            class:list={['schematic-number', { cardinal: number === 12 || number === 6 }]}
+            x={point.x}
+            y={point.y}
+          >
+            {number}
+          </text>
+        );
+      })}
+    </g>
+  </svg>
+  <span class="schematic-label">Esquema sin imagen oficial</span>
+</div>
+
+<style>
+  .map-schematic {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--line);
+    background: var(--panel);
+  }
+
+  .map-schematic svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .schematic-bg { fill: var(--panel); }
+  .schematic-grid line {
+    stroke: rgba(139, 151, 161, .22);
+    stroke-width: 1;
+  }
+  .schematic-grid .schematic-edge {
+    fill: none;
+    stroke: var(--blood);
+    stroke-width: 2;
+  }
+  .schematic-grid .schematic-axis {
+    stroke: rgba(255, 183, 3, .6);
+    stroke-width: 1;
+  }
+  .schematic-unknown rect,
+  .schematic-unknown line {
+    fill: none;
+    stroke: rgba(139, 151, 161, .28);
+    stroke-width: 1;
+    stroke-dasharray: 5 6;
+  }
+  .schematic-unknown .schematic-unknown-plate {
+    fill: var(--panel);
+    stroke: none;
+  }
+  .schematic-unknown-label {
+    fill: var(--muted);
+    font-family: "JetBrains Mono Variable", monospace;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-anchor: middle;
+  }
+  .schematic-number {
+    fill: var(--amber);
+    font-family: "JetBrains Mono Variable", monospace;
+    font-size: 14px;
+    font-weight: 700;
+    text-anchor: middle;
+    dominant-baseline: middle;
+  }
+  .schematic-number.cardinal { fill: var(--blood-2); }
+  .schematic-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5px 8px;
+    background: var(--bg);
+    color: var(--muted);
+    font-family: "JetBrains Mono Variable", monospace;
+    font-size: .62rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+</style>

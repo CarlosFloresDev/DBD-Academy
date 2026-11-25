@@ -1,0 +1,18 @@
+---
+const embers = Array.from({ length: 14 }, (_, index) => ({
+  left: `${(index * 37 + 9) % 97}%`,
+  delay: `${-((index * 13) % 90) / 10}s`,
+  duration: `${9 + (index * 7) % 11}s`,
+  size: `${2 + index % 3}px`,
+  drift: `${((index * 17) % 45) - 22}px`,
+}));
+---
+<span class="embers" aria-hidden="true">
+  {embers.map((ember) => <i style={`--x:${ember.left};--delay:${ember.delay};--duration:${ember.duration};--size:${ember.size};--drift:${ember.drift}`}></i>)}
+</span>
+<style>
+  .embers { position:absolute; inset:0; z-index:1; overflow:clip; pointer-events:none; }
+  .embers i { position:absolute; left:var(--x); bottom:-8px; width:var(--size); height:var(--size); border-radius:50%; background:var(--ember); opacity:0; filter:drop-shadow(0 0 5px var(--ember)); animation:ember-rise var(--duration) linear var(--delay) infinite; }
+  @keyframes ember-rise { 8% { opacity:.65; } 75% { opacity:.32; } 100% { transform:translate3d(var(--drift),-80vh,0) scale(.3); opacity:0; } }
+  @media (prefers-reduced-motion:reduce) { .embers { display:none; } }
+</style>

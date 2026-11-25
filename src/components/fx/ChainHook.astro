@@ -1,0 +1,19 @@
+---
+interface Props { small?: boolean; position?: 'left' | 'right' }
+const { small = false, position } = Astro.props;
+---
+<span class:list={['chain-hook', { small }, position && `position-${position}`]} aria-hidden="true">
+  <svg viewBox="0 0 90 190">
+    <path d="M24 0v30m18-30v30m18-30v30M24 30l18 11 18-11m-36 0v28m18-28v28m18-28v28M24 58l18 11 18-11m-36 0v28m18-28v28m18-28v28M24 86l18 11 18-11m-36 0v25" fill="none" stroke="currentColor" stroke-width="4"/>
+    <path d="M42 111v16c0 23 25 24 31 5 4-13-5-23-19-22" fill="none" stroke="var(--blood-2)" stroke-width="8" stroke-linecap="round"/>
+    <path d="M42 111v16c0 23 25 24 31 5 4-13-5-23-19-22" fill="none" stroke="var(--rust)" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+</span>
+<style>
+  .chain-hook { display:block; width:90px; color:#687078; transform-origin:28px 0; animation:hook-sway 5.8s ease-in-out infinite alternate; pointer-events:none; }
+  .chain-hook svg { width:100%; height:auto; filter:drop-shadow(0 3px 4px rgba(0,0,0,.7)); }
+  .chain-hook.small { width:46px; }
+  .chain-hook.small { animation:none; }
+  @keyframes hook-sway { from { transform:rotate(-2deg); } to { transform:rotate(2.2deg); } }
+  @media (prefers-reduced-motion:reduce) { .chain-hook { animation:none; } }
+</style>

@@ -29,14 +29,15 @@ const { perk, compact=false } = Astro.props;
   </div>
 </article>
 <style>
- .perk-card { display:grid; grid-template-columns:auto 1fr; gap:16px; padding:16px; }
+ .perk-card { display:grid; grid-template-columns:auto 1fr; gap:16px; padding:16px; border-left:2px solid var(--gore); }
+ .perk-card:hover { border-left-color:var(--blood-2); }
  .perk-main { min-width:0; }
  .perk-head { display:flex; align-items:center; justify-content:space-between; gap:8px; }
  .perk-head h3 { margin:0; font-family:"Barlow Condensed",sans-serif; font-size:1.15rem; letter-spacing:.02em; text-transform:uppercase; }
  details p,.clamp { color:var(--muted); font-size:.78rem; line-height:1.55; }
  details summary { width:max-content; cursor:pointer; color:var(--text); font-size:.78rem; }
  .clamp { display:-webkit-box; overflow:hidden; -webkit-line-clamp:4; -webkit-box-orient:vertical; }
- .official { display:block; margin:8px 0; color:var(--muted); font-size:.68rem; }
+ .official { display:block; margin:8px 0; color:#aab1b6; font-family:"JetBrains Mono Variable",monospace; font-size:.62rem; letter-spacing:.04em; }
  .perk-data { display:grid; gap:8px; }
  .values,.tags { display:flex; flex-wrap:wrap; gap:6px; }
 </style>

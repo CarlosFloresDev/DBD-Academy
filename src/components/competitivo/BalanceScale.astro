@@ -1,0 +1,238 @@
+---
+import balance from '../../data/balance-4v1.json';
+import killers from '../../data/killers.json';
+import SectionHead from '../SectionHead.astro';
+
+type Tier = 'S' | 'A' | 'B' | 'C' | 'D';
+
+const tiers: Tier[] = ['S', 'A', 'B', 'C', 'D'];
+const angles: Record<Tier, number> = { S: 14, A: 7, B: 0, C: -7, D: -14 };
+const killerSlugByName = new Map(killers.map((killer) => [killer.name, killer.slug] as const));
+const exampleByTier = new Map(balance.ejemploEscala.map((entry) => [entry.tier, entry] as const));
+
+const steps = tiers.map((tier) => {
+  const entry = exampleByTier.get(tier);
+  const names = (entry?.ejemplo ?? '').split(',').map((name) => name.trim()).filter(Boolean);
+  return {
+    tier,
+    angle: angles[tier],
+    generic: !entry,
+    killerText: entry?.killer ?? 'Restricciones intermedias.',
+    survivorText: entry?.survivors ?? 'Restricciones intermedias.',
+    examples: names.map((name) => ({ name, slug: killerSlugByName.get(name) ?? null })),
+  };
+});
+---
+
+<section class="balance-section container" aria-label="La compensación" data-angles={steps.map((step) => step.angle).join(',')}>
+  <SectionHead eyebrow="La compensación" title={balance.logica.titulo} description={balance.logica.reglas[0]} />
+
+  <div class="balance-layout">
+    <div class="scale-stage" data-reveal>
+      <svg class="scale-svg" viewBox="0 0 720 320" role="img" aria-labelledby="scale-title scale-desc">
+        <title id="scale-title">Balanza de compensación entre killer y survivors</title>
+        <desc id="scale-desc">El platillo izquierdo representa las restricciones del killer y el derecho la libertad de los survivors. La inclinación cambia según el tier seleccionado.</desc>
+        <g class="scale-frame">
+          <path d="M270 266h180" />
+          <path class="post" d="M360 266V104" />
+          <path class="fulcrum" d="M360 100l-28 158h56z" />
+          <circle class="pivot" cx="360" cy="100" r="8" />
+        </g>
+        <g class="scale-beam">
+          <path d="M110 100h500" />
+          <path class="beam-tick" d="M110 93v14M610 93v14" />
+          <circle class="beam-end killer-end" cx="110" cy="100" r="5" />
+          <circle class="beam-end survivor-end" cx="610" cy="100" r="5" />
+        </g>
+        <g class="scale-pan" data-pan="killer">
+          <path class="pan-wire" d="M110 164v50" />
+          <path class="pan-bowl killer-bowl" d="M46 214h128l-18 32H64z" />
+          <text class="pan-label" x="110" y="235" text-anchor="middle">KILLER</text>
+        </g>
+        <g class="scale-pan" data-pan="survivors">
+          <path class="pan-wire" d="M610 164v50" />
+          <path class="pan-bowl survivor-bowl" d="M546 214h128l-18 32H564z" />
+          <text class="pan-label" x="610" y="235" text-anchor="middle">SURVIVORS</text>
+        </g>
+      </svg>
+
+      <div class="scale-control">
+        <div class="control-head">
+          <label for="balance-tier">Tier del killer</label>
+          <output class="mono" for="balance-tier" data-tier-output>Tier S</output>
+        </div>
+        <input class="scale-slider" id="balance-tier" type="range" min="0" max="4" step="1" value="0" list="balance-ticks" aria-valuetext="Tier S" data-tier-slider />
+        <datalist id="balance-ticks">
+          <option value="0"></option><option value="1"></option><option value="2"></option><option value="3"></option><option value="4"></option>
+        </datalist>
+        <div class="tier-ticks" role="group" aria-label="Seleccionar tier del killer">
+          {steps.map((step, index) => (
+            <button type="button" class:list={['tier-tick', 'mono', { active: index === 0 }]} data-tier-index={index} aria-label={`Ver ejemplo del tier ${step.tier}`} aria-pressed={index === 0}>{step.tier}</button>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div class="scale-explain" data-reveal>
+      <p class="eyebrow">Cómo se lee</p>
+      <ol class="logic-rules">
+        {balance.logica.reglas.map((rule) => <li>{rule}</li>)}
+      </ol>
+      <p class="example-note">{balance.ejemploAviso}</p>
+    </div>
+  </div>
+
+  <div class="scale-columns" data-reveal>
+    {steps.map((step, index) => (
+      <div class="scale-panels" data-scale-panel={step.tier} hidden={index !== 0}>
+        <article class="panel panel-killer">
+          <p class="eyebrow">Izquierda · Killer</p>
+          <h3 class="display">Restricciones</h3>
+          <p class="panel-text">{step.killerText}</p>
+          {step.generic && <span class="mono generic-tag">Sin dato en la guía: restricciones intermedias</span>}
+          {step.examples.length > 0 && (
+            <div class="example-killers">
+              <span class="example-label">Ejemplos de la guía</span>
+              <div class="example-links">
+                {step.examples.map((example) => (
+                  example.slug
+                    ? <a href={`/killers/${example.slug}/`}>{example.name}</a>
+                    : <span>{example.name}</span>
+                ))}
+              </div>
+            </div>
+          )}
+        </article>
+        <article class="panel panel-survivors">
+          <p class="eyebrow">Derecha · Survivors</p>
+          <h3 class="display">Libertad</h3>
+          <p class="panel-text">{step.survivorText}</p>
+          {step.generic && <span class="mono generic-tag">Sin dato en la guía: restricciones intermedias</span>}
+        </article>
+      </div>
+    ))}
+  </div>
+  <p class="visually-hidden" role="status" aria-live="polite" data-scale-status>Escala en tier S.</p>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+
+  const root = document.querySelector<HTMLElement>('.balance-section');
+  if (root) {
+    const slider = root.querySelector<HTMLInputElement>('[data-tier-slider]');
+    const output = root.querySelector<HTMLOutputElement>('[data-tier-output]');
+    const status = root.querySelector<HTMLElement>('[data-scale-status]');
+    const beam = root.querySelector<SVGGElement>('.scale-beam');
+    const panKiller = root.querySelector<SVGGElement>('[data-pan="killer"]');
+    const panSurvivors = root.querySelector<SVGGElement>('[data-pan="survivors"]');
+    const panels = [...root.querySelectorAll<HTMLElement>('[data-scale-panel]')];
+    const ticks = [...root.querySelectorAll<HTMLButtonElement>('[data-tier-index]')];
+    const tiers = ['S', 'A', 'B', 'C', 'D'];
+    const angles = (root.dataset.angles ?? '0,0,0,0,0').split(',').map(Number);
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const render = (index: number, animate: boolean) => {
+      const tier = tiers[index] ?? 'S';
+      const angle = angles[index] ?? 0;
+
+      if (slider) {
+        slider.value = String(index);
+        slider.setAttribute('aria-valuetext', `Tier ${tier}`);
+      }
+      if (output) output.textContent = `Tier ${tier}`;
+      if (status) status.textContent = `Escala en tier ${tier}.`;
+
+      ticks.forEach((tick, tickIndex) => {
+        tick.classList.toggle('active', tickIndex === index);
+        tick.setAttribute('aria-pressed', String(tickIndex === index));
+      });
+      panels.forEach((panel) => { panel.hidden = panel.dataset.scalePanel !== tier; });
+
+      const radians = angle * Math.PI / 180;
+      const leftX = 360 - 250 * Math.cos(radians);
+      const leftY = 100 - 250 * Math.sin(radians);
+      const rightX = 360 + 250 * Math.cos(radians);
+      const rightY = 100 + 250 * Math.sin(radians);
+      const pans: [SVGGElement | null, number, number][] = [
+        [panKiller, leftX - 110, leftY + 64 - 164],
+        [panSurvivors, rightX - 610, rightY + 64 - 164],
+      ];
+
+      if (animate && !reduced) {
+        if (beam) gsap.to(beam, { rotation: angle, svgOrigin: '360 100', duration: 0.5, ease: 'power3.out', overwrite: 'auto' });
+        pans.forEach(([pan, x, y]) => { if (pan) gsap.to(pan, { x, y, duration: 0.5, ease: 'power3.out', overwrite: 'auto' }); });
+        const active = panels.find((panel) => panel.dataset.scalePanel === tier);
+        if (active) gsap.fromTo(active, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.32, ease: 'power3.out', overwrite: 'auto' });
+      } else {
+        if (beam) gsap.set(beam, { rotation: angle, svgOrigin: '360 100' });
+        pans.forEach(([pan, x, y]) => { if (pan) gsap.set(pan, { x, y }); });
+        panels.forEach((panel) => gsap.set(panel, { clearProps: 'opacity,transform' }));
+      }
+    };
+
+    slider?.addEventListener('input', () => render(Number(slider.value), true));
+    ticks.forEach((tick) => tick.addEventListener('click', () => render(Number(tick.dataset.tierIndex ?? 0), true)));
+    render(0, false);
+  }
+</script>
+
+<style>
+  .balance-section { margin-top: 96px; }
+  .balance-section :global(.section-head) { max-width: none; }
+  .balance-layout { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 40px; align-items: center; }
+  .scale-stage { min-width: 0; border: 1px solid var(--line); background: var(--bg-2); padding: 24px; }
+  .scale-svg { width: 100%; height: auto; overflow: visible; }
+  .scale-frame path, .scale-frame circle { fill: none; stroke: var(--line); stroke-width: 2; }
+  .scale-frame .post { stroke: var(--muted); }
+  .scale-frame .fulcrum { fill: var(--panel); stroke: var(--line); }
+  .scale-frame .pivot { fill: var(--blood); stroke: none; }
+  .scale-beam path { fill: none; stroke: var(--text); stroke-width: 3; }
+  .scale-beam .beam-tick { stroke-width: 2; }
+  .scale-beam .killer-end { fill: var(--blood-2); stroke: none; }
+  .scale-beam .survivor-end { fill: var(--amber); stroke: none; }
+  .pan-wire { fill: none; stroke: var(--muted); stroke-width: 1.5; }
+  .pan-bowl { stroke-width: 2; }
+  .killer-bowl { fill: var(--panel); stroke: var(--blood-2); }
+  .survivor-bowl { fill: var(--panel); stroke: var(--amber); }
+  .pan-label { fill: var(--muted); font: 700 11px "JetBrains Mono Variable", monospace; letter-spacing: .12em; }
+  .scale-control { border-top: 1px solid var(--line); padding-top: 20px; }
+  .control-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .control-head label { color: var(--muted); font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; }
+  .control-head output { color: var(--amber); font-size: 1.2rem; font-weight: 700; }
+  .scale-slider { width: 100%; margin: 14px 0 6px; accent-color: var(--blood); cursor: pointer; }
+  .tier-ticks { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+  .tier-tick { min-height: 34px; border: 1px solid var(--line); border-radius: var(--r); background: transparent; color: var(--muted); cursor: pointer; font-size: .8rem; }
+  .tier-tick:hover { border-color: var(--blood); color: var(--text); }
+  .tier-tick.active { border-color: var(--blood-2); background: rgba(193, 18, 31, .18); color: var(--text); }
+  .scale-explain { min-width: 0; }
+  .logic-rules { display: grid; gap: 14px; margin: 16px 0 0; padding: 0; list-style: none; counter-reset: rule; }
+  .logic-rules li { display: grid; grid-template-columns: 34px 1fr; gap: 10px; color: var(--muted); font-size: .85rem; counter-increment: rule; }
+  .logic-rules li::before { content: "0" counter(rule); color: var(--blood-2); font-family: "JetBrains Mono Variable", monospace; font-size: .7rem; }
+  .example-note { margin: 24px 0 0; border-left: 2px solid var(--amber); padding-left: 12px; color: var(--muted); font-size: .74rem; }
+  .scale-columns { margin-top: 32px; }
+  .scale-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .scale-panels[hidden] { display: none; }
+  .panel { min-width: 0; border: 1px solid var(--line); border-top: 3px solid var(--blood-2); background: var(--panel); padding: 22px; }
+  .panel-survivors { border-top-color: var(--amber); }
+  .panel h3 { margin: 10px 0; font-size: 2.2rem; }
+  .panel-text { margin: 0; color: var(--text); font-size: .9rem; }
+  .generic-tag { display: inline-block; margin-top: 12px; color: var(--muted); font-size: .68rem; }
+  .example-killers { display: grid; gap: 8px; margin-top: 20px; border-top: 1px solid var(--line); padding-top: 14px; }
+  .example-label { color: var(--muted); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; }
+  .example-links { display: flex; flex-wrap: wrap; gap: 8px; }
+  .example-links a, .example-links span { border: 1px solid var(--line); border-radius: var(--r); padding: 5px 9px; font-size: .76rem; }
+  .example-links a { color: var(--text); text-decoration: underline; text-decoration-color: var(--blood); text-underline-offset: 3px; }
+  .example-links a:hover { border-color: var(--blood-2); color: var(--amber); }
+  .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  @media (max-width: 900px) {
+    .balance-layout { grid-template-columns: 1fr; gap: 24px; }
+  }
+  @media (max-width: 600px) {
+    .balance-section { margin-top: 64px; }
+    .scale-stage { padding: 12px; }
+    .scale-panels { grid-template-columns: 1fr; }
+    .panel { padding: 16px; }
+    .scale-svg { margin-inline: -8px; width: calc(100% + 16px); }
+  }
+</style>

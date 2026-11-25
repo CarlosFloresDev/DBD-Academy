@@ -1,0 +1,285 @@
+---
+interface Props {
+  mainAt?: number;
+  interactive?: boolean;
+  showMain?: boolean;
+  showShack?: boolean;
+  highlight?: number;
+}
+
+const {
+  mainAt = 0,
+  interactive = false,
+  showMain = true,
+  showShack = true,
+  highlight,
+} = Astro.props;
+
+const rings = [
+  { name: 'mid', inner: 48, outer: 112, label: 'Mid' },
+  { name: 'deep', inner: 112, outer: 152, label: 'Deep' },
+  { name: 'edge', inner: 152, outer: 178, label: 'Edge' },
+] as const;
+
+const point = (radius: number, degrees: number) => {
+  const radians = (degrees * Math.PI) / 180;
+  return {
+    x: Number((200 + radius * Math.cos(radians)).toFixed(2)),
+    y: Number((200 + radius * Math.sin(radians)).toFixed(2)),
+  };
+};
+
+const wedge = (number: number, inner: number, outer: number) => {
+  const center = number * 30 - 90;
+  const start = center - 15;
+  const end = center + 15;
+  const outerStart = point(outer, start);
+  const outerEnd = point(outer, end);
+  const innerStart = point(inner, start);
+  const innerEnd = point(inner, end);
+
+  return `M ${outerStart.x} ${outerStart.y} A ${outer} ${outer} 0 0 1 ${outerEnd.x} ${outerEnd.y} L ${innerEnd.x} ${innerEnd.y} A ${inner} ${inner} 0 0 0 ${innerStart.x} ${innerStart.y} Z`;
+};
+---
+
+<svg
+  class="clock-overlay"
+  viewBox="0 0 400 400"
+  role={interactive ? 'group' : 'img'}
+  aria-label="Reloj de callouts: 12 arriba, sentido horario"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <title>Reloj de callouts</title>
+  <rect class="map-frame" x="25" y="25" width="350" height="350" />
+  <g class="clock-face" transform={`rotate(${mainAt} 200 200)`}>
+    {rings.map((ring) => Array.from({ length: 12 }, (_, index) => index + 1).map((number) => (
+      <path
+        class:list={[
+          'sector',
+          `sector-${ring.name}`,
+          { highlighted: highlight === number },
+          { interactive: interactive },
+        ]}
+        d={wedge(number, ring.inner, ring.outer)}
+        data-callout-sector={interactive ? number : undefined}
+        data-ring={interactive ? ring.name : undefined}
+        tabindex={interactive ? 0 : undefined}
+        role={interactive ? 'button' : undefined}
+        aria-label={interactive ? `Sector ${number}, ${ring.label}` : undefined}
+        aria-description={interactive ? `Anillo ${ring.label}` : undefined}
+      >
+        {interactive && <title>{`Sector ${number}, anillo ${ring.label}`}</title>}
+      </path>
+    )))}
+
+    <circle class="mid-core" cx="200" cy="200" r="46" />
+    {interactive && (
+      <circle
+        class="center-target"
+        cx="200"
+        cy="200"
+        r="43"
+        tabindex="0"
+        role="button"
+        aria-label="Centro del mapa"
+        data-callout-center
+      >
+        <title>Centro del mapa</title>
+      </circle>
+    )}
+
+    <circle class="ring-guide" cx="200" cy="200" r="112" />
+    <circle class="ring-guide" cx="200" cy="200" r="152" />
+    <circle class="ring-guide outer-guide" cx="200" cy="200" r="178" />
+
+    {Array.from({ length: 12 }, (_, index) => {
+      const number = index + 1;
+      const position = point(188, number * 30 - 90);
+      return (
+        <text class="clock-number" x={position.x} y={position.y} text-anchor="middle" dominant-baseline="central">
+          {number}
+        </text>
+      );
+    })}
+
+    <text class="ring-label label-mid" x="284" y="203">MID</text>
+    <text class="ring-label label-deep" x="325" y="203">DEEP</text>
+    <text class="ring-label label-edge" x="361" y="203">EDGE</text>
+
+    {showMain && (
+      <g class="landmark main-building" aria-label="Edificio principal, las 12">
+        <rect x="177" y="42" width="46" height="25" />
+        <path d="M184 50h32M184 57h18M196 67v-8h8v8" />
+        <text x="200" y="37" text-anchor="middle">MAIN</text>
+      </g>
+    )}
+    {showShack && (
+      <g class="landmark shack" aria-label="Shack, cerca de las 6">
+        <rect x="184" y="333" width="32" height="20" />
+        <path d="M190 341h20M197 353v-8h7v8" />
+        <text x="200" y="366" text-anchor="middle">SHACK</text>
+      </g>
+    )}
+
+    <g class="clock-hand" aria-hidden="true">
+      <path d="M200 213V89" />
+      <path d="M195 99l5-10 5 10" />
+      <circle cx="200" cy="200" r="5" />
+    </g>
+  </g>
+
+  <path class="frame-draw draw" d="M25 25H375V375H25Z" />
+</svg>
+
+<script>
+  const dispatchSelection = (target: Element, n: number, ring: string, source: string) => {
+    target.dispatchEvent(new CustomEvent('callout:select', {
+      bubbles: true,
+      detail: { n, ring, source },
+    }));
+  };
+
+  document.querySelectorAll<SVGPathElement>('.clock-overlay [data-callout-sector]').forEach((sector) => {
+    const n = Number(sector.dataset.calloutSector);
+    const ring = sector.dataset.ring ?? 'mid';
+    sector.addEventListener('pointerenter', () => dispatchSelection(sector, n, ring, 'pointer'));
+    sector.addEventListener('focus', () => dispatchSelection(sector, n, ring, 'focus'));
+    sector.addEventListener('click', () => dispatchSelection(sector, n, ring, 'click'));
+    sector.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        dispatchSelection(sector, n, ring, 'keyboard');
+      }
+    });
+  });
+
+  document.querySelectorAll<SVGCircleElement>('.clock-overlay [data-callout-center]').forEach((center) => {
+    center.addEventListener('pointerenter', () => dispatchSelection(center, 0, 'centro', 'pointer'));
+    center.addEventListener('focus', () => dispatchSelection(center, 0, 'centro', 'focus'));
+    center.addEventListener('click', () => dispatchSelection(center, 0, 'centro', 'click'));
+    center.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        dispatchSelection(center, 0, 'centro', 'keyboard');
+      }
+    });
+  });
+</script>
+
+<style>
+  .clock-overlay {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    color: var(--text);
+  }
+
+  .map-frame {
+    fill: rgba(12, 16, 21, .5);
+    stroke: var(--line);
+    stroke-width: 1;
+  }
+
+  .sector {
+    fill: rgba(125, 211, 252, .025);
+    stroke: rgba(139, 151, 161, .22);
+    stroke-width: .8;
+    transition: fill 180ms ease, stroke 180ms ease, opacity 180ms ease;
+  }
+
+  .sector:nth-child(odd) { fill: rgba(125, 211, 252, .045); }
+  .sector.highlighted { fill: rgba(193, 18, 31, .48); stroke: var(--blood-2); }
+
+  .ring-guide {
+    fill: none;
+    stroke: rgba(139, 151, 161, .28);
+    stroke-width: .8;
+    stroke-dasharray: 2 4;
+  }
+
+  .outer-guide { stroke: var(--muted); stroke-dasharray: none; }
+
+  .mid-core {
+    fill: rgba(6, 8, 11, .8);
+    stroke: rgba(255, 183, 3, .7);
+    stroke-width: 1;
+  }
+
+  .ring-label,
+  .clock-number,
+  .landmark text {
+    fill: var(--muted);
+    font-family: "JetBrains Mono Variable", monospace;
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: .08em;
+  }
+
+  .ring-label { font-size: 6px; }
+  .clock-number { fill: var(--text); font-size: 9px; }
+  .label-mid { fill: var(--amber); }
+  .label-edge { fill: var(--blood-2); }
+  .landmark rect { fill: var(--panel); stroke: var(--blood-2); stroke-width: 1.4; }
+  .landmark path { fill: none; stroke: var(--muted); stroke-width: 1; }
+  .landmark text { fill: var(--blood-2); font-size: 6px; }
+  .shack rect { stroke: var(--amber); }
+  .shack text { fill: var(--amber); }
+
+  .clock-hand {
+    transform-box: view-box;
+    transform-origin: 200px 200px;
+    animation: hand-drift 4s ease-in-out infinite alternate;
+  }
+
+  .clock-hand path {
+    fill: none;
+    stroke: var(--amber);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .clock-hand circle { fill: var(--blood); stroke: var(--amber); stroke-width: 1; }
+  .frame-draw { fill: none; stroke: var(--line); stroke-width: 1; }
+
+  .interactive { cursor: pointer; }
+  .interactive:hover,
+  .interactive:focus,
+  .interactive:focus-visible {
+    fill: rgba(193, 18, 31, .72);
+    stroke: var(--blood-2);
+    stroke-width: 1.8;
+    outline: none;
+  }
+
+  .interactive[data-target="true"] {
+    fill: rgba(193, 18, 31, .72);
+    stroke: var(--amber);
+    stroke-width: 2;
+  }
+
+  .center-target {
+    fill: transparent;
+    stroke: transparent;
+    cursor: pointer;
+  }
+
+  .center-target:hover,
+  .center-target:focus,
+  .center-target:focus-visible {
+    fill: rgba(193, 18, 31, .55);
+    stroke: var(--blood-2);
+    stroke-width: 2;
+    outline: none;
+  }
+
+  @keyframes hand-drift {
+    from { transform: rotate(-2deg); }
+    to { transform: rotate(2deg); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .clock-hand { animation: none; }
+    .sector { transition: none; }
+  }
+</style>
