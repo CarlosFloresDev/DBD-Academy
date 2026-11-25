@@ -122,7 +122,7 @@ const allConstantGroups = [
         </div>
         <div class="formula card">
           <p class="eyebrow">Fórmula</p>
-          <p>Cargas pendientes = {clock.generador.cargasTotales} − (patadas × {clock.generador.patadaPenalizacionPct}% × {clock.generador.cargasTotales}) − (fallo × {clock.generador.skillCheckFalloPenalizacionPct}% × {clock.generador.cargasTotales}).</p>
+          <p>Cargas por reparar = {clock.generador.cargasTotales} + (patadas × {clock.generador.patadaPenalizacionPct}% × {clock.generador.cargasTotales}) + (fallo × {clock.generador.skillCheckFalloPenalizacionPct}% × {clock.generador.cargasTotales}).</p>
           <p>Tiempo = cargas pendientes ÷ (survivors × eficiencia individual).</p>
         </div>
         <div class="comparison card">
@@ -294,11 +294,11 @@ const allConstantGroups = [
       const row = config.generador.porNumeroDeSobrevivientes.find((entry) => entry.n === survivorCount);
       const lost = kickCount * config.generador.cargasTotales * config.generador.patadaPenalizacionPct / 100
         + (failedCheck.checked ? config.generador.cargasTotales * config.generador.skillCheckFalloPenalizacionPct / 100 : 0);
-      const remaining = Math.max(0, config.generador.cargasTotales - lost);
+      const remaining = config.generador.cargasTotales + lost;
       totalGenSeconds = remaining / (row.eficienciaIndividual * survivorCount);
       genResult.textContent = `${totalGenSeconds.toFixed(2).replace('.', ',')} s`;
       genClock.textContent = formatSeconds(totalGenSeconds);
-      genRing?.setAttribute('stroke-dashoffset', String(circumference * (1 - remaining / config.generador.cargasTotales)));
+      genRing?.setAttribute('stroke-dashoffset', String(circumference * (1 - config.generador.cargasTotales / remaining)));
       root.querySelectorAll('[data-ref-n]').forEach((line) => line.classList.toggle('selected', Number(line.getAttribute('data-ref-n')) === survivorCount));
       elapsed = 0;
       running = false;
