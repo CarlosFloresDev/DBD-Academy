@@ -3,3 +3,6 @@ dist
 .astro
 .wrangler
 data/raw/*.lua
+.claude/
+briefs/run/*.log
+briefs/run/*.status

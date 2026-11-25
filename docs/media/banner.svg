@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" width="1280" height="360" role="img" aria-labelledby="t d">
+  <title id="t">DBD Academy</title>
+  <desc id="d">Banner de DBD Academy: aprende Dead by Daylight competitivo con un reloj animado.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0e13"/>
+      <stop offset="1" stop-color="#06080b"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#c1121f" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#c1121f" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="28"/></filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#1f2a33" stroke-width="1" opacity=".55"/>
+    </pattern>
+  </defs>
+  <style>
+    .fog1 { animation: drift1 14s ease-in-out infinite alternate; }
+    .fog2 { animation: drift2 18s ease-in-out infinite alternate; }
+    .ring { stroke-dasharray: 628; stroke-dashoffset: 628; animation: run 7s linear infinite; }
+    .tick { animation: pulse 1s steps(2, jump-none) infinite; }
+    .hook { transform-origin: 1010px 0; animation: sway 5s ease-in-out infinite alternate; }
+    .light { animation: flick 3.2s infinite; }
+    @keyframes drift1 { from { transform: translateX(-60px); } to { transform: translateX(80px); } }
+    @keyframes drift2 { from { transform: translateX(70px); } to { transform: translateX(-90px); } }
+    @keyframes run { 0% { stroke-dashoffset: 628; } 90% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 0; } }
+    @keyframes pulse { 50% { opacity: .2; } }
+    @keyframes sway { from { transform: rotate(-2deg); } to { transform: rotate(2deg); } }
+    @keyframes flick { 0%, 100% { opacity: 1; } 42% { opacity: .9; } 44% { opacity: .25; } 46% { opacity: 1; } 80% { opacity: .85; } }
+    @media (prefers-reduced-motion: reduce) { .fog1, .fog2, .ring, .tick, .hook, .light { animation: none; } .ring { stroke-dashoffset: 120; } }
+  </style>
+
+  <rect width="1280" height="360" fill="url(#bg)"/>
+  <rect width="1280" height="360" fill="url(#grid)"/>
+  <ellipse class="fog1" cx="320" cy="300" rx="420" ry="90" fill="#7dd3fc" opacity=".07" filter="url(#blur)"/>
+  <ellipse class="fog2" cx="900" cy="330" rx="480" ry="80" fill="#e8e3d6" opacity=".06" filter="url(#blur)"/>
+  <circle cx="1010" cy="180" r="190" fill="url(#glow)"/>
+
+  <!-- siluetas -->
+  <path d="M0 360V292l70-26 18-52 30 46 62-30 42 26 54-34 30 40 70-18v116z" fill="#06080b" opacity=".9"/>
+  <g fill="#06080b">
+    <rect x="1130" y="150" width="14" height="210"/>
+    <path d="M1137 150l-44-42m44 42l36-52m-36 52l-6-62" stroke="#06080b" stroke-width="7" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- gancho -->
+  <g class="hook">
+    <line x1="1010" y1="0" x2="1010" y2="38" stroke="#4a5560" stroke-width="3"/>
+    <path d="M1010 38c-18 0-18 26 0 26 8 0 12-6 10-12" fill="none" stroke="#8b97a1" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- reloj -->
+  <g transform="translate(1010 190)">
+    <circle r="100" fill="#0c1015" stroke="#1f2a33" stroke-width="3"/>
+    <circle class="ring" r="100" fill="none" stroke="#ffb703" stroke-width="8" stroke-linecap="round" transform="rotate(-90)"/>
+    <g stroke="#8b97a1" stroke-width="2" opacity=".7">
+      <path d="M0 -82v10M82 0h-10M0 82v-10M-82 0h10"/>
+    </g>
+    <text y="12" text-anchor="middle" font-family="'JetBrains Mono','Consolas',monospace" font-size="36" font-weight="700" fill="#ffb703">40,91</text>
+    <text y="40" text-anchor="middle" font-family="'JetBrains Mono','Consolas',monospace" font-size="13" fill="#8b97a1" letter-spacing="2">SEG / GEN</text>
+    <circle class="tick" cx="0" cy="-58" r="4" fill="#ff3b47"/>
+  </g>
+
+  <!-- generador -->
+  <g transform="translate(760 262)">
+    <rect width="76" height="52" rx="4" fill="#10161c" stroke="#1f2a33"/>
+    <rect x="10" y="10" width="56" height="12" fill="#06080b"/>
+    <circle class="light" cx="62" cy="40" r="5" fill="#ff3b47"/>
+    <path d="M14 40h28" stroke="#4a5560" stroke-width="3"/>
+  </g>
+
+  <!-- texto -->
+  <g font-family="'Barlow Condensed','Oswald','Impact','Arial Narrow',sans-serif">
+    <text x="70" y="80" font-size="18" font-weight="700" letter-spacing="6" fill="#ff3b47" font-family="'JetBrains Mono','Consolas',monospace">DEAD BY DAYLIGHT / COMPETITIVO</text>
+    <text x="66" y="196" font-size="108" font-weight="800" letter-spacing="2" fill="#e8e3d6">DBD ACADEMY</text>
+    <text x="70" y="244" font-size="30" fill="#8b97a1" font-family="'Inter','Segoe UI',Arial,sans-serif">Los números del juego, medidos como un reloj.</text>
+    <rect x="70" y="276" width="118" height="4" fill="#c1121f"/>
+  </g>
+</svg>

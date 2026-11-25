@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-labelledby="t d">
+  <title id="t">Flujo de datos de DBD Academy</title>
+  <desc id="d">Wiki oficial y DBD Arena se convierten en JSON, Astro genera 183 páginas estáticas y se publican en Cloudflare Pages.</desc>
+  <style>
+    .box { fill: #10161c; stroke: #1f2a33; stroke-width: 2; }
+    .hot { stroke: #c1121f; }
+    .t { font: 700 22px 'Barlow Condensed','Arial Narrow',Arial,sans-serif; fill: #e8e3d6; letter-spacing: 1px; }
+    .s { font: 14px 'Inter','Segoe UI',Arial,sans-serif; fill: #8b97a1; }
+    .m { font: 12px 'JetBrains Mono',Consolas,monospace; fill: #ffb703; }
+    .flow { stroke: #ff3b47; stroke-width: 3; fill: none; stroke-dasharray: 8 10; animation: dash 1.2s linear infinite; }
+    @keyframes dash { to { stroke-dashoffset: -36; } }
+    @media (prefers-reduced-motion: reduce) { .flow { animation: none; } }
+  </style>
+  <rect width="1200" height="300" fill="#06080b"/>
+
+  <g transform="translate(30 40)"><rect class="box" width="200" height="100" rx="6"/><text class="t" x="18" y="40">WIKI OFICIAL</text><text class="s" x="18" y="66">Módulos Lua: killers,</text><text class="s" x="18" y="86">mapas, perks, poderes</text></g>
+  <g transform="translate(30 170)"><rect class="box" width="200" height="90" rx="6"/><text class="t" x="18" y="40">DBD ARENA</text><text class="s" x="18" y="66">Reglas 1v1 y tiers</text></g>
+
+  <path class="flow" d="M232 90H290"/><path class="flow" d="M232 215H262Q276 215 276 200V120Q276 105 290 105"/>
+
+  <g transform="translate(290 70)"><rect class="box hot" width="220" height="110" rx="6"/><text class="t" x="18" y="40">tools/</text><text class="m" x="18" y="66">lua2json.mjs</text><text class="m" x="18" y="86">fetch-wiki.mjs</text><text class="m" x="18" y="106">build-data.mjs</text></g>
+
+  <path class="flow" d="M512 125H570"/>
+
+  <g transform="translate(570 70)"><rect class="box" width="200" height="110" rx="6"/><text class="t" x="18" y="40">src/data/*.json</text><text class="s" x="18" y="68">45 killers · 55 survivors</text><text class="s" x="18" y="88">342 perks · 47 mapas</text></g>
+
+  <path class="flow" d="M772 125H830"/>
+
+  <g transform="translate(830 70)"><rect class="box" width="160" height="110" rx="6"/><text class="t" x="18" y="40">ASTRO 7</text><text class="s" x="18" y="68">GSAP + Lenis</text><text class="m" x="18" y="92">183 páginas</text></g>
+
+  <path class="flow" d="M992 125H1030"/>
+
+  <g transform="translate(1030 70)"><rect class="box hot" width="150" height="110" rx="6"/><text class="t" x="18" y="40">PAGES</text><text class="s" x="18" y="68">Cloudflare · estático</text><text class="m" x="18" y="92">.pages.dev</text></g>
+
+  <text class="s" x="290" y="250">Los scripts convierten los datos una vez; el sitio no consulta ninguna API en ejecución.</text>
+</svg>
